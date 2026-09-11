@@ -24,6 +24,38 @@ proyecto sin una verificación independiente, realizada por el equipo,
 contra la fuente original, el código fuente del proyecto auditado o los
 archivos de datos reales.
 
+Chat 1 — Diagnóstico, auditoría y validación empírica
+
+"Vamos a desarrollar la Fase 1 de una consultoría estadística sobre el repositorio [enlace de GitHub], un proyecto del mismo curso que intentó construir un observatorio de datos de educación superior en Colombia integrando tres fuentes: SNIES, Saber Pro y el PTE (Portal de Transparencia Económica).
+
+Necesito que primero hagas un diagnóstico crítico del repositorio: qué se propuso, qué se logró realmente, y qué vacíos o afirmaciones metodológicas sin evidencia hay detrás — revisando no solo el informe final, sino el código fuente real (scripts de carga y construcción del modelo).
+
+Con ese diagnóstico, necesito que me ayudes a verificar empíricamente —no a suponer— cualquier afirmación sobre si las fuentes se pueden integrar entre sí, construyendo el código necesario para probarlo contra datos reales. También necesito que identifiquemos y organicemos el acceso a las tres fuentes: de dónde se descargan, con qué periodicidad, y qué limitaciones de acceso tiene cada una.
+
+Antes de dar cualquier hallazgo por cierto, verifícalo contra la fuente real, no lo asumas porque suene razonable."
+
+Entregable de este chat: diagnóstico completo, llave de integración validada con datos reales, y las tres fuentes identificadas y accesibles.
+
+Chat 2 — Diseño metodológico, objetivos y estado del arte
+
+"Continuamos la consultoría del Proyecto Observatorio de Datos de Educación en Colombia. Te resumo lo ya resuelto en la etapa anterior: [pegar el diagnóstico, el resultado de la validación de la llave con sus porcentajes, y qué fuentes de datos están confirmadas y accesibles].
+
+Nuestro profesor sugirió orientar el proyecto hacia el ángulo de economía y consumo de recursos —eficiencia del gasto público—. Necesito que, con esa base, me ayudes a definir un objetivo general y objetivos específicos verificables, y a diseñar en detalle la técnica de Análisis Envolvente de Datos aplicada a este problema —insumos, resultados, orientación del modelo, supuestos y verificación de tamaño de muestra—.
+
+Con los objetivos ya definidos, necesito que construyas el estado del arte: literatura que sustente específicamente estos objetivos, no una revisión general del tema — verificando cada fuente de forma independiente antes de citarla, incluyendo autores, año y datos exactos contra la fuente original."
+
+Entregable de este chat: objetivos específicos definidos, diseño metodológico completo del DEA, y estado del arte con fuentes verificadas una por una.
+
+Chat 3 — Adaptación a la rúbrica y ensamblaje de entregables**
+
+"Cerramos la Fase 1 de la consultoría del Proyecto Observatorio de Datos de Educación en Colombia. Te resumo lo desarrollado hasta ahora: [pegar o adjuntar el diagnóstico, la llave validada, los objetivos específicos, el diseño del DEA, y el estado del arte ya construidos].
+
+Adjunto también la rúbrica real de evaluación de mi profesor [adjuntar documento]. Necesito que la revises criterio por criterio contra todo lo que ya tenemos, identifiques qué falta o qué no cumple el nivel esperado, y me ayudes a completarlo — incluyendo cronograma, declaración de uso de IA, y cualquier otro elemento exigido que no hayamos trabajado todavía.
+
+Con todo eso completo, necesito que ensambles el documento final del anteproyecto respetando el formato, extensión y citación exigidos, y que generes los guiones necesarios para la sustentación oral."
+
+Entregable de este chat: documento final del anteproyecto, ajustado a la rúbrica, y material listo para la sustentación.
+
 ---
 
 ## 1. Diagnóstico inicial y comprensión del repositorio base
