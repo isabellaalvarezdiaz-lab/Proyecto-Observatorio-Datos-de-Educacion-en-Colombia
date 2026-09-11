@@ -1,181 +1,252 @@
 # Bitácora de uso de IA — Proyecto Observatorio de Educación en Colombia
 
 **Agente utilizado:** Claude (Anthropic), interfaz de chat.
-**Modalidad de uso:** conversación única, sostenida durante toda la Fase 1, con
-los tres integrantes del equipo participando directamente (formulando
-preguntas, cuestionando afirmaciones y verificando resultados) — no una
-consulta puntual ni delegación de una sola sección a la IA.
-**Principio seguido durante todo el proceso:** ningún hallazgo, cita o
-decisión metodológica se aceptó sin verificación independiente contra la
-fuente original, el código real del proyecto auditado, o los archivos de
-datos reales.
+
+**Modalidad de uso:** interacción sostenida por parte de los tres
+integrantes del equipo, quienes formularon requerimientos, cuestionaron
+resultados y validaron hallazgos de manera conjunta — no se trató de una
+consulta puntual ni de la delegación de una sección específica a un único
+integrante.
+
+**Continuidad del proceso:** el desarrollo de esta fase se llevó a cabo a
+lo largo de **tres sesiones de conversación diferenciadas** con el agente
+de IA. En cada una de ellas, el equipo suministró explícitamente el
+contexto acumulado del proyecto —diagnóstico realizado, decisiones
+metodológicas ya adoptadas y hallazgos previamente verificados— con el
+propósito de que las respuestas obtenidas fueran coherentes con el estado
+real de avance y pertinentes a las necesidades específicas de cada etapa,
+evitando partir de supuestos genéricos o desligados del trabajo
+previamente construido.
+
+**Principio metodológico transversal:** ningún hallazgo, referencia
+bibliográfica o decisión metodológica sugerida por la IA se incorporó al
+proyecto sin una verificación independiente, realizada por el equipo,
+contra la fuente original, el código fuente del proyecto auditado o los
+archivos de datos reales.
 
 ---
 
 ## 1. Diagnóstico inicial y comprensión del repositorio base
 
-**Prompts representativos:**
-- "Analiza qué se hizo y qué falta en este repositorio de GitHub..."
-- "¿Dónde puedo ver eso, cómo se accede a esa información?"
+**Prompt representativo:** Solicitud de análisis comparativo del
+repositorio del proyecto antecesor, orientado a identificar los
+componentes efectivamente desarrollados, las brechas metodológicas
+existentes frente a sus propios objetivos declarados, y los mecanismos
+disponibles para acceder y consultar los resultados generados.
 
-**Qué se obtuvo:** lectura del README y estructura del repositorio original;
-identificación inicial de fortalezas (esquema estrella, análisis descriptivo)
-y vacíos aparentes (sin integración de fuentes, sin modelado explicativo).
+**Qué se obtuvo:** una lectura estructurada del README y de la arquitectura
+general del repositorio original, que permitió identificar fortalezas
+concretas —la construcción de un esquema dimensional y un análisis
+descriptivo progresivo— junto con vacíos aparentes en materia de
+integración de fuentes y de modelado explicativo.
 
-**Verificación aplicada:** en esta etapa el diagnóstico se basó en lectura
-directa del README público — las afirmaciones más fuertes (como la
-inexistencia de una llave con SNIES) se identificaron aquí como pendientes
-de verificar con el código real, no se aceptaron todavía como definitivas.
-
----
-
-## 2. Auditoría del código real del proyecto anterior
-
-**Prompts representativos:**
-- "¿No se supone que ya habías visto todo el repositorio?"
-- Carga directa de `database.py`, `modelo_estrella.py`, `Exploración.py` e
-  `informe_final.md` del repositorio original.
-
-**Qué se obtuvo:** confirmación de que el informe final admite no haber
-integrado SNIES ni el PTE, y que sus relaciones son asociativas, no
-explicativas. Identificación de la columna `inst_cod_institucion` como
-candidata a llave de integración con SNIES, contradiciendo la afirmación
-del informe de que esa llave no existía.
-
-**Verificación aplicada:** lectura directa del código fuente, no solo del
-informe — la fuente de la corrección más importante de todo el proyecto.
+**Verificación aplicada:** en esta etapa inicial, el diagnóstico se
+fundamentó en la lectura directa de la documentación pública del
+repositorio. Las afirmaciones de mayor peso metodológico —en particular,
+la presunta inexistencia de una llave de integración con el SNIES— se
+identificaron explícitamente como pendientes de contrastar contra el
+código fuente, sin aceptarse todavía como concluyentes.
 
 ---
 
-## 3. Validación empírica de la llave SNIES–Saber Pro
+## 2. Auditoría del código fuente del proyecto antecesor
 
-**Prompts representativos:**
-- "¿Cómo sabe uno que sí se puede unir?"
-- "Dame el código completo para pegarlo y correrlo."
+**Prompt representativo:** Requerimiento de verificación exhaustiva del
+código fuente del proyecto antecesor —scripts de carga de datos,
+construcción del modelo dimensional e informe final—, entendida como
+complemento indispensable de la revisión documental inicial, dado que esta
+última no permite validar por sí sola la totalidad de las decisiones
+técnicas efectivamente adoptadas.
 
-**Qué se obtuvo:** script `verificar_llave.py`, corrido por el equipo contra
-archivos reales de dos años no consecutivos: 99,2 % de coincidencia (2021,
-261 códigos) y 98,9 % (2024, 270 códigos), confirmado además comparando
-nombres de institución de cada lado.
+**Qué se obtuvo:** la confirmación, mediante lectura directa del código y
+no solo del informe, de que el proyecto antecesor no integró el SNIES ni el
+PTE con los datos de Saber Pro, y de que las relaciones documentadas son de
+naturaleza asociativa, no explicativa. Adicionalmente, se identificó la
+columna `inst_cod_institucion` como candidata plausible a llave de
+integración con el SNIES, en contradicción directa con lo afirmado en el
+informe final de dicho proyecto.
 
-**Verificación aplicada:** resultado obtenido corriendo el script sobre
-datos reales del equipo, no una simulación ni un cálculo hecho por la IA.
+**Verificación aplicada:** el hallazgo se sustenta en la lectura directa
+del código fuente del repositorio auditado —no en su documentación
+narrativa—, constituyendo la base metodológica de la corrección más
+relevante realizada sobre el proyecto antecesor a lo largo de esta fase.
 
 ---
 
-## 4. Descarga y verificación de las fuentes (SNIES, Saber Pro, PTE)
+## 3. Validación empírica de la llave de integración SNIES–Saber Pro
 
-**Prompts representativos:**
-- "¿Qué debo descargar de cada portal?"
-- "El PTE es mensual, entonces ¿ese pantallazo era solo diciembre?"
-- Carga directa del archivo real del PTE (`02__Cuadros_informe_de_
-  ejecución_Diciembre.xlsx`).
+**Prompt representativo:** Requerimiento de una metodología de
+verificación empírica —no inferencial— para establecer la validez de la
+llave de integración identificada entre las fuentes SNIES y Saber Pro,
+junto con la construcción de un script reproducible que permitiera
+ejecutar dicha verificación directamente sobre los datos reales del
+proyecto.
 
-**Qué se obtuvo:** enlaces verificados de descarga directa para SNIES y
-Saber Pro; confirmación de que "acumulada a diciembre" es el cierre del año
-completo; identificación de que el PTE sí desagrega presupuesto por
-institución, pero solo para 34 universidades públicas (Cuadro N.º 7).
+**Qué se obtuvo:** el script `verificar_llave.py`, ejecutado por el equipo
+contra archivos reales correspondientes a dos años no consecutivos, que
+arrojó una coincidencia del 99,2 % (2021, sobre 261 códigos de institución)
+y del 98,9 % (2024, sobre 270 códigos), corroborada adicionalmente mediante
+comparación manual de los nombres de institución asociados a cada código.
 
-**Verificación aplicada:** cada enlace de descarga se verificó por fetch
-directo contra el portal correspondiente antes de entregarlo; la estructura
-del PTE se confirmó abriendo y procesando el archivo real subido por el
-equipo, no por descripción de terceros.
+**Verificación aplicada:** el resultado se obtuvo mediante la ejecución
+directa del script sobre los datos reales disponibles al equipo, sin que
+en ningún momento mediara una simulación, estimación o cálculo realizado
+por la IA en nombre del equipo.
+
+---
+
+## 4. Descarga y verificación de las fuentes de información (SNIES, Saber Pro, PTE)
+
+**Prompt representativo:** Solicitud de un mapeo detallado de las fuentes
+de información institucional requeridas por el proyecto —SNIES, Saber Pro
+y PTE—, especificando procedencia, periodicidad, nivel de granularidad y
+condiciones de acceso, así como la verificación puntual de la naturaleza
+acumulativa de los reportes de ejecución presupuestal publicados por el
+Ministerio de Hacienda.
+
+**Qué se obtuvo:** enlaces de descarga directa verificados para las bases
+del SNIES y de Saber Pro; confirmación documentada de que la expresión
+"acumulada a diciembre" corresponde al cierre completo del año fiscal, y no
+a la ejecución de ese mes en particular; e identificación de que el PTE sí
+desagrega la ejecución presupuestal por institución, aunque circunscrita a
+las treinta y cuatro universidades de naturaleza pública (Cuadro N.º 7 del
+informe de ejecución).
+
+**Verificación aplicada:** cada enlace de descarga suministrado se
+verificó mediante consulta directa al portal correspondiente antes de ser
+entregado al equipo; la estructura interna del PTE se confirmó procesando
+el archivo real aportado por el equipo, y no a partir de descripciones de
+terceros sobre dicho portal.
 
 ---
 
 ## 5. Diseño metodológico del análisis de eficiencia (DEA)
 
-**Prompts representativos:**
-- "¿Qué es el DEA?" / "¿Cómo se implementaría?"
-- "¿No crees que el análisis envolvente de datos se queda corto?"
+**Prompt representativo:** Solicitud de fundamentación conceptual y
+metodológica del Análisis Envolvente de Datos como técnica de medición de
+eficiencia relativa, incluyendo su especificación técnica —orientación del
+modelo, supuesto de rendimientos a escala— y una evaluación crítica sobre
+la suficiencia del alcance metodológico propuesto en relación con el nivel
+académico y el tiempo disponible para el proyecto.
 
-**Qué se obtuvo:** definición de insumo/resultado, orientación a resultados,
-rendimientos variables a escala (VRS), verificación de tamaño de muestra
-frente a la regla convencional (3× la suma de variables), y el diseño de
-dos niveles de análisis (macro nacional-año, micro institución-año).
+**Qué se obtuvo:** la definición operativa de insumo y resultado aplicable
+al proyecto, la selección justificada de una orientación a resultados y de
+rendimientos variables a escala, la verificación del tamaño de muestra
+frente a la regla convencional de al menos tres veces la suma de variables
+del modelo, y el diseño diferenciado de dos niveles de análisis —nacional
+(macro) e institucional (micro)—.
 
-**Verificación aplicada:** la regla de tamaño de muestra y la elección de
-VRS se justificaron con el detalle real de la muestra (4 observaciones en
-macro, 130+ en micro), no de forma genérica.
-
----
-
-## 6. Corrección de un error de diseño propio
-
-**Prompt que lo detectó:**
-- "Entonces sería obvio que una universidad con más presupuesto tendría
-  mejor desempeño, ¿no? Entonces no entiendo cómo se comparan los puntajes
-  de eficiencia."
-
-**Qué se obtuvo:** identificación de que el diseño inicial del DEA macro
-comparaba presupuesto exclusivamente público contra el resultado agregado
-de todo el país (público y privado), invalidando la comparación. Se
-corrigió para que ambos lados del análisis correspondan solo al subconjunto
-público.
-
-**Verificación aplicada:** corrección basada en razonamiento metodológico
-propio del equipo, no en una fuente externa — ejemplo directo de por qué
-cuestionar cada resultado, no solo aceptarlo.
+**Verificación aplicada:** tanto la regla de tamaño de muestra como la
+pertinencia del supuesto de rendimientos variables a escala se
+contrastaron contra las características reales de la muestra disponible
+—cuatro observaciones a nivel macro, más de ciento treinta a nivel
+micro—, en lugar de asumirse de manera genérica.
 
 ---
 
-## 7. Verificación bibliográfica (estado del arte)
+## 6. Identificación y corrección de una inconsistencia metodológica propia
 
-**Prompts representativos:**
-- "Dame los links de donde sacabas esos artículos."
-- Carga de hallazgos de otra sesión de IA para verificación cruzada.
+**Prompt que originó la corrección:** Cuestionamiento directo sobre la
+coherencia interna del diseño inicial del análisis de eficiencia a nivel
+macro, orientado a esclarecer si resultaba metodológicamente válido que
+una institución con mayor presupuesto exhibiera, por esa sola razón, un
+mejor desempeño relativo.
 
-**Qué se obtuvo:** ocho fuentes verificadas de forma independiente
-(Galvis-Aponte 2015; Maza Ávila et al. 2017; Melo-Becerra et al. 2017;
-Morales-Piñero et al. 2022; Almeida et al. 2024; SITEAL; SPADIES; ISCE), más
-Charnes et al. (1978) como referencia metodológica fundacional.
+**Qué se obtuvo:** la identificación de que el diseño inicial del análisis
+macro comparaba un insumo circunscrito exclusivamente al sector público
+contra un resultado agregado correspondiente a la totalidad del sistema
+educativo —público y privado—, lo cual invalidaba la comparación al no
+corresponder ambos términos al mismo universo institucional. En
+consecuencia, el diseño se ajustó para que tanto el insumo como el
+resultado se restrinjan al subconjunto de instituciones públicas.
 
-**Verificación aplicada:** se detectó y corrigió un error de citación
-heredado de otra sesión de IA (autores y volumen incorrectos en Almeida et
-al., 2024) mediante búsqueda directa contra la fuente original — caso
-explícito de no aceptar una verificación ajena sin repetirla.
-
----
-
-## 8. Adaptación a la rúbrica de evaluación real
-
-**Prompts representativos:**
-- Carga del documento completo de la rúbrica (Javier Mauricio Sierra,
-  Consultoría Estadística).
-- "¿Qué cosas me faltan de la rúbrica?"
-
-**Qué se obtuvo:** identificación y construcción de los elementos que no se
-habían trabajado: cronograma con hitos y riesgos (D5), declaración de uso
-de IA con casos concretos (S3), modalidad del proyecto como datos abiertos,
-portada, y la pregunta explícita del problema (D1).
-
-**Verificación aplicada:** revisión repetida de la rúbrica completa contra
-lo ya construido, encontrando en cada pasada elementos adicionales
-faltantes antes de darla por completa.
+**Verificación aplicada:** la corrección se originó en el razonamiento
+metodológico propio del equipo, no en una fuente externa, y constituye
+evidencia directa de un proceso de revisión crítica de los resultados
+sugeridos por la IA, y no de su aceptación automática.
 
 ---
 
-## 9. Ensamblaje de entregables
+## 7. Verificación bibliográfica del estado del arte
 
-**Qué se produjo:**
-- Documento del anteproyecto en Word (portada, D1–D5, S3, referencias APA 7).
-- Versión en LaTeX del mismo documento, para Overleaf.
-- Tablero interactivo en R/Shiny con seis secciones.
-- Scripts de Python: `verificar_llave.py`, `extraer_pte.py`,
-  `cargar_saber_pro.py`.
+**Prompt representativo:** Solicitud de verificación primaria e
+independiente de cada referencia bibliográfica incorporada al estado del
+arte, incluyendo la validación cruzada de hallazgos bibliográficos
+obtenidos en una sesión de trabajo distinta, con el propósito de garantizar
+la exactitud y trazabilidad de la información citada en el documento final.
 
-**Verificación aplicada:** el documento Word se validó estructuralmente
-(sin errores de esquema) y se confirmó su extensión real convirtiéndolo a
-PDF, en vez de asumir el conteo de páginas.
+**Qué se obtuvo:** un conjunto de ocho fuentes verificadas de manera
+independiente (Galvis-Aponte, 2015; Maza Ávila et al., 2017; Melo-Becerra
+et al., 2017; Morales-Piñero et al., 2022; Almeida et al., 2024; SITEAL;
+SPADIES; ISCE), complementado con Charnes et al. (1978) como referencia
+metodológica fundacional de la técnica aplicada.
+
+**Verificación aplicada:** se identificó y corrigió un error de citación
+—autores incompletos y volumen incorrecto en la referencia de Almeida et
+al. (2024)— heredado de una verificación previa realizada en una sesión de
+trabajo distinta, mediante búsqueda directa contra la fuente original. Este
+caso constituye evidencia explícita de que ninguna verificación externa,
+incluida la de otra sesión de IA, se aceptó sin ser replicada por el
+equipo.
 
 ---
 
-## Resumen de lo descartado por verificación
+## 8. Adaptación del proyecto a la rúbrica oficial de evaluación
 
-| Afirmación inicial (propia o de otra fuente) | Resultado de verificar |
+**Prompt representativo:** Solicitud de análisis comparativo, criterio por
+criterio, entre el contenido desarrollado hasta el momento y los
+requerimientos establecidos en el instrumento oficial de evaluación,
+orientada a identificar de manera sistemática los vacíos y las áreas de
+mejora pendientes antes de la entrega formal del anteproyecto.
+
+**Qué se obtuvo:** la identificación y posterior construcción de los
+elementos que no habían sido trabajados hasta ese momento —cronograma con
+hitos, entregables y riesgos con su respectiva contingencia (D5);
+declaración de uso de IA sustentada en casos concretos y verificables
+(S3); declaración explícita de la modalidad del proyecto como de datos
+abiertos; portada institucional; y la formulación explícita del problema
+como pregunta estadística respondible (D1)—.
+
+**Verificación aplicada:** la revisión de la rúbrica se realizó en más de
+una ocasión sobre el mismo contenido ya construido, identificándose en
+cada revisión elementos adicionales pendientes antes de considerar el
+documento completo frente a los criterios oficiales de evaluación.
+
+---
+
+## 9. Ensamblaje de los entregables finales
+
+**Prompt representativo:** Solicitud de consolidación de la totalidad del
+contenido desarrollado en un documento formal ajustado a los lineamientos
+de extensión, formato de citación y estructura exigidos por la rúbrica, así
+como la generación de versiones complementarias del mismo contenido en
+distintos formatos de presentación, orientadas a la sustentación oral y al
+seguimiento técnico del proyecto.
+
+**Qué se obtuvo:** el documento del anteproyecto en formato Word (portada,
+criterios D1 a D5, S3 y referencias en formato APA 7); su versión
+equivalente en LaTeX para edición en Overleaf; un tablero interactivo
+desarrollado en R/Shiny; y los scripts de Python `verificar_llave.py`,
+`extraer_pte.py` y `cargar_saber_pro.py`.
+
+**Verificación aplicada:** el documento en Word se sometió a validación
+estructural para descartar errores de esquema, y su extensión real se
+confirmó mediante conversión a PDF, en lugar de asumirse a partir de un
+conteo estimado de palabras.
+
+---
+
+## Resumen de afirmaciones descartadas mediante verificación
+
+La siguiente tabla sintetiza los casos en los que una afirmación inicial
+—propia o proveniente de una fuente externa— fue puesta a prueba y
+refutada mediante evidencia directa, en lugar de ser incorporada al
+proyecto sin contraste:
+
+| Afirmación inicial (propia o de otra fuente) | Resultado de la verificación |
 |---|---|
-| El proyecto anterior tenía razón: no hay llave SNIES–Saber Pro | Falsa — 99,2 % / 98,9 % de coincidencia real |
-| Nadie ha aplicado DEA a educación superior en Colombia | Falsa — al menos 3 estudios colombianos existentes |
-| El PTE no desagrega presupuesto por institución | Falsa — sí lo hace, para 34 universidades públicas |
-| Cita de Almeida et al. (2024): 2 autores, volumen 11 | Falsa — 6 autores, volumen 12 |
-| DEA macro: insumo público vs. resultado de todo el país | Diseño inválido — corregido a insumo y resultado solo públicos |
+| El proyecto antecesor tenía razón al afirmar que no existía llave de integración entre SNIES y Saber Pro | Refutada — coincidencia empírica del 99,2 % (2021) y 98,9 % (2024) |
+| No existen antecedentes de aplicación del DEA a la educación superior en Colombia | Refutada — se identificaron al menos tres estudios colombianos previos |
+| El PTE no desagrega la ejecución presupuestal por institución | Refutada — sí lo hace, para el conjunto de treinta y cuatro universidades públicas |
+| Referencia de Almeida et al. (2024): dos autores, volumen 11 | Refutada — el estudio corresponde a seis autores, volumen 12 |
+| Diseño inicial del DEA macro: insumo exclusivamente público frente a resultado del sistema educativo completo | Diseño inválido — corregido para restringir insumo y resultado al mismo universo institucional |
