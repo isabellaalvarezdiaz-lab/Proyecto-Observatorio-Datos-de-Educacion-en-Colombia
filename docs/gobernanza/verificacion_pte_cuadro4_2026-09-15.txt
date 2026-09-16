@@ -1,0 +1,22 @@
+
+##### Ejecución 2026-09-15 01:00 #####
+
+=== PTE (R11): 02. Cuadros informe de ejecución Diciembre.xlsx ===
+  hojas: ['Cuadro No. 1', 'Cuadro No. 2', 'Cuadro No. 3', 'Cuadro No. 4', 'Cuadro No. 5', 'Cuadro No. 6', 'Cuadro No. 7', 'Cuadro No. 8', 'Cuadro No. 9', 'Cuadro No. 10']
+  HOJA QUE TOMA EL SCRIPT HEREDADO: 'Cuadro No. 4' (encabezado en fila 4)
+  texto sobre el encabezado (título/unidades): Cuadro No. 4 | Ejecución Presupuesto General de la Nación por sectores  | Acumulada a Diciembre de 2024 | Miles de millones de pesos
+  encabezados: ['Sector', 'Apropiación \nVigente', 'Compromiso', 'Obligación', 'Pago', 'Apropiación sin \ncomprometer', 'Porcentaje de ejecución', nan, nan, nan, nan]
+  fila Educación (valor | tipo de celda):
+      'EDUCACIÓN' | str
+      70125.283359031 | float
+      70028.26509682403 | float
+      67589.13458192091 | float
+      67472.45416196542 | float
+      97.01826220696967 | float
+      99.86165009599996 | float
+      96.38340316697847 | float
+      96.21701464864891 | float
+      96.51693425286106 | float
+      99.82736808116093 | float
+
+Resultado guardado en C:\Users\ymary\Documents\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\scripts\verificacion_herencia.txt

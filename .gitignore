@@ -1,0 +1,7 @@
+# Datos: nunca al repositorio público
+data/
+*.db
+*.sqlite
+
+# Temporales de Excel
+~$*
