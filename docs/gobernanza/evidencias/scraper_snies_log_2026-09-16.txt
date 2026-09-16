@@ -1,0 +1,16 @@
+2026-09-16 06:39:38,881 [INFO] ====== WebDriver manager ======
+2026-09-16 06:39:40,214 [INFO] Get LATEST chromedriver version for google-chrome
+2026-09-16 06:39:40,654 [INFO] There is no [win64] chromedriver "153.0.8010.47" for browser google-chrome "153.0.8010" in cache
+2026-09-16 06:39:41,228 [INFO] There is no [win64] chromedriver "153.0.8010.47" for browser google-chrome "153.0.8010" in cache
+2026-09-16 06:39:41,228 [INFO] Get LATEST chromedriver version for google-chrome
+2026-09-16 06:39:42,354 [INFO] WebDriver version 153.0.8010.47 selected
+2026-09-16 06:39:42,377 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/153.0.8010.47/win64/chromedriver-win64.zip
+2026-09-16 06:39:42,377 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/153.0.8010.47/win64/chromedriver-win64.zip
+2026-09-16 06:39:43,032 [INFO] Driver downloading response is 200
+2026-09-16 06:39:50,377 [INFO] Driver has been saved in cache [C:\Users\USER\.wdm\drivers\chromedriver\win64\153.0.8010.47]
+2026-09-16 06:46:02,783 [INFO] Manifest guardado en output\manifest.csv
+2026-09-16 06:46:02,783 [WARNING] Año 2021: faltan ['Administrativos', 'Docentes', 'Estudiantes_admitidos', 'Estudiantes_inscritos', 'Estudiantes_matriculados', 'Estudiantes_matriculados_primer_curso']
+2026-09-16 06:46:02,783 [WARNING] Año 2022: faltan ['Administrativos', 'Docentes', 'Estudiantes_admitidos', 'Estudiantes_inscritos', 'Estudiantes_matriculados', 'Estudiantes_matriculados_primer_curso']
+2026-09-16 06:46:02,783 [WARNING] Año 2023: faltan ['Administrativos', 'Docentes', 'Estudiantes_admitidos', 'Estudiantes_inscritos', 'Estudiantes_matriculados', 'Estudiantes_matriculados_primer_curso']
+2026-09-16 06:46:02,783 [WARNING] Año 2024: faltan ['Administrativos', 'Docentes', 'Estudiantes_admitidos', 'Estudiantes_inscritos', 'Estudiantes_matriculados', 'Estudiantes_matriculados_primer_curso']
+2026-09-16 06:46:02,783 [WARNING] Año 2025: faltan ['Administrativos', 'Docentes', 'Estudiantes_admitidos', 'Estudiantes_inscritos', 'Estudiantes_matriculados', 'Estudiantes_matriculados_primer_curso']
