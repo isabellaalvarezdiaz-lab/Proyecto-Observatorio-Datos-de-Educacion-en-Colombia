@@ -1,0 +1,56 @@
+
+##### Ejecución 2026-09-17 02:21 #####
+
+=== SABER PRO (R02, R03, R05, R07) ===
+
+[2021] filas=253,568  columnas totales=95  codificación=utf-8
+  R02 inst_cod_institucion: tipo inferido=float64, nulos=5,027, códigos únicos=261
+  R02 estu_snies_prgmacademico: tipo=float64, nulos=5,027
+  R03 instituciones con estudiantes en más de un departamento: 0 de 261
+  R05 estu_genero: {'F': 149637, 'M': 103924, nan: 7}
+  R07 mod_competen_ciudada_punt: ceros=1,361 (0.54%), nulos=0
+  R07 mod_comuni_escrita_punt: ceros=6,873 (2.71%), nulos=0
+  R07 mod_ingles_punt: ceros=2,662 (1.05%), nulos=121
+  R07 mod_lectura_critica_punt: ceros=671 (0.26%), nulos=0
+  R07 mod_razona_cuantitat_punt: ceros=153 (0.06%), nulos=0
+  R07 punt_global: ceros=17 (0.01%), nulos=7
+
+[2022] filas=231,030  columnas totales=100  codificación=utf-8
+  R02 inst_cod_institucion: tipo inferido=float64, nulos=6,378, códigos únicos=265
+  R02 estu_snies_prgmacademico: tipo=float64, nulos=6,380
+  R03 instituciones con estudiantes en más de un departamento: 0 de 265
+  R05 estu_genero: {'F': 134794, 'M': 96226, nan: 10}
+  R07 mod_competen_ciudada_punt: ceros=1,359 (0.59%), nulos=0
+  R07 mod_comuni_escrita_punt: ceros=20,977 (9.08%), nulos=0
+  R07 mod_ingles_punt: ceros=2,828 (1.22%), nulos=126
+  R07 mod_lectura_critica_punt: ceros=815 (0.35%), nulos=0
+  R07 mod_razona_cuantitat_punt: ceros=429 (0.19%), nulos=0
+  R07 punt_global: ceros=328 (0.14%), nulos=1
+
+[2023] filas=249,096  columnas totales=96  codificación=utf-8
+  R02 inst_cod_institucion: tipo inferido=float64, nulos=6,920, códigos únicos=265
+  R02 estu_snies_prgmacademico: tipo=float64, nulos=6,920
+  R03 instituciones con estudiantes en más de un departamento: 0 de 265
+  R05 estu_genero: {'F': 142791, 'M': 106304, 'L': 1}
+  R07 mod_competen_ciudada_punt: ceros=244 (0.10%), nulos=0
+  R07 mod_comuni_escrita_punt: ceros=10,877 (4.37%), nulos=0
+  R07 mod_ingles_punt: ceros=507 (0.20%), nulos=155
+  R07 mod_lectura_critica_punt: ceros=120 (0.05%), nulos=0
+  R07 mod_razona_cuantitat_punt: ceros=123 (0.05%), nulos=0
+  R07 punt_global: ceros=9 (0.00%), nulos=36
+
+[2024] filas=281,601  columnas totales=90  codificación=utf-8
+  R02 inst_cod_institucion: tipo inferido=float64, nulos=9,153, códigos únicos=270
+  R02 estu_snies_prgmacademico: tipo=float64, nulos=9,153
+  R03 instituciones con estudiantes en más de un departamento: 0 de 270
+  R05 estu_genero: {'F': 161568, 'M': 120032, nan: 1}
+  R07 mod_competen_ciudada_punt: ceros=202 (0.07%), nulos=0
+  R07 mod_comuni_escrita_punt: ceros=19,357 (6.87%), nulos=0
+  R07 mod_ingles_punt: ceros=450 (0.16%), nulos=171
+  R07 mod_lectura_critica_punt: ceros=100 (0.04%), nulos=0
+  R07 mod_razona_cuantitat_punt: ceros=90 (0.03%), nulos=0
+  R07 punt_global: ceros=15 (0.01%), nulos=0
+
+  R02 tipos de inst_cod_institucion por año: {2021: 'float64', 2022: 'float64', 2023: 'float64', 2024: 'float64'}
+
+Resultado guardado en C:\Users\ferna\Downloads\trabajo\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\verificacion_herencia.txt
