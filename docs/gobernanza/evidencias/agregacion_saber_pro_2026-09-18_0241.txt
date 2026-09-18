@@ -1,0 +1,18 @@
+##### Agregación de Saber Pro por institución y año — 2026-09-18 02:41 #####
+
+=== AÑO 2023 ===
+  registros=249,096 | con código y puntaje global=242,140 | ceros en Escrita=10,423 (4.30%)
+  niveles de formación presentes: {'UNIVERSITARIO': 242140}
+  instituciones con evaluados: 265
+  puntaje promedio (ponderado por evaluados): a=145.08 | c=146.22
+
+=== AÑO 2024 ===
+  registros=281,601 | con código y puntaje global=272,448 | ceros en Escrita=18,327 (6.73%)
+  niveles de formación presentes: {'UNIVERSITARIO': 272442, 'TECNOLOGÍA': 4, 'TÉCNICO PROFESIONAL': 2}
+  instituciones con evaluados: 270
+  puntaje promedio (ponderado por evaluados): a=146.19 | c=147.98
+
+Tabla guardada en resultados\saber_pro_institucion_anio.csv (535 filas)
+  instituciones presentes en todos los años: 263
+  [REVISAR] 2023: códigos que no están en todos los años: [2809, 2824]
+  [REVISAR] 2024: códigos que no están en todos los años: [3114, 4719, 9923, 9924, 9928, 9933, 9936]
