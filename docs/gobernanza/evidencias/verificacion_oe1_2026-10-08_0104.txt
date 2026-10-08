@@ -1,0 +1,27 @@
+##### Verificación del OE1 contra los archivos originales — 2026-10-08 01:03 #####
+
+1. PTE (fila de Excel citada → obligación)
+  PASA   las 68 filas citadas contienen el código de su universidad
+  PASA   obligación (pesos) (68 valores, diferencia máxima 0)
+
+2. SNIES (Excel original → suma de sedes por universidad)
+  PASA   matriculados pregrado semestre 1 (68 valores, diferencia máxima 0)
+  PASA   matriculados pregrado semestre 2 (68 valores, diferencia máxima 0)
+  PASA   matriculados posgrado semestre 1 (68 valores, diferencia máxima 0)
+  PASA   matriculados posgrado semestre 2 (68 valores, diferencia máxima 0)
+  PASA   graduados total (68 valores, diferencia máxima 0)
+
+3. Saber Pro (.txt original → estudiante por estudiante)
+  PASA   evaluados (66 valores, diferencia máxima 0)
+  PASA   ceros en Escrita (66 valores, diferencia máxima 0)
+  PASA   puntaje global_c (tolerancia 0,01 por redondeo) (66 valores, diferencia máxima 0.005845)
+
+4. Tabla maestra (totales nacionales contra los archivos originales)
+  PASA   2023 matriculados (s1+s2): archivo original=4,829,200 | tabla maestra=4,829,200
+  PASA   2023 graduados: archivo original=534,942 | tabla maestra=534,942
+  PASA   2023 evaluados Saber Pro con código: archivo original=242,140 | tabla maestra=242,140
+  PASA   2024 matriculados (s1+s2): archivo original=5,026,633 | tabla maestra=5,026,633
+  PASA   2024 graduados: archivo original=547,959 | tabla maestra=547,959
+  PASA   2024 evaluados Saber Pro con código: archivo original=272,448 | tabla maestra=272,448
+
+RESULTADO: TODO COINCIDE

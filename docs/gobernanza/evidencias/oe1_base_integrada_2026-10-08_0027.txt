@@ -1,0 +1,84 @@
+##### OE1 — base integrada — 2026-10-08 00:25 #####
+
+[1/5] Saber Pro por sede y año  (scripts/agregar_saber_pro.py)
+##### Agregación de Saber Pro por institución y año — 2026-10-08 00:25 #####
+
+=== AÑO 2023 ===
+  registros=249,096 | con código y puntaje global=242,140 | ceros en Escrita=10,423 (4.30%)
+  niveles de formación presentes: {'UNIVERSITARIO': 242140}
+  instituciones con evaluados: 265
+  puntaje promedio (ponderado por evaluados): a=145.08 | c=146.22
+
+=== AÑO 2024 ===
+  registros=281,601 | con código y puntaje global=272,448 | ceros en Escrita=18,327 (6.73%)
+  niveles de formación presentes: {'UNIVERSITARIO': 272442, 'TECNOLOGÍA': 4, 'TÉCNICO PROFESIONAL': 2}
+  instituciones con evaluados: 270
+  puntaje promedio (ponderado por evaluados): a=146.19 | c=147.98
+
+Tabla guardada en resultados\saber_pro_institucion_anio.csv (535 filas)
+  instituciones presentes en todos los años: 263
+  [REVISAR] 2023: códigos que no están en todos los años: [2809, 2824]
+  [REVISAR] 2024: códigos que no están en todos los años: [3114, 4719, 9923, 9924, 9928, 9933, 9936]
+
+Evidencia guardada en docs\gobernanza\evidencias\agregacion_saber_pro_2026-10-08_0025.txt
+
+
+[2/5] Presupuesto de las universidades públicas (PTE, Cuadro No. 7)  (scripts/extraer_pte_universidades.py)
+Archivos Excel en data\raw\pte: 2
+  data/raw/pte/2023/pte_2023_cuadros_diciembre.xlsx: diciembre de 2023
+  data/raw/pte/2024/pte_2024_cuadros_diciembre.xlsx: diciembre de 2024
+
+2023: data/raw/pte/2023/pte_2023_cuadros_diciembre.xlsx | hoja 'Cuadro No. 7' | 34 universidades
+
+2024: data/raw/pte/2024/pte_2024_cuadros_diciembre.xlsx | hoja 'Cuadro No. 7' | 34 universidades
+Mismo conjunto de códigos en todos los años: True
+Códigos cuyo nombre cambia entre años: ninguno
+Obligación total (miles de millones): {2023: 5368.9, 2024: 6155.2}
+Guardado: resultados/pte_universidades_2023_2024.csv (68 filas)
+
+
+[3/5] SNIES matriculados y graduados  (scripts/cargar_snies.py)
+data/raw/snies/snies_matriculados_2023_articles-421539.xlsx: 72,373 filas | 4,829,200 matriculados | semestres ['1', '2'] | 323 códigos de institución
+   pie de página: FUENTE: SNIES-MEN | Fecha de corte de la información: Mayo 31 de 2024 | La información suministrada corresponde a lo reportado por las Instituciones de Educación Superior a través del SNIES | A partir de 2021, la Universidad Internacional del Trópico Americano pertenece al sector oficial | Para el año 2023, de las 304 IES con personería jurídica activa 277 reportaron estudiantes matriculados | A partir de la información de la vigencia 2019 el Ministerio de Educación Nacional implementa la Clasificación internacional Normalizada de la Educación – Campos de educación y formación adaptada para Colombia, CINE-F 2013 A.C. para clasificar los programas académicos de educación superior en el SNIES. En este sentido, los programas etiquetados "Sin clasificar" en área de conocimiento y núcleo básico de conocimiento, corresponden a aquellos cuya clasificación únicamente se realiza a partir de CINE | La información de acreditación de IES y programas es con corte 31 de diciembre de 2023
+data/raw/snies/snies_matriculados_2024_articles-425151.xlsx: 75,175 filas | 5,026,633 matriculados | semestres ['1', '2'] | 323 códigos de institución
+   pie de página: FUENTE: SNIES-MEN | Fecha de corte de la información: Mayo 31 de 2025 | La información suministrada corresponde a lo reportado por las Instituciones de Educación Superior a través del SNIES | A partir de 2021, la Universidad Internacional del Trópico Americano pertenece al sector oficial | Para el año 2024, de las 305 IES con personería jurídica activa 277 reportaron estudiantes matriculados | A partir de la información de la vigencia 2019 el Ministerio de Educación Nacional implementa la Clasificación internacional Normalizada de la Educación – Campos de educación y formación adaptada para Colombia, CINE-F 2013 A.C. para clasificar los programas académicos de educación superior en el SNIES. En este sentido, los programas etiquetados "Sin clasificar" en área de conocimiento y núcleo básico de conocimiento, corresponden a aquellos cuya clasificación únicamente se realiza a partir de CINE | La información de acreditación de IES y programas es con corte 31 de diciembre de 2024
+Guardado: data/interim/snies_matriculados.csv.gz
+data/raw/snies/snies_graduados_2023_articles-421535.xlsx: 45,652 filas | 534,942 graduados | semestres ['1', '2'] | 315 códigos de institución
+   pie de página: FUENTE: SNIES-MEN | Fecha de corte de la información: Mayo 31 de 2024 | La información suministrada corresponde a lo reportado por las Instituciones de Educación Superior a través del SNIES | A partir de 2021, la Universidad Internacional del Trópico Americano pertenece al sector oficial | Para el año 2023, de las 304 IES con personería jurídica activa 269 reportaron estudiantes graduados | A partir de la información de la vigencia 2019 el Ministerio de Educación Nacional implementa la Clasificación internacional Normalizada de la Educación – Campos de educación y formación adaptada para Colombia, CINE-F 2013 A.C. para clasificar los programas académicos de educación superior en el SNIES. En este sentido, los programas etiquetados "Sin clasificar" en área de conocimiento y núcleo básico de conocimiento, corresponden a aquellos cuya clasificación únicamente se realiza a partir de CINE | La información de acreditación de IES y programas es con corte 31 de diciembre de 2023
+data/raw/snies/snies_graduados_2024_articles-425146.xlsx: 46,540 filas | 547,959 graduados | semestres ['1', '2'] | 316 códigos de institución
+   pie de página: FUENTE: SNIES-MEN | Fecha de corte de la información: Mayo 31 de 2025 | La información suministrada corresponde a lo reportado por las Instituciones de Educación Superior a través del SNIES | A partir de 2021, la Universidad Internacional del Trópico Americano pertenece al sector oficial | Para el año 2024, de las 305 IES con personería jurídica activa 270 reportaron estudiantes graduados | A partir de la información de la vigencia 2019 el Ministerio de Educación Nacional implementa la Clasificación internacional Normalizada de la Educación – Campos de educación y formación adaptada para Colombia, CINE-F 2013 A.C. para clasificar los programas académicos de educación superior en el SNIES. En este sentido, los programas etiquetados "Sin clasificar" en área de conocimiento y núcleo básico de conocimiento, corresponden a aquellos cuya clasificación únicamente se realiza a partir de CINE | La información de acreditación de IES y programas es con corte 31 de diciembre de 2024
+Guardado: data/interim/snies_graduados.csv.gz
+
+
+[4/5] Sedes que forman cada universidad del PTE  (scripts/cruce_sedes.py)
+Entidades del PTE: 34 | con al menos una sede: 34
+Sedes asignadas: 52 | por regla: {'nombre en Saber Pro': 48, 'mismo IES PADRE en SNIES': 3, 'nombre en SNIES (sin evaluados en Saber Pro)': 1}
+Sedes de Saber Pro que no aparecen en SNIES: ninguna
+Sector en SNIES de las sedes asignadas: {'Oficial': 52}
+Universidades con más de una sede: {'universidad nacional de colombia': 7, 'universidad de antioquia': 7, 'universidad pedagogica y tecnologica de colombia': 4, 'universidad popular del cesar': 2, 'universidad de cundinamarca': 3}
+Universidades oficiales de SNIES que no están entre las del PTE:
+   9105  ESCUELA NAVAL DE CADETES ALMIRANTE PADILLA
+Guardado: resultados/sedes_por_universidad.csv
+
+
+[5/5] Base integrada  (scripts/construir_base_integrada.py)
+Filas: 68 (esperado 68) | universidades: 34
+Incluidas en el DEA: 33 universidades, 66 observaciones
+Excluidas: [{'pte_codigo': '225734', 'anio': 2023, 'pte_nombre': 'universidad autónoma indígena intercultural uaiin cric'}, {'pte_codigo': '225734', 'anio': 2024, 'pte_nombre': 'universidad autónoma indígena intercultural uaiin cric'}]
+  faltantes en obligacion      : 0
+  faltantes en mat_total_prom  : 0
+  faltantes en grad_total      : 0
+  faltantes en n_evaluados     : 2
+  faltantes en global_c        : 2
+Totales por año:
+      obligacion_mm  mat_total_prom  grad_total  n_evaluados
+anio                                                        
+2023         5368.9        722063.5      110419      70534.0
+2024         6155.2        765028.5      111761      83906.0
+Isotonicidad — correlación de Spearman entre obligación y cada producto (universidades del DEA):
+  2023 (n=33): {'mat_total_prom': 0.65, 'grad_total': 0.59, 'global_c': 0.52}
+  2024 (n=33): {'mat_total_prom': 0.68, 'grad_total': 0.65, 'global_c': 0.52}
+Guardado: resultados/base_integrada_2023_2024.csv
+
+
+Listo.

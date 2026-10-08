@@ -1,4 +1,4 @@
-##### Agregación de Saber Pro por institución y año — 2026-09-18 02:41 #####
+##### Agregación de Saber Pro por institución y año — 2026-10-08 00:45 #####
 
 === AÑO 2023 ===
   registros=249,096 | con código y puntaje global=242,140 | ceros en Escrita=10,423 (4.30%)

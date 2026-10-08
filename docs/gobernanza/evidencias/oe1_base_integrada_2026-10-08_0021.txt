@@ -1,0 +1,6 @@
+##### OE1 — base integrada — 2026-10-08 00:21 #####
+
+[1/5] Saber Pro por sede y año  (scripts/agregar_saber_pro.py)
+C:\Users\ymary\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'C:\\Users\\ymary\\Documents\\Proyecto-Observatorio-Datos-de-Educacion-en-Colombia\\scripts\\agregar_saber_pro.py': [Errno 2] No such file or directory
+
+Se detuvo en el paso 1: scripts/agregar_saber_pro.py
