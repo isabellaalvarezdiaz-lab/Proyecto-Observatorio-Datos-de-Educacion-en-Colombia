@@ -5,3 +5,4 @@ data/
 
 # Temporales de Excel
 ~$*
+__pycache__/
