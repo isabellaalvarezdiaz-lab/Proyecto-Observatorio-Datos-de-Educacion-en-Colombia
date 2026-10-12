@@ -1,0 +1,44 @@
+##### Verificación OE2 y OE3 (programa dual, punto interior) — 2026-10-12 03:13 #####
+
+1–4. DEA y bootstrap (oe3_eficiencia.csv)
+  PASA   principal 2023: eficiencia = programa dual — diferencia máxima 5.0e-05
+  PASA   principal 2023: eficiencias en (0, 1]
+  PASA   principal 2023: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total), universidad nacional de colombia (mayor global_c)
+  PASA   principal 2023: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   principal 2023: metas ≥ valor actual
+  PASA   principal 2024: eficiencia = programa dual — diferencia máxima 4.7e-05
+  PASA   principal 2024: eficiencias en (0, 1]
+  PASA   principal 2024: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total), universidad nacional de colombia (mayor global_c)
+  PASA   principal 2024: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   principal 2024: metas ≥ valor actual
+  PASA   cobertura 2023: eficiencia = programa dual — diferencia máxima 4.9e-05
+  PASA   cobertura 2023: eficiencias en (0, 1]
+  PASA   cobertura 2023: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total)
+  PASA   cobertura 2023: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   cobertura 2023: metas ≥ valor actual
+  PASA   cobertura 2024: eficiencia = programa dual — diferencia máxima 4.9e-05
+  PASA   cobertura 2024: eficiencias en (0, 1]
+  PASA   cobertura 2024: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total)
+  PASA   cobertura 2024: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   cobertura 2024: metas ≥ valor actual
+
+5. Deja uno fuera (oe3_deja_uno_fuera.csv)
+  PASA   15 filas recalculadas (cambio medio y máximo) — diferencia máxima 4.8e-05
+
+6. Malmquist (oe2_malmquist.csv)
+  PASA   principal nominal: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   principal nominal: M y EC recalculados
+  PASA   principal nominal: M = EC × TC
+  PASA   principal real: cuatro distancias = programa dual — diferencia máxima 4.9e-05
+  PASA   principal real: M y EC recalculados
+  PASA   principal real: M = EC × TC
+  PASA   principal: deflactar multiplica M por 1,052 y no cambia EC — razón M real/nominal 1.0519–1.0521
+  PASA   cobertura nominal: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   cobertura nominal: M y EC recalculados
+  PASA   cobertura nominal: M = EC × TC
+  PASA   cobertura real: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   cobertura real: M y EC recalculados
+  PASA   cobertura real: M = EC × TC
+  PASA   cobertura: deflactar multiplica M por 1,052 y no cambia EC — razón M real/nominal 1.0519–1.0521
+
+RESULTADO: TODO COINCIDE
