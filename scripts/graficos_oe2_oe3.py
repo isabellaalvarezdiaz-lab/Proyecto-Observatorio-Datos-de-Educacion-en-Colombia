@@ -1,10 +1,13 @@
 """
-graficos_oe2_oe3.py — Figuras para el informe a partir de resultados/oe3_eficiencia.csv y
-resultados/oe2_malmquist.csv. Guarda PNG en resultados/figuras/.
+graficos_oe2_oe3.py — Figuras para el informe a partir de resultados/oe3_eficiencia.csv,
+resultados/oe3_cobertura_sin_unad.csv, resultados/oe2_malmquist.csv y resultados/oe3_segunda_etapa.csv.
+Guarda PNG en resultados/figuras/.
 
   fig1_eficiencia_principal_<año>.png   eficiencia corregida con intervalo del 95 % (modelo principal)
   fig2_eficiencia_cobertura_<año>.png   ídem, modelo de cobertura
   fig3_malmquist_<modelo>.png           índice de Malmquist 2023→2024 (versión real) y su descomposición
+  fig4_eficiencia_cobertura_sin_unad_<año>.png   ídem fig2, sin la UNAD (32 universidades)
+  fig5_segunda_etapa.png                 asociación de cada característica con la eficiencia corregida
 
 Uso (desde la raíz del repositorio):
     python scripts/graficos_oe2_oe3.py
@@ -64,7 +67,8 @@ def eficiencia(ef, modelo, anio, archivo):
     for s in ("top", "right", "left"):
         ax.spines[s].set_visible(False)
     ax.tick_params(axis="y", length=0)
-    titulo = {"principal": "matrícula, graduados y puntaje Saber Pro", "cobertura": "matrícula y graduados"}[modelo]
+    titulo = {"principal": "matrícula, graduados y puntaje Saber Pro", "cobertura": "matrícula y graduados",
+              "cobertura_sin_unad": "matrícula y graduados, sin la UNAD"}[modelo]
     fig.suptitle(f"Eficiencia DEA {anio} — productos: {titulo}", x=0.01, ha="left", fontsize=10, color=TINTA)
     fig.legend(*ax.get_legend_handles_labels(), loc="upper left", bbox_to_anchor=(0.01, 0.97), ncol=2,
                frameon=False, fontsize=8)
@@ -103,6 +107,56 @@ def malmquist(mq, modelo, archivo):
     plt.close(fig)
 
 
+def segunda_etapa(se, archivo):
+    modelos = [("principal", "Principal\n(matrícula, graduados, puntaje)"),
+               ("cobertura", "Cobertura\n(con la UNAD)"), ("cobertura_sin_unad", "Cobertura\n(sin la UNAD)")]
+    orden = se[se.modelo == "principal"].drop_duplicates("variable")
+    orden = pd.concat([orden[orden.tipo == "continua"], orden[orden.tipo == "binaria"]])
+    etiquetas = []
+    for r in orden.itertuples():
+        e = r.etiqueta
+        if r.tipo == "binaria":
+            e += f" ({r.grupo_a.split(' (')[0]} vs {r.grupo_b.split(' (')[0]})"
+        etiquetas.append(e)
+    pos = {v: i for i, v in enumerate(orden.variable[::-1])}
+    fig, axes = plt.subplots(1, 3, figsize=(10.2, 5.6), sharey=True)
+    for ax, (m, t) in zip(axes, modelos):
+        ax.axvline(0, color=TINTA2, lw=1, zorder=1)
+        for anio, col, dy in ((2023, GRIS, 0.15), (2024, AZUL, -0.15)):
+            d = se[(se.modelo == m) & (se.anio == anio)]
+            for r in d.itertuples():
+                y = pos[r.variable] + dy
+                if r.mecanica:
+                    ax.scatter(r.efecto, y, s=30, marker="x", color=col, lw=1.3, zorder=3)
+                else:
+                    sig = r.p_holm < 0.05
+                    ax.scatter(r.efecto, y, s=38, color=col if sig else SUPERFICIE, edgecolor=col, lw=1.5, zorder=3)
+        ax.set_title(t, fontsize=9, color=TINTA, loc="left")
+        ax.set_xlim(-1.05, 1.05)
+        ax.set_xticks([-1, -0.5, 0, 0.5, 1])
+        ax.grid(axis="x", color="#e6e5e0", lw=0.8)
+        ax.set_axisbelow(True)
+        for sp in ("top", "right", "left"):
+            ax.spines[sp].set_visible(False)
+        ax.tick_params(axis="y", length=0)
+    nlab = [etiquetas[::-1][i] for i in range(len(etiquetas))]
+    axes[0].set_yticks(range(len(nlab)), nlab)
+    axes[1].set_xlabel("Asociación con la eficiencia corregida (rho de Spearman; en las binarias, "
+                       "correlación biserial de rangos)")
+    from matplotlib.lines import Line2D
+    h = [Line2D([], [], marker="o", ls="", color=GRIS, ms=6, label="2023"),
+         Line2D([], [], marker="o", ls="", color=AZUL, ms=6, label="2024"),
+         Line2D([], [], marker="o", ls="", color=TINTA2, ms=6, label="relleno: p Holm < 0,05"),
+         Line2D([], [], marker="o", ls="", mfc=SUPERFICIE, mec=TINTA2, ms=6, label="vacío: no significativo"),
+         Line2D([], [], marker="x", ls="", color=TINTA2, ms=6, label="asociación mecánica (no es hallazgo)")]
+    fig.suptitle("Segunda etapa: ¿qué se asocia con la eficiencia? (análisis exploratorio)",
+                 x=0.01, ha="left", fontsize=10, color=TINTA)
+    fig.legend(handles=h, loc="upper left", bbox_to_anchor=(0.01, 0.96), ncol=5, frameon=False, fontsize=8)
+    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    fig.savefig(OUT / archivo, dpi=200)
+    plt.close(fig)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     ef = pd.read_csv("resultados/oe3_eficiencia.csv")
@@ -112,6 +166,14 @@ def main():
         eficiencia(ef, "cobertura", a, f"fig2_eficiencia_cobertura_{a}.png")
     for m in ("principal", "cobertura"):
         malmquist(mq, m, f"fig3_malmquist_{m}.png")
+    su = Path("resultados/oe3_cobertura_sin_unad.csv")
+    if su.exists():
+        su = pd.read_csv(su)
+        for a in sorted(su.anio.unique()):
+            eficiencia(su, "cobertura_sin_unad", a, f"fig4_eficiencia_cobertura_sin_unad_{a}.png")
+    se = Path("resultados/oe3_segunda_etapa.csv")
+    if se.exists():
+        segunda_etapa(pd.read_csv(se), "fig5_segunda_etapa.png")
     print("Figuras guardadas en", OUT.as_posix(), ":", sorted(p.name for p in OUT.glob("*.png")))
 
 

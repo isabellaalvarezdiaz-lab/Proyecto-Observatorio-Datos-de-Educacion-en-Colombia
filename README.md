@@ -13,6 +13,8 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE1 · Base para el DEA: tabla maestra + PTE (universidades públicas) | una fila por universidad y año | `resultados/base_integrada_2023_2024.csv` |
 | OE2 · Índice de Malmquist 2023→2024 | cambio de productividad por universidad | `resultados/oe2_malmquist.csv` |
 | OE3 · DEA con bootstrap (Simar y Wilson, 1998) | eficiencia con intervalos, pares, metas y sensibilidad | `resultados/oe3_eficiencia.csv`, `oe3_deja_uno_fuera.csv`, `oe3_sensibilidad.csv` |
+| OE3 · Cobertura sin la UNAD | eficiencia de las otras 32 universidades | `resultados/oe3_cobertura_sin_unad.csv` |
+| OE3 · Segunda etapa (exploratoria) | qué características se asocian con la eficiencia | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv` |
 
 ## Estructura
 
@@ -69,11 +71,14 @@ Se corren después del OE1, desde la raíz del repositorio. Además de `pandas`,
 ```bash
 python scripts/oe3_dea_bootstrap.py     # DEA + bootstrap (2.000 réplicas, ≈ 10 min); --B 200 para una prueba rápida
 python scripts/oe2_malmquist.py         # índice de Malmquist (segundos)
-python scripts/verificar_oe2_oe3.py     # recalcula todo por el programa dual y responde PASA o FALLA
+python scripts/oe3_cobertura_sin_unad.py         # cobertura sin la UNAD (≈ 4 min)
+python scripts/caracteristicas_universidades.py  # características por universidad; necesita data/raw
+python scripts/oe3_segunda_etapa.py              # Spearman y Mann-Whitney con ajuste de Holm (segundos)
+python scripts/verificar_oe2_oe3.py     # recalcula todo por otro camino y responde PASA o FALLA
 python scripts/graficos_oe2_oe3.py      # figuras en resultados/figuras/
 ```
 
-El bootstrap usa una semilla fija (20261011), así que cualquiera que lo corra obtiene los mismos números. La especificación, las columnas y cómo leerlas están en `docs/diccionario_resultados_oe2_oe3.md`.
+El bootstrap usa una semilla fija (20261011), así que cualquiera que lo corra obtiene los mismos números. `caracteristicas_universidades.py` lee los archivos crudos; quien no los tenga puede usar el `resultados/caracteristicas_universidades.csv` que está en el repositorio y seguir con `oe3_segunda_etapa.py`. La especificación, las columnas y cómo leerlas están en `docs/diccionario_resultados_oe2_oe3.md`.
 
 ## Datos y licencias
 

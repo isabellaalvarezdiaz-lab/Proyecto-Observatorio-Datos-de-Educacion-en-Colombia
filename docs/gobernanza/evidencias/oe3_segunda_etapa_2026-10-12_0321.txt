@@ -1,0 +1,92 @@
+##### OE3 — segunda etapa exploratoria — 2026-10-12 03:21 #####
+
+=== cobertura · 2023 (n = 33) ===
+  Millones de pesos de la Nación por estudiante   rho = -0.49                                             p = 0.0037  p Holm = 0.0369 [mecánica]
+  Tamaño (log de la matrícula)                    rho = +0.48                                             p = 0.0044  p Holm = 0.0395 [mecánica]
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.631 vs otro departamento (n=27) 0.258 p = 0.0888  p Holm = 0.7103
+  Orden                                           mediana nacional (n=16) 0.203 vs territorial (n=16) 0.322 p = 0.2206  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=26) 0.250 vs no acreditada (n=7) 0.421 p = 0.3295  p Holm = 1.0000
+  Departamentos donde ofrece programas            rho = +0.13                                             p = 0.4554  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = -0.12                                             p = 0.5048  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = -0.08                                             p = 0.6392  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = +0.05                                             p = 0.7928  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = -0.02                                             p = 0.9118  p Holm = 1.0000
+
+=== cobertura · 2024 (n = 33) ===
+  Millones de pesos de la Nación por estudiante   rho = -0.54                                             p = 0.0013  p Holm = 0.0129 [mecánica]
+  Tamaño (log de la matrícula)                    rho = +0.44                                             p = 0.0105  p Holm = 0.0944 [mecánica]
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.568 vs otro departamento (n=27) 0.212 p = 0.0984  p Holm = 0.7871
+  Orden                                           mediana nacional (n=16) 0.152 vs territorial (n=16) 0.270 p = 0.1092  p Holm = 0.7871
+  Departamentos donde ofrece programas            rho = +0.22                                             p = 0.2115  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = -0.14                                             p = 0.4271  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = +0.14                                             p = 0.4446  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = +0.13                                             p = 0.4859  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=26) 0.216 vs no acreditada (n=7) 0.261 p = 0.8129  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = +0.02                                             p = 0.9140  p Holm = 1.0000
+
+=== cobertura_sin_unad · 2023 (n = 32) ===
+  Tamaño (log de la matrícula)                    rho = +0.81                                             p = 0.0000  p Holm = 0.0000 [mecánica]
+  Orden                                           mediana nacional (n=15) 0.475 vs territorial (n=16) 0.704 p = 0.0168  p Holm = 0.1510
+  Departamentos donde ofrece programas            rho = +0.40                                             p = 0.0248  p Holm = 0.1985
+  Millones de pesos de la Nación por estudiante   rho = -0.34                                             p = 0.0559  p Holm = 0.3915 [mecánica]
+  % de matrícula a distancia o virtual            rho = +0.27                                             p = 0.1287  p Holm = 0.7719
+  % de matrícula en posgrado                      rho = +0.19                                             p = 0.2977  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = -0.18                                             p = 0.3242  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=25) 0.553 vs no acreditada (n=7) 0.648 p = 0.5616  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = +0.08                                             p = 0.6536  p Holm = 1.0000
+  Domicilio en Bogotá                             mediana Bogotá (n=5) 0.749 vs otro departamento (n=27) 0.553 p = 0.8015  p Holm = 1.0000
+
+=== cobertura_sin_unad · 2024 (n = 32) ===
+  Tamaño (log de la matrícula)                    rho = +0.77                                             p = 0.0000  p Holm = 0.0000 [mecánica]
+  Departamentos donde ofrece programas            rho = +0.46                                             p = 0.0084  p Holm = 0.0753
+  Millones de pesos de la Nación por estudiante   rho = -0.46                                             p = 0.0085  p Holm = 0.0753 [mecánica]
+  Orden                                           mediana nacional (n=15) 0.487 vs territorial (n=16) 0.718 p = 0.0086  p Holm = 0.0753
+  % de matrícula a distancia o virtual            rho = +0.34                                             p = 0.0570  p Holm = 0.3418
+  Acreditación institucional                      mediana acreditada (n=25) 0.571 vs no acreditada (n=7) 0.512 p = 0.3236  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = +0.09                                             p = 0.6299  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = -0.01                                             p = 0.9444  p Holm = 1.0000
+  Domicilio en Bogotá                             mediana Bogotá (n=5) 0.745 vs otro departamento (n=27) 0.564 p = 0.9599  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = -0.01                                             p = 0.9619  p Holm = 1.0000
+
+=== principal · 2023 (n = 33) ===
+  % de evaluados con 0 en Escrita                 rho = -0.72                                             p = 0.0000  p Holm = 0.0000
+  % de matrícula en programas acreditados         rho = +0.58                                             p = 0.0004  p Holm = 0.0037
+  % de matrícula en posgrado                      rho = +0.49                                             p = 0.0037  p Holm = 0.0294
+  Acreditación institucional                      mediana acreditada (n=26) 0.892 vs no acreditada (n=7) 0.802 p = 0.0066  p Holm = 0.0460
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.912 vs otro departamento (n=27) 0.869 p = 0.0097  p Holm = 0.0580
+  Tamaño (log de la matrícula)                    rho = +0.44                                             p = 0.0099  p Holm = 0.0580
+  Departamentos donde ofrece programas            rho = +0.23                                             p = 0.1919  p Holm = 0.7676
+  Millones de pesos de la Nación por estudiante   rho = +0.23                                             p = 0.2027  p Holm = 0.7676 [mecánica]
+  Orden                                           mediana nacional (n=16) 0.897 vs territorial (n=16) 0.865 p = 0.6647  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = -0.06                                             p = 0.7460  p Holm = 1.0000
+
+=== principal · 2024 (n = 33) ===
+  % de evaluados con 0 en Escrita                 rho = -0.77                                             p = 0.0000  p Holm = 0.0000
+  % de matrícula en programas acreditados         rho = +0.56                                             p = 0.0008  p Holm = 0.0068
+  % de matrícula en posgrado                      rho = +0.53                                             p = 0.0016  p Holm = 0.0130
+  Tamaño (log de la matrícula)                    rho = +0.42                                             p = 0.0158  p Holm = 0.1108
+  Acreditación institucional                      mediana acreditada (n=26) 0.895 vs no acreditada (n=7) 0.823 p = 0.0159  p Holm = 0.1108
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.915 vs otro departamento (n=27) 0.876 p = 0.0237  p Holm = 0.1186
+  Millones de pesos de la Nación por estudiante   rho = +0.25                                             p = 0.1543  p Holm = 0.6172 [mecánica]
+  Departamentos donde ofrece programas            rho = +0.18                                             p = 0.3210  p Holm = 0.9630
+  Orden                                           mediana nacional (n=16) 0.897 vs territorial (n=16) 0.875 p = 0.5340  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = -0.02                                             p = 0.9264  p Holm = 1.0000
+
+Asociaciones no mecánicas con p Holm < 0,05 en los dos años:
+  principal: % de evaluados con 0 en Escrita — valores [-0.72, -0.77] (2023, 2024)
+  principal: % de matrícula en posgrado — valores [0.49, 0.53] (2023, 2024)
+  principal: % de matrícula en programas acreditados — valores [0.58, 0.56] (2023, 2024)
+
+Contexto — Spearman de cada variable continua con los productos (33 universidades del DEA):
+  2023 % de matrícula en programas acreditados         mat_total_prom +0.35  grad_total +0.25  global_c +0.81
+  2023 % de matrícula a distancia o virtual            mat_total_prom +0.37  grad_total +0.42  global_c -0.11
+  2023 % de matrícula en posgrado                      mat_total_prom +0.29  grad_total +0.29  global_c +0.57
+  2023 Departamentos donde ofrece programas            mat_total_prom +0.57  grad_total +0.51  global_c +0.21
+  2023 % de evaluados con 0 en Escrita                 mat_total_prom -0.31  grad_total -0.22  global_c -0.80
+  2024 % de matrícula en programas acreditados         mat_total_prom +0.33  grad_total +0.30  global_c +0.80
+  2024 % de matrícula a distancia o virtual            mat_total_prom +0.38  grad_total +0.41  global_c -0.12
+  2024 % de matrícula en posgrado                      mat_total_prom +0.36  grad_total +0.40  global_c +0.61
+  2024 Departamentos donde ofrece programas            mat_total_prom +0.62  grad_total +0.52  global_c +0.13
+  2024 % de evaluados con 0 en Escrita                 mat_total_prom -0.26  grad_total -0.21  global_c -0.91
+
+Guardado: resultados/oe3_segunda_etapa.csv

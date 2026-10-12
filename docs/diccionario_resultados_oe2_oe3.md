@@ -7,6 +7,9 @@ Se generan con:
 ```bash
 python scripts/oe3_dea_bootstrap.py     # ≈ 10 min con 2.000 réplicas
 python scripts/oe2_malmquist.py         # segundos
+python scripts/oe3_cobertura_sin_unad.py        # ≈ 4 min
+python scripts/caracteristicas_universidades.py  # necesita data/raw (SNIES y Saber Pro)
+python scripts/oe3_segunda_etapa.py             # segundos
 python scripts/verificar_oe2_oe3.py     # comprueba todo por otro camino
 ```
 
@@ -27,6 +30,7 @@ Para la versión "real" del Malmquist se usa 1,052, que es la variación anual d
 |---|---|---|
 | `principal` | matrícula promedio, graduados, puntaje `global_c` | Cobertura y calidad juntas, como se planteó |
 | `cobertura` | matrícula promedio, graduados | Cobertura sola |
+| `cobertura_sin_unad` | matrícula promedio, graduados; 32 universidades (sin la UNAD) | Cobertura sin la universidad que más mueve la frontera |
 
 El modelo de cobertura existe por esto: el puntaje varía poco entre universidades (coeficiente de variación ≈ 0,08; la mejor tiene 1,5 veces el de la peor). En un DEA radial, que expande todos los productos en la misma proporción, el puntaje limita la expansión y deja las brechas de matrícula y graduados como holguras. Galvis-Aponte (2015) también reporta por separado la eficiencia en cobertura y en calidad.
 
@@ -72,6 +76,59 @@ Una fila por modelo, versión (nominal o real) y universidad.
 | `D23_23`, `D23_24`, `D24_23`, `D24_24` | Distancias de Shephard con rendimientos constantes: `Dxx_yy` = universidad en el año yy evaluada contra la frontera del año xx |
 
 M = EC × TC. Con un solo insumo y rendimientos constantes, deflactar multiplica M y TC por 1,052 en todas las universidades y no cambia EC ni el orden entre universidades.
+
+## `resultados/oe3_cobertura_sin_unad.csv`
+
+Mismas columnas que `oe3_eficiencia.csv`, con `modelo = cobertura_sin_unad`. Mismo método, misma semilla.
+
+Por qué existe: en `oe3_deja_uno_fuera.csv`, sacar a la UNAD del modelo de cobertura sube más de 5 puntos la eficiencia de 25 de 32 universidades en 2023 y de 29 de 32 en 2024. La UNAD tiene el 100 % de su matrícula a distancia o virtual y fija una frontera que ninguna otra alcanza. Sin ella, las demás se comparan entre sí.
+
+Ojo: las 32 restantes **no** son todas presenciales. Varias tienen una parte grande de su matrícula a distancia o virtual (columna `pct_mat_distancia_virtual` de `caracteristicas_universidades.csv`).
+
+## `resultados/caracteristicas_universidades.csv`
+
+Una fila por universidad y año (las 34 de la base integrada). Todas las variables salen de columnas de los archivos originales; ninguna se asigna a mano. Se genera con `scripts/caracteristicas_universidades.py`, que necesita `data/raw/snies` y `data/raw/saber_pro`.
+
+**Sede principal.** Es la sede cuyo código coincide con su IES PADRE en el SNIES. Si ninguna coincide (UFPS Ocaña), es la de mayor matrícula.
+
+| Columna | Origen |
+|---|---|
+| `acreditada_institucional` | SNIES matriculados, columna `IES ACREDITADA` de la sede principal (`Si` → True) |
+| `pct_mat_prog_acreditados` | % de la matrícula (suma de los dos semestres) en filas con `PROGRAMA ACREDITADO` = `Si` |
+| `pct_mat_distancia_virtual` | % de la matrícula con `MODALIDAD` = A distancia, Virtual, Virtual-A distancia o Virtual-Dual |
+| `pct_mat_posgrado` | % de la matrícula con `NIVEL ACADÉMICO` = Posgrado |
+| `n_departamentos_oferta` | número de valores distintos de `DEPARTAMENTO DE OFERTA DEL PROGRAMA` |
+| `departamento_domicilio`, `domicilio_bogota` | `DEPARTAMENTO DE DOMICILIO DE LA IES` de la sede principal |
+| `origen_saber_pro`, `orden` | `inst_origen` de Saber Pro de la sede principal. OFICIAL NACIONAL → `nacional`; OFICIAL DEPARTAMENTAL u OFICIAL MUNICIPAL → `territorial`; otro valor → vacío. Quedan vacías la U. Internacional del Trópico Americano (Saber Pro la registra como `NO OFICIAL - FUNDACIÓN`) y la UAIIN-CRIC (sin evaluados) |
+| `log_matricula` | logaritmo natural de `mat_total_prom` (tamaño) |
+| `millones_por_estudiante` | `obligacion` / `mat_total_prom` / 10⁶, pesos corrientes |
+| `pct_ceros_escrita` | igual que en la base integrada |
+
+## `resultados/oe3_segunda_etapa.csv`
+
+Segunda etapa **exploratoria**: qué características se asocian con la eficiencia corregida. Con 32–33 universidades no se estima una regresión; se usan pruebas no paramétricas.
+
+- Variables continuas: correlación de Spearman.
+- Binarias: Mann-Whitney de dos colas. Es exacta si un grupo tiene 8 o menos universidades y no hay empates; si no, aproximación normal.
+- Los p-valores se ajustan por Holm dentro de cada modelo y año (10 pruebas).
+
+Una fila por modelo, año y variable.
+
+| Columna | Significado |
+|---|---|
+| `valor` | rho de Spearman o U de Mann-Whitney (del grupo A) |
+| `efecto` | escala de −1 a 1 para comparar: rho en las continuas; en las binarias, correlación biserial de rangos 2U/(n_A·n_B) − 1, positiva si el grupo A es más eficiente |
+| `p`, `p_holm` | p-valor sin ajustar y ajustado por Holm |
+| `mecanica` | True si la variable se construye con el insumo o con un producto del modelo, así que la asociación es aritmética y no un hallazgo. Se marcan `millones_por_estudiante` en todos los modelos y `log_matricula` en los de cobertura |
+| `grupo_a`, `mediana_a`, `grupo_b`, `mediana_b` | en las binarias, los grupos con su tamaño y la mediana de la eficiencia corregida |
+
+Cómo leerla:
+
+- Las eficiencias DEA de una misma muestra no son independientes entre sí (dependen de la misma frontera), así que los p-valores son **orientativos**.
+- Ninguna asociación es causal.
+- Algunas variables no se construyen con los productos, pero están muy correlacionadas con uno de ellos. Entonces su asociación con la eficiencia repite, en buena parte, la de ese producto. El script imprime esas correlaciones al final de su evidencia (bloque "Contexto").
+  - En el modelo principal, el % de matrícula en programas acreditados, el % en posgrado y el % de ceros en Escrita se mueven con el puntaje `global_c`.
+  - Leerlas así: las universidades con marcadores de calidad más altos (programas acreditados, posgrado, menos ceros en Escrita) son las que el modelo principal ubica más cerca de la frontera. Eso no aísla un efecto propio de cada variable.
 
 ## Limitaciones de lectura
 
