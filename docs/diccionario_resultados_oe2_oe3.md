@@ -1,0 +1,81 @@
+# Diccionario de resultados — OE3 (DEA con bootstrap) y OE2 (Malmquist)
+
+Todos parten de `resultados/base_integrada_2023_2024.csv`: 33 universidades con `incluida_dea = True` en cada año. La UAIIN-CRIC queda fuera porque no tiene evaluados en Saber Pro.
+
+Se generan con:
+
+```bash
+python scripts/oe3_dea_bootstrap.py     # ≈ 10 min con 2.000 réplicas
+python scripts/oe2_malmquist.py         # segundos
+python scripts/verificar_oe2_oe3.py     # comprueba todo por otro camino
+```
+
+Cada corrida deja su salida en `docs/gobernanza/evidencias/`.
+
+## Especificación
+
+| | OE3 · DEA | OE2 · Malmquist |
+|---|---|---|
+| Orientación | al producto | al producto |
+| Rendimientos | variables (BCC) | constantes (CRS) |
+| Insumo | obligación del PTE (miles de millones de pesos corrientes) | ídem; en la versión "real", 2024 dividido por 1,052 |
+| Corrección | bootstrap de Simar y Wilson (1998), 2.000 réplicas, semilla 20261011 | — |
+
+Para la versión "real" del Malmquist se usa 1,052, que es la variación anual del IPC a diciembre de 2024 (5,20 %). Fuente: DANE, Comunicado de prensa IPC diciembre 2024, p. 1, <https://www.dane.gov.co/files/operaciones/IPC/dic2024/cp-IPC-dic2024.pdf>.
+
+| Modelo | Productos | Para qué |
+|---|---|---|
+| `principal` | matrícula promedio, graduados, puntaje `global_c` | Cobertura y calidad juntas, como se planteó |
+| `cobertura` | matrícula promedio, graduados | Cobertura sola |
+
+El modelo de cobertura existe por esto: el puntaje varía poco entre universidades (coeficiente de variación ≈ 0,08; la mejor tiene 1,5 veces el de la peor). En un DEA radial, que expande todos los productos en la misma proporción, el puntaje limita la expansión y deja las brechas de matrícula y graduados como holguras. Galvis-Aponte (2015) también reporta por separado la eficiencia en cobertura y en calidad.
+
+## `resultados/oe3_eficiencia.csv`
+
+Una fila por modelo, año y universidad.
+
+| Columna | Significado |
+|---|---|
+| `eficiencia` | δ = 1/φ ∈ (0, 1]. 1 = en la frontera. 0,80 = produce el 80 % de lo que logran sus pares con el mismo presupuesto, es decir, podría multiplicar sus productos por 1/0,80 = 1,25 |
+| `eficiencia_corregida` | Eficiencia corregida por el sesgo del DEA con el bootstrap. Es menor o igual que la original, porque la frontera estimada con la muestra queda por debajo de la verdadera |
+| `ic95_inf`, `ic95_sup` | Intervalo de confianza del 95 % de la eficiencia |
+| `sesgo_phi` | Sesgo estimado en la escala φ |
+| `en_frontera` | Eficiencia original = 1 |
+| `pares` | Universidades de la frontera con las que se compara, con su peso λ |
+| `<producto>_actual`, `<producto>_meta` | Valor actual y meta: lo que lograría si funcionara como la combinación de sus pares. Incluye la expansión radial y las holguras |
+
+## `resultados/oe3_deja_uno_fuera.csv`
+
+Se saca una por una cada universidad de la frontera y se vuelve a calcular la eficiencia de las demás. Solo hace falta con las de la frontera, porque una universidad ineficiente no define la frontera y quitarla no cambia la eficiencia de nadie.
+
+| Columna | Significado |
+|---|---|
+| `sale` | Universidad que se saca |
+| `cambio_medio`, `cambio_max` | Cambio de la eficiencia de las demás (en proporción: 0,05 = 5 puntos) |
+| `universidad_cambio_max` | La que más cambia |
+| `n_cambian_mas_5_puntos` | Cuántas suben más de 5 puntos |
+| `spearman_ranking` | Correlación de Spearman entre el orden de las universidades con y sin ella |
+
+## `resultados/oe3_sensibilidad.csv`
+
+Modelo principal con `global_b` (puntaje sin los estudiantes con 0 en Escrita) en lugar de `global_c`.
+
+## `resultados/oe2_malmquist.csv`
+
+Una fila por modelo, versión (nominal o real) y universidad.
+
+| Columna | Significado |
+|---|---|
+| `malmquist` | M > 1 = la productividad mejoró entre 2023 y 2024; M < 1 = retroceso de productividad |
+| `cambio_eficiencia` | EC: cuánto se acercó (> 1) o se alejó (< 1) la universidad de la frontera |
+| `cambio_tecnologico` | TC: cuánto se movió la frontera completa (> 1 = las mejores producen más con lo mismo) |
+| `D23_23`, `D23_24`, `D24_23`, `D24_24` | Distancias de Shephard con rendimientos constantes: `Dxx_yy` = universidad en el año yy evaluada contra la frontera del año xx |
+
+M = EC × TC. Con un solo insumo y rendimientos constantes, deflactar multiplica M y TC por 1,052 en todas las universidades y no cambia EC ni el orden entre universidades.
+
+## Limitaciones de lectura
+
+- Con 33 universidades, los intervalos son anchos. Compare universidades por sus intervalos, no solo por el valor puntual.
+- En el DEA BCC orientado al producto, quedan en la frontera por construcción la universidad con menor insumo y la de mayor valor en cada producto. Su 100 % no significa lo mismo que el de una universidad mediana.
+- El insumo solo incluye lo que gira la Nación. Las universidades con otras fuentes importantes de financiación parecen más eficientes de lo que son; el análisis deja uno fuera mide cuánto pesan.
+- El Malmquist no tiene intervalos: el método original de bootstrap para Malmquist (Simar y Wilson, 1999) no se consiguió en texto completo.

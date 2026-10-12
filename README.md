@@ -11,8 +11,8 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 |---|---|---|
 | OE1 · Tabla maestra SNIES + Saber Pro (todas las instituciones) | una fila por institución y año | `resultados/tabla_maestra_2023_2024.csv` |
 | OE1 · Base para el DEA: tabla maestra + PTE (universidades públicas) | una fila por universidad y año | `resultados/base_integrada_2023_2024.csv` |
-| OE2 · Índice de Malmquist 2023→2024 | cambio de productividad por universidad | pendiente |
-| OE3 · DEA con bootstrap (Simar y Wilson, 1998) | eficiencia con intervalos | pendiente |
+| OE2 · Índice de Malmquist 2023→2024 | cambio de productividad por universidad | `resultados/oe2_malmquist.csv` |
+| OE3 · DEA con bootstrap (Simar y Wilson, 1998) | eficiencia con intervalos, pares, metas y sensibilidad | `resultados/oe3_eficiencia.csv`, `oe3_deja_uno_fuera.csv`, `oe3_sensibilidad.csv` |
 
 ## Estructura
 
@@ -21,7 +21,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 ├─ scripts/        código; todo se corre desde la raíz del repositorio
 ├─ resultados/     tablas agregadas, sin datos de estudiantes (sí se suben)
 ├─ docs/
-│  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md
+│  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md, diccionario_resultados_oe2_oe3.md
 │  ├─ gobernanza/evidencias/   salida de cada corrida, con fecha y hora
 │  ├─ uso_ia/                  inventarios de fallos de IA
 │  ├─ BITACORA_IA.md
@@ -61,6 +61,19 @@ Todo lo que imprime queda en `docs/gobernanza/evidencias/oe1_base_integrada_<fec
 Para comprobar las dos tablas contra los archivos originales corra `python scripts/verificar_oe1.py`. El script recalcula cada cifra por otro camino y responde PASA o FALLA, con la universidad y la columna que no coincide. Su salida queda en `docs/gobernanza/evidencias/verificacion_oe1_<fecha>.txt`.
 
 Las reglas de construcción y el significado de cada columna están en `docs/diccionario_tabla_maestra.md` y `docs/diccionario_base_integrada.md`.
+
+## Cómo reproducir el DEA (OE3) y el Malmquist (OE2)
+
+Se corren después del OE1, desde la raíz del repositorio. Además de `pandas`, requieren `numpy`, `scipy` y `matplotlib`.
+
+```bash
+python scripts/oe3_dea_bootstrap.py     # DEA + bootstrap (2.000 réplicas, ≈ 10 min); --B 200 para una prueba rápida
+python scripts/oe2_malmquist.py         # índice de Malmquist (segundos)
+python scripts/verificar_oe2_oe3.py     # recalcula todo por el programa dual y responde PASA o FALLA
+python scripts/graficos_oe2_oe3.py      # figuras en resultados/figuras/
+```
+
+El bootstrap usa una semilla fija (20261011), así que cualquiera que lo corra obtiene los mismos números. La especificación, las columnas y cómo leerlas están en `docs/diccionario_resultados_oe2_oe3.md`.
 
 ## Datos y licencias
 

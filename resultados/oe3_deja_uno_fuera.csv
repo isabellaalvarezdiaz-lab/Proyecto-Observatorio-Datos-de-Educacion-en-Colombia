@@ -1,0 +1,16 @@
+﻿modelo,anio,sale,cambio_medio,cambio_max,universidad_cambio_max,n_cambian_mas_5_puntos,spearman_ranking
+principal,2023,universidad nacional de colombia,0.0031,0.0412,universidad de antioquia,0,0.9898
+principal,2023,universidad pedagogica y tecnologica de colombia,0.0014,0.0169,universidad de cartagena,0,0.9891
+principal,2023,universidad distrital francisco jose de caldas,0.0187,0.0414,universidad colegio mayor de cundinamarca,0,0.97
+principal,2023,universidad nacional abierta y a distancia unad,0.0052,0.0604,universidad del tolima,1,0.9611
+principal,2023,universidad militar nueva granada,0.0014,0.0439,universidad de cundinamarca,0,0.9968
+principal,2023,universidad internacional del tropico americano,0.0076,0.1409,universidad del pacifico,2,0.8954
+principal,2024,universidad nacional de colombia,0.0024,0.027,universidad de antioquia,0,0.9956
+principal,2024,universidad distrital francisco jose de caldas,0.0227,0.0616,universidad de sucre,1,0.9322
+principal,2024,universidad nacional abierta y a distancia unad,0.0136,0.1207,universidad del tolima,4,0.8494
+principal,2024,universidad internacional del tropico americano,0.0099,0.1764,universidad del pacifico,3,0.8296
+cobertura,2023,universidad nacional abierta y a distancia unad,0.2264,0.515,universidad del magdalena,25,0.8326
+cobertura,2023,universidad militar nueva granada,0.0172,0.1208,universidad de cundinamarca,3,0.9937
+cobertura,2023,universidad internacional del tropico americano,0.0331,0.784,universidad del pacifico,4,0.8596
+cobertura,2024,universidad nacional abierta y a distancia unad,0.2908,0.5948,universidad del magdalena,29,0.8162
+cobertura,2024,universidad internacional del tropico americano,0.0471,0.8256,universidad del pacifico,5,0.8514
