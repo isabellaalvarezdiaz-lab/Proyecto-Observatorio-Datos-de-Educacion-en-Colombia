@@ -8,7 +8,7 @@ resultados y validaron hallazgos de manera conjunta — no se trató de una
 consulta puntual ni de la delegación de una sección específica a un único
 integrante.
 
-**Continuidad del proceso:** el desarrollo de esta fase se llevó a cabo a
+**Continuidad del proceso (fase 1):** el desarrollo de esta fase se llevó a cabo a
 lo largo de **tres sesiones de conversación diferenciadas** con el agente
 de IA. En cada una de ellas, el equipo suministró explícitamente el
 contexto acumulado del proyecto —diagnóstico realizado, decisiones
@@ -268,6 +268,191 @@ conteo estimado de palabras.
 
 ---
 
+# Fase 2 — Ejecución de los objetivos específicos (octubre de 2026)
+
+**Agente utilizado:** Claude (Anthropic), en una sesión con un entorno de
+ejecución de código, en la que el agente corrió los scripts sobre copias de
+los datos aportados por el equipo.
+
+**Integrantes que interactuaron en esta fase:** Isabella Álvarez y Anderson
+González.
+
+**Punto de partida:** la sesión arrancó de un resumen de traspaso con las
+decisiones ya verificadas, redactado bajo la regla "nada sin fuente": toda
+afirmación debe poder rastrearse a un documento y a una ubicación dentro de
+él, y lo que no esté verificado se dice explícitamente.
+
+**Cómo se verificó en esta fase:** cada resultado sale de un script del
+repositorio y se comprobó por tres vías:
+
+1. un verificador independiente que recalcula las cifras por otro camino
+   (`verificar_oe1.py` y `verificar_oe2_oe3.py`) y responde PASA o FALLA;
+2. errores plantados a propósito en copias de los resultados, para comprobar
+   que el verificador los detecta;
+3. la reproducción completa en un segundo computador del equipo, que obtuvo
+   las mismas cifras.
+
+Cada corrida deja su salida con fecha y hora en `docs/gobernanza/evidencias/`.
+
+---
+
+## 10. Tabla maestra y base integrada (OE1)
+
+**Prompt representativo:** solicitud de concentrar el trabajo en cumplir los
+objetivos específicos, a partir de los archivos del PTE, el SNIES y Saber Pro
+ya descargados por el equipo, con un repositorio reiniciado de forma limpia.
+
+**Qué se obtuvo:** los scripts `agregar_saber_pro.py`,
+`extraer_pte_universidades.py`, `cargar_snies.py`, `cruce_sedes.py`,
+`construir_tabla_maestra.py`, `construir_base_integrada.py` y `correr_oe1.py`.
+La tabla maestra tiene 654 filas y 330 códigos de institución; la base
+integrada reúne las 34 universidades públicas del PTE a partir de 52 sedes.
+
+**Verificación aplicada:** `verificar_oe1.py` recalcula cada cifra desde los
+archivos originales y respondió TODO COINCIDE, también en el segundo
+computador.
+
+**Fallos de la IA detectados y corregidos:**
+
+- Los primeros scripts buscaban los datos en una carpeta `raw/` en la raíz
+  del repositorio, que no coincidía con la estructura acordada
+  (`data/raw/...`). Se detectó al correrlos y se reescribieron.
+- El paquete entregado tras reiniciar el repositorio no incluía
+  `agregar_saber_pro.py`. Se detectó porque el primer paso de `correr_oe1.py`
+  falló, y se entregó el archivo.
+- El primer cruce por nombre omitió la sede 9933 de la Universidad Nacional,
+  con 74 evaluados en 2024. Se detectó al comparar los conteos con una corrida
+  anterior y se corrigió asignando las sedes por la columna IES PADRE del SNIES.
+
+---
+
+## 11. DEA con bootstrap (OE3) e índice de Malmquist (OE2)
+
+**Prompt representativo:** solicitud de terminar el 70 % del trabajo en la
+semana, con instrucciones paso a paso para ejecutarlo en PowerShell y con
+todo verificado.
+
+**Qué se obtuvo:** `dea.py`, `oe3_dea_bootstrap.py`, `oe2_malmquist.py`,
+`verificar_oe2_oe3.py` y `graficos_oe2_oe3.py`, con los diccionarios de
+resultados y el informe de avance en LaTeX.
+
+**Verificación aplicada:** el verificador resuelve el programa dual con el
+algoritmo de punto interior, en lugar del programa de envolvente con el
+símplex, y comprueba las propiedades que la teoría garantiza. Detectó todos
+los errores plantados, y el segundo computador reprodujo las cifras.
+
+**Fallos de la IA detectados y corregidos:**
+
+- La primera versión del bootstrap suavizaba en la escala de eficiencia (0 a
+  1) y produjo eficiencias corregidas negativas en el modelo de cobertura
+  (hasta −606). Se detectó con un control de coherencia y se corrigió
+  trabajando en la escala de Farrell (φ ≥ 1) con reflexión en 1.
+- El verificador tenía dos errores de código (alineación de índices y
+  precedencia de operadores) que aparecieron al correrlo y se corrigieron
+  antes de la entrega.
+- Las instrucciones de subida no excluían `__pycache__`, que quedó en GitHub
+  (commit `9414a9f`). Se agregó al `.gitignore` y se retiró en el commit
+  `2fdded9`.
+
+---
+
+## 12. Cobertura sin la UNAD y segunda etapa exploratoria
+
+**Prompt representativo:** solicitud de avanzar en dos resultados: el modelo
+de cobertura sin la UNAD como resultado formal, y qué caracteriza a las
+universidades menos eficientes, con pruebas no paramétricas y no con
+regresión. Después, solicitud de agregar el contexto socioeconómico que el
+anteproyecto había prometido.
+
+**Qué se obtuvo:** `oe3_cobertura_sin_unad.py`,
+`caracteristicas_universidades.py` y `oe3_segunda_etapa.py` (Spearman y
+Mann-Whitney con ajuste de Holm), con las figuras 4 y 5 y la tabla del perfil
+de las cinco universidades menos eficientes.
+
+**Verificación aplicada:** el verificador recalcula los estadísticos, los
+p-valores y el ajuste de Holm con fórmulas propias, sin las funciones de
+`scipy`. En el computador que tiene los datos crudos, también recalcula
+desde el SNIES y Saber Pro originales cada característica de las
+universidades. El índice socioeconómico del ICFES (INSE) se descartó tras
+comprobar con los datos que su relación con el estrato cambia de −0,54 en
+2023 a −0,95 en 2024.
+
+**Fallos de la IA detectados y corregidos:**
+
+- La IA describió el modelo sin la UNAD como una comparación entre
+  universidades presenciales. El SNIES muestra que en 2024 el Tolima tiene el
+  68 %, Cartagena el 53 % y el Magdalena el 34 % de su matrícula a distancia o
+  virtual. Se corrigió la descripción.
+- La IA presentó tres asociaciones del modelo principal (ceros en Escrita,
+  programas acreditados y posgrado) como hallazgos independientes. Al
+  calcular su correlación con los productos se vio que las tres siguen al
+  puntaje de Saber Pro, y se cambió la interpretación.
+- Unas instrucciones de PowerShell traían una ruta de ejemplo
+  (`C:\ruta\...`) en lugar de la real. Al ejecutarlas tal cual, el zip no se
+  descomprimió, corrieron los scripts anteriores y se subió un commit
+  (`1a84cef`) cuyo mensaje no corresponde a su contenido. No dañó resultados;
+  desde entonces las instrucciones buscan el archivo y comprueban con
+  `Test-Path` que llegó antes de seguir.
+
+---
+
+## 13. Revisión crítica de todo lo hecho
+
+**Prompt representativo:** "¿todo lo que hemos hecho está bien?".
+
+**Qué se obtuvo:** una revisión de los supuestos y de la interpretación, además
+de los cálculos. En una corrida de revisión hecha por el agente (no incluida
+en el repositorio) se comprobó que en todas las universidades el sesgo del
+bootstrap es al menos 1,7 veces su desviación estándar, lo que justifica
+reportar la eficiencia corregida. No se pudo verificar en el texto original
+el umbral que la literatura atribuye a Simar y Wilson para esa decisión, así
+que no se cita.
+
+**Fallos de la IA detectados y corregidos:**
+
+- El informe decía que el insumo era "lo que gira la Nación". Revisando el
+  Cuadro No. 7 del PTE se vio que es solo lo registrado en la entidad de cada
+  universidad: en diciembre de 2024, la gratuidad (2.744 mil millones de
+  pesos, fila 1758) y la concurrencia pensional (475 mil millones, fila 1729)
+  están en el Ministerio de Educación sin desagregar. Se corrigió la
+  limitación.
+- El informe decía que cuatro universidades mejoraron su productividad. Dos
+  de ellas (la Nacional, 1,005, y Cartagena, 1,004) están prácticamente en 1 y
+  el Malmquist no tiene intervalos, así que se cambió la redacción.
+- Las correlaciones de Spearman del análisis deja uno fuera, de la
+  sensibilidad y del modelo sin la UNAD no trataban como empatadas a las
+  universidades de la frontera: el ruido numérico del solver rompía el
+  empate. Se detectó al recalcularlas desde los CSV para el informe. Se
+  corrigió en los scripts (commit `5a8f02e`): los valores cambiaron hasta en
+  0,02, ninguna eficiencia cambió y ahora el verificador revisa esas
+  correlaciones.
+
+---
+
+## 14. Informe y discusión frente a la literatura
+
+**Prompt representativo:** solicitud de redactar las secciones nuevas del
+informe y la comparación con los estudios colombianos, a partir de los PDF
+aportados por el equipo.
+
+**Qué se obtuvo:** el informe en LaTeX generado a partir de los CSV del
+repositorio, sin transcribir cifras a mano, y la discusión frente a Maza
+Ávila et al. (2017), Visbal-Cadavid et al. (2017) y Melo-Becerra et al.
+(2017), con la página de cada cifra citada.
+
+**Verificación aplicada:** los tres artículos se leyeron completos antes de
+citarlos. Uno de los PDF aportados (Marques et al., 2020) no correspondía a
+los solicitados y no se usó. La referencia de Maza Ávila et al. se corrigió
+con el nombre exacto de la revista (*Investigación & Desarrollo*) y su DOI,
+tomados del propio artículo.
+
+**Fallos menores de la IA:** errores de LaTeX detectados al compilar (citas
+con `\citet` sin el paquete natbib, una coma introducida por un reemplazo
+global en "U, Distrital" y figuras que dejaban huecos en la página),
+corregidos antes de la entrega.
+
+---
+
 ## Resumen de afirmaciones descartadas mediante verificación
 
 La siguiente tabla sintetiza los casos en los que una afirmación inicial
@@ -282,3 +467,11 @@ proyecto sin contraste:
 | El PTE no desagrega la ejecución presupuestal por institución | Refutada — sí lo hace, para el conjunto de treinta y cuatro universidades públicas |
 | Referencia de Almeida et al. (2024): dos autores, volumen 11 | Refutada — el estudio corresponde a seis autores, volumen 12 |
 | Diseño inicial del DEA macro: insumo exclusivamente público frente a resultado del sistema educativo completo | Diseño inválido — corregido para restringir insumo y resultado al mismo universo institucional |
+| El modelo de cobertura sin la UNAD compara universidades presenciales | Refutada — en 2024 el Tolima tiene el 68 %, Cartagena el 53 % y el Magdalena el 34 % de su matrícula a distancia o virtual (SNIES) |
+| Las asociaciones del modelo principal con los ceros en Escrita, los programas acreditados y el posgrado son hallazgos independientes | Refutada — las tres siguen al puntaje de Saber Pro, que es un producto del modelo |
+| El insumo recoge todo lo que la Nación gira a cada universidad | Refutada — la gratuidad y la concurrencia pensional están en el Ministerio de Educación sin desagregar (PTE, Cuadro No. 7, diciembre de 2024, filas 1758 y 1729) |
+| Cuatro universidades mejoraron su productividad entre 2023 y 2024 | Matizada — la Nacional (1,005) y Cartagena (1,004) quedan prácticamente en 1; solo la UNAD y el Magdalena superan 1 con claridad |
+| Las correlaciones de Spearman del análisis deja uno fuera estaban bien calculadas | Refutada — los empates de la frontera se rompían por ruido numérico; corregidas, cambian hasta en 0,02 |
+| El bootstrap puede suavizarse en la escala de eficiencia (0 a 1) | Refutada — produjo eficiencias corregidas negativas en el modelo de cobertura |
+| El primer cruce por nombre encontró todas las sedes | Refutada — faltaba la sede 9933 de la Universidad Nacional (74 evaluados en 2024) |
+| El índice socioeconómico del ICFES (INSE) sirve para comparar universidades entre años | Descartado — su relación con el estrato cambia de −0,54 (2023) a −0,95 (2024) |
