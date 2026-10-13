@@ -20,6 +20,7 @@ Convenciones
 Requiere: numpy, scipy (linprog con HiGHS).
 """
 import numpy as np
+import pandas as pd
 from scipy.optimize import linprog
 
 
@@ -96,6 +97,16 @@ def eficiencia(X, Y, Xref=None, Yref=None, vrs=True):
         delta[o] = 1.0 / phi
         lam[o] = l
     return delta, lam
+
+
+def spearman(a, b):
+    """Correlación de Spearman entre dos vectores de eficiencias, con empates bien tratados.
+
+    Redondea a 6 decimales antes de ordenar. Las universidades de la frontera tienen δ = 1, pero el
+    solver devuelve valores como 0,9999999998 o 1,0000000001; sin redondear, ese ruido rompe al
+    azar el empate entre ellas y cambia la correlación hasta en 0,02.
+    """
+    return pd.Series(np.round(a, 6)).corr(pd.Series(np.round(b, 6)), method="spearman")
 
 
 def bootstrap_simar_wilson(X, Y, B=2000, alfa=0.05, semilla=20261011, vrs=True):

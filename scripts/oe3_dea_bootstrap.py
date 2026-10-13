@@ -91,7 +91,7 @@ def main():
                 keep = np.arange(n) != j
                 dj, _ = dea.eficiencia(X[keep], Y[keep])
                 cambio = dj - bs["delta"][keep]
-                rho = pd.Series(bs["delta"][keep]).corr(pd.Series(dj), method="spearman")
+                rho = dea.spearman(bs["delta"][keep], dj)
                 k = int(np.argmax(cambio))
                 loo.append(dict(modelo=modelo, anio=a, sale=d.pte_nombre[j],
                                 cambio_medio=cambio.mean(), cambio_max=cambio.max(),
@@ -107,7 +107,7 @@ def main():
             if modelo == "principal":
                 Yb = d[["mat_total_prom", "grad_total", "global_b"]].to_numpy(float)
                 db, _ = dea.eficiencia(X, Yb)
-                rho = pd.Series(bs["delta"]).corr(pd.Series(db), method="spearman")
+                rho = dea.spearman(bs["delta"], db)
                 sens.append(dict(anio=a, variante="global_b en vez de global_c",
                                  eficiencia_media=db.mean(), cambio_medio=(db - bs["delta"]).mean(),
                                  cambio_max_abs=np.abs(db - bs["delta"]).max(), spearman_ranking=rho))

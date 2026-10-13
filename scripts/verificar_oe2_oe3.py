@@ -14,7 +14,9 @@ Qué comprueba:
      menor insumo y la de mayor valor en cada producto quedan en la frontera.
   3. Bootstrap: intervalo inferior ≤ eficiencia corregida ≤ intervalo superior ≤ eficiencia original.
   4. Metas: cada meta ≥ valor actual.
-  5. Deja uno fuera: cada fila de oe3_deja_uno_fuera.csv recalculada por el dual.
+  5. Deja uno fuera: cada fila de oe3_deja_uno_fuera.csv recalculada por el dual, incluida la
+     correlación de Spearman (con las universidades de la frontera empatadas en 1).
+     5b. Sensibilidad (oe3_sensibilidad.csv): el modelo principal con global_b, recalculado.
   6. Malmquist: las cuatro distancias recalculadas por el dual; M = EC × TC; M y EC recalculados
      desde las distancias; versión real = nominal × 1,052 en M y TC; EC igual en las dos.
   7. Cobertura sin la UNAD (oe3_cobertura_sin_unad.csv): la UNAD no está; eficiencias = dual;
@@ -224,7 +226,7 @@ def main():
             check(f"{modelo} {a}: metas ≥ valor actual", okm)
 
     log("\n5. Deja uno fuera (oe3_deja_uno_fuera.csv)")
-    peor = 0.0
+    peor, peor_rho = 0.0, 0.0
     for r in loo.itertuples():
         d = base[base.anio == r.anio].reset_index(drop=True)
         X, Y = d[["obligacion_mm"]].to_numpy(float), d[MODELOS[r.modelo]].to_numpy(float)
@@ -233,7 +235,24 @@ def main():
         sin = dual(X[keep], Y[keep])
         cambio = sin - full[keep]
         peor = max(peor, abs(cambio.mean() - r.cambio_medio), abs(cambio.max() - r.cambio_max))
+        rk = lambda v: pd.Series(np.round(v, 6)).rank().to_numpy()
+        peor_rho = max(peor_rho, abs(np.corrcoef(rk(full[keep]), rk(sin))[0, 1] - r.spearman_ranking))
     check(f"{len(loo)} filas recalculadas (cambio medio y máximo)", peor < TOL, f"diferencia máxima {peor:.1e}")
+    check("Spearman del orden con y sin cada universidad", peor_rho < TOL, f"diferencia máxima {peor_rho:.1e}")
+
+    log("\n5b. Sensibilidad (oe3_sensibilidad.csv)")
+    sens = pd.read_csv("resultados/oe3_sensibilidad.csv")
+    ok_s = True
+    for r in sens.itertuples():
+        d = base[base.anio == r.anio].reset_index(drop=True)
+        X = d[["obligacion_mm"]].to_numpy(float)
+        dc = dual(X, d[MODELOS["principal"]].to_numpy(float))
+        db = dual(X, d[["mat_total_prom", "grad_total", "global_b"]].to_numpy(float))
+        rk = lambda v: pd.Series(np.round(v, 6)).rank().to_numpy()
+        ok_s &= (abs(db.mean() - r.eficiencia_media) < TOL and abs((db - dc).mean() - r.cambio_medio) < TOL
+                 and abs(np.abs(db - dc).max() - r.cambio_max_abs) < TOL
+                 and abs(np.corrcoef(rk(dc), rk(db))[0, 1] - r.spearman_ranking) < TOL)
+    check(f"{len(sens)} filas recalculadas (media, cambios y Spearman)", bool(ok_s))
 
     log("\n6. Malmquist (oe2_malmquist.csv)")
     amb = base.groupby("pte_codigo").anio.nunique()

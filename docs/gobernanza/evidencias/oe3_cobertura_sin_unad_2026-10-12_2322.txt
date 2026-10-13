@@ -1,0 +1,16 @@
+##### OE3 — modelo de cobertura sin la UNAD — 2026-10-12 23:16 #####
+B = 2000 | semilla = 20261011 | universidades por año: {2023: 32, 2024: 32}
+
+=== 2023 (n = 32) | h = 0.3231
+  eficiencia media 0.682 (corregida 0.577); con la UNAD era 0.455 (0.328)
+  frontera: universidad nacional de colombia, universidad pedagogica y tecnologica de colombia, universidad distrital francisco jose de caldas, universidad militar nueva granada, universidad internacional del tropico americano
+  Spearman con el modelo de cobertura con UNAD: 0.838
+  menor eficiencia corregida: universidad del pacifico 0.185 [0.162; 0.215]
+
+=== 2024 (n = 32) | h = 0.3529
+  eficiencia media 0.689 (corregida 0.580); con la UNAD era 0.398 (0.277)
+  frontera: universidad nacional de colombia, universidad de antioquia, universidad pedagogica y tecnologica de colombia, universidad distrital francisco jose de caldas, universidad de cartagena, universidad del magdalena, universidad militar nueva granada, universidad del tolima, universidad internacional del tropico americano
+  Spearman con el modelo de cobertura con UNAD: 0.800
+  menor eficiencia corregida: universidad del pacifico 0.164 [0.143; 0.191]
+
+Guardado: resultados/oe3_cobertura_sin_unad.csv

@@ -58,7 +58,7 @@ Se saca una por una cada universidad de la frontera y se vuelve a calcular la ef
 | `cambio_medio`, `cambio_max` | Cambio de la eficiencia de las demás (en proporción: 0,05 = 5 puntos) |
 | `universidad_cambio_max` | La que más cambia |
 | `n_cambian_mas_5_puntos` | Cuántas suben más de 5 puntos |
-| `spearman_ranking` | Correlación de Spearman entre el orden de las universidades con y sin ella |
+| `spearman_ranking` | Correlación de Spearman entre el orden de las universidades con y sin ella. Las universidades de la frontera cuentan como empatadas en 1: las eficiencias se redondean a 6 decimales antes de ordenar, porque el solver deja diferencias de 1e-10 que romperían el empate al azar |
 
 ## `resultados/oe3_sensibilidad.csv`
 
@@ -163,5 +163,6 @@ Para cada modelo y año, las 5 universidades con menor eficiencia corregida y su
 
 - Con 33 universidades, los intervalos son anchos. Compare universidades por sus intervalos, no solo por el valor puntual.
 - En el DEA BCC orientado al producto, quedan en la frontera por construcción la universidad con menor insumo y la de mayor valor en cada producto. Su 100 % no significa lo mismo que el de una universidad mediana.
-- El insumo solo incluye lo que gira la Nación. Las universidades con otras fuentes importantes de financiación parecen más eficientes de lo que son; el análisis deja uno fuera mide cuánto pesan.
+- El insumo es la obligación que el PTE registra en la entidad de cada universidad (2257xx). No incluye los recursos propios ni los que la Nación gira a las instituciones públicas desde el Ministerio de Educación sin desagregar por universidad. En el Cuadro No. 7 de diciembre de 2024, por ejemplo, la gratuidad tuvo obligaciones por 2.744 mil millones (fila 1758) y la concurrencia pensional por 475 mil millones (fila 1729), frente a 6.155 mil millones en las 34 universidades. Las universidades con más recursos fuera del insumo parecen más eficientes de lo que son; el análisis deja uno fuera mide cuánto pesa la UNAD.
+- El bootstrap de Simar y Wilson (1998) es homogéneo: supone que la ineficiencia se distribuye igual en todas las universidades. Simar y Wilson (2000) proponen una versión heterogénea, que no se implementó.
 - El Malmquist no tiene intervalos: el método original de bootstrap para Malmquist (Simar y Wilson, 1999) no se consiguió en texto completo.

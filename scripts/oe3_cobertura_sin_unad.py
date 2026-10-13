@@ -68,7 +68,7 @@ def main():
             filas.append(fila)
         ef = pd.DataFrame([f for f in filas if f["anio"] == a])
         c = con[con.anio == a].set_index("pte_codigo").loc[ef.pte_codigo]
-        rho = pd.Series(ef.eficiencia.to_numpy()).corr(pd.Series(c.eficiencia.to_numpy()), method="spearman")
+        rho = dea.spearman(ef.eficiencia.to_numpy(), c.eficiencia.to_numpy())
         log(f"\n=== {a} (n = {len(d)}) | h = {bs['h']:.4f}")
         log(f"  eficiencia media {ef.eficiencia.mean():.3f} (corregida {ef.eficiencia_corregida.mean():.3f}); "
             f"con la UNAD era {c.eficiencia.mean():.3f} ({c.eficiencia_corregida.mean():.3f})")

@@ -1,0 +1,41 @@
+##### OE3 — DEA BCC orientado al producto + bootstrap Simar-Wilson — 2026-10-12 23:03 #####
+Réplicas bootstrap B = 2000 | semilla = 20261011 | universidades por año: {2023: 33, 2024: 33}
+
+=== Modelo principal · 2023 (n = 33) ===
+  ancho de banda h = 0.0592
+  eficiencia media 0.913 (corregida 0.868) | mínima 0.716 | en la frontera: 6
+  frontera: universidad nacional de colombia, universidad pedagogica y tecnologica de colombia, universidad distrital francisco jose de caldas, universidad nacional abierta y a distancia unad, universidad militar nueva granada, universidad internacional del tropico americano
+  sin universidad nacional de colombia: cambio medio +0.003, máximo +0.041 (universidad de antioquia), 0 suben > 5 puntos, Spearman 0.996
+  sin universidad pedagogica y tecnologica de colombia: cambio medio +0.001, máximo +0.017 (universidad de cartagena), 0 suben > 5 puntos, Spearman 0.994
+  sin universidad distrital francisco jose de caldas: cambio medio +0.019, máximo +0.041 (universidad colegio mayor de cundinamarca), 0 suben > 5 puntos, Spearman 0.975
+  sin universidad nacional abierta y a distancia unad: cambio medio +0.005, máximo +0.060 (universidad del tolima), 1 suben > 5 puntos, Spearman 0.965
+  sin universidad militar nueva granada: cambio medio +0.001, máximo +0.044 (universidad de cundinamarca), 0 suben > 5 puntos, Spearman 0.999
+  sin universidad internacional del tropico americano: cambio medio +0.008, máximo +0.141 (universidad del pacifico), 2 suben > 5 puntos, Spearman 0.878
+  sensibilidad global_b: cambio medio +0.0023, máximo absoluto 0.0112, Spearman 1.000
+
+=== Modelo principal · 2024 (n = 33) ===
+  ancho de banda h = 0.0562
+  eficiencia media 0.916 (corregida 0.876) | mínima 0.711 | en la frontera: 4
+  frontera: universidad nacional de colombia, universidad distrital francisco jose de caldas, universidad nacional abierta y a distancia unad, universidad internacional del tropico americano
+  sin universidad nacional de colombia: cambio medio +0.002, máximo +0.027 (universidad de antioquia), 0 suben > 5 puntos, Spearman 0.993
+  sin universidad distrital francisco jose de caldas: cambio medio +0.023, máximo +0.062 (universidad de sucre), 1 suben > 5 puntos, Spearman 0.940
+  sin universidad nacional abierta y a distancia unad: cambio medio +0.014, máximo +0.121 (universidad del tolima), 4 suben > 5 puntos, Spearman 0.853
+  sin universidad internacional del tropico americano: cambio medio +0.010, máximo +0.176 (universidad del pacifico), 3 suben > 5 puntos, Spearman 0.807
+  sensibilidad global_b: cambio medio +0.0027, máximo absoluto 0.0102, Spearman 0.998
+
+=== Modelo cobertura · 2023 (n = 33) ===
+  ancho de banda h = 1.0452
+  eficiencia media 0.472 (corregida 0.337) | mínima 0.149 | en la frontera: 3
+  frontera: universidad nacional abierta y a distancia unad, universidad militar nueva granada, universidad internacional del tropico americano
+  sin universidad nacional abierta y a distancia unad: cambio medio +0.226, máximo +0.515 (universidad del magdalena), 25 suben > 5 puntos, Spearman 0.838
+  sin universidad militar nueva granada: cambio medio +0.017, máximo +0.121 (universidad de cundinamarca), 3 suben > 5 puntos, Spearman 0.995
+  sin universidad internacional del tropico americano: cambio medio +0.033, máximo +0.784 (universidad del pacifico), 4 suben > 5 puntos, Spearman 0.879
+
+=== Modelo cobertura · 2024 (n = 33) ===
+  ancho de banda h = 1.2768
+  eficiencia media 0.416 (corregida 0.287) | mínima 0.128 | en la frontera: 2
+  frontera: universidad nacional abierta y a distancia unad, universidad internacional del tropico americano
+  sin universidad nacional abierta y a distancia unad: cambio medio +0.291, máximo +0.595 (universidad del magdalena), 29 suben > 5 puntos, Spearman 0.800
+  sin universidad internacional del tropico americano: cambio medio +0.047, máximo +0.826 (universidad del pacifico), 5 suben > 5 puntos, Spearman 0.842
+
+Guardado: resultados/oe3_eficiencia.csv, oe3_deja_uno_fuera.csv, oe3_sensibilidad.csv
