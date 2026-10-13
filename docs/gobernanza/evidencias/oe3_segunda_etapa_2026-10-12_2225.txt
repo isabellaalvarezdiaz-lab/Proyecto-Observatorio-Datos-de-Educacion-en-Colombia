@@ -1,0 +1,149 @@
+##### OE3 — segunda etapa exploratoria — 2026-10-12 22:25 #####
+
+=== cobertura · 2023 (n = 33) ===
+  Millones de pesos de la Nación por estudiante   rho = -0.49                                             p = 0.0037  p Holm = 0.0369 [mecánica]
+  Tamaño (log de la matrícula)                    rho = +0.48                                             p = 0.0044  p Holm = 0.0395 [mecánica]
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.631 vs otro departamento (n=27) 0.258 p = 0.0888  p Holm = 0.7103
+  Orden                                           mediana nacional (n=16) 0.203 vs territorial (n=16) 0.322 p = 0.2206  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=26) 0.250 vs no acreditada (n=7) 0.421 p = 0.3295  p Holm = 1.0000
+  % de evaluados en estratos 1 y 2                rho = -0.17                                             p = 0.3343  p Holm = 0.6687  [socioeconómica]
+  Departamentos donde ofrece programas            rho = +0.13                                             p = 0.4554  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = -0.12                                             p = 0.5048  p Holm = 1.0000
+  % de evaluados con madre hasta secundaria       rho = -0.12                                             p = 0.5192  p Holm = 0.6687  [socioeconómica]
+  % de evaluados con 0 en Escrita                 rho = -0.08                                             p = 0.6392  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = +0.05                                             p = 0.7928  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = -0.02                                             p = 0.9118  p Holm = 1.0000
+
+=== cobertura · 2024 (n = 33) ===
+  Millones de pesos de la Nación por estudiante   rho = -0.54                                             p = 0.0013  p Holm = 0.0129 [mecánica]
+  Tamaño (log de la matrícula)                    rho = +0.44                                             p = 0.0105  p Holm = 0.0944 [mecánica]
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.568 vs otro departamento (n=27) 0.212 p = 0.0984  p Holm = 0.7871
+  Orden                                           mediana nacional (n=16) 0.152 vs territorial (n=16) 0.270 p = 0.1092  p Holm = 0.7871
+  % de evaluados con madre hasta secundaria       rho = -0.23                                             p = 0.2000  p Holm = 0.4000  [socioeconómica]
+  Departamentos donde ofrece programas            rho = +0.22                                             p = 0.2115  p Holm = 1.0000
+  % de evaluados en estratos 1 y 2                rho = -0.19                                             p = 0.2814  p Holm = 0.4000  [socioeconómica]
+  % de matrícula en programas acreditados         rho = -0.14                                             p = 0.4271  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = +0.14                                             p = 0.4446  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = +0.13                                             p = 0.4859  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=26) 0.216 vs no acreditada (n=7) 0.261 p = 0.8129  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = +0.02                                             p = 0.9140  p Holm = 1.0000
+
+=== cobertura_sin_unad · 2023 (n = 32) ===
+  Tamaño (log de la matrícula)                    rho = +0.81                                             p = 0.0000  p Holm = 0.0000 [mecánica]
+  Orden                                           mediana nacional (n=15) 0.475 vs territorial (n=16) 0.704 p = 0.0168  p Holm = 0.1510
+  % de evaluados en estratos 1 y 2                rho = -0.41                                             p = 0.0194  p Holm = 0.0387  [socioeconómica]
+  Departamentos donde ofrece programas            rho = +0.40                                             p = 0.0248  p Holm = 0.1985
+  Millones de pesos de la Nación por estudiante   rho = -0.34                                             p = 0.0559  p Holm = 0.3915 [mecánica]
+  % de evaluados con madre hasta secundaria       rho = -0.29                                             p = 0.1107  p Holm = 0.1107  [socioeconómica]
+  % de matrícula a distancia o virtual            rho = +0.27                                             p = 0.1287  p Holm = 0.7719
+  % de matrícula en posgrado                      rho = +0.19                                             p = 0.2977  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = -0.18                                             p = 0.3242  p Holm = 1.0000
+  Acreditación institucional                      mediana acreditada (n=25) 0.553 vs no acreditada (n=7) 0.648 p = 0.5616  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = +0.08                                             p = 0.6536  p Holm = 1.0000
+  Domicilio en Bogotá                             mediana Bogotá (n=5) 0.749 vs otro departamento (n=27) 0.553 p = 0.8015  p Holm = 1.0000
+
+=== cobertura_sin_unad · 2024 (n = 32) ===
+  Tamaño (log de la matrícula)                    rho = +0.77                                             p = 0.0000  p Holm = 0.0000 [mecánica]
+  Departamentos donde ofrece programas            rho = +0.46                                             p = 0.0084  p Holm = 0.0753
+  Millones de pesos de la Nación por estudiante   rho = -0.46                                             p = 0.0085  p Holm = 0.0753 [mecánica]
+  Orden                                           mediana nacional (n=15) 0.487 vs territorial (n=16) 0.718 p = 0.0086  p Holm = 0.0753
+  % de evaluados en estratos 1 y 2                rho = -0.36                                             p = 0.0412  p Holm = 0.0824  [socioeconómica]
+  % de evaluados con madre hasta secundaria       rho = -0.35                                             p = 0.0500  p Holm = 0.0824  [socioeconómica]
+  % de matrícula a distancia o virtual            rho = +0.34                                             p = 0.0570  p Holm = 0.3418
+  Acreditación institucional                      mediana acreditada (n=25) 0.571 vs no acreditada (n=7) 0.512 p = 0.3236  p Holm = 1.0000
+  % de matrícula en posgrado                      rho = +0.09                                             p = 0.6299  p Holm = 1.0000
+  % de evaluados con 0 en Escrita                 rho = -0.01                                             p = 0.9444  p Holm = 1.0000
+  Domicilio en Bogotá                             mediana Bogotá (n=5) 0.745 vs otro departamento (n=27) 0.564 p = 0.9599  p Holm = 1.0000
+  % de matrícula en programas acreditados         rho = -0.01                                             p = 0.9619  p Holm = 1.0000
+
+=== principal · 2023 (n = 33) ===
+  % de evaluados en estratos 1 y 2                rho = -0.79                                             p = 0.0000  p Holm = 0.0000  [socioeconómica]
+  % de evaluados con 0 en Escrita                 rho = -0.72                                             p = 0.0000  p Holm = 0.0000
+  % de matrícula en programas acreditados         rho = +0.58                                             p = 0.0004  p Holm = 0.0037
+  % de matrícula en posgrado                      rho = +0.49                                             p = 0.0037  p Holm = 0.0294
+  Acreditación institucional                      mediana acreditada (n=26) 0.892 vs no acreditada (n=7) 0.802 p = 0.0066  p Holm = 0.0460
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.912 vs otro departamento (n=27) 0.869 p = 0.0097  p Holm = 0.0580
+  Tamaño (log de la matrícula)                    rho = +0.44                                             p = 0.0099  p Holm = 0.0580
+  % de evaluados con madre hasta secundaria       rho = -0.40                                             p = 0.0201  p Holm = 0.0201  [socioeconómica]
+  Departamentos donde ofrece programas            rho = +0.23                                             p = 0.1919  p Holm = 0.7676
+  Millones de pesos de la Nación por estudiante   rho = +0.23                                             p = 0.2027  p Holm = 0.7676 [mecánica]
+  Orden                                           mediana nacional (n=16) 0.897 vs territorial (n=16) 0.865 p = 0.6647  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = -0.06                                             p = 0.7460  p Holm = 1.0000
+
+=== principal · 2024 (n = 33) ===
+  % de evaluados con 0 en Escrita                 rho = -0.77                                             p = 0.0000  p Holm = 0.0000
+  % de evaluados en estratos 1 y 2                rho = -0.76                                             p = 0.0000  p Holm = 0.0000  [socioeconómica]
+  % de matrícula en programas acreditados         rho = +0.56                                             p = 0.0008  p Holm = 0.0068
+  % de matrícula en posgrado                      rho = +0.53                                             p = 0.0016  p Holm = 0.0130
+  % de evaluados con madre hasta secundaria       rho = -0.50                                             p = 0.0031  p Holm = 0.0031  [socioeconómica]
+  Tamaño (log de la matrícula)                    rho = +0.42                                             p = 0.0158  p Holm = 0.1108
+  Acreditación institucional                      mediana acreditada (n=26) 0.895 vs no acreditada (n=7) 0.823 p = 0.0159  p Holm = 0.1108
+  Domicilio en Bogotá                             mediana Bogotá (n=6) 0.915 vs otro departamento (n=27) 0.876 p = 0.0237  p Holm = 0.1186
+  Millones de pesos de la Nación por estudiante   rho = +0.25                                             p = 0.1543  p Holm = 0.6172 [mecánica]
+  Departamentos donde ofrece programas            rho = +0.18                                             p = 0.3210  p Holm = 0.9630
+  Orden                                           mediana nacional (n=16) 0.897 vs territorial (n=16) 0.875 p = 0.5340  p Holm = 1.0000
+  % de matrícula a distancia o virtual            rho = -0.02                                             p = 0.9264  p Holm = 1.0000
+
+Asociaciones no mecánicas con p Holm < 0,05 en los dos años:
+  principal: % de evaluados con 0 en Escrita — valores [-0.72, -0.77] (2023, 2024)
+  principal: % de evaluados en estratos 1 y 2 — valores [-0.79, -0.76] (2023, 2024)
+  principal: % de evaluados con madre hasta secundaria — valores [-0.4, -0.5] (2023, 2024)
+  principal: % de matrícula en posgrado — valores [0.49, 0.53] (2023, 2024)
+  principal: % de matrícula en programas acreditados — valores [0.58, 0.56] (2023, 2024)
+
+Contexto — Spearman de cada variable continua con los productos (33 universidades del DEA):
+  2023 % de matrícula en programas acreditados         mat_total_prom +0.35  grad_total +0.25  global_c +0.81
+  2023 % de matrícula a distancia o virtual            mat_total_prom +0.37  grad_total +0.42  global_c -0.11
+  2023 % de matrícula en posgrado                      mat_total_prom +0.29  grad_total +0.29  global_c +0.57
+  2023 Departamentos donde ofrece programas            mat_total_prom +0.57  grad_total +0.51  global_c +0.21
+  2023 % de evaluados con 0 en Escrita                 mat_total_prom -0.31  grad_total -0.22  global_c -0.80
+  2023 % de evaluados en estratos 1 y 2                mat_total_prom -0.46  grad_total -0.36  global_c -0.77
+  2023 % de evaluados con madre hasta secundaria       mat_total_prom -0.33  grad_total -0.35  global_c -0.63
+  2024 % de matrícula en programas acreditados         mat_total_prom +0.33  grad_total +0.30  global_c +0.80
+  2024 % de matrícula a distancia o virtual            mat_total_prom +0.38  grad_total +0.41  global_c -0.12
+  2024 % de matrícula en posgrado                      mat_total_prom +0.36  grad_total +0.40  global_c +0.61
+  2024 Departamentos donde ofrece programas            mat_total_prom +0.62  grad_total +0.52  global_c +0.13
+  2024 % de evaluados con 0 en Escrita                 mat_total_prom -0.26  grad_total -0.21  global_c -0.91
+  2024 % de evaluados en estratos 1 y 2                mat_total_prom -0.47  grad_total -0.40  global_c -0.74
+  2024 % de evaluados con madre hasta secundaria       mat_total_prom -0.42  grad_total -0.43  global_c -0.66
+
+Las 5 menos eficientes y su perfil (puesto 1 = mayor % entre las n universidades del modelo):
+  cobertura 2023 — medianas: estratos 1-2 77.0 %, madre hasta secundaria 60.5 %
+    1. universidad pedagogica nacional                      ef. 0.107 | estratos 1-2  67.2 % (puesto 21 de 33) | madre hasta sec.  64.9 % (puesto 11)
+    2. universidad de caldas                                ef. 0.146 | estratos 1-2  57.1 % (puesto 29 de 33) | madre hasta sec.  58.7 % (puesto 24)
+    3. universidad del quindio                              ef. 0.149 | estratos 1-2  65.3 % (puesto 23 de 33) | madre hasta sec.  65.0 % (puesto 10)
+    4. universidad del pacifico                             ef. 0.150 | estratos 1-2  90.1 % (puesto  7 de 33) | madre hasta sec.  62.6 % (puesto 15)
+    5. universidad de los llanos                            ef. 0.155 | estratos 1-2  63.6 % (puesto 24 de 33) | madre hasta sec.  60.1 % (puesto 20)
+  cobertura 2024 — medianas: estratos 1-2 79.5 %, madre hasta secundaria 64.0 %
+    1. universidad pedagogica nacional                      ef. 0.088 | estratos 1-2  64.7 % (puesto 25 de 33) | madre hasta sec.  67.0 % (puesto 11)
+    2. universidad del quindio                              ef. 0.114 | estratos 1-2  70.0 % (puesto 21 de 33) | madre hasta sec.  66.2 % (puesto 12)
+    3. universidad del pacifico                             ef. 0.120 | estratos 1-2  93.2 % (puesto  7 de 33) | madre hasta sec.  67.3 % (puesto 10)
+    4. universidad del cauca                                ef. 0.135 | estratos 1-2  77.8 % (puesto 19 de 33) | madre hasta sec.  58.4 % (puesto 28)
+    5. universidad de los llanos                            ef. 0.139 | estratos 1-2  66.6 % (puesto 22 de 33) | madre hasta sec.  65.7 % (puesto 14)
+  cobertura_sin_unad 2023 — medianas: estratos 1-2 78.2 %, madre hasta secundaria 60.4 %
+    1. universidad del pacifico                             ef. 0.185 | estratos 1-2  90.1 % (puesto  7 de 32) | madre hasta sec.  62.6 % (puesto 14)
+    2. universidad de sucre                                 ef. 0.258 | estratos 1-2  95.4 % (puesto  1 de 32) | madre hasta sec.  61.9 % (puesto 15)
+    3. universidad de los llanos                            ef. 0.260 | estratos 1-2  63.6 % (puesto 23 de 32) | madre hasta sec.  60.1 % (puesto 19)
+    4. universidad colegio mayor de cundinamarca            ef. 0.272 | estratos 1-2  60.2 % (puesto 27 de 32) | madre hasta sec.  57.3 % (puesto 27)
+    5. universidad pedagogica nacional                      ef. 0.296 | estratos 1-2  67.2 % (puesto 20 de 32) | madre hasta sec.  64.9 % (puesto 10)
+  cobertura_sin_unad 2024 — medianas: estratos 1-2 80.1 %, madre hasta secundaria 62.5 %
+    1. universidad del pacifico                             ef. 0.164 | estratos 1-2  93.2 % (puesto  7 de 32) | madre hasta sec.  67.3 % (puesto  9)
+    2. universidad de los llanos                            ef. 0.271 | estratos 1-2  66.6 % (puesto 21 de 32) | madre hasta sec.  65.7 % (puesto 13)
+    3. universidad de sucre                                 ef. 0.286 | estratos 1-2  96.3 % (puesto  1 de 32) | madre hasta sec.  59.9 % (puesto 22)
+    4. universidad colegio mayor de cundinamarca            ef. 0.292 | estratos 1-2  62.9 % (puesto 25 de 32) | madre hasta sec.  60.7 % (puesto 19)
+    5. universidad de la amazonia                           ef. 0.292 | estratos 1-2  95.9 % (puesto  3 de 32) | madre hasta sec.  76.5 % (puesto  1)
+  principal 2023 — medianas: estratos 1-2 77.0 %, madre hasta secundaria 60.5 %
+    1. universidad tecnologica del choco diego luis cordoba ef. 0.691 | estratos 1-2  92.4 % (puesto  6 de 33) | madre hasta sec.  67.7 % (puesto  7)
+    2. universidad de la guajira                            ef. 0.758 | estratos 1-2  93.7 % (puesto  4 de 33) | madre hasta sec.  60.5 % (puesto 17)
+    3. universidad de la amazonia                           ef. 0.797 | estratos 1-2  95.3 % (puesto  2 de 33) | madre hasta sec.  70.1 % (puesto  6)
+    4. universidad popular del cesar                        ef. 0.802 | estratos 1-2  87.1 % (puesto 10 de 33) | madre hasta sec.  59.2 % (puesto 22)
+    5. universidad del pacifico                             ef. 0.811 | estratos 1-2  90.1 % (puesto  7 de 33) | madre hasta sec.  62.6 % (puesto 15)
+  principal 2024 — medianas: estratos 1-2 79.5 %, madre hasta secundaria 64.0 %
+    1. universidad tecnologica del choco diego luis cordoba ef. 0.689 | estratos 1-2  95.9 % (puesto  4 de 33) | madre hasta sec.  74.3 % (puesto  3)
+    2. universidad de la guajira                            ef. 0.772 | estratos 1-2  95.0 % (puesto  6 de 33) | madre hasta sec.  60.0 % (puesto 22)
+    3. universidad del pacifico                             ef. 0.784 | estratos 1-2  93.2 % (puesto  7 de 33) | madre hasta sec.  67.3 % (puesto 10)
+    4. universidad de la amazonia                           ef. 0.822 | estratos 1-2  95.9 % (puesto  3 de 33) | madre hasta sec.  76.5 % (puesto  2)
+    5. universidad popular del cesar                        ef. 0.823 | estratos 1-2  87.7 % (puesto 11 de 33) | madre hasta sec.  59.8 % (puesto 25)
+Guardado: resultados/oe3_contexto_menos_eficientes.csv
+
+Guardado: resultados/oe3_segunda_etapa.csv

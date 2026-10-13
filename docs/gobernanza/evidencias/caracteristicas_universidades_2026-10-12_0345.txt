@@ -1,0 +1,14 @@
+2023: % sin dato de estrato: mediana entre universidades 4.7 %, máximo 14.8 % (universidad tecnologica del choco diego luis cordoba)
+2023: % sin dato de madre: mediana entre universidades 3.4 %, máximo 8.8 % (universidad del pacifico)
+2023: snies_matriculados_2023_articles-421539.xlsx | 52 sedes | 34 universidades
+2024: % sin dato de estrato: mediana entre universidades 3.0 %, máximo 7.6 % (universidad tecnologica del choco diego luis cordoba)
+2024: % sin dato de madre: mediana entre universidades 2.8 %, máximo 6.1 % (universidad tecnologica del choco diego luis cordoba)
+2024: snies_matriculados_2024_articles-425151.xlsx | 52 sedes | 34 universidades
+Acreditadas: 26 de 34 | domicilio en Bogotá: 6 | orden: {'nacional': 16, 'territorial': 16, nan: 2}
+Sin orden asignado: [{'pte_nombre': 'universidad internacional del tropico americano', 'origen_saber_pro': 'NO OFICIAL - FUNDACIÓN'}, {'pte_nombre': 'universidad autónoma indígena intercultural uaiin cric', 'origen_saber_pro': ''}]
+
+Diagnóstico del INSE del ICFES (no se usa en el análisis), Spearman entre universidades:
+  2023: INSE vs % estratos 1-2 -0.54 | INSE vs % madre hasta secundaria -0.83
+  2024: INSE vs % estratos 1-2 -0.95 | INSE vs % madre hasta secundaria -0.56
+  mismo orden de universidades en los dos años (Spearman 2023 vs 2024): inse_promedio 0.69 | pct_estrato_1_2 0.99 | pct_madre_hasta_secundaria 0.92
+Guardado: resultados/caracteristicas_universidades.csv

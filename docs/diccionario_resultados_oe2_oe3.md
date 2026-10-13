@@ -95,7 +95,7 @@ Una fila por universidad y año (las 34 de la base integrada). Todas las variabl
 |---|---|
 | `acreditada_institucional` | SNIES matriculados, columna `IES ACREDITADA` de la sede principal (`Si` → True) |
 | `pct_mat_prog_acreditados` | % de la matrícula (suma de los dos semestres) en filas con `PROGRAMA ACREDITADO` = `Si` |
-| `pct_mat_distancia_virtual` | % de la matrícula con `MODALIDAD` = A distancia, Virtual, Virtual-A distancia o Virtual-Dual |
+| `pct_mat_distancia_virtual` | % de la matrícula con `MODALIDAD` = A distancia, Virtual, Virtual-A distancia o Virtual-Dual. Presencial-Virtual e Híbrida (Presencial-Virtual) no se cuentan; en las universidades públicas son 29 filas en 2023 y 56 en 2024 |
 | `pct_mat_posgrado` | % de la matrícula con `NIVEL ACADÉMICO` = Posgrado |
 | `n_departamentos_oferta` | número de valores distintos de `DEPARTAMENTO DE OFERTA DEL PROGRAMA` |
 | `departamento_domicilio`, `domicilio_bogota` | `DEPARTAMENTO DE DOMICILIO DE LA IES` de la sede principal |
@@ -103,6 +103,19 @@ Una fila por universidad y año (las 34 de la base integrada). Todas las variabl
 | `log_matricula` | logaritmo natural de `mat_total_prom` (tamaño) |
 | `millones_por_estudiante` | `obligacion` / `mat_total_prom` / 10⁶, pesos corrientes |
 | `pct_ceros_escrita` | igual que en la base integrada |
+| `n_evaluados_saber_pro` | evaluados en Saber Pro de todas las sedes (registros con código de institución y puntaje global, como en `agregar_saber_pro.py`). Coincide con `n_evaluados` de la base integrada |
+| `pct_estrato_1_2` | % de evaluados en estratos 1 y 2 (`fami_estratovivienda`), sobre quienes reportan estrato 1 a 6. "Sin Estrato" y las respuestas vacías no entran en el denominador |
+| `pct_madre_hasta_secundaria` | % de evaluados cuya madre llegó como máximo a secundaria completa (`fami_educacionmadre`: Ninguno, Primaria incompleta o completa, Secundaria incompleta o completa), sobre quienes reportan un nivel. "No sabe", "No Aplica" y vacías no entran |
+
+Las cifras de los dos párrafos siguientes están en la evidencia que deja `caracteristicas_universidades.py` (`docs/gobernanza/evidencias/caracteristicas_universidades_<fecha>.txt`).
+
+**Datos faltantes del perfil socioeconómico.** La mediana entre universidades es 4,7 % sin estrato y 3,4 % sin educación de la madre en 2023 (3,0 % y 2,8 % en 2024). El caso más alto es la Tecnológica del Chocó: 14,8 % sin estrato en 2023 y 7,6 % en 2024.
+
+**Por qué no se usa el índice socioeconómico del ICFES** (`estu_inse_individual`). Su relación con las otras dos variables cambia mucho entre años:
+- con el % en estratos 1 y 2, Spearman −0,54 en 2023 y −0,95 en 2024;
+- con el % de madres hasta secundaria, −0,83 y −0,56.
+
+Además, el orden de las universidades por INSE se parece poco entre 2023 y 2024 (Spearman 0,69). Por el estrato es 0,99 y por la educación de la madre, 0,92. Esto sugiere que el índice se construyó distinto cada año, pero no se encontró la documentación del ICFES que lo confirme. Por eso se prefirieron las dos respuestas directas del cuestionario.
 
 ## `resultados/oe3_segunda_etapa.csv`
 
@@ -110,7 +123,9 @@ Segunda etapa **exploratoria**: qué características se asocian con la eficienc
 
 - Variables continuas: correlación de Spearman.
 - Binarias: Mann-Whitney de dos colas. Es exacta si un grupo tiene 8 o menos universidades y no hay empates; si no, aproximación normal.
-- Los p-valores se ajustan por Holm dentro de cada modelo y año (10 pruebas).
+- Hay dos familias de pruebas, cada una con su propio ajuste de Holm dentro de cada modelo y año (columna `familia`):
+  - `institucional`: las 10 características de la universidad (7 continuas y 3 binarias);
+  - `socioeconomica`: el % en estratos 1 y 2 y el % de madres hasta secundaria (2 pruebas). Responde al compromiso del anteproyecto de interpretar las eficiencias bajas considerando variables regionales y socioeconómicas (sección 6, riesgos éticos).
 
 Una fila por modelo, año y variable.
 
@@ -129,6 +144,20 @@ Cómo leerla:
 - Algunas variables no se construyen con los productos, pero están muy correlacionadas con uno de ellos. Entonces su asociación con la eficiencia repite, en buena parte, la de ese producto. El script imprime esas correlaciones al final de su evidencia (bloque "Contexto").
   - En el modelo principal, el % de matrícula en programas acreditados, el % en posgrado y el % de ceros en Escrita se mueven con el puntaje `global_c`.
   - Leerlas así: las universidades con marcadores de calidad más altos (programas acreditados, posgrado, menos ceros en Escrita) son las que el modelo principal ubica más cerca de la frontera. Eso no aísla un efecto propio de cada variable.
+- Lo mismo pasa con el perfil socioeconómico. El % en estratos 1 y 2 tiene Spearman −0,77 (2023) y −0,74 (2024) con `global_c` (bloque "Contexto" de la evidencia de `oe3_segunda_etapa.py`). Entonces, en el modelo principal, una eficiencia baja puede reflejar en parte el perfil con el que llegan los estudiantes, y no solo la gestión de la universidad.
+
+## `resultados/oe3_contexto_menos_eficientes.csv`
+
+Para cada modelo y año, las 5 universidades con menor eficiencia corregida y su perfil. Es el contexto que pide el anteproyecto para leer las eficiencias bajas.
+
+| Columna | Significado |
+|---|---|
+| `puesto_eficiencia` | 1 = la menos eficiente |
+| `n` | universidades en el modelo ese año |
+| `pct_estrato_1_2`, `puesto_estrato_1_2` | % en estratos 1 y 2, y su puesto entre las `n` (1 = el mayor %) |
+| `pct_madre_hasta_secundaria`, `puesto_madre_hasta_sec` | ídem para la educación de la madre |
+| `mediana_estrato_1_2`, `mediana_madre_hasta_sec` | medianas de las `n` universidades del modelo ese año, como referencia |
+| `departamento_domicilio`, `pct_mat_distancia_virtual` | contexto regional y de modalidad |
 
 ## Limitaciones de lectura
 

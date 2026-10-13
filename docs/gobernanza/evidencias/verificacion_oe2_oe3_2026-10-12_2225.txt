@@ -1,0 +1,87 @@
+##### Verificación OE2 y OE3 (programa dual, punto interior) — 2026-10-12 22:25 #####
+
+0. Datos del DEA (base_integrada_2023_2024.csv)
+  PASA   principal 2023: sin vacíos ni valores ≤ 0; 33 universidades ≥ 3 × (1 + 3) = 12
+  PASA   principal 2024: sin vacíos ni valores ≤ 0; 33 universidades ≥ 3 × (1 + 3) = 12
+  PASA   cobertura 2023: sin vacíos ni valores ≤ 0; 33 universidades ≥ 3 × (1 + 2) = 9
+  PASA   cobertura 2024: sin vacíos ni valores ≤ 0; 33 universidades ≥ 3 × (1 + 2) = 9
+  PASA   cobertura_sin_unad 2023: sin vacíos ni valores ≤ 0; 32 universidades ≥ 3 × (1 + 2) = 9
+  PASA   cobertura_sin_unad 2024: sin vacíos ni valores ≤ 0; 32 universidades ≥ 3 × (1 + 2) = 9
+
+1–4. DEA y bootstrap (oe3_eficiencia.csv)
+  PASA   principal 2023: eficiencia = programa dual — diferencia máxima 5.0e-05
+  PASA   principal 2023: eficiencias en (0, 1]
+  PASA   principal 2023: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total), universidad nacional de colombia (mayor global_c)
+  PASA   principal 2023: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   principal 2023: metas ≥ valor actual
+  PASA   principal 2024: eficiencia = programa dual — diferencia máxima 4.7e-05
+  PASA   principal 2024: eficiencias en (0, 1]
+  PASA   principal 2024: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total), universidad nacional de colombia (mayor global_c)
+  PASA   principal 2024: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   principal 2024: metas ≥ valor actual
+  PASA   cobertura 2023: eficiencia = programa dual — diferencia máxima 4.9e-05
+  PASA   cobertura 2023: eficiencias en (0, 1]
+  PASA   cobertura 2023: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total)
+  PASA   cobertura 2023: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   cobertura 2023: metas ≥ valor actual
+  PASA   cobertura 2024: eficiencia = programa dual — diferencia máxima 4.9e-05
+  PASA   cobertura 2024: eficiencias en (0, 1]
+  PASA   cobertura 2024: extremos en la frontera — universidad internacional del tropico americano (menor insumo), universidad nacional abierta y a distancia unad (mayor grad_total)
+  PASA   cobertura 2024: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   cobertura 2024: metas ≥ valor actual
+
+5. Deja uno fuera (oe3_deja_uno_fuera.csv)
+  PASA   15 filas recalculadas (cambio medio y máximo) — diferencia máxima 4.8e-05
+
+6. Malmquist (oe2_malmquist.csv)
+  PASA   principal nominal: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   principal nominal: M y EC recalculados
+  PASA   principal nominal: M = EC × TC
+  PASA   principal real: cuatro distancias = programa dual — diferencia máxima 4.9e-05
+  PASA   principal real: M y EC recalculados
+  PASA   principal real: M = EC × TC
+  PASA   principal: deflactar multiplica M por 1,052 y no cambia EC — razón M real/nominal 1.0519–1.0521
+  PASA   cobertura nominal: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   cobertura nominal: M y EC recalculados
+  PASA   cobertura nominal: M = EC × TC
+  PASA   cobertura real: cuatro distancias = programa dual — diferencia máxima 5.0e-05
+  PASA   cobertura real: M y EC recalculados
+  PASA   cobertura real: M = EC × TC
+  PASA   cobertura: deflactar multiplica M por 1,052 y no cambia EC — razón M real/nominal 1.0519–1.0521
+
+7. Cobertura sin la UNAD (oe3_cobertura_sin_unad.csv)
+  PASA   la UNAD (225709) no está en el modelo
+  PASA   sin UNAD 2023: 32 universidades = las del DEA menos la UNAD
+  PASA   sin UNAD 2023: eficiencia = programa dual — diferencia máxima 5.0e-05
+  PASA   sin UNAD 2023: eficiencias en (0, 1]
+  PASA   sin UNAD 2023: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   sin UNAD 2023: metas ≥ valor actual
+  PASA   sin UNAD 2023: ninguna eficiencia baja al sacar a la UNAD
+  PASA   sin UNAD 2024: 32 universidades = las del DEA menos la UNAD
+  PASA   sin UNAD 2024: eficiencia = programa dual — diferencia máxima 4.9e-05
+  PASA   sin UNAD 2024: eficiencias en (0, 1]
+  PASA   sin UNAD 2024: ic inferior ≤ corregida ≤ ic superior ≤ original
+  PASA   sin UNAD 2024: metas ≥ valor actual
+  PASA   sin UNAD 2024: ninguna eficiencia baja al sacar a la UNAD
+
+8. Características (caracteristicas_universidades.csv)
+  PASA   una fila por universidad y año, las mismas de la base integrada — 68 filas
+  PASA   porcentajes entre 0 y 100 (vacíos solo donde no hay evaluados) — sin evaluados: universidad autónoma indígena intercultural uaiin cric
+  PASA   evaluados en Saber Pro = n_evaluados de la base integrada
+  PASA   log_matricula = ln(matrícula promedio)
+  PASA   millones_por_estudiante = obligación / matrícula / 10^6
+  PASA   % de ceros en Escrita = el de la base integrada
+  8b. OMITIDA — este computador no tiene data/raw; la corre quien tenga los datos crudos.
+
+9. Segunda etapa (oe3_segunda_etapa.csv)
+  PASA   72 estadísticos (rho, U y efecto) recalculados — diferencia máxima 5.0e-05
+  PASA   p-valores recalculados — diferencia máxima 5.0e-05
+  PASA   ajuste de Holm recalculado — diferencia máxima 4.3e-05
+  PASA   solo se marcan como mecánicas millones_por_estudiante y log_matricula — log_matricula, millones_por_estudiante
+  PASA   familias: 10 pruebas institucionales y 2 socioeconómicas por modelo y año
+
+10. Contexto de las menos eficientes (oe3_contexto_menos_eficientes.csv)
+  PASA   las 5 de menor eficiencia corregida de cada modelo y año
+  PASA   puestos en estratos 1 y 2 y en educación de la madre
+
+RESULTADO: TODO COINCIDE

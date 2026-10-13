@@ -14,7 +14,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE2 · Índice de Malmquist 2023→2024 | cambio de productividad por universidad | `resultados/oe2_malmquist.csv` |
 | OE3 · DEA con bootstrap (Simar y Wilson, 1998) | eficiencia con intervalos, pares, metas y sensibilidad | `resultados/oe3_eficiencia.csv`, `oe3_deja_uno_fuera.csv`, `oe3_sensibilidad.csv` |
 | OE3 · Cobertura sin la UNAD | eficiencia de las otras 32 universidades | `resultados/oe3_cobertura_sin_unad.csv` |
-| OE3 · Segunda etapa (exploratoria) | qué características se asocian con la eficiencia | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv` |
+| OE3 · Segunda etapa (exploratoria) | qué características, institucionales y socioeconómicas, se asocian con la eficiencia, y el perfil de las menos eficientes | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv`, `oe3_contexto_menos_eficientes.csv` |
 
 ## Estructura
 
@@ -75,6 +75,7 @@ python scripts/oe3_cobertura_sin_unad.py         # cobertura sin la UNAD (≈ 4 
 python scripts/caracteristicas_universidades.py  # características por universidad; necesita data/raw
 python scripts/oe3_segunda_etapa.py              # Spearman y Mann-Whitney con ajuste de Holm (segundos)
 python scripts/verificar_oe2_oe3.py     # recalcula todo por otro camino y responde PASA o FALLA
+                                        # (si hay data/raw, también recalcula las características desde los crudos)
 python scripts/graficos_oe2_oe3.py      # figuras en resultados/figuras/
 ```
 

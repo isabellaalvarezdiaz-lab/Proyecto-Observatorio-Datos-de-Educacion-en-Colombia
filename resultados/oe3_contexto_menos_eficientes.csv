@@ -1,0 +1,31 @@
+﻿modelo,anio,puesto_eficiencia,n,pte_codigo,pte_nombre,eficiencia_corregida,ic95_inf,ic95_sup,pct_estrato_1_2,puesto_estrato_1_2,pct_madre_hasta_secundaria,puesto_madre_hasta_sec,mediana_estrato_1_2,mediana_madre_hasta_sec,departamento_domicilio,pct_mat_distancia_virtual
+cobertura,2023,1,33,225715,universidad pedagogica nacional,0.1068,0.0962,0.1181,67.1608,21,64.8864,11,77.0004,60.4543,"Bogotá, D.C.",2.4883
+cobertura,2023,2,33,225716,universidad de caldas,0.1457,0.1319,0.1604,57.0946,29,58.7354,24,77.0004,60.4543,Caldas,10.3489
+cobertura,2023,3,33,225721,universidad del quindio,0.1489,0.1334,0.1696,65.2937,23,64.9767,10,77.0004,60.4543,Quindío,30.3653
+cobertura,2023,4,33,225732,universidad del pacifico,0.1501,0.1366,0.1687,90.0862,7,62.605,15,77.0004,60.4543,Valle del Cauca,0.0
+cobertura,2023,5,33,225723,universidad de los llanos,0.1554,0.1422,0.1691,63.5989,24,60.0543,20,77.0004,60.4543,Meta,0.6646
+cobertura,2024,1,33,225715,universidad pedagogica nacional,0.0881,0.0801,0.0968,64.684,25,66.9963,11,79.55,63.991,"Bogotá, D.C.",3.6699
+cobertura,2024,2,33,225721,universidad del quindio,0.1143,0.1033,0.1303,69.965,21,66.1684,12,79.55,63.991,Quindío,30.4179
+cobertura,2024,3,33,225732,universidad del pacifico,0.1201,0.1096,0.1316,93.2432,7,67.2727,10,79.55,63.991,Valle del Cauca,0.0
+cobertura,2024,4,33,225711,universidad del cauca,0.1346,0.1223,0.1479,77.7716,19,58.4294,28,79.55,63.991,Cauca,0.7975
+cobertura,2024,5,33,225723,universidad de los llanos,0.1392,0.1269,0.151,66.5775,22,65.7296,14,79.55,63.991,Meta,0.7614
+cobertura_sin_unad,2023,1,32,225732,universidad del pacifico,0.185,0.162,0.2153,90.0862,7,62.605,14,78.1728,60.4332,Valle del Cauca,0.0
+cobertura_sin_unad,2023,2,32,225730,universidad de sucre,0.2581,0.2285,0.2912,95.3642,1,61.9256,15,78.1728,60.4332,Sucre,3.6232
+cobertura_sin_unad,2023,3,32,225723,universidad de los llanos,0.2597,0.2337,0.2874,63.5989,23,60.0543,19,78.1728,60.4332,Meta,0.6646
+cobertura_sin_unad,2023,4,32,225727,universidad colegio mayor de cundinamarca,0.2724,0.2409,0.3065,60.2018,27,57.2881,27,78.1728,60.4332,"Bogotá, D.C.",0.0
+cobertura_sin_unad,2023,5,32,225715,universidad pedagogica nacional,0.2958,0.2726,0.3153,67.1608,20,64.8864,10,78.1728,60.4332,"Bogotá, D.C.",2.4883
+cobertura_sin_unad,2024,1,32,225732,universidad del pacifico,0.1637,0.1426,0.1909,93.2432,7,67.2727,9,80.1067,62.5165,Valle del Cauca,0.0
+cobertura_sin_unad,2024,2,32,225723,universidad de los llanos,0.2705,0.2432,0.2993,66.5775,21,65.7296,13,80.1067,62.5165,Meta,0.7614
+cobertura_sin_unad,2024,3,32,225730,universidad de sucre,0.2863,0.2542,0.3202,96.292,1,59.8837,22,80.1067,62.5165,Sucre,3.8867
+cobertura_sin_unad,2024,4,32,225727,universidad colegio mayor de cundinamarca,0.2917,0.2607,0.3264,62.8998,25,60.6801,19,80.1067,62.5165,"Bogotá, D.C.",0.9807
+cobertura_sin_unad,2024,5,32,225726,universidad de la amazonia,0.2922,0.2632,0.3192,95.9222,3,76.5421,1,80.1067,62.5165,Caquetá,12.3097
+principal,2023,1,33,225729,universidad tecnologica del choco diego luis cordoba,0.6906,0.6757,0.7022,92.389,6,67.7356,7,77.0004,60.4543,Chocó,0.0071
+principal,2023,2,33,225731,universidad de la guajira,0.758,0.7225,0.7853,93.6881,4,60.4543,17,77.0004,60.4543,La Guajira,1.4518
+principal,2023,3,33,225726,universidad de la amazonia,0.7966,0.7734,0.8145,95.288,2,70.0518,6,77.0004,60.4543,Caquetá,11.7177
+principal,2023,4,33,225722,universidad popular del cesar,0.8024,0.7735,0.8247,87.0674,10,59.19,22,77.0004,60.4543,Cesar,0.0866
+principal,2023,5,33,225732,universidad del pacifico,0.8114,0.7716,0.8417,90.0862,7,62.605,15,77.0004,60.4543,Valle del Cauca,0.0
+principal,2024,1,33,225729,universidad tecnologica del choco diego luis cordoba,0.6885,0.6735,0.6992,95.8555,4,74.2812,3,79.55,63.991,Chocó,0.0102
+principal,2024,2,33,225731,universidad de la guajira,0.7722,0.7393,0.7971,94.9529,6,59.9893,22,79.55,63.991,La Guajira,3.2041
+principal,2024,3,33,225732,universidad del pacifico,0.7845,0.7522,0.8085,93.2432,7,67.2727,10,79.55,63.991,Valle del Cauca,0.0
+principal,2024,4,33,225726,universidad de la amazonia,0.8219,0.8004,0.835,95.9222,3,76.5421,2,79.55,63.991,Caquetá,12.3097
+principal,2024,5,33,225722,universidad popular del cesar,0.8231,0.7975,0.8432,87.6712,11,59.7995,25,79.55,63.991,Cesar,2.7845

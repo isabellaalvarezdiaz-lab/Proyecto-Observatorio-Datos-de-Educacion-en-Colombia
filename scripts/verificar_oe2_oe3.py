@@ -7,6 +7,8 @@ en lugar del símplex, y lo compara cifra por cifra con los archivos de resultad
 propiedades que la teoría garantiza.
 
 Qué comprueba:
+  0. Datos del DEA: sin vacíos ni valores ≤ 0 en el insumo y los productos, y número de universidades
+     frente a la regla del anteproyecto (al menos 3 veces la suma de insumos y productos).
   1. Eficiencias de oe3_eficiencia.csv = las del programa dual (por modelo, año y universidad).
   2. Propiedades del DEA BCC orientado al producto: eficiencias en (0, 1]; la universidad con el
      menor insumo y la de mayor valor en cada producto quedan en la frontera.
@@ -19,12 +21,17 @@ Qué comprueba:
      propiedades 2–4; y, como sacar una universidad de la muestra solo puede achicar la frontera,
      ninguna eficiencia sin la UNAD es menor que con ella.
   8. Características (caracteristicas_universidades.csv): una fila por universidad y año;
-     porcentajes entre 0 y 100; tamaño, gasto por estudiante y % de ceros en Escrita recalculados
-     desde la base integrada.
+     porcentajes entre 0 y 100; tamaño, gasto por estudiante, % de ceros en Escrita y número de
+     evaluados recalculados desde la base integrada.
+     8b. Si este computador tiene data/raw, recalcula desde el SNIES y Saber Pro originales, con
+     código escrito aparte, todas las variables que salen de esos archivos. Si no los tiene, la
+     omite y lo dice (no cuenta como falla).
   9. Segunda etapa (oe3_segunda_etapa.csv): rho de Spearman, U de Mann-Whitney, el efecto, los p-valores y el
      ajuste de Holm recalculados con fórmulas escritas aquí (rangos, conteo de pares, distribución
      exacta de U por recursión, aproximación normal con corrección por empates), sin las funciones
-     de scipy que usó el script original.
+     de scipy que usó el script original. Holm se aplica dentro de cada modelo, año y familia.
+ 10. Contexto de las menos eficientes (oe3_contexto_menos_eficientes.csv): las 5 de menor eficiencia
+     corregida y sus puestos en el perfil socioeconómico, recalculados.
 
 Uso (desde la raíz del repositorio, después de oe3_dea_bootstrap.py, oe2_malmquist.py,
 oe3_cobertura_sin_unad.py y oe3_segunda_etapa.py):
@@ -44,6 +51,11 @@ import dea  # noqa: E402
 MODELOS = {"principal": ["mat_total_prom", "grad_total", "global_c"],
            "cobertura": ["mat_total_prom", "grad_total"]}
 TOL = 1e-3            # los resultados se guardaron redondeados a 4 decimales
+DISTANCIA = {"A distancia", "Virtual", "Virtual-A distancia", "Virtual-Dual"}
+NIVEL_MADRE = {"Ninguno": 0, "Primaria incompleta": 1, "Primaria completa": 2,
+               "Secundaria (Bachillerato) incompleta": 3, "Secundaria (Bachillerato) completa": 4,
+               "Técnica o tecnológica incompleta": 5, "Técnica o tecnológica completa": 6,
+               "Educación profesional incompleta": 7, "Educación profesional completa": 8, "Postgrado": 9}
 LOG, FALLAS = [], []
 
 
@@ -114,6 +126,62 @@ def holm_propio(p):
     return out
 
 
+def recalcular_desde_crudos():
+    """Variables de caracteristicas_universidades.csv recalculadas desde los archivos originales.
+
+    Camino distinto al del script original: lee con los tipos por defecto (números como números),
+    usa tablas por universidad en lugar de recorrer universidades, extrae el número del estrato con
+    una expresión regular y ordena la educación de la madre con una escala de 0 a 9.
+    """
+    sedes = pd.read_csv("resultados/sedes_por_universidad.csv", dtype=str)
+    mapa = {int(c): u for c, u in zip(sedes.cod_institucion, sedes.pte_codigo)}
+    tablas = []
+    for anio in (2023, 2024):
+        f = sorted(Path("data/raw/snies").glob(f"snies_matriculados_{anio}_*.xlsx"))[0]
+        m = pd.read_excel(f, sheet_name="1.", header=5)
+        m = m[m["AÑO"].notna()].copy()
+        m["cod"] = pd.to_numeric(m["CÓDIGO DE LA INSTITUCIÓN"]).astype("int64")
+        m["padre"] = pd.to_numeric(m["IES PADRE"]).astype("int64")
+        m = m[m.cod.isin(mapa)].copy()
+        m["u"] = m.cod.map(mapa)
+        m["mat"] = pd.to_numeric(m.MATRICULADOS)
+        m["acr"] = m["PROGRAMA ACREDITADO"].astype(str).str.strip().str.upper().eq("SI") * m.mat
+        m["dist"] = m.MODALIDAD.astype(str).str.strip().isin(DISTANCIA) * m.mat
+        m["pos"] = m["NIVEL ACADÉMICO"].astype(str).str.strip().str.upper().eq("POSGRADO") * m.mat
+        t = m.groupby("u")[["mat", "acr", "dist", "pos"]].sum()
+        r = pd.DataFrame({"pct_mat_prog_acreditados": 100 * t.acr / t.mat,
+                          "pct_mat_distancia_virtual": 100 * t.dist / t.mat,
+                          "pct_mat_posgrado": 100 * t.pos / t.mat,
+                          "n_departamentos_oferta": m.groupby("u")["DEPARTAMENTO DE OFERTA DEL PROGRAMA"].nunique()})
+        por_sede = m.groupby(["u", "cod"]).agg(mat=("mat", "sum"), padre=("padre", "first"),
+                                                acred=("IES ACREDITADA", "first"),
+                                                dom=("DEPARTAMENTO DE DOMICILIO DE LA IES", "first")).reset_index()
+        por_sede["propia"] = por_sede.cod == por_sede.padre
+        por_sede = por_sede.sort_values(["u", "propia", "mat"], ascending=[True, False, False])
+        princ = por_sede.drop_duplicates("u").set_index("u")
+        r["sede_principal"] = princ.cod
+        r["acreditada_institucional"] = princ.acred.astype(str).str.strip().str.upper().eq("SI")
+        r["domicilio_bogota"] = princ.dom.astype(str).str.upper().str.contains("BOGOT")
+        sp = pd.read_csv(f"data/raw/saber_pro/Examen_Saber_Pro_Genericas_{anio}.txt", sep=";", low_memory=False,
+                         usecols=["inst_cod_institucion", "punt_global", "inst_origen",
+                                  "fami_estratovivienda", "fami_educacionmadre"])
+        sp = sp.dropna(subset=["inst_cod_institucion", "punt_global"])
+        sp["cod"] = sp.inst_cod_institucion.astype("int64")
+        sp = sp[sp.cod.isin(mapa)].copy()
+        sp["u"] = sp.cod.map(mapa)
+        estr = pd.to_numeric(sp.fami_estratovivienda.str.extract(r"^Estrato (\d)$")[0])
+        madre = sp.fami_educacionmadre.str.strip().map(NIVEL_MADRE)
+        r["n_evaluados_saber_pro"] = sp.groupby("u").size()
+        r["pct_estrato_1_2"] = 100 * estr.le(2)[estr.notna()].groupby(sp.u[estr.notna()]).mean()
+        r["pct_madre_hasta_secundaria"] = 100 * madre.le(4)[madre.notna()].groupby(sp.u[madre.notna()]).mean()
+        org = sp.drop_duplicates("cod").set_index("cod").inst_origen
+        o = r.sede_principal.map(org)
+        r["orden"] = np.where(o.eq("OFICIAL NACIONAL"), "nacional",
+                              np.where(o.isin(["OFICIAL DEPARTAMENTAL", "OFICIAL MUNICIPAL"]), "territorial", None))
+        tablas.append(r.assign(anio=anio))
+    return pd.concat(tablas).rename_axis("pte_codigo").reset_index()
+
+
 def main():
     base = pd.read_csv("resultados/base_integrada_2023_2024.csv", dtype={"pte_codigo": str})
     base = base[base.incluida_dea]
@@ -121,6 +189,17 @@ def main():
     loo = pd.read_csv("resultados/oe3_deja_uno_fuera.csv")
     mq = pd.read_csv("resultados/oe2_malmquist.csv", dtype={"pte_codigo": str})
     log(f"##### Verificación OE2 y OE3 (programa dual, punto interior) — {datetime.now():%Y-%m-%d %H:%M} #####")
+
+    log("\n0. Datos del DEA (base_integrada_2023_2024.csv)")
+    for modelo, prods in {**MODELOS, "cobertura_sin_unad": MODELOS["cobertura"]}.items():
+        for a in sorted(base.anio.unique()):
+            d = base[base.anio == a]
+            if modelo == "cobertura_sin_unad":
+                d = d[d.pte_codigo != "225709"]
+            v = d[["obligacion_mm"] + prods]
+            regla = 3 * (1 + len(prods))
+            check(f"{modelo} {a}: sin vacíos ni valores ≤ 0; {len(d)} universidades ≥ 3 × (1 + {len(prods)}) = {regla}",
+                  bool(v.notna().all().all() and (v > 0).all().all() and len(d) >= regla))
 
     log("\n1–4. DEA y bootstrap (oe3_eficiencia.csv)")
     for modelo, prods in MODELOS.items():
@@ -213,14 +292,39 @@ def main():
     check("una fila por universidad y año, las mismas de la base integrada",
           len(car) == len(k) == len(todas) and not car.duplicated(["pte_codigo", "anio"]).any(),
           f"{len(car)} filas")
-    pct = ["pct_mat_prog_acreditados", "pct_mat_distancia_virtual", "pct_mat_posgrado"]
-    check("porcentajes entre 0 y 100", bool(((car[pct] >= 0) & (car[pct] <= 100)).all().all()))
+    pct = ["pct_mat_prog_acreditados", "pct_mat_distancia_virtual", "pct_mat_posgrado",
+           "pct_estrato_1_2", "pct_madre_hasta_secundaria"]
+    sin_sp = car.n_evaluados_saber_pro.isna()   # la UAIIN no tiene evaluados: sus variables de Saber Pro van vacías
+    okp = ((car[pct] >= 0) & (car[pct] <= 100)) | car[pct].isna().mul(sin_sp, axis=0)
+    check("porcentajes entre 0 y 100 (vacíos solo donde no hay evaluados)", bool(okp.all().all()),
+          f"sin evaluados: {', '.join(car.loc[sin_sp, 'pte_nombre'].unique()) or 'ninguna'}")
+    check("evaluados en Saber Pro = n_evaluados de la base integrada",
+          bool((k.n_evaluados_saber_pro.fillna(0) == k.n_evaluados.fillna(0)).all()))
     check("log_matricula = ln(matrícula promedio)",
           np.abs(k.log_matricula - np.log(k.mat_total_prom_b)).max() < TOL)
     check("millones_por_estudiante = obligación / matrícula / 10^6",
           np.abs(k.millones_por_estudiante - k.obligacion / k.mat_total_prom_b / 1e6).max() < TOL)
     check("% de ceros en Escrita = el de la base integrada",
           np.abs(k.pct_ceros_escrita - k.pct_ceros_escrita_b).max() < TOL)
+    hay_crudos = (any(Path("data/raw/snies").glob("snies_matriculados_*.xlsx"))
+                  and any(Path("data/raw/saber_pro").glob("Examen_Saber_Pro_Genericas_*.txt")))
+    if not hay_crudos:
+        log("  8b. OMITIDA — este computador no tiene data/raw; la corre quien tenga los datos crudos.")
+    else:
+        log("  8b. Recalculando desde los archivos originales (≈ 1 min)...")
+        rc = recalcular_desde_crudos()
+        x = car.merge(rc, on=["pte_codigo", "anio"], suffixes=("", "_rc"))
+        check("8b. una fila recalculada por cada fila del archivo", len(x) == len(car) == len(rc))
+        for c in ["pct_mat_prog_acreditados", "pct_mat_distancia_virtual", "pct_mat_posgrado",
+                  "pct_estrato_1_2", "pct_madre_hasta_secundaria", "n_evaluados_saber_pro"]:
+            dif = (x[c] - x[c + "_rc"]).abs()
+            ok = bool(((dif < TOL) | (x[c].isna() & x[c + "_rc"].isna())).all())
+            check(f"8b. {c} = recalculado", ok, f"diferencia máxima {dif.max():.1e}")
+        for c in ["n_departamentos_oferta", "sede_principal", "acreditada_institucional", "domicilio_bogota", "orden"]:
+            texto = lambda serie: serie.map(lambda v: "" if pd.isna(v) else str(v))   # vacío = vacío
+            a_, b_ = texto(x[c]), texto(x[c + "_rc"])
+            check(f"8b. {c} = recalculado", bool((a_ == b_).all()),
+                  "; ".join(x.loc[a_ != b_, "pte_nombre"].head(3)))
 
     log("\n9. Segunda etapa (oe3_segunda_etapa.csv)")
     se = pd.read_csv("resultados/oe3_segunda_etapa.csv")
@@ -228,7 +332,7 @@ def main():
     binarias = {"acreditada_institucional": (True, False), "domicilio_bogota": (True, False),
                 "orden": ("nacional", "territorial")}
     peor_v = peor_p = peor_h = 0.0
-    for (modelo, a), g in se.groupby(["modelo", "anio"]):
+    for (modelo, a, fam), g in se.groupby(["modelo", "anio", "familia"]):
         t = todo[(todo.modelo == modelo) & (todo.anio == a)]
         y = t.eficiencia_corregida.to_numpy()
         vals, ps = [], []
@@ -254,6 +358,24 @@ def main():
     mec = se[se.mecanica].variable.unique().tolist()
     check("solo se marcan como mecánicas millones_por_estudiante y log_matricula",
           set(mec) <= {"millones_por_estudiante", "log_matricula"}, ", ".join(mec))
+    tam = se.groupby(["modelo", "anio", "familia"]).size()
+    check("familias: 10 pruebas institucionales y 2 socioeconómicas por modelo y año",
+          all(tam[i] == {"institucional": 10, "socioeconomica": 2}[i[2]] for i in tam.index) and len(tam) == 12)
+
+    log("\n10. Contexto de las menos eficientes (oe3_contexto_menos_eficientes.csv)")
+    cx = pd.read_csv("resultados/oe3_contexto_menos_eficientes.csv", dtype={"pte_codigo": str})
+    ok_ids, ok_puestos = True, True
+    for (modelo, a), g in cx.groupby(["modelo", "anio"]):
+        t = todo[(todo.modelo == modelo) & (todo.anio == a)]
+        cinco = t.sort_values("eficiencia_corregida").pte_codigo.head(5).tolist()
+        ok_ids &= cinco == g.sort_values("puesto_eficiencia").pte_codigo.tolist()
+        for r in g.itertuples():
+            pe = int((t.pct_estrato_1_2 > t.pct_estrato_1_2[t.pte_codigo == r.pte_codigo].iloc[0]).sum()) + 1
+            pm = int((t.pct_madre_hasta_secundaria >
+                      t.pct_madre_hasta_secundaria[t.pte_codigo == r.pte_codigo].iloc[0]).sum()) + 1
+            ok_puestos &= (pe == r.puesto_estrato_1_2) and (pm == r.puesto_madre_hasta_sec) and (r.n == len(t))
+    check("las 5 de menor eficiencia corregida de cada modelo y año", ok_ids)
+    check("puestos en estratos 1 y 2 y en educación de la madre", ok_puestos)
 
     log(f"\nRESULTADO: {'TODO COINCIDE' if not FALLAS else 'HAY DIFERENCIAS: ' + '; '.join(FALLAS)}")
     carpeta = Path("docs") / "gobernanza" / "evidencias"

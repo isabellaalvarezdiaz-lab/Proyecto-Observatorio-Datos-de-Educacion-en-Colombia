@@ -7,7 +7,8 @@ Guarda PNG en resultados/figuras/.
   fig2_eficiencia_cobertura_<año>.png   ídem, modelo de cobertura
   fig3_malmquist_<modelo>.png           índice de Malmquist 2023→2024 (versión real) y su descomposición
   fig4_eficiencia_cobertura_sin_unad_<año>.png   ídem fig2, sin la UNAD (32 universidades)
-  fig5_segunda_etapa.png                 asociación de cada característica con la eficiencia corregida
+  fig5_segunda_etapa.png                 asociación de cada característica (institucional y socioeconómica)
+                                         con la eficiencia corregida
 
 Uso (desde la raíz del repositorio):
     python scripts/graficos_oe2_oe3.py
@@ -111,7 +112,10 @@ def segunda_etapa(se, archivo):
     modelos = [("principal", "Principal\n(matrícula, graduados, puntaje)"),
                ("cobertura", "Cobertura\n(con la UNAD)"), ("cobertura_sin_unad", "Cobertura\n(sin la UNAD)")]
     orden = se[se.modelo == "principal"].drop_duplicates("variable")
-    orden = pd.concat([orden[orden.tipo == "continua"], orden[orden.tipo == "binaria"]])
+    fam = orden.familia if "familia" in orden else pd.Series("institucional", index=orden.index)
+    inst = orden[fam == "institucional"]
+    orden = pd.concat([inst[inst.tipo == "continua"], inst[inst.tipo == "binaria"], orden[fam != "institucional"]])
+    n_socio = int((fam != "institucional").sum())
     etiquetas = []
     for r in orden.itertuples():
         e = r.etiqueta
@@ -119,9 +123,11 @@ def segunda_etapa(se, archivo):
             e += f" ({r.grupo_a.split(' (')[0]} vs {r.grupo_b.split(' (')[0]})"
         etiquetas.append(e)
     pos = {v: i for i, v in enumerate(orden.variable[::-1])}
-    fig, axes = plt.subplots(1, 3, figsize=(10.2, 5.6), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(10.2, 5.6 + 0.4 * n_socio), sharey=True)
     for ax, (m, t) in zip(axes, modelos):
         ax.axvline(0, color=TINTA2, lw=1, zorder=1)
+        if n_socio:   # separa la familia socioeconómica (Holm propio) de la institucional
+            ax.axhline(n_socio - 0.5, color=GRIS, lw=0.8, ls=(0, (3, 3)), zorder=1)
         for anio, col, dy in ((2023, GRIS, 0.15), (2024, AZUL, -0.15)):
             d = se[(se.modelo == m) & (se.anio == anio)]
             for r in d.itertuples():
@@ -146,13 +152,16 @@ def segunda_etapa(se, archivo):
     from matplotlib.lines import Line2D
     h = [Line2D([], [], marker="o", ls="", color=GRIS, ms=6, label="2023"),
          Line2D([], [], marker="o", ls="", color=AZUL, ms=6, label="2024"),
-         Line2D([], [], marker="o", ls="", color=TINTA2, ms=6, label="relleno: p Holm < 0,05"),
+         Line2D([], [], marker="o", ls="", color=TINTA2, ms=6, label="relleno: p Holm < 0,05 (Holm por familia)"),
          Line2D([], [], marker="o", ls="", mfc=SUPERFICIE, mec=TINTA2, ms=6, label="vacío: no significativo"),
          Line2D([], [], marker="x", ls="", color=TINTA2, ms=6, label="asociación mecánica (no es hallazgo)")]
     fig.suptitle("Segunda etapa: ¿qué se asocia con la eficiencia? (análisis exploratorio)",
                  x=0.01, ha="left", fontsize=10, color=TINTA)
     fig.legend(handles=h, loc="upper left", bbox_to_anchor=(0.01, 0.96), ncol=5, frameon=False, fontsize=8)
-    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    if n_socio:
+        fig.text(0.01, 0.01, "Debajo de la línea punteada: perfil socioeconómico de los evaluados en Saber Pro "
+                 "(familia aparte, con su propio ajuste de Holm).", fontsize=7.5, color=TINTA2)
+    fig.tight_layout(rect=(0, 0.025 if n_socio else 0, 1, 0.94))
     fig.savefig(OUT / archivo, dpi=200)
     plt.close(fig)
 
