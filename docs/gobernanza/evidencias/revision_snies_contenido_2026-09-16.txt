@@ -1,0 +1,135 @@
+﻿articles-411247_recurso.xlsx  huella=0c8a2b7e4a631a56  hojas=['Sheet 1']  a±os=['2021', '2022']
+    PERSONAL ADMINISTRATIVO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: Mayo de 2022 | Fuente: Ministerio de Educaci¾n Nacional - Sistema Nacional de Informa
+
+articles-411248_recurso.xlsx  huella=1adddf59967ea9c7  hojas=['Sheet 1']  a±os=['2021', '2022']
+    PERSONAL DOCENTE EN INSTITUCIONES DE EDUCACIËN SUPERIOR   - COLOMBIA 2021 | Fecha de corte de la informaci¾n: mayo de 2022 | Fuente: Ministerio de Educaci¾n Nacional - Sistema Nacional de Informaci¾n 
+
+articles-411249_recurso.xlsx  huella=b36c998fe0e82418  hojas=['Sheet 1']  a±os=['2021']
+    ADMITIDOS EN EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: junio de 2021 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo reportado po
+
+articles-411250_recurso.xlsx  huella=50e9db072e598b3d  hojas=['Sheet 1']  a±os=['2021', '2022']
+    ESTUDIANTES GRADUADOS EN EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: mayo de 2022 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo r
+
+articles-411251_recurso.xlsx  huella=8056ef6c86869178  hojas=['Sheet 1']  a±os=['2021', '2022']
+    N┌MERO DE INSCRIPCIONES EN PROGRAMAS DE EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: mayo de 2022 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada cor
+
+articles-411252_recurso.xlsx  huella=0af7492c6aa6dd3e  hojas=['Sheet 1']  a±os=['2021', '2022']
+    ESTUDIANTES MATRICULADOS EN EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: 31 de mayo de 2022 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada correspon
+
+articles-411254_recurso.xlsx  huella=f9c589c458a4511a  hojas=['Sheet 1']  a±os=['2021', '2022']
+    ESTUDIANTES EN PRIMER CURSO EN EDUCACIËN SUPERIOR - COLOMBIA 2021 | Fecha de corte de la informaci¾n: junio de 2022 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde
+
+articles-416244_recurso.xlsx  huella=d2e12bb501c5b4d3  hojas=['Matriculados E.S. 2022']  a±os=['2022', '2023']
+    ESTUDIANTES MATRICULADOS EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a 
+
+articles-416245_recurso.xlsx  huella=f2059e2592e07699  hojas=['Primer Curso E.S. 2022']  a±os=['2022', '2023']
+    ESTUDIANTES MATRICULADOS EN PRIMER CURSO EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrad
+
+articles-416246_recurso.xlsx  huella=210cacf3f6677582  hojas=['Inscritos E.S. 2022']  a±os=['2022', '2023']
+    ESTUDIANTES INSCRITOS EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo 
+
+articles-416247_recurso.xlsx  huella=f1c398edc90fa8da  hojas=['Graduados E.S. 2022']  a±os=['2022', '2023']
+    ESTUDIANTES GRADUADOS EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo 
+
+articles-416248_recurso.xlsx  huella=1de795af6a4a0c90  hojas=['Admitidos E.S. 2022']  a±os=['2022', '2023']
+    ESTUDIANTES ADMITIDOS EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo 
+
+articles-416249_recurso.xlsx  huella=c4f59978e515d170  hojas=['Docentes 2022']  a±os=['2022', '2023']
+    DOCENTES EN EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Mnisterio de Educaci¾n Nacional | La informaci¾n suministrada corresponde a lo reportado por 
+
+articles-416250_recurso.xlsx  huella=2c576124a75c3933  hojas=['Administrativos 2022']  a±os=['2022', '2023']
+    PERSONAL ADMINISTRATIVO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA 2022 | Fecha de corte de la informaci¾n: junio de 2023 | Fuente: Ministerio de Educaci¾n Nacional - Sistema Nacional de Inform
+
+articles-417493_recurso.xlsx  huella=be021474a8f8b010  hojas=['INSCRITOS', 'ADMITIDOS ', 'PRIMER CURSO', 'MATRICULADOS', 'GRADUADOS ', 'DOCENTES', 'ADMINISTRATIVOS', ' CINE 2013 F AC', '┴REAS Y NBC']  a±os=[]
+    METADATOS BASES CONSOLIDADAS | Nombre de la base de datos: | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | Definici¾n: | Solicitudes de personas naturales para el ingreso a
+
+articles-421535_recurso.xlsx  huella=8162c73b7fa16ea3  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES GRADUADOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | ESTUD
+
+articles-421537_recurso.xlsx  huella=e431820eec7ce1a0  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | PERSONAL ADMINISTRATIVO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | PER
+
+articles-421538_recurso.xlsx  huella=02f9812814594987  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | ESTUD
+
+articles-421539_recurso.xlsx  huella=629316ca389a1a95  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES MATRICULADOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | ES
+
+articles-421540_recurso.xlsx  huella=8043ed6aea668cf2  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES ADMITIDOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | ESTUD
+
+articles-421541_recurso.xlsx  huella=1e4cab9fa0ac1ed7  hojas=['═NDICE', '1.']  a±os=[]
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES MATRICULADOS EN PRIMER CURSO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 20
+
+articles-421822_recurso.xlsx  huella=d8ee7c82e68a8931  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | DOCENTES EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | DOCENTES EN INSTIT
+
+articles-425145_recurso.xlsx  huella=2f13eaebffd1fd61  hojas=['INSCRITOS', 'ADMITIDOS ', 'PRIMER CURSO', 'MATRICULADOS', 'GRADUADOS ', 'DOCENTES', 'ADMINISTRATIVOS', ' CINE 2013 F AC', '┴REAS Y NBC']  a±os=[]
+    METADATOS BASES CONSOLIDADAS | Nombre de la base de datos: | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | Definici¾n: | Solicitudes de personas naturales para el ingreso a
+
+articles-425146_recurso.xlsx  huella=8de07b72101de145  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES GRADUADOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | ESTUD
+
+articles-425147_recurso.xlsx  huella=5f6f7114531f0039  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | PERSONAL ADMINISTRATIVO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | PER
+
+articles-425148_recurso.xlsx  huella=b365df404f6ab31c  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | ESTUD
+
+articles-425151_recurso.xlsx  huella=6558fdb32d95eddb  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES MATRICULADOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | ES
+
+articles-425153_recurso.xlsx  huella=8043ed6aea668cf2  hojas=['═NDICE', '1.']  a±os=['2023']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES ADMITIDOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2023 | ═NDICE | ESTUD
+
+articles-425154_recurso.xlsx  huella=10b71be5224f2342  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES ADMITIDOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | ESTUD
+
+articles-425155_recurso.xlsx  huella=141e7cc974fbf3be  hojas=['═NDICE', '1.']  a±os=[]
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES MATRICULADOS EN PRIMER CURSO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 20
+
+articles-425156_recurso.xlsx  huella=6f6b5294da02debd  hojas=['═NDICE', '1.']  a±os=['2024']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | DOCENTES EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2024 | ═NDICE | DOCENTES EN INSTIT
+
+articles-430140_recurso.xlsx  huella=f18a7add644af6a1  hojas=['═NDICE', 'Hoja1', '1.']  a±os=[]
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES MATRICULADOS EN PRIMER CURSO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 20
+
+articles-430144_recurso.xlsx  huella=40789ac2fa8f8d17  hojas=['INSCRITOS', 'ADMITIDOS ', 'PRIMER CURSO', 'MATRICULADOS', 'GRADUADOS ', 'DOCENTES', 'ADMINISTRATIVOS', ' CINE 2013 F AC', '┴REAS Y NBC']  a±os=[]
+    METADATOS BASES CONSOLIDADAS | Nombre de la base de datos: | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | Definici¾n: | Solicitudes de personas naturales para el ingreso a
+
+articles-430146_recurso.xlsx  huella=f0defdbecf1335d3  hojas=['═NDICE', '1.']  a±os=['2025']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | DOCENTES EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2025 | ═NDICE | DOCENTES EN INSTIT
+
+articles-430148_recurso.xlsx  huella=8fda92b3beee4d42  hojas=['═NDICE', '1.']  a±os=['2025']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES ADMITIDOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2025 | ═NDICE | ESTUD
+
+articles-430151_recurso.xlsx  huella=1145e12c9e5161a9  hojas=['═NDICE', '1.']  a±os=['2025']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES GRADUADOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2025 | ═NDICE | ESTUD
+
+articles-430155_recurso.xlsx  huella=4c1379427d483463  hojas=['═NDICE', '1.']  a±os=['2025']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | ESTUDIANTES INSCRITOS EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2025 | ═NDICE | ESTUD
+
+articles-430283_recurso.xlsx  huella=81d2ad33809d9433  hojas=['═NDICE', '1.']  a±os=['2025']
+    MINISTERIO DE EDUCACIËN NACIONAL
+TABLAS Y CUADROS DE SALIDA | SUBDIRECCIËN DE DESARROLLO SECTORIAL | PERSONAL ADMINISTRATIVO EN INSTITUCIONES DE EDUCACIËN SUPERIOR - COLOMBIA | AÐO 2025 | ═NDICE | PER
+
