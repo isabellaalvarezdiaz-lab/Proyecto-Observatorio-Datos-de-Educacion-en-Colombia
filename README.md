@@ -14,7 +14,10 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE2 · Índice de Malmquist 2023→2024 | cambio de productividad por universidad | `resultados/oe2_malmquist.csv` |
 | OE3 · DEA con bootstrap (Simar y Wilson, 1998) | eficiencia con intervalos, pares, metas y sensibilidad | `resultados/oe3_eficiencia.csv`, `oe3_deja_uno_fuera.csv`, `oe3_sensibilidad.csv` |
 | OE3 · Cobertura sin la UNAD | eficiencia de las otras 32 universidades | `resultados/oe3_cobertura_sin_unad.csv` |
+| OE3 · Validación fuera de muestra | si la evaluación se sostiene con universidades que el modelo no usó | `resultados/oe3_validacion_resumen.csv`, `oe3_validacion_universidades.csv` |
 | OE3 · Segunda etapa (exploratoria) | qué características, institucionales y socioeconómicas, se asocian con la eficiencia, y el perfil de las menos eficientes | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv`, `oe3_contexto_menos_eficientes.csv` |
+| Corrección del trabajo previo | cifras de Comunicación Escrita 2023–2024 que corrigen el informe 2025-2 | `resultados/revision_trabajo_previo.csv` |
+| Tablero interactivo | los datos que lee el tablero, tomados de las tablas anteriores | `resultados/tablero/*.json` |
 
 ## Estructura
 
@@ -22,12 +25,16 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 .
 ├─ scripts/        código; todo se corre desde la raíz del repositorio
 ├─ resultados/     tablas agregadas, sin datos de estudiantes (sí se suben)
+│  ├─ figuras/     las que genera graficos_oe2_oe3.py
+│  └─ tablero/     los datos que lee el tablero interactivo
 ├─ docs/
 │  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md, diccionario_resultados_oe2_oe3.md
 │  ├─ gobernanza/evidencias/   salida de cada corrida, con fecha y hora
 │  ├─ uso_ia/                  inventarios de fallos de IA
 │  ├─ BITACORA_IA.md
 │  └─ Consultoria.pdf          anteproyecto
+├─ heredado/       los archivos del equipo 2025-2, sin cambios; su README quedó como README_equipo_anterior.md
+├─ requirements.txt
 └─ data/           datos crudos; NO se sube (está en .gitignore)
    ├─ raw/pte/2023/, raw/pte/2024/   informe del PTE acumulado a diciembre
    ├─ raw/snies/                      snies_matriculados_AAAA_*.xlsx, snies_graduados_AAAA_*.xlsx
@@ -37,7 +44,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 
 ## Cómo reproducir la base integrada (OE1)
 
-Requisitos: Python ≥ 3.10, `pandas` y `openpyxl`.
+Requisitos: Python ≥ 3.10, `pandas` y `openpyxl`. Para instalar de una vez todo lo que usan los scripts: `python -m pip install -r requirements.txt`.
 
 1. Ponga los archivos crudos en `data/raw/` como se indica arriba.
    - **PTE:** use el informe *acumulado a diciembre* de cada año. El script reconoce el año por el título de la hoja, así que el nombre del archivo no importa.
@@ -74,12 +81,39 @@ python scripts/oe2_malmquist.py         # índice de Malmquist (segundos)
 python scripts/oe3_cobertura_sin_unad.py         # cobertura sin la UNAD (≈ 4 min)
 python scripts/caracteristicas_universidades.py  # características por universidad; necesita data/raw
 python scripts/oe3_segunda_etapa.py              # Spearman y Mann-Whitney con ajuste de Holm (segundos)
-python scripts/verificar_oe2_oe3.py     # recalcula todo por otro camino y responde PASA o FALLA
+python scripts/oe3_validacion_fuera_muestra.py   # 1.000 sorteos reservando el 20 % de las universidades (≈ 2 min)
+python scripts/verificar_oe2_oe3.py     # recalcula todo por otro camino y responde PASA o FALLA (≈ 4 min)
                                         # (si hay data/raw, también recalcula las características desde los crudos)
 python scripts/graficos_oe2_oe3.py      # figuras en resultados/figuras/
 ```
 
 El bootstrap usa una semilla fija (20261011), así que cualquiera que lo corra obtiene los mismos números. `caracteristicas_universidades.py` lee los archivos crudos; quien no los tenga puede usar el `resultados/caracteristicas_universidades.csv` que está en el repositorio y seguir con `oe3_segunda_etapa.py`. La especificación, las columnas y cómo leerlas están en `docs/diccionario_resultados_oe2_oe3.md`.
+
+## Corrección del trabajo previo y tablero
+
+```bash
+python scripts/revision_trabajo_previo.py   # cifras de Comunicación Escrita del informe 2025-2; necesita data/raw
+python scripts/datos_tablero.py             # datos del tablero interactivo (segundos)
+```
+
+`revision_trabajo_previo.py` calcula, con la misma población que la agregación de Saber Pro, la media y la desviación estándar de cada módulo, y las de Comunicación Escrita sin los ceros que no tienen nivel de desempeño. `datos_tablero.py` no estima nada: une las tablas de `resultados/` y les agrega una llave y el nombre corto de cada universidad. El tablero interactivo lee solo esos cuatro archivos y calcula a la vista los promedios, los puestos y las medianas que muestra.
+
+## Fase 1: diagnóstico de las fuentes (septiembre de 2026)
+
+Antes del OE1 se revisaron las fuentes y el código heredado con los scripts de esta tabla. No hacen parte del flujo final (`correr_oe1.py` no los usa) y algunos leen archivos de 2021 y 2022, que quedaron fuera del periodo. Su salida está en `docs/gobernanza/evidencias/`.
+
+| Script | Qué revisa | Evidencia |
+|---|---|---|
+| `inventario.py` | los archivos del proyecto, con su huella SHA-256 | `inventario_2026-09-16_Eduar.csv`, `inventario_2026-09-17_Anderson.csv` |
+| `verificar_herencia.py` | los supuestos del código heredado sobre el PTE y Saber Pro | `verificacion_pte_cuadro4_2026-09-15.txt`, `verificacion_saberpro_2026-09-15.txt`, `verificacion_saberpro_repositorio_2026-09-17.txt` |
+| `revisar_snies.py` | qué contiene cada archivo descargado del SNIES, según su título interno | `revision_snies_contenido_2026-09-16.txt` |
+| `encabezados_snies.py` | la hoja y la fila del encabezado de los archivos del SNIES 2021–2024 | `encabezados_snies_2026-09-16.txt` |
+| `diagnostico_ceros_escrita.py` | los ceros de Comunicación Escrita y su efecto en el puntaje global | `diagnostico_ceros_escrita_2026-09-17_0256.txt` |
+| `verificar_llave.py` | la coincidencia de los códigos de institución del SNIES y de Saber Pro, 2023–2024 | `verificacion_llave_2026-09-18_0235.txt` |
+
+De esa fase también son la corrida del scraper heredado (`scraper_snies_log_2026-09-16.txt` y `scraper_snies_manifest_2026-09-16.csv`) y la revisión del Cuadro 7 del PTE de 2024 (`revision_pte_cuadro7_estructura_2026-09-15.txt` y `revision_pte_cuadro7_universidades_2026-09-15.txt`). `traceback_modelo_estrella_2026-09-17.txt` está vacío desde que se subió.
+
+Estos archivos y `docs/uso_ia/inventario_fallos_isabella.md` se borraron en el commit `ffb2454` (8-10-2026) y se restauraron sin cambios el 13-10-2026: el informe, la bitácora y el diccionario de la tabla maestra citan algunos de ellos, y los demás son el respaldo del diagnóstico de septiembre.
 
 ## Datos y licencias
 

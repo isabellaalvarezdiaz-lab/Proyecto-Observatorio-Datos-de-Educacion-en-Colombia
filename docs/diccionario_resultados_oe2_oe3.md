@@ -159,6 +159,63 @@ Para cada modelo y año, las 5 universidades con menor eficiencia corregida y su
 | `mediana_estrato_1_2`, `mediana_madre_hasta_sec` | medianas de las `n` universidades del modelo ese año, como referencia |
 | `departamento_domicilio`, `pct_mat_distancia_virtual` | contexto regional y de modalidad |
 
+## `resultados/oe3_validacion_resumen.csv` y `oe3_validacion_universidades.csv`
+
+Validación fuera de muestra, pedida por el docente para comprobar que el modelo funciona con datos que no usó. La produce `scripts/oe3_validacion_fuera_muestra.py`. En cada sorteo se reserva cerca del 20 % de las universidades (7 de 33; 6 de 32 sin la UNAD), la frontera se estima con las demás y cada reservada se evalúa contra ella con el mismo DEA. Se hacen 1.000 sorteos por modelo y año con semilla fija; con 33 universidades, los modelos principal y de cobertura usan los mismos sorteos.
+
+Cómo leerla:
+
+- Sacar universidades solo puede bajar la frontera, así que la eficiencia fuera de muestra nunca es menor que la del modelo completo. Lo que interesa es cuánto sube y si el orden se mantiene.
+- Una universidad cuyos pares siguen todos en la muestra no cambia. Por eso la mayoría de las evaluaciones no cambia nada.
+- Las universidades de la frontera, al quedar reservadas, quedan en la frontera de entrenamiento o por encima (eficiencia ≥ 1).
+- Si la reservada tiene menos presupuesto que todas las de entrenamiento, no se puede evaluar con rendimientos variables ("fuera del soporte"). Solo les pasa a las tres de menor presupuesto: U. del Trópico Americano, U. del Pacífico y U. de Cundinamarca.
+- Se compara la eficiencia original, no la corregida: repetir el bootstrap en cada sorteo costaría 2.000 réplicas por sorteo.
+
+`oe3_validacion_resumen.csv` (una fila por modelo y año):
+
+| Columna | Significado |
+|---|---|
+| `n`, `reservadas`, `repeticiones`, `semilla` | universidades del modelo, reservadas por sorteo, número de sorteos y semilla |
+| `evaluaciones`, `fuera_soporte` | evaluaciones hechas (reservadas × sorteos) y las que no se pudieron hacer |
+| `interior_evaluaciones` | evaluaciones de universidades que no están en la frontera del modelo completo |
+| `interior_sin_cambio_pct` | % de esas evaluaciones en las que la eficiencia no cambia (diferencia < 10⁻⁶) |
+| `interior_cambio_medio`, `interior_cambio_p95` | cambio medio y percentil 95 del cambio (eficiencia fuera de muestra − completa) |
+| `interior_parecen_eficientes_pct` | % de esas evaluaciones en las que la universidad parece eficiente (eficiencia ≥ 1) |
+| `frontera_evaluaciones` | evaluaciones de universidades de la frontera |
+| `spearman_mediana`, `spearman_p05` | Spearman, en cada sorteo, entre la eficiencia fuera de muestra y la completa de las reservadas: mediana y percentil 5 entre los sorteos |
+| `spearman_agregado`, `universidades_agregado` | Spearman entre la mediana de la eficiencia fuera de muestra de cada universidad y su eficiencia completa, y cuántas universidades entran |
+
+`oe3_validacion_universidades.csv` (una fila por modelo, año y universidad): `eficiencia` (modelo completo), `en_frontera`, `veces_reservada`, `veces_fuera_soporte`, `eficiencia_fuera_mediana`, `cambio_medio`, `sin_cambio_pct` y `parece_eficiente_pct` (este último solo para las que no están en la frontera).
+
+`verificar_oe2_oe3.py` (sección 11) repite todos los sorteos con el programa dual, comprueba las propiedades de arriba y recalcula cada indicador.
+
+## `resultados/revision_trabajo_previo.csv`
+
+Cifras para la corrección anónima de las conclusiones del trabajo previo (informe final del semestre 2025-2, `docs/informe_final.md` de su repositorio, línea 183). Las produce `scripts/revision_trabajo_previo.py` con los microdatos de Saber Pro y la misma población que `agregar_saber_pro.py` (registros con código de institución y puntaje global). Una fila por año, módulo y población.
+
+| Columna | Significado |
+|---|---|
+| `anio` | 2023 o 2024 |
+| `modulo` | módulo genérico de Saber Pro |
+| `poblacion` | `todos los evaluados`, o `sin los ceros en Escrita` (solo en Comunicación escrita) |
+| `n` | evaluados con puntaje en el módulo |
+| `media`, `de` | media y desviación estándar del puntaje del módulo |
+
+El % de evaluados con 0 en Escrita es 1 − n(sin los ceros) / n(todos) en Comunicación escrita. Ninguno de esos ceros tiene nivel de desempeño (lo imprime la evidencia `revision_trabajo_previo_<fecha>.txt`), así que son pruebas sin calificar. Los años 2021 y 2022 del trabajo previo no se revisan: el proyecto no tiene esos microdatos.
+
+## `resultados/tablero/*.json`
+
+Datos del tablero interactivo. `scripts/datos_tablero.py` los arma desde los CSV de `resultados/` sin cambiar ningún valor numérico: agrega una llave `id` y el nombre corto de cada universidad (la misma función de las figuras) y renombra algunas columnas, como se indica abajo. Cada archivo es una lista de filas en JSON.
+
+| Archivo | Una fila por | Llave `id` | Viene de |
+|---|---|---|---|
+| `universidades.json` | modelo, año y universidad | `modelo-año-código PTE` | `oe3_eficiencia.csv` y `oe3_cobertura_sin_unad.csv` |
+| `caracteristicas.json` | año y universidad (las 33 del DEA) | `año-código PTE` | `base_integrada_2023_2024.csv` y `caracteristicas_universidades.csv` |
+| `malmquist.json` | modelo, versión y universidad | `modelo-versión-código PTE` | `oe2_malmquist.csv` |
+| `segunda_etapa.json` | modelo, año y variable | `modelo-año-variable` | `oe3_segunda_etapa.csv` |
+
+En `universidades.json`, `matricula_*`, `graduados_*` y `puntaje_*` son las columnas `mat_total_prom_*`, `grad_total_*` y `global_c_*` de `oe3_eficiencia.csv`, y `pares` lleva los nombres cortos con el peso de cada par. Los promedios, los puestos y las medianas que muestra el tablero no están en estos archivos: los calcula el tablero, y quien lo consulte puede ver cada fórmula.
+
 ## Limitaciones de lectura
 
 - Con 33 universidades, los intervalos son anchos. Compare universidades por sus intervalos, no solo por el valor puntual.

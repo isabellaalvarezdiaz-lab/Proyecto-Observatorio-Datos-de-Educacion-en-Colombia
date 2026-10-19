@@ -1,0 +1,7 @@
+# Paquetes que usan los scripts de scripts/ (Python >= 3.10).
+# Instalación: python -m pip install -r requirements.txt
+pandas
+numpy
+scipy>=1.6     # los métodos HiGHS de linprog llegaron en scipy 1.6.0
+matplotlib
+openpyxl       # lectura de los .xlsx del SNIES y del PTE
