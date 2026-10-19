@@ -1,0 +1,47 @@
+﻿ubicacion,ruta,carpeta,tipo,extension,tamano_mb,modificado,sha256,en_git,inventariado_por,alertas
+repositorio,.gitignore,(raiz),otro,,0.0,2026-09-17 00:18,bcd60c26d1e8f17ec1b0ca61c0c17fc747c018f2b5f7004c3c06de1fff1ed403,si,Anderson,
+repositorio,Códigos/Exploración.ipynb,Códigos,codigo,.ipynb,7.546,2026-09-17 00:18,bdeb41dfe27baa276a505959e3d9e9b5f74257bc1a11be58840477c3dc604a1f,si,Anderson,
+repositorio,Códigos/Exploración.py,Códigos,codigo,.py,0.003,2026-09-17 00:18,5472fe8c58b0b07ea59b50a0c3772195d65837149b9901147dfd75736a00bd68,si,Anderson,
+repositorio,Códigos/extrae_pte_educacion_full.py,Códigos,codigo,.py,0.006,2026-09-17 00:18,1efaf54a41265ffca95697a2d3c6b4ad4629b01cccf94db27827f0a92c7ab4d5,si,Anderson,
+repositorio,Códigos/Saber Pro 2021-2024/Database.py,Códigos,codigo,.py,0.002,2026-09-17 00:18,0dedb1824829f8a493b69071e4b4b6fc22b2b1bb12f3fe439e40d4828d4ddda0,si,Anderson,
+repositorio,Códigos/Saber Pro 2021-2024/modelo_estrella.png,Códigos,imagen,.png,0.076,2026-09-17 00:18,837682185bb890ab9990f7221bfe05c0b9edcd5a012c8244ce070a50b0bd11f0,si,Anderson,
+repositorio,Códigos/Saber Pro 2021-2024/modelo_estrella.py,Códigos,codigo,.py,0.011,2026-09-17 00:18,3cf08bf177688d2a92f5f4b610e7015e4783fa6b187f7258f7967df3ae88a238,si,Anderson,
+repositorio,Códigos/scraper_snies.py,Códigos,codigo,.py,0.016,2026-09-17 00:18,fd0e2506a3de6326f7fa9dc290af43de1579b65c6e619b3c3d8f20c6c5195e5c,si,Anderson,
+repositorio,Códigos/snies_renamed_registros.py,Códigos,codigo,.py,0.005,2026-09-17 00:18,b5e9b61ec318a4c41933da783d2597fd4ead087174092c0343dc96cb808b6344,si,Anderson,
+repositorio,data/processed/SaberPro2021_2024_heredado.db,data,dato,.db,764.25,2026-09-17 01:00,14cded96c913a623968d5edb2b29110fbc8a31b9cfd908931057683347408baf,no,Anderson,
+repositorio,data/raw/saber_pro/Examen_Saber_Pro_Genericas_2021.txt,data,dato,.txt,181.979,2026-09-15 00:29,ff361263788a8bfceb96354138c455bef3d01b39eade37b20a35237a385b6fe1,no,Anderson,
+repositorio,data/raw/saber_pro/Examen_Saber_Pro_Genericas_2022.txt,data,dato,.txt,178.833,2026-09-15 00:29,6b9c264df035ac17cfbed1d17b4ab2c8ca82cfde5c60c29b16e9cc71ed8bbc12,no,Anderson,
+repositorio,data/raw/saber_pro/Examen_Saber_Pro_Genericas_2023.txt,data,dato,.txt,182.021,2026-09-15 00:30,6911ec5f479f1ebc472123a1d7b0ff44ff91558bf9dc7e139ed16d18c74b4d59,no,Anderson,
+repositorio,data/raw/saber_pro/Examen_Saber_Pro_Genericas_2024.txt,data,dato,.txt,182.738,2026-09-15 00:30,86bfe7f6766dd496594dfb43d44a20cb7349065098c5fd8602d3497502f24d9b,no,Anderson,
+repositorio,docs/.gitkeep,docs,otro,,0.0,2026-09-17 00:18,7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6,si,Anderson,
+repositorio,docs/analisis_de_bases_seleccionadas.md,docs,documento,.md,0.018,2026-09-17 00:18,b411271f2e10b7b7b45eee303710bdfbb5289ca2d3fe7e9f82a15af6c6240cee,si,Anderson,
+repositorio,docs/BITACORA_IA.md,docs,documento,.md,0.016,2026-09-17 00:18,271541c18ef1e283fc7cb8824ce88a0453afe07f976e0e73d34fe3b596834d0d,si,Anderson,
+repositorio,docs/Consultoria.pdf,docs,documento,.pdf,0.089,2026-09-17 00:18,a95ded8f1d6a33e4ff5108f9afd68e79d007142823148488f176c4a511b2c50a,si,Anderson,
+repositorio,docs/exploracion_analisis_bivariado.md,docs,documento,.md,0.029,2026-09-17 00:18,0a33883945d12a77c43496b0ce0b6fd4386656abf7bfc67c0aca8fdd7c6dc006,si,Anderson,
+repositorio,docs/exploracion_analisis_bivariado_parte_2.md,docs,documento,.md,0.006,2026-09-17 00:18,1b805b935fe98fe0ec76d523d52f06375fb0d0d8411abb63e7f9e28754aab396,si,Anderson,
+repositorio,docs/exploracion_analisis_multivariado.md,docs,documento,.md,0.002,2026-09-17 00:18,f7b6d27407c3b7e8c10cac4a3aa6bc79d22b506602e66397c286da9505e9a61b,si,Anderson,
+repositorio,docs/exploracion_analisis_univariado.md,docs,documento,.md,0.005,2026-09-17 00:18,63dce3efba0cbf651a237cac5f7fea6aabe5a926686e09bdd21bff16821f96c6,si,Anderson,
+repositorio,docs/gobernanza/evidencias/encabezados_snies_2026-09-16.txt,docs,dato,.txt,0.008,2026-09-17 00:18,d7f5990c54d89d19b81781f16a249b8d58154cfcab2789a13116f01f0eead35b,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/inventario_2026-09-16_Eduar.csv,docs,dato,.csv,0.012,2026-09-17 00:18,bdba486f5e3c249798043aa2d6962306c786dd4eb633604b6dd53f61bfde61b9,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/revision_pte_cuadro7_estructura_2026-09-15.txt,docs,dato,.txt,0.01,2026-09-17 00:18,c42c7f797bc64db046e20315ac74e05fb0f03f9e633ab5c08da1bcffe9137d3a,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/revision_pte_cuadro7_universidades_2026-09-15.txt,docs,dato,.txt,0.023,2026-09-17 00:18,5f62b6f84422d0800108e9294897c46984b795133b3f69819418c5ce82c0072c,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/revision_snies_contenido_2026-09-16.txt,docs,dato,.txt,0.012,2026-09-17 00:18,0bc8c8e5051697ea3fc2cee2b20ed165ea06c93fcd65ac6686f7a92c509f4b8f,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/scraper_snies_log_2026-09-16.txt,docs,dato,.txt,0.002,2026-09-17 00:18,ed85ba3760611eedd495ee8292a8de182cc23bbe4c7ede46578e13bb66680560,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/scraper_snies_manifest_2026-09-16.csv,docs,dato,.csv,0.001,2026-09-17 00:18,24a902ce31fa7a6e4dffab88cd6b928180c781e3a2f20c65fc5d5f5493b59eaa,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/traceback_modelo_estrella_2026-09-17.txt,docs,dato,.txt,0.0,2026-09-17 02:20,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,no,Anderson,
+repositorio,docs/gobernanza/evidencias/verificacion_pte_cuadro4_2026-09-15.txt,docs,dato,.txt,0.001,2026-09-17 00:18,ab1ce526058693dd487e79ff9202fbf6b674a07449be27e0025b3b6e86ea7357,si,Anderson,DATO EN REPO PUBLICO: revisar si puede publicarse
+repositorio,docs/gobernanza/evidencias/verificacion_saberpro_2026-09-15.txt,docs,dato,.txt,0.003,2026-09-15 00:34,4a7b761eb53ae590ee5605b24c79dac279eef694c4cd72eccc75f6324df9f1b9,no,Anderson,
+repositorio,docs/gobernanza/evidencias/verificacion_saberpro_repositorio_2026-09-17.txt,docs,dato,.txt,0.003,2026-09-17 02:21,a7ac9470211013dfcc6a72a27e55920eee8d838dd2a5c9e2c6bf6e284151caca,no,Anderson,
+repositorio,docs/informe_final.md,docs,documento,.md,0.021,2026-09-17 00:18,7ba6519551f302f50b112e00f5ed77ddc97967aad586a6e73b4d766123073a2d,si,Anderson,
+repositorio,docs/README.md,docs,documento,.md,0.003,2026-09-17 00:18,5ba1891f9ab10b28c66f7cefb1099df7c86fb3e4e66bb4889a9e31d03c3885e8,si,Anderson,
+repositorio,Imagenes/Correlaciones.png,Imagenes,imagen,.png,0.041,2026-09-17 00:18,e536c4c3e285ab1748dc99854721452e146e1a16358c0d49c9d442b019d12e7c,si,Anderson,
+repositorio,Imagenes/Departamentos.jpg,Imagenes,imagen,.jpg,0.042,2026-09-17 00:18,8dcef9c3f907f75d6e458e3dcd6992760ae7df89526cfee5ebde8d75bbcb7da4,si,Anderson,
+repositorio,Imagenes/Distrib puntajes.png,Imagenes,imagen,.png,0.023,2026-09-17 00:18,9c14cad69afabe7ccff927e7aca1c9bd0eea2f23ee5e32eef55b88888598faed,si,Anderson,
+repositorio,Imagenes/Distrib sexo.png,Imagenes,imagen,.png,0.017,2026-09-17 00:18,f815299e40d1d9092f25efa52d91db1795f1c62e962908217effacb946177def,si,Anderson,
+repositorio,Imagenes/FAMD.png,Imagenes,imagen,.png,0.046,2026-09-17 00:18,11b2005ca17752eb2fe51760b2ffe96bac2df3e696da814fa7410e2e830aa963,si,Anderson,
+repositorio,Imagenes/Puntajes anuales.png,Imagenes,imagen,.png,0.033,2026-09-17 00:18,a2a090312227b605ff84464dad8fdf454758c6c4c50369b1795c4671bfd87757,si,Anderson,
+repositorio,Imagenes/Universidades.jpg,Imagenes,imagen,.jpg,0.107,2026-09-17 00:18,e12237cf1a4ac226fdc7bef8f7adf069b1f35630a5f7dd2c7d4523316cecc728,si,Anderson,
+repositorio,scripts/encabezados_snies.py,scripts,codigo,.py,0.002,2026-09-17 00:18,cb05708cfc42d4edc804b30f2d722f6ef45554663a85062dc9d6ff8af5af45a0,si,Anderson,
+repositorio,scripts/inventario.py,scripts,codigo,.py,0.006,2026-09-17 00:18,aff54e205c7c7b7fec8e23b3c0356cdd736f27f328c8c12922ee280a66b84413,si,Anderson,
+repositorio,scripts/revisar_snies.py,scripts,codigo,.py,0.003,2026-09-17 00:18,4fad5d31dd2c64e242952ec330e16512697680aa820870b88b71fa6c20c27714,si,Anderson,
+repositorio,scripts/verificar_herencia.py,scripts,codigo,.py,0.008,2026-09-17 00:18,2ecc004ccfb8c5062e99a3ec5a3cd510b596a0709092855e33e68a54d439d4ba,si,Anderson,
