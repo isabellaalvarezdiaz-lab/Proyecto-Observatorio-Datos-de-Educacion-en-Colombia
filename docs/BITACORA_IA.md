@@ -125,6 +125,17 @@ directa del script sobre los datos reales disponibles al equipo, sin que
 en ningún momento mediara una simulación, estimación o cálculo realizado
 por la IA en nombre del equipo.
 
+**Nota de trazabilidad (13-10-2026):** esa corrida se hizo con la versión
+del script entregada en el chat, que no está en el repositorio, y su salida
+tampoco; por eso el 99,2 % de 2021 no tiene evidencia en el repositorio. El
+script se rehízo el 17-09-2026 (`scripts/verificar_llave.py`) y su corrida
+sobre el periodo del proyecto quedó en
+`docs/gobernanza/evidencias/verificacion_llave_2026-09-18_0235.txt`: el
+98,9 % de los códigos de Saber Pro (262 de 265) está en el SNIES de
+matriculados en 2023, y el 100 % (270 de 270) en 2024. El 98,9 % de 2024
+citado arriba corresponde a la comparación con el SNIES de graduados (267
+de 270), que esa misma evidencia reproduce.
+
 ---
 
 ## 4. Descarga y verificación de las fuentes de información (SNIES, Saber Pro, PTE)
@@ -265,6 +276,14 @@ desarrollado en R/Shiny; y los scripts de Python `verificar_llave.py`,
 estructural para descartar errores de esquema, y su extensión real se
 confirmó mediante conversión a PDF, en lugar de asumirse a partir de un
 conteo estimado de palabras.
+
+**Nota de trazabilidad (13-10-2026):** las versiones de esos tres scripts
+que se entregaron en el chat, y el tablero en R/Shiny, nunca estuvieron en
+el repositorio. `verificar_llave.py` se rehízo el 17-09-2026 (ver la nota
+de la entrada 3); la extracción del PTE y la agregación de Saber Pro las
+hacen hoy `scripts/extraer_pte_universidades.py` y
+`scripts/agregar_saber_pro.py`, dentro de `scripts/correr_oe1.py`. El
+tablero de la entrega final es el de la entrada 15.
 
 ---
 
@@ -453,6 +472,90 @@ corregidos antes de la entrega.
 
 ---
 
+## 15. Corrección del trabajo previo, informe final y material de la sustentación
+
+**Prompt representativo:** "realiza lo que puedas hacer ya".
+
+**Qué se obtuvo:** `scripts/revision_trabajo_previo.py`, con su tabla y su
+evidencia, para corregir la afirmación del informe 2025-2 sobre Comunicación
+Escrita; las secciones finales del informe (cumplimiento de los objetivos,
+corrección del trabajo previo, conclusiones y recomendaciones); una
+presentación para la sustentación, un tablero interactivo y una guía de
+preguntas. Las cifras de la presentación y del tablero salen de los CSV del
+repositorio con el mismo cálculo que usa el informe; los datos del tablero los
+prepara `scripts/datos_tablero.py`.
+
+**Verificación aplicada:** el informe se generó otra vez desde los CSV y
+compiló sin advertencias. El formato de números del tablero se comparó con el
+del informe en 8.128 valores, sin ninguna diferencia. `datos_tablero.py`
+comprueba que cada llave sea única y que el intervalo contenga la eficiencia
+corregida.
+
+**Fallos de la IA detectados y corregidos:**
+
+- Una cifra escrita a mano en el texto del informe no coincidía con su tabla:
+  la eficiencia del Chocó aparecía como 0,688 [0,674; 0,699] y la tabla
+  calculada da 0,689 [0,673; 0,699]. Ahora esa frase también se genera desde
+  los CSV.
+- El informe decía que la acreditación institucional no pasaba el ajuste de
+  Holm en ningún año, pero en 2023 su p ajustado es 0,046. Se corrigió la
+  redacción.
+- Una afirmación sobre el ordenamiento de Visbal-Cadavid et al. citaba la
+  página 1; el ordenamiento está en la tabla 10 (pp. 14–15). Se corrigió la
+  cita.
+- Riesgo detectado antes de entregar: el formato de números del navegador
+  redondea 0,6735 a 0,674, mientras que el informe muestra 0,673, porque
+  Python redondea el valor binario exacto. El tablero usa un formato propio
+  que reproduce el del informe.
+
+---
+
+## 16. Sugerencias del docente: modelo principal y validación fuera de muestra
+
+**Prompt representativo:** el docente indicó dejar como principal el modelo con mayor eficiencia, "siempre y cuando no tuviera un sobreajuste", y dejar un porcentaje de los datos que el modelo no toque para validar que sirve. También mencionó un ensamblaje de modelos (k-means y luego otro modelo) y una clasificación con regresión logística.
+
+**Qué se obtuvo:** el agente explicó que esas sugerencias vienen de los modelos predictivos y las adaptó al DEA, que no predice una variable conocida.
+
+- Se mantuvo el modelo principal: es el de mayor eficiencia y no está sobreajustado (cumple la regla del tamaño de muestra y deja solo 4 de 33 universidades en la frontera en 2024).
+- Se agregó `scripts/oe3_validacion_fuera_muestra.py`. En 1.000 sorteos por modelo y año reserva el 20 % de las universidades, estima la frontera con las demás y evalúa a las reservadas.
+  - En el modelo principal, la eficiencia de las que no están en la frontera no cambia en el 60,9 % y el 62,2 % de las evaluaciones (2023 y 2024).
+  - El 95 % de los cambios es menor de 0,048 y 0,106, y el orden se mantiene (Spearman agregado de 1,00).
+  - El modelo de cobertura con la UNAD es el más sensible.
+- No se hizo el ensamblaje: sin una variable objetivo no hay error que reducir combinando modelos.
+- No se hizo el k-means previo: con 33 universidades caben como máximo 2 grupos en el modelo principal, y el modelo sin la UNAD ya separa a la universidad más distinta.
+- No se hizo la regresión logística: hay solo 4 a 6 universidades en la frontera por año, las eficiencias no son independientes y el anteproyecto excluyó una segunda etapa formal. Con esas razones se acordó no hacerlos.
+
+**Verificación aplicada:** `verificar_oe2_oe3.py` (sección 11) repite todos los sorteos con el programa dual. Comprueba que los casos fuera del soporte corresponden a programas infactibles, que ninguna eficiencia baja al sacar universidades y que no cambia la de una universidad cuyos pares siguen en la muestra. Además recalcula cada indicador: TODO COINCIDE. Se plantaron dos errores en los archivos de la validación y el verificador detectó los dos.
+
+**Fallos menores de la IA:** una expresión mal escrita en el script y un tipo de dato distinto en el generador del informe, detectados al correrlos, y un salto de línea de LaTeX que el compilador rechazó. Se corrigieron antes de entregar.
+
+---
+
+## 17. Revisión del repositorio antes de la entrega
+
+**Prompt representativo:** solicitud de revisar si el repositorio está bien organizado y si falta algo que debería estar en él.
+
+**Qué se obtuvo:** una comparación de lo que hay en GitHub con lo que citan el README, la bitácora, los diccionarios, el informe, la presentación y el tablero.
+
+- En el commit `ffb2454` (8-10-2026), además de pasar lo heredado a `heredado/`, se borraron 22 archivos. Tres de ellos los citan documentos vigentes:
+  - `docs/uso_ia/inventario_fallos_isabella.md`, en la tabla "Afirmaciones del informe 2025-2 y lo que muestran los datos" del informe;
+  - `docs/gobernanza/evidencias/verificacion_llave_2026-09-18_0235.txt`, en el diccionario de la tabla maestra;
+  - `scripts/verificar_llave.py`, en la entrada 3.
+- Se restauraron sin cambios 21 de los 22; el que falta, `docs/.gitkeep`, no hace falta.
+- El README ahora describe `heredado/` y los scripts de la fase 1, y se agregó `requirements.txt`.
+
+**Verificación aplicada:**
+
+- Cada archivo restaurado tiene la misma huella de git que en la versión anterior a ese commit.
+- Existe toda ruta que citan esos documentos, salvo las de archivos que no tienen por qué estar: los que nunca se subieron (nota de la entrada 9), los que describen los inventarios de fallos y `docs/informe_final.md`, que se cita como archivo del repositorio del equipo 2025-2 (aquí está en `heredado/docs/`).
+- Los 25 scripts compilan.
+- Los archivos de `heredado/` son idénticos a los del último commit del equipo 2025-2 (`0e5bffe`).
+- Las salidas del cuaderno `heredado/codigos/Exploración.ipynb` muestran conteos, nombres de columnas, estadísticas agregadas y gráficos; ninguna lista registros de estudiantes.
+
+**Afirmación sin respaldo detectada:** la entrada 3 atribuye a `verificar_llave.py` una coincidencia del 99,2 % en 2021 que no tiene evidencia en el repositorio. Se dejó una nota con las cifras que sí la tienen.
+
+---
+
 ## Resumen de afirmaciones descartadas mediante verificación
 
 La siguiente tabla sintetiza los casos en los que una afirmación inicial
@@ -462,7 +565,7 @@ proyecto sin contraste:
 
 | Afirmación inicial (propia o de otra fuente) | Resultado de la verificación |
 |---|---|
-| El proyecto antecesor tenía razón al afirmar que no existía llave de integración entre SNIES y Saber Pro | Refutada — coincidencia empírica del 99,2 % (2021) y 98,9 % (2024) |
+| El proyecto antecesor tenía razón al afirmar que no existía llave de integración entre SNIES y Saber Pro | Refutada — coincidencia empírica del 99,2 % (2021) y 98,9 % (2024); la corrida que quedó en el repositorio da 98,9 % (2023) y 100 % (2024) (nota de la entrada 3) |
 | No existen antecedentes de aplicación del DEA a la educación superior en Colombia | Refutada — se identificaron al menos tres estudios colombianos previos |
 | El PTE no desagrega la ejecución presupuestal por institución | Refutada — sí lo hace, para el conjunto de treinta y cuatro universidades públicas |
 | Referencia de Almeida et al. (2024): dos autores, volumen 11 | Refutada — el estudio corresponde a seis autores, volumen 12 |
@@ -475,3 +578,7 @@ proyecto sin contraste:
 | El bootstrap puede suavizarse en la escala de eficiencia (0 a 1) | Refutada — produjo eficiencias corregidas negativas en el modelo de cobertura |
 | El primer cruce por nombre encontró todas las sedes | Refutada — faltaba la sede 9933 de la Universidad Nacional (74 evaluados en 2024) |
 | El índice socioeconómico del ICFES (INSE) sirve para comparar universidades entre años | Descartado — su relación con el estrato cambia de −0,54 (2023) a −0,95 (2024) |
+| Las cifras escritas en el texto del informe coinciden con sus tablas | Refutada — la del Chocó no coincidía (0,688 frente a 0,689); ahora se genera desde los CSV |
+| La acreditación institucional no pasa el ajuste de Holm en ningún año | Refutada — su p ajustado es 0,046 en 2023 |
+| El modelo de mayor eficiencia podría estar sobreajustado | Descartado — se sostiene fuera de muestra: al reservar el 20 % de las universidades, el orden se mantiene (Spearman agregado de 1,00 en el modelo principal) |
+| El repositorio de GitHub tiene todo lo que citan el informe, la bitácora y los diccionarios | Refutada — tres archivos citados se habían borrado en el commit `ffb2454`; se restauraron sin cambios |
