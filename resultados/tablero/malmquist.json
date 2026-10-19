@@ -1,0 +1,1322 @@
+[
+{
+"id": "principal-nominal-225701",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225701",
+"universidad": "U. Nacional de Colombia",
+"malmquist": 0.9549,
+"cambio_eficiencia": 1.0331,
+"cambio_tecnologico": 0.9243
+},
+{
+"id": "principal-nominal-225702",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225702",
+"universidad": "U. de Antioquia",
+"malmquist": 0.8753,
+"cambio_eficiencia": 1.041,
+"cambio_tecnologico": 0.8408
+},
+{
+"id": "principal-nominal-225703",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225703",
+"universidad": "U. del Valle",
+"malmquist": 0.8752,
+"cambio_eficiencia": 1.0532,
+"cambio_tecnologico": 0.8309
+},
+{
+"id": "principal-nominal-225704",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225704",
+"universidad": "U. Industrial de Santander",
+"malmquist": 0.8902,
+"cambio_eficiencia": 1.1209,
+"cambio_tecnologico": 0.7942
+},
+{
+"id": "principal-nominal-225705",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225705",
+"universidad": "U. Pedagógica y Tecnológica (UPTC)",
+"malmquist": 0.7812,
+"cambio_eficiencia": 0.8582,
+"cambio_tecnologico": 0.9102
+},
+{
+"id": "principal-nominal-225706",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225706",
+"universidad": "U. Distrital Francisco José de Caldas",
+"malmquist": 0.8068,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 0.8068
+},
+{
+"id": "principal-nominal-225707",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225707",
+"universidad": "U. de Cartagena",
+"malmquist": 0.9539,
+"cambio_eficiencia": 1.0753,
+"cambio_tecnologico": 0.8871
+},
+{
+"id": "principal-nominal-225708",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225708",
+"universidad": "U. de Nariño",
+"malmquist": 0.8952,
+"cambio_eficiencia": 1.1323,
+"cambio_tecnologico": 0.7906
+},
+{
+"id": "principal-nominal-225709",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225709",
+"universidad": "U. Nacional Abierta y a Distancia (UNAD)",
+"malmquist": 1.0057,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 1.0057
+},
+{
+"id": "principal-nominal-225710",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225710",
+"universidad": "U. del Magdalena",
+"malmquist": 0.9683,
+"cambio_eficiencia": 1.182,
+"cambio_tecnologico": 0.8192
+},
+{
+"id": "principal-nominal-225711",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225711",
+"universidad": "U. del Cauca",
+"malmquist": 0.9042,
+"cambio_eficiencia": 1.1319,
+"cambio_tecnologico": 0.7989
+},
+{
+"id": "principal-nominal-225712",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225712",
+"universidad": "U. Tecnológica de Pereira",
+"malmquist": 0.8731,
+"cambio_eficiencia": 1.0979,
+"cambio_tecnologico": 0.7953
+},
+{
+"id": "principal-nominal-225713",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225713",
+"universidad": "U. de Pamplona",
+"malmquist": 0.7771,
+"cambio_eficiencia": 0.9691,
+"cambio_tecnologico": 0.8019
+},
+{
+"id": "principal-nominal-225714",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225714",
+"universidad": "U. Surcolombiana",
+"malmquist": 0.8788,
+"cambio_eficiencia": 1.1139,
+"cambio_tecnologico": 0.7889
+},
+{
+"id": "principal-nominal-225715",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225715",
+"universidad": "U. Pedagógica Nacional",
+"malmquist": 0.8602,
+"cambio_eficiencia": 1.0979,
+"cambio_tecnologico": 0.7835
+},
+{
+"id": "principal-nominal-225716",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225716",
+"universidad": "U. de Caldas",
+"malmquist": 0.9496,
+"cambio_eficiencia": 1.2015,
+"cambio_tecnologico": 0.7903
+},
+{
+"id": "principal-nominal-225717",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225717",
+"universidad": "U. Militar Nueva Granada",
+"malmquist": 0.7603,
+"cambio_eficiencia": 0.9762,
+"cambio_tecnologico": 0.7788
+},
+{
+"id": "principal-nominal-225718",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225718",
+"universidad": "U. del Atlántico",
+"malmquist": 0.8903,
+"cambio_eficiencia": 1.1323,
+"cambio_tecnologico": 0.7863
+},
+{
+"id": "principal-nominal-225719",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225719",
+"universidad": "U. del Tolima",
+"malmquist": 0.9424,
+"cambio_eficiencia": 1.1254,
+"cambio_tecnologico": 0.8374
+},
+{
+"id": "principal-nominal-225720",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225720",
+"universidad": "U. de Córdoba",
+"malmquist": 0.8748,
+"cambio_eficiencia": 1.1181,
+"cambio_tecnologico": 0.7824
+},
+{
+"id": "principal-nominal-225721",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225721",
+"universidad": "U. del Quindío",
+"malmquist": 0.8597,
+"cambio_eficiencia": 1.0653,
+"cambio_tecnologico": 0.807
+},
+{
+"id": "principal-nominal-225722",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225722",
+"universidad": "U. Popular del Cesar",
+"malmquist": 0.7807,
+"cambio_eficiencia": 0.9936,
+"cambio_tecnologico": 0.7858
+},
+{
+"id": "principal-nominal-225723",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225723",
+"universidad": "U. de los Llanos",
+"malmquist": 0.8478,
+"cambio_eficiencia": 1.0804,
+"cambio_tecnologico": 0.7847
+},
+{
+"id": "principal-nominal-225724",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225724",
+"universidad": "U. Francisco de Paula Santander",
+"malmquist": 0.8697,
+"cambio_eficiencia": 1.0931,
+"cambio_tecnologico": 0.7956
+},
+{
+"id": "principal-nominal-225725",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225725",
+"universidad": "U. Francisco de Paula Santander (Ocaña)",
+"malmquist": 0.8363,
+"cambio_eficiencia": 1.0735,
+"cambio_tecnologico": 0.7791
+},
+{
+"id": "principal-nominal-225726",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225726",
+"universidad": "U. de la Amazonia",
+"malmquist": 0.6897,
+"cambio_eficiencia": 0.8826,
+"cambio_tecnologico": 0.7814
+},
+{
+"id": "principal-nominal-225727",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225727",
+"universidad": "U. Colegio Mayor de Cundinamarca",
+"malmquist": 0.7919,
+"cambio_eficiencia": 1.0154,
+"cambio_tecnologico": 0.7798
+},
+{
+"id": "principal-nominal-225728",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225728",
+"universidad": "U. de Cundinamarca",
+"malmquist": 0.7884,
+"cambio_eficiencia": 1.009,
+"cambio_tecnologico": 0.7814
+},
+{
+"id": "principal-nominal-225729",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225729",
+"universidad": "U. Tecnológica del Chocó",
+"malmquist": 0.8328,
+"cambio_eficiencia": 1.04,
+"cambio_tecnologico": 0.8007
+},
+{
+"id": "principal-nominal-225730",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225730",
+"universidad": "U. de Sucre",
+"malmquist": 0.8487,
+"cambio_eficiencia": 1.0894,
+"cambio_tecnologico": 0.7791
+},
+{
+"id": "principal-nominal-225731",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225731",
+"universidad": "U. de la Guajira",
+"malmquist": 0.7986,
+"cambio_eficiencia": 1.0183,
+"cambio_tecnologico": 0.7843
+},
+{
+"id": "principal-nominal-225732",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225732",
+"universidad": "U. del Pacífico",
+"malmquist": 0.7307,
+"cambio_eficiencia": 0.9243,
+"cambio_tecnologico": 0.7905
+},
+{
+"id": "principal-nominal-225733",
+"modelo": "principal",
+"version": "nominal",
+"pte_codigo": "225733",
+"universidad": "U. Internacional del Trópico Americano",
+"malmquist": 0.7806,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 0.7806
+},
+{
+"id": "principal-real-225701",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225701",
+"universidad": "U. Nacional de Colombia",
+"malmquist": 1.0046,
+"cambio_eficiencia": 1.0331,
+"cambio_tecnologico": 0.9724
+},
+{
+"id": "principal-real-225702",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225702",
+"universidad": "U. de Antioquia",
+"malmquist": 0.9208,
+"cambio_eficiencia": 1.041,
+"cambio_tecnologico": 0.8845
+},
+{
+"id": "principal-real-225703",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225703",
+"universidad": "U. del Valle",
+"malmquist": 0.9207,
+"cambio_eficiencia": 1.0532,
+"cambio_tecnologico": 0.8741
+},
+{
+"id": "principal-real-225704",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225704",
+"universidad": "U. Industrial de Santander",
+"malmquist": 0.9365,
+"cambio_eficiencia": 1.1209,
+"cambio_tecnologico": 0.8355
+},
+{
+"id": "principal-real-225705",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225705",
+"universidad": "U. Pedagógica y Tecnológica (UPTC)",
+"malmquist": 0.8218,
+"cambio_eficiencia": 0.8582,
+"cambio_tecnologico": 0.9576
+},
+{
+"id": "principal-real-225706",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225706",
+"universidad": "U. Distrital Francisco José de Caldas",
+"malmquist": 0.8488,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 0.8488
+},
+{
+"id": "principal-real-225707",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225707",
+"universidad": "U. de Cartagena",
+"malmquist": 1.0035,
+"cambio_eficiencia": 1.0753,
+"cambio_tecnologico": 0.9332
+},
+{
+"id": "principal-real-225708",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225708",
+"universidad": "U. de Nariño",
+"malmquist": 0.9417,
+"cambio_eficiencia": 1.1323,
+"cambio_tecnologico": 0.8317
+},
+{
+"id": "principal-real-225709",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225709",
+"universidad": "U. Nacional Abierta y a Distancia (UNAD)",
+"malmquist": 1.0579,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 1.0579
+},
+{
+"id": "principal-real-225710",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225710",
+"universidad": "U. del Magdalena",
+"malmquist": 1.0186,
+"cambio_eficiencia": 1.182,
+"cambio_tecnologico": 0.8618
+},
+{
+"id": "principal-real-225711",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225711",
+"universidad": "U. del Cauca",
+"malmquist": 0.9512,
+"cambio_eficiencia": 1.1319,
+"cambio_tecnologico": 0.8404
+},
+{
+"id": "principal-real-225712",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225712",
+"universidad": "U. Tecnológica de Pereira",
+"malmquist": 0.9185,
+"cambio_eficiencia": 1.0979,
+"cambio_tecnologico": 0.8366
+},
+{
+"id": "principal-real-225713",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225713",
+"universidad": "U. de Pamplona",
+"malmquist": 0.8175,
+"cambio_eficiencia": 0.9691,
+"cambio_tecnologico": 0.8436
+},
+{
+"id": "principal-real-225714",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225714",
+"universidad": "U. Surcolombiana",
+"malmquist": 0.9245,
+"cambio_eficiencia": 1.1139,
+"cambio_tecnologico": 0.83
+},
+{
+"id": "principal-real-225715",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225715",
+"universidad": "U. Pedagógica Nacional",
+"malmquist": 0.9049,
+"cambio_eficiencia": 1.0979,
+"cambio_tecnologico": 0.8242
+},
+{
+"id": "principal-real-225716",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225716",
+"universidad": "U. de Caldas",
+"malmquist": 0.999,
+"cambio_eficiencia": 1.2015,
+"cambio_tecnologico": 0.8314
+},
+{
+"id": "principal-real-225717",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225717",
+"universidad": "U. Militar Nueva Granada",
+"malmquist": 0.7998,
+"cambio_eficiencia": 0.9762,
+"cambio_tecnologico": 0.8193
+},
+{
+"id": "principal-real-225718",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225718",
+"universidad": "U. del Atlántico",
+"malmquist": 0.9366,
+"cambio_eficiencia": 1.1323,
+"cambio_tecnologico": 0.8272
+},
+{
+"id": "principal-real-225719",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225719",
+"universidad": "U. del Tolima",
+"malmquist": 0.9914,
+"cambio_eficiencia": 1.1254,
+"cambio_tecnologico": 0.881
+},
+{
+"id": "principal-real-225720",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225720",
+"universidad": "U. de Córdoba",
+"malmquist": 0.9203,
+"cambio_eficiencia": 1.1181,
+"cambio_tecnologico": 0.823
+},
+{
+"id": "principal-real-225721",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225721",
+"universidad": "U. del Quindío",
+"malmquist": 0.9044,
+"cambio_eficiencia": 1.0653,
+"cambio_tecnologico": 0.849
+},
+{
+"id": "principal-real-225722",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225722",
+"universidad": "U. Popular del Cesar",
+"malmquist": 0.8213,
+"cambio_eficiencia": 0.9936,
+"cambio_tecnologico": 0.8266
+},
+{
+"id": "principal-real-225723",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225723",
+"universidad": "U. de los Llanos",
+"malmquist": 0.8919,
+"cambio_eficiencia": 1.0804,
+"cambio_tecnologico": 0.8256
+},
+{
+"id": "principal-real-225724",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225724",
+"universidad": "U. Francisco de Paula Santander",
+"malmquist": 0.9149,
+"cambio_eficiencia": 1.0931,
+"cambio_tecnologico": 0.8369
+},
+{
+"id": "principal-real-225725",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225725",
+"universidad": "U. Francisco de Paula Santander (Ocaña)",
+"malmquist": 0.8798,
+"cambio_eficiencia": 1.0735,
+"cambio_tecnologico": 0.8196
+},
+{
+"id": "principal-real-225726",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225726",
+"universidad": "U. de la Amazonia",
+"malmquist": 0.7255,
+"cambio_eficiencia": 0.8826,
+"cambio_tecnologico": 0.822
+},
+{
+"id": "principal-real-225727",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225727",
+"universidad": "U. Colegio Mayor de Cundinamarca",
+"malmquist": 0.833,
+"cambio_eficiencia": 1.0154,
+"cambio_tecnologico": 0.8204
+},
+{
+"id": "principal-real-225728",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225728",
+"universidad": "U. de Cundinamarca",
+"malmquist": 0.8294,
+"cambio_eficiencia": 1.009,
+"cambio_tecnologico": 0.822
+},
+{
+"id": "principal-real-225729",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225729",
+"universidad": "U. Tecnológica del Chocó",
+"malmquist": 0.8761,
+"cambio_eficiencia": 1.04,
+"cambio_tecnologico": 0.8424
+},
+{
+"id": "principal-real-225730",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225730",
+"universidad": "U. de Sucre",
+"malmquist": 0.8928,
+"cambio_eficiencia": 1.0894,
+"cambio_tecnologico": 0.8196
+},
+{
+"id": "principal-real-225731",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225731",
+"universidad": "U. de la Guajira",
+"malmquist": 0.8402,
+"cambio_eficiencia": 1.0183,
+"cambio_tecnologico": 0.8251
+},
+{
+"id": "principal-real-225732",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225732",
+"universidad": "U. del Pacífico",
+"malmquist": 0.7687,
+"cambio_eficiencia": 0.9243,
+"cambio_tecnologico": 0.8316
+},
+{
+"id": "principal-real-225733",
+"modelo": "principal",
+"version": "real",
+"pte_codigo": "225733",
+"universidad": "U. Internacional del Trópico Americano",
+"malmquist": 0.8212,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 0.8212
+},
+{
+"id": "cobertura-nominal-225701",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225701",
+"universidad": "U. Nacional de Colombia",
+"malmquist": 0.9631,
+"cambio_eficiencia": 0.9381,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225702",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225702",
+"universidad": "U. de Antioquia",
+"malmquist": 0.8619,
+"cambio_eficiencia": 0.8395,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225703",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225703",
+"universidad": "U. del Valle",
+"malmquist": 0.8744,
+"cambio_eficiencia": 0.8517,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225704",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225704",
+"universidad": "U. Industrial de Santander",
+"malmquist": 0.8993,
+"cambio_eficiencia": 0.876,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225705",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225705",
+"universidad": "U. Pedagógica y Tecnológica (UPTC)",
+"malmquist": 0.7506,
+"cambio_eficiencia": 0.7311,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225706",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225706",
+"universidad": "U. Distrital Francisco José de Caldas",
+"malmquist": 0.7952,
+"cambio_eficiencia": 0.7745,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225707",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225707",
+"universidad": "U. de Cartagena",
+"malmquist": 0.9825,
+"cambio_eficiencia": 0.957,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225708",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225708",
+"universidad": "U. de Nariño",
+"malmquist": 0.9528,
+"cambio_eficiencia": 0.928,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225709",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225709",
+"universidad": "U. Nacional Abierta y a Distancia (UNAD)",
+"malmquist": 1.0267,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225710",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225710",
+"universidad": "U. del Magdalena",
+"malmquist": 1.034,
+"cambio_eficiencia": 1.0071,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225711",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225711",
+"universidad": "U. del Cauca",
+"malmquist": 0.9055,
+"cambio_eficiencia": 0.8819,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225712",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225712",
+"universidad": "U. Tecnológica de Pereira",
+"malmquist": 0.8435,
+"cambio_eficiencia": 0.8215,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225713",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225713",
+"universidad": "U. de Pamplona",
+"malmquist": 0.7023,
+"cambio_eficiencia": 0.6841,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225714",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225714",
+"universidad": "U. Surcolombiana",
+"malmquist": 0.8955,
+"cambio_eficiencia": 0.8722,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225715",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225715",
+"universidad": "U. Pedagógica Nacional",
+"malmquist": 0.868,
+"cambio_eficiencia": 0.8455,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225716",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225716",
+"universidad": "U. de Caldas",
+"malmquist": 1.094,
+"cambio_eficiencia": 1.0655,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225717",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225717",
+"universidad": "U. Militar Nueva Granada",
+"malmquist": 0.7437,
+"cambio_eficiencia": 0.7243,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225718",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225718",
+"universidad": "U. del Atlántico",
+"malmquist": 0.8819,
+"cambio_eficiencia": 0.859,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225719",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225719",
+"universidad": "U. del Tolima",
+"malmquist": 0.9825,
+"cambio_eficiencia": 0.957,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225720",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225720",
+"universidad": "U. de Córdoba",
+"malmquist": 0.7736,
+"cambio_eficiencia": 0.7535,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225721",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225721",
+"universidad": "U. del Quindío",
+"malmquist": 0.8199,
+"cambio_eficiencia": 0.7986,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225722",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225722",
+"universidad": "U. Popular del Cesar",
+"malmquist": 0.7314,
+"cambio_eficiencia": 0.7124,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225723",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225723",
+"universidad": "U. de los Llanos",
+"malmquist": 0.8293,
+"cambio_eficiencia": 0.8077,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225724",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225724",
+"universidad": "U. Francisco de Paula Santander",
+"malmquist": 0.8657,
+"cambio_eficiencia": 0.8432,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225725",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225725",
+"universidad": "U. Francisco de Paula Santander (Ocaña)",
+"malmquist": 0.8127,
+"cambio_eficiencia": 0.7916,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225726",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225726",
+"universidad": "U. de la Amazonia",
+"malmquist": 0.459,
+"cambio_eficiencia": 0.4471,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225727",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225727",
+"universidad": "U. Colegio Mayor de Cundinamarca",
+"malmquist": 0.831,
+"cambio_eficiencia": 0.8094,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225728",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225728",
+"universidad": "U. de Cundinamarca",
+"malmquist": 0.7398,
+"cambio_eficiencia": 0.7205,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225729",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225729",
+"universidad": "U. Tecnológica del Chocó",
+"malmquist": 0.8044,
+"cambio_eficiencia": 0.7835,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225730",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225730",
+"universidad": "U. de Sucre",
+"malmquist": 0.7997,
+"cambio_eficiencia": 0.7789,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225731",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225731",
+"universidad": "U. de la Guajira",
+"malmquist": 0.748,
+"cambio_eficiencia": 0.7286,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225732",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225732",
+"universidad": "U. del Pacífico",
+"malmquist": 0.7629,
+"cambio_eficiencia": 0.743,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-nominal-225733",
+"modelo": "cobertura",
+"version": "nominal",
+"pte_codigo": "225733",
+"universidad": "U. Internacional del Trópico Americano",
+"malmquist": 0.699,
+"cambio_eficiencia": 0.6808,
+"cambio_tecnologico": 1.0267
+},
+{
+"id": "cobertura-real-225701",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225701",
+"universidad": "U. Nacional de Colombia",
+"malmquist": 1.0132,
+"cambio_eficiencia": 0.9381,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225702",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225702",
+"universidad": "U. de Antioquia",
+"malmquist": 0.9067,
+"cambio_eficiencia": 0.8395,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225703",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225703",
+"universidad": "U. del Valle",
+"malmquist": 0.9199,
+"cambio_eficiencia": 0.8517,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225704",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225704",
+"universidad": "U. Industrial de Santander",
+"malmquist": 0.9461,
+"cambio_eficiencia": 0.876,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225705",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225705",
+"universidad": "U. Pedagógica y Tecnológica (UPTC)",
+"malmquist": 0.7896,
+"cambio_eficiencia": 0.7311,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225706",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225706",
+"universidad": "U. Distrital Francisco José de Caldas",
+"malmquist": 0.8365,
+"cambio_eficiencia": 0.7745,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225707",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225707",
+"universidad": "U. de Cartagena",
+"malmquist": 1.0336,
+"cambio_eficiencia": 0.957,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225708",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225708",
+"universidad": "U. de Nariño",
+"malmquist": 1.0023,
+"cambio_eficiencia": 0.928,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225709",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225709",
+"universidad": "U. Nacional Abierta y a Distancia (UNAD)",
+"malmquist": 1.08,
+"cambio_eficiencia": 1.0,
+"cambio_tecnologico": 1.08
+},
+{
+"id": "cobertura-real-225710",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225710",
+"universidad": "U. del Magdalena",
+"malmquist": 1.0878,
+"cambio_eficiencia": 1.0071,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225711",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225711",
+"universidad": "U. del Cauca",
+"malmquist": 0.9526,
+"cambio_eficiencia": 0.8819,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225712",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225712",
+"universidad": "U. Tecnológica de Pereira",
+"malmquist": 0.8873,
+"cambio_eficiencia": 0.8215,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225713",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225713",
+"universidad": "U. de Pamplona",
+"malmquist": 0.7388,
+"cambio_eficiencia": 0.6841,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225714",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225714",
+"universidad": "U. Surcolombiana",
+"malmquist": 0.942,
+"cambio_eficiencia": 0.8722,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225715",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225715",
+"universidad": "U. Pedagógica Nacional",
+"malmquist": 0.9132,
+"cambio_eficiencia": 0.8455,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225716",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225716",
+"universidad": "U. de Caldas",
+"malmquist": 1.1508,
+"cambio_eficiencia": 1.0655,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225717",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225717",
+"universidad": "U. Militar Nueva Granada",
+"malmquist": 0.7823,
+"cambio_eficiencia": 0.7243,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225718",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225718",
+"universidad": "U. del Atlántico",
+"malmquist": 0.9277,
+"cambio_eficiencia": 0.859,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225719",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225719",
+"universidad": "U. del Tolima",
+"malmquist": 1.0336,
+"cambio_eficiencia": 0.957,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225720",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225720",
+"universidad": "U. de Córdoba",
+"malmquist": 0.8139,
+"cambio_eficiencia": 0.7535,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225721",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225721",
+"universidad": "U. del Quindío",
+"malmquist": 0.8626,
+"cambio_eficiencia": 0.7986,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225722",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225722",
+"universidad": "U. Popular del Cesar",
+"malmquist": 0.7694,
+"cambio_eficiencia": 0.7124,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225723",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225723",
+"universidad": "U. de los Llanos",
+"malmquist": 0.8724,
+"cambio_eficiencia": 0.8077,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225724",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225724",
+"universidad": "U. Francisco de Paula Santander",
+"malmquist": 0.9107,
+"cambio_eficiencia": 0.8432,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225725",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225725",
+"universidad": "U. Francisco de Paula Santander (Ocaña)",
+"malmquist": 0.855,
+"cambio_eficiencia": 0.7916,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225726",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225726",
+"universidad": "U. de la Amazonia",
+"malmquist": 0.4829,
+"cambio_eficiencia": 0.4471,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225727",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225727",
+"universidad": "U. Colegio Mayor de Cundinamarca",
+"malmquist": 0.8742,
+"cambio_eficiencia": 0.8094,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225728",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225728",
+"universidad": "U. de Cundinamarca",
+"malmquist": 0.7782,
+"cambio_eficiencia": 0.7205,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225729",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225729",
+"universidad": "U. Tecnológica del Chocó",
+"malmquist": 0.8462,
+"cambio_eficiencia": 0.7835,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225730",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225730",
+"universidad": "U. de Sucre",
+"malmquist": 0.8412,
+"cambio_eficiencia": 0.7789,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225731",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225731",
+"universidad": "U. de la Guajira",
+"malmquist": 0.7869,
+"cambio_eficiencia": 0.7286,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225732",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225732",
+"universidad": "U. del Pacífico",
+"malmquist": 0.8025,
+"cambio_eficiencia": 0.743,
+"cambio_tecnologico": 1.0801
+},
+{
+"id": "cobertura-real-225733",
+"modelo": "cobertura",
+"version": "real",
+"pte_codigo": "225733",
+"universidad": "U. Internacional del Trópico Americano",
+"malmquist": 0.7353,
+"cambio_eficiencia": 0.6808,
+"cambio_tecnologico": 1.0801
+}
+]

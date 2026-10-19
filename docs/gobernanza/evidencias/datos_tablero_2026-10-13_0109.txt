@@ -1,0 +1,21 @@
+##### Datos del tablero — 2026-10-13 01:09 #####
+
+Eficiencia: 196 filas
+  cobertura            2023: 33 universidades, 3 en la frontera, media corregida 0.3371
+  cobertura            2024: 33 universidades, 2 en la frontera, media corregida 0.2874
+  cobertura_sin_unad   2023: 32 universidades, 5 en la frontera, media corregida 0.5767
+  cobertura_sin_unad   2024: 32 universidades, 9 en la frontera, media corregida 0.5801
+  principal            2023: 33 universidades, 6 en la frontera, media corregida 0.8685
+  principal            2024: 33 universidades, 4 en la frontera, media corregida 0.8761
+
+Características: 66 filas ({2023: 33, 2024: 33})
+
+Malmquist: 132 filas ({('cobertura', 'nominal'): 33, ('cobertura', 'real'): 33, ('principal', 'nominal'): 33, ('principal', 'real'): 33})
+
+Segunda etapa: 72 filas
+
+Archivos:
+  resultados/tablero/universidades.json: 196 filas, 99,457 bytes
+  resultados/tablero/caracteristicas.json: 66 filas, 33,074 bytes
+  resultados/tablero/malmquist.json: 132 filas, 29,537 bytes
+  resultados/tablero/segunda_etapa.json: 72 filas, 30,771 bytes
