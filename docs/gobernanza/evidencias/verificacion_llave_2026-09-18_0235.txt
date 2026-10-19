@@ -1,0 +1,48 @@
+##### Verificación de la llave SNIES-Saber Pro — 2026-09-18 02:33 #####
+
+=== AÑO 2023 ===
+  Saber Pro: 249,096 registros; 242,176 con código; 265 códigos únicos
+
+  --- SNIES matriculados: snies_matriculados_2023_articles-421539.xlsx (hoja '1.', encabezado fila 5) ---
+  Códigos únicos SNIES: 323 | en común con Saber Pro: 262
+  % códigos de Saber Pro presentes en SNIES:    98.9%
+  % registros de Saber Pro con código en SNIES: 100.0%
+  % códigos del SNIES presentes en Saber Pro:   81.1%
+  Códigos de Saber Pro que NO están en SNIES matriculados (3):
+      2809 | CORPORACION UNIVERSITARIA TECNOLOGICA DE BOLIVAR-CARTAGENA | 1 registros
+      2824 | CORPORACION UNIVERSITARIA DE COLOMBIA IDEAS-BOGOTÁ D.C. | 35 registros
+      9931 | FUNDACION UNIVERSITARIA PATRICIO SYMES | 53 registros
+  Códigos del SNIES sin registros en Saber Pro, por sector: {'Privado': 41, 'Oficial': 20}
+
+  --- SNIES graduados: snies_graduados_2023_articles-421535.xlsx (hoja '1.', encabezado fila 5) ---
+  Códigos únicos SNIES: 315 | en común con Saber Pro: 261
+  % códigos de Saber Pro presentes en SNIES:    98.5%
+  % registros de Saber Pro con código en SNIES: 99.9%
+  % códigos del SNIES presentes en Saber Pro:   82.9%
+  Códigos de Saber Pro que NO están en SNIES graduados (4):
+      2809 | CORPORACION UNIVERSITARIA TECNOLOGICA DE BOLIVAR-CARTAGENA | 1 registros
+      2824 | CORPORACION UNIVERSITARIA DE COLOMBIA IDEAS-BOGOTÁ D.C. | 35 registros
+      9902 | FUNDACION UNIVERSITARIA COMFENALCO SANTANDER-BUCARAMANGA | 34 registros
+      9931 | FUNDACION UNIVERSITARIA PATRICIO SYMES | 53 registros
+  Códigos del SNIES sin registros en Saber Pro, por sector: {'Privado': 36, 'Oficial': 18}
+
+=== AÑO 2024 ===
+  Saber Pro: 281,601 registros; 272,448 con código; 270 códigos únicos
+
+  --- SNIES matriculados: snies_matriculados_2024_articles-425151.xlsx (hoja '1.', encabezado fila 5) ---
+  Códigos únicos SNIES: 323 | en común con Saber Pro: 270
+  % códigos de Saber Pro presentes en SNIES:    100.0%
+  % registros de Saber Pro con código en SNIES: 100.0%
+  % códigos del SNIES presentes en Saber Pro:   83.6%
+  Códigos del SNIES sin registros en Saber Pro, por sector: {'Privado': 36, 'Oficial': 17}
+
+  --- SNIES graduados: snies_graduados_2024_articles-425146.xlsx (hoja '1.', encabezado fila 5) ---
+  Códigos únicos SNIES: 316 | en común con Saber Pro: 267
+  % códigos de Saber Pro presentes en SNIES:    98.9%
+  % registros de Saber Pro con código en SNIES: 100.0%
+  % códigos del SNIES presentes en Saber Pro:   84.5%
+  Códigos de Saber Pro que NO están en SNIES graduados (3):
+      4826 | CORPORACION UNIVERSITARIA REGIONAL DEL CARIBE- IAFIC-CARTAGENA | 99 registros
+      9924 | FUNDACION UNIVERSITARIA INTERNACIONAL DE COLOMBIA - UNINCOL | 3 registros
+      9928 | FUNDACIÓN UNIVERSITARIA SALESIANA | 13 registros
+  Códigos del SNIES sin registros en Saber Pro, por sector: {'Privado': 31, 'Oficial': 18}
