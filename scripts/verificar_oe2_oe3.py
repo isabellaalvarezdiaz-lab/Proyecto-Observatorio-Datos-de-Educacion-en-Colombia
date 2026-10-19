@@ -34,9 +34,14 @@ Qué comprueba:
      de scipy que usó el script original. Holm se aplica dentro de cada modelo, año y familia.
  10. Contexto de las menos eficientes (oe3_contexto_menos_eficientes.csv): las 5 de menor eficiencia
      corregida y sus puestos en el perfil socioeconómico, recalculados.
+ 11. Validación fuera de muestra (oe3_validacion_resumen.csv y oe3_validacion_universidades.csv):
+     repite los mismos sorteos con el programa dual; comprueba que "fuera del soporte" corresponde a
+     un programa infactible, que ninguna eficiencia baja al sacar universidades de la frontera, que
+     las de la frontera siguen en ella o por encima y que una universidad cuyos pares siguen en la
+     muestra no cambia; y recalcula todos los indicadores con funciones escritas aquí.
 
 Uso (desde la raíz del repositorio, después de oe3_dea_bootstrap.py, oe2_malmquist.py,
-oe3_cobertura_sin_unad.py y oe3_segunda_etapa.py):
+oe3_cobertura_sin_unad.py, oe3_segunda_etapa.py y oe3_validacion_fuera_muestra.py):
     python scripts/verificar_oe2_oe3.py
 """
 import sys
@@ -182,6 +187,81 @@ def recalcular_desde_crudos():
                               np.where(o.isin(["OFICIAL DEPARTAMENTAL", "OFICIAL MUNICIPAL"]), "territorial", None))
         tablas.append(r.assign(anio=anio))
     return pd.concat(tablas).rename_axis("pte_codigo").reset_index()
+
+
+def rangos_corr(a, b):
+    """Spearman como correlación de Pearson de los rangos promedio, redondeando a 6 decimales para
+    que las universidades de la frontera queden empatadas (escrito aparte de dea.spearman)."""
+    ra = pd.Series(np.round(a, 6)).rank().to_numpy()
+    rb = pd.Series(np.round(b, 6)).rank().to_numpy()
+    return np.corrcoef(ra, rb)[0, 1]
+
+
+def verificar_validacion(base):
+    """11. Repite la validación fuera de muestra con el programa dual y revisa sus propiedades."""
+    log("\n11. Validación fuera de muestra (oe3_validacion_resumen.csv y oe3_validacion_universidades.csv)")
+    log("  Repite los mismos sorteos con el programa dual (≈ 3 min)...")
+    vr = pd.read_csv("resultados/oe3_validacion_resumen.csv")
+    vu = pd.read_csv("resultados/oe3_validacion_universidades.csv", dtype={"pte_codigo": str})
+    prods = {**MODELOS, "cobertura_sin_unad": MODELOS["cobertura"]}
+    for f in vr.itertuples():
+        d = base[base.anio == f.anio]
+        if f.modelo == "cobertura_sin_unad":
+            d = d[d.pte_codigo != "225709"]
+        d = d.reset_index(drop=True)
+        X, Y = d[["obligacion_mm"]].to_numpy(float), d[prods[f.modelo]].to_numpy(float)
+        n = len(d)
+        full = dual(X, Y)
+        _, lam = dea.eficiencia(X, Y)            # pares del modelo completo: solo para la propiedad de igualdad
+        parts = dea.particiones(n, int(f.reservadas), int(f.repeticiones), int(f.semilla))
+        fuera = np.full(parts.shape, np.nan)
+        soporte_ok = no_baja = frontera_ok = igual_ok = True
+        for r, p in enumerate(parts):
+            ent = np.setdiff1d(np.arange(n), p)
+            for i, o in enumerate(p):
+                if X[o, 0] < X[ent, 0].min():       # fuera del soporte: el programa debe ser infactible
+                    try:
+                        dea.phi_envolvente(X[o], Y[o], X[ent], Y[ent])
+                        soporte_ok = False
+                    except RuntimeError:
+                        pass
+                    continue
+                v = 1 / dea.phi_multiplicadores(X[o], Y[o], X[ent], Y[ent], metodo="highs-ipm")
+                fuera[r, i] = v
+                no_baja &= bool(v >= full[o] - 1e-6)     # menos universidades → frontera igual o más baja
+                if full[o] > 1 - 1e-6:
+                    frontera_ok &= bool(v >= 1 - 1e-6)
+                elif lam[o, o] < 1e-9 and not (set(np.where(lam[o] > 1e-9)[0]) & set(p)):
+                    igual_ok &= bool(abs(v - full[o]) < 1e-5)  # sus pares siguen: no puede cambiar
+        etq = f"{f.modelo} {f.anio}"
+        check(f"{etq}: fuera del soporte = programa infactible", soporte_ok)
+        check(f"{etq}: ninguna eficiencia baja al sacarla de la frontera", no_baja)
+        check(f"{etq}: las de la frontera siguen en la frontera o por encima", frontera_ok)
+        check(f"{etq}: sin cambio cuando todos sus pares siguen en la muestra", igual_ok)
+        comp = full[parts]
+        ok = ~np.isnan(fuera)
+        inte = ok & (comp <= 1 - 1e-6)
+        cambio = fuera - comp
+        rhos = [rangos_corr(fuera[r][ok[r]], comp[r][ok[r]]) for r in range(len(parts))
+                if ok[r].sum() >= 3 and np.ptp(np.round(comp[r][ok[r]], 6)) > 0]
+        por_u = pd.DataFrame({"o": parts.ravel(), "v": fuera.ravel()}).dropna().groupby("o").v.median()
+        calc = {"evaluaciones": parts.size, "fuera_soporte": int((~ok).sum()), "interior_evaluaciones": int(inte.sum()),
+                "interior_sin_cambio_pct": 100 * np.mean(np.abs(cambio[inte]) < 1e-6),
+                "interior_cambio_medio": cambio[inte].mean(), "interior_cambio_p95": np.quantile(cambio[inte], 0.95),
+                "interior_parecen_eficientes_pct": 100 * np.mean(fuera[inte] >= 1 - 1e-6),
+                "frontera_evaluaciones": int((ok & (comp > 1 - 1e-6)).sum()),
+                "spearman_mediana": np.nanmedian(rhos), "spearman_p05": np.nanquantile(rhos, 0.05),
+                "spearman_agregado": rangos_corr(por_u.to_numpy(), full[por_u.index.to_numpy()])}
+        peor = max(abs(calc[c] - getattr(f, c)) for c in calc)
+        check(f"{etq}: indicadores recalculados", peor < TOL, f"diferencia máxima {peor:.1e}")
+        u = vu[(vu.modelo == f.modelo) & (vu.anio == f.anio)].set_index("pte_codigo").loc[d.pte_codigo]
+        veces = np.bincount(parts.ravel(), minlength=n)
+        fuera_s = np.bincount(parts.ravel()[~ok.ravel()], minlength=n)
+        med = pd.Series(np.nan, index=range(n))
+        med[por_u.index] = por_u.to_numpy()
+        ok_u = ((u.veces_reservada.to_numpy() == veces).all() and (u.veces_fuera_soporte.to_numpy() == fuera_s).all()
+                and np.nanmax(np.abs(u.eficiencia_fuera_mediana.to_numpy() - med.to_numpy())) < TOL)
+        check(f"{etq}: detalle por universidad recalculado", bool(ok_u))
 
 
 def main():
@@ -395,6 +475,11 @@ def main():
             ok_puestos &= (pe == r.puesto_estrato_1_2) and (pm == r.puesto_madre_hasta_sec) and (r.n == len(t))
     check("las 5 de menor eficiencia corregida de cada modelo y año", ok_ids)
     check("puestos en estratos 1 y 2 y en educación de la madre", ok_puestos)
+
+    if Path("resultados/oe3_validacion_resumen.csv").exists():
+        verificar_validacion(base)
+    else:
+        log("\n11. OMITIDA — no existe resultados/oe3_validacion_resumen.csv (correr oe3_validacion_fuera_muestra.py).")
 
     log(f"\nRESULTADO: {'TODO COINCIDE' if not FALLAS else 'HAY DIFERENCIAS: ' + '; '.join(FALLAS)}")
     carpeta = Path("docs") / "gobernanza" / "evidencias"
