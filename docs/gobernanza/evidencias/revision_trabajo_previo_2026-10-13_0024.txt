@@ -1,0 +1,21 @@
+##### Revisión del trabajo previo: Comunicación Escrita — 2026-10-13 00:24 #####
+
+=== 2023: 242,140 evaluados | 0 en Escrita: 10,423 (4.30 %) | de esos ceros, con nivel de desempeño: 0
+  Inglés                      todos los evaluados       media  153.21  desviación  33.62
+  Lectura crítica             todos los evaluados       media  149.07  desviación  31.08
+  Razonamiento cuantitativo   todos los evaluados       media  142.85  desviación  31.87
+  Competencias ciudadanas     todos los evaluados       media  139.71  desviación  34.30
+  Comunicación escrita        todos los evaluados       media  140.59  desviación  39.05
+  Comunicación escrita        sin los ceros en Escrita  media  146.92  desviación  25.77
+  Escrita sin ceros: puesto por media 3 de 5; puesto por desviación (1 = la mayor) 5 de 5
+
+=== 2024: 272,448 evaluados | 0 en Escrita: 18,327 (6.73 %) | de esos ceros, con nivel de desempeño: 0
+  Inglés                      todos los evaluados       media  155.33  desviación  34.21
+  Lectura crítica             todos los evaluados       media  152.47  desviación  29.60
+  Razonamiento cuantitativo   todos los evaluados       media  143.60  desviación  31.78
+  Competencias ciudadanas     todos los evaluados       media  145.61  desviación  32.95
+  Comunicación escrita        todos los evaluados       media  133.94  desviación  45.04
+  Comunicación escrita        sin los ceros en Escrita  media  143.60  desviación  28.07
+  Escrita sin ceros: puesto por media 4 de 5; puesto por desviación (1 = la mayor) 5 de 5
+
+Guardado: resultados/revision_trabajo_previo.csv
