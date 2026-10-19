@@ -1,0 +1,40 @@
+##### OE3 — validación fuera de muestra — 2026-10-13 18:09 #####
+sorteos R = 1000 | semilla = 20261013 | fracción reservada = 0.2
+
+=== principal · 2023 (n = 33; se reservan 7 en cada sorteo) ===
+  evaluaciones: 7,000; fuera del soporte: 253 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (5,700 evaluaciones): sin ningún cambio 60.9 %; cambio medio 0.0110; percentil 95 0.0484; parecen eficientes 3.3 %
+  Spearman por sorteo: mediana 1.000, percentil 5 0.846 | agregado (32 universidades): 0.997
+  más sensibles a quién queda en la frontera: universidad de cundinamarca (cambio medio 0.053); universidad de cartagena (cambio medio 0.025); universidad de antioquia (cambio medio 0.020)
+
+=== principal · 2024 (n = 33; se reservan 7 en cada sorteo) ===
+  evaluaciones: 7,000; fuera del soporte: 253 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (6,121 evaluaciones): sin ningún cambio 62.2 %; cambio medio 0.0205; percentil 95 0.1065; parecen eficientes 8.3 %
+  Spearman por sorteo: mediana 1.000, percentil 5 0.699 | agregado (32 universidades): 0.998
+  más sensibles a quién queda en la frontera: universidad de cundinamarca (cambio medio 0.173); universidad de cartagena (cambio medio 0.060); universidad militar nueva granada (cambio medio 0.059)
+
+=== cobertura · 2023 (n = 33; se reservan 7 en cada sorteo) ===
+  evaluaciones: 7,000; fuera del soporte: 253 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (6,310 evaluaciones): sin ningún cambio 69.2 %; cambio medio 0.0693; percentil 95 0.4387; parecen eficientes 4.2 %
+  Spearman por sorteo: mediana 1.000, percentil 5 0.771 | agregado (32 universidades): 1.000
+  más sensibles a quién queda en la frontera: universidad distrital francisco jose de caldas (cambio medio 0.143); universidad pedagogica y tecnologica de colombia (cambio medio 0.139); universidad nacional de colombia (cambio medio 0.134)
+
+=== cobertura · 2024 (n = 33; se reservan 7 en cada sorteo) ===
+  evaluaciones: 7,000; fuera del soporte: 253 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (6,516 evaluaciones): sin ningún cambio 71.3 %; cambio medio 0.0831; percentil 95 0.5591; parecen eficientes 5.9 %
+  Spearman por sorteo: mediana 1.000, percentil 5 0.750 | agregado (32 universidades): 1.000
+  más sensibles a quién queda en la frontera: universidad de cundinamarca (cambio medio 0.203); universidad de cartagena (cambio medio 0.164); universidad nacional de colombia (cambio medio 0.156)
+
+=== cobertura_sin_unad · 2023 (n = 32; se reservan 6 en cada sorteo) ===
+  evaluaciones: 6,000; fuera del soporte: 215 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (5,049 evaluaciones): sin ningún cambio 64.7 %; cambio medio 0.0197; percentil 95 0.1018; parecen eficientes 3.7 %
+  Spearman por sorteo: mediana 1.000, percentil 5 0.899 | agregado (31 universidades): 0.999
+  más sensibles a quién queda en la frontera: universidad de cartagena (cambio medio 0.087); universidad de cundinamarca (cambio medio 0.060); universidad del tolima (cambio medio 0.027)
+
+=== cobertura_sin_unad · 2024 (n = 32; se reservan 6 en cada sorteo) ===
+  evaluaciones: 6,000; fuera del soporte: 215 (universidad de cundinamarca, universidad del pacifico, universidad internacional del tropico americano)
+  universidades que no están en la frontera (4,340 evaluaciones): sin ningún cambio 66.8 %; cambio medio 0.0148; percentil 95 0.0578; parecen eficientes 1.0 %
+  Spearman por sorteo: mediana 0.986, percentil 5 0.894 | agregado (31 universidades): 0.991
+  más sensibles a quién queda en la frontera: universidad de cundinamarca (cambio medio 0.140); universidad de la guajira (cambio medio 0.025); universidad francisco de paula santander seccional ocaña (cambio medio 0.021)
+
+Guardado: resultados/oe3_validacion_resumen.csv, oe3_validacion_universidades.csv

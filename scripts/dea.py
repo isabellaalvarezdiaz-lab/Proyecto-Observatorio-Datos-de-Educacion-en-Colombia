@@ -1,6 +1,6 @@
 """
 dea.py — Funciones de Análisis Envolvente de Datos (DEA) que usan oe3_dea_bootstrap.py,
-oe2_malmquist.py y verificar_oe2_oe3.py. No se corre solo.
+oe2_malmquist.py, oe3_validacion_fuera_muestra.py y verificar_oe2_oe3.py. No se corre solo.
 
 Convenciones
   X: matriz (n, m) de insumos   Y: matriz (n, s) de productos   (filas = universidades)
@@ -107,6 +107,15 @@ def spearman(a, b):
     azar el empate entre ellas y cambia la correlación hasta en 0,02.
     """
     return pd.Series(np.round(a, 6)).corr(pd.Series(np.round(b, 6)), method="spearman")
+
+
+def particiones(n, k, R, semilla):
+    """R sorteos de k universidades reservadas entre n (sin repetir dentro de cada sorteo), para la
+    validación fuera de muestra. Con la misma semilla y el mismo n da los mismos sorteos, así que
+    oe3_validacion_fuera_muestra.py y verificar_oe2_oe3.py evalúan exactamente las mismas particiones.
+    Devuelve una matriz (R, k) de índices de fila."""
+    rng = np.random.default_rng(semilla)
+    return np.array([np.sort(rng.choice(n, size=k, replace=False)) for _ in range(R)])
 
 
 def bootstrap_simar_wilson(X, Y, B=2000, alfa=0.05, semilla=20261011, vrs=True):

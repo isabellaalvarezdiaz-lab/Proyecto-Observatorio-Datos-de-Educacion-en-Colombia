@@ -1,0 +1,197 @@
+﻿modelo,anio,pte_codigo,pte_nombre,eficiencia,en_frontera,veces_reservada,veces_fuera_soporte,eficiencia_fuera_mediana,cambio_medio,sin_cambio_pct,parece_eficiente_pct
+principal,2023,225701,universidad nacional de colombia,1.0,True,186,0,1.144,0.226,0.0,
+principal,2023,225702,universidad de antioquia,0.9588,False,224,0,0.9599,0.0201,39.7321,20.9821
+principal,2023,225703,universidad del valle,0.9567,False,213,0,0.9662,0.0152,37.0892,4.2254
+principal,2023,225704,universidad industrial de santander,0.9973,False,222,0,0.9973,0.0092,71.6216,28.3784
+principal,2023,225705,universidad pedagogica y tecnologica de colombia,1.0,True,215,0,1.0338,0.1203,0.0,
+principal,2023,225706,universidad distrital francisco jose de caldas,1.0,True,209,0,1.0843,0.1745,0.0,
+principal,2023,225707,universidad de cartagena,0.9133,False,210,0,0.9226,0.0253,45.7143,4.2857
+principal,2023,225708,universidad de nariño,0.9068,False,240,0,0.9068,0.007,65.0,0.0
+principal,2023,225709,universidad nacional abierta y a distancia unad,1.0,True,231,0,5.4309,4.5234,0.0,
+principal,2023,225710,universidad del magdalena,0.8953,False,192,0,0.897,0.0138,44.7917,2.6042
+principal,2023,225711,universidad del cauca,0.929,False,217,0,0.929,0.0033,68.2028,0.0
+principal,2023,225712,universidad tecnologica de pereira,0.9237,False,210,0,0.9237,0.0021,68.5714,0.0
+principal,2023,225713,universidad de pamplona,0.8734,False,207,0,0.8752,0.0112,49.7585,0.4831
+principal,2023,225714,universidad surcolombiana,0.9038,False,195,0,0.9038,0.0075,64.6154,0.0
+principal,2023,225715,universidad pedagogica nacional,0.9251,False,201,0,0.9251,0.0049,68.6567,0.0
+principal,2023,225716,universidad de caldas,0.9305,False,198,0,0.9305,0.0043,71.7172,0.0
+principal,2023,225717,universidad militar nueva granada,1.0,True,206,0,1.1501,0.1704,0.0,
+principal,2023,225718,universidad del atlantico,0.9066,False,226,0,0.9066,0.0044,51.7699,0.0
+principal,2023,225719,universidad del tolima,0.8782,False,209,0,0.8782,0.0197,50.2392,2.3923
+principal,2023,225720,universidad de cordoba,0.8536,False,211,0,0.8536,0.0049,66.8246,0.0
+principal,2023,225721,universidad del quindio,0.875,False,208,0,0.875,0.0068,64.9038,0.0
+principal,2023,225722,universidad popular del cesar,0.8411,False,194,0,0.8411,0.0082,50.0,0.0
+principal,2023,225723,universidad de los llanos,0.9181,False,204,0,0.9181,0.0092,67.6471,0.4902
+principal,2023,225724,universidad francisco de paula santander,0.8628,False,221,0,0.8628,0.0073,68.7783,0.0
+principal,2023,225725,universidad francisco de paula santander seccional ocaña,0.8792,False,236,0,0.8792,0.0135,70.339,0.0
+principal,2023,225726,universidad de la amazonia,0.8304,False,223,0,0.8304,0.0087,62.3318,0.0
+principal,2023,225727,universidad colegio mayor de cundinamarca,0.9394,False,256,0,0.9394,0.0085,71.875,1.9531
+principal,2023,225728,universidad de cundinamarca,0.9428,False,204,8,0.9428,0.0527,54.0816,19.898
+principal,2023,225729,universidad tecnologica del choco diego luis cordoba,0.7159,False,222,0,0.7159,0.0069,70.7207,0.0
+principal,2023,225730,universidad de sucre,0.9007,False,178,0,0.9007,0.0064,68.5393,0.0
+principal,2023,225731,universidad de la guajira,0.8014,False,209,0,0.8014,0.0131,50.2392,0.9569
+principal,2023,225732,universidad del pacifico,0.8591,False,214,36,0.8591,0.0043,80.8989,0.0
+principal,2023,225733,universidad internacional del tropico americano,1.0,True,209,209,,,,
+principal,2024,225701,universidad nacional de colombia,1.0,True,186,0,1.1531,0.2332,0.0,
+principal,2024,225702,universidad de antioquia,0.973,False,224,0,0.973,0.0213,51.7857,37.0536
+principal,2024,225703,universidad del valle,0.9375,False,213,0,0.9448,0.0134,46.4789,0.939
+principal,2024,225704,universidad industrial de santander,0.9983,False,222,0,0.9983,0.0089,71.6216,28.3784
+principal,2024,225705,universidad pedagogica y tecnologica de colombia,0.9957,False,215,0,0.9957,0.038,55.3488,44.6512
+principal,2024,225706,universidad distrital francisco jose de caldas,1.0,True,209,0,1.0846,0.1696,0.0,
+principal,2024,225707,universidad de cartagena,0.9371,False,210,0,0.9371,0.0604,50.4762,25.7143
+principal,2024,225708,universidad de nariño,0.9018,False,240,0,0.9018,0.0075,65.0,0.0
+principal,2024,225709,universidad nacional abierta y a distancia unad,1.0,True,231,0,6.5512,5.5703,0.0,
+principal,2024,225710,universidad del magdalena,0.908,False,192,0,0.908,0.0278,54.1667,20.8333
+principal,2024,225711,universidad del cauca,0.9583,False,217,0,0.9583,0.0033,68.2028,2.3041
+principal,2024,225712,universidad tecnologica de pereira,0.9242,False,210,0,0.9242,0.0021,68.5714,0.0
+principal,2024,225713,universidad de pamplona,0.8565,False,207,0,0.8581,0.0241,47.343,0.4831
+principal,2024,225714,universidad surcolombiana,0.9042,False,195,0,0.9042,0.0082,64.6154,0.0
+principal,2024,225715,universidad pedagogica nacional,0.9244,False,201,0,0.9244,0.0051,68.6567,0.0
+principal,2024,225716,universidad de caldas,0.9365,False,198,0,0.9365,0.0045,71.7172,0.0
+principal,2024,225717,universidad militar nueva granada,0.9773,False,206,0,0.9773,0.0586,50.4854,36.8932
+principal,2024,225718,universidad del atlantico,0.9215,False,226,0,0.9215,0.0039,52.2124,0.0
+principal,2024,225719,universidad del tolima,0.8793,False,209,0,0.8793,0.0344,51.1962,17.7033
+principal,2024,225720,universidad de cordoba,0.8682,False,211,0,0.8682,0.005,66.8246,0.0
+principal,2024,225721,universidad del quindio,0.8856,False,208,0,0.8856,0.0075,64.9038,0.0
+principal,2024,225722,universidad popular del cesar,0.8578,False,194,0,0.8578,0.0087,68.5567,0.0
+principal,2024,225723,universidad de los llanos,0.9217,False,204,0,0.9217,0.0103,67.6471,0.0
+principal,2024,225724,universidad francisco de paula santander,0.8733,False,221,0,0.8733,0.0081,68.7783,0.0
+principal,2024,225725,universidad francisco de paula santander seccional ocaña,0.8952,False,236,0,0.8952,0.0185,70.339,1.2712
+principal,2024,225726,universidad de la amazonia,0.8485,False,223,0,0.8485,0.009,62.3318,0.0
+principal,2024,225727,universidad colegio mayor de cundinamarca,0.9299,False,256,0,0.9299,0.0086,71.875,1.9531
+principal,2024,225728,universidad de cundinamarca,0.9351,False,204,8,0.9441,0.1731,49.4898,19.898
+principal,2024,225729,universidad tecnologica del choco diego luis cordoba,0.7111,False,222,0,0.7111,0.0073,70.7207,0.0
+principal,2024,225730,universidad de sucre,0.9192,False,178,0,0.9192,0.0099,70.2247,2.809
+principal,2024,225731,universidad de la guajira,0.8111,False,209,0,0.8111,0.0128,54.067,0.9569
+principal,2024,225732,universidad del pacifico,0.8236,False,214,36,0.8236,0.0069,80.8989,0.0
+principal,2024,225733,universidad internacional del tropico americano,1.0,True,209,209,,,,
+cobertura,2023,225701,universidad nacional de colombia,0.8524,False,186,0,0.8524,0.1343,80.6452,19.3548
+cobertura,2023,225702,universidad de antioquia,0.5279,False,224,0,0.5279,0.1038,78.125,6.6964
+cobertura,2023,225703,universidad del valle,0.4845,False,213,0,0.4845,0.1132,76.9953,3.7559
+cobertura,2023,225704,universidad industrial de santander,0.3286,False,222,0,0.3286,0.087,77.027,0.0
+cobertura,2023,225705,universidad pedagogica y tecnologica de colombia,0.7756,False,215,0,0.7756,0.139,78.6047,21.3953
+cobertura,2023,225706,universidad distrital francisco jose de caldas,0.9279,False,209,0,0.9279,0.1435,51.1962,48.8038
+cobertura,2023,225707,universidad de cartagena,0.549,False,210,0,0.549,0.1142,74.2857,4.2857
+cobertura,2023,225708,universidad de nariño,0.2352,False,240,0,0.2352,0.0534,84.5833,0.0
+cobertura,2023,225709,universidad nacional abierta y a distancia unad,1.0,True,231,0,5.4309,4.5234,0.0,
+cobertura,2023,225710,universidad del magdalena,0.4012,False,192,0,0.4012,0.1121,64.0625,0.0
+cobertura,2023,225711,universidad del cauca,0.2225,False,217,0,0.2225,0.087,76.0369,0.0
+cobertura,2023,225712,universidad tecnologica de pereira,0.25,False,210,0,0.25,0.0571,81.4286,0.0
+cobertura,2023,225713,universidad de pamplona,0.4995,False,207,0,0.4995,0.0986,61.3527,0.4831
+cobertura,2023,225714,universidad surcolombiana,0.2533,False,195,0,0.2533,0.0664,62.5641,0.0
+cobertura,2023,225715,universidad pedagogica nacional,0.1485,False,201,0,0.1485,0.0284,85.0746,0.0
+cobertura,2023,225716,universidad de caldas,0.2021,False,198,0,0.2021,0.064,78.7879,0.0
+cobertura,2023,225717,universidad militar nueva granada,1.0,True,206,0,1.1501,0.1704,0.0,
+cobertura,2023,225718,universidad del atlantico,0.3664,False,226,0,0.3664,0.0752,78.3186,0.0
+cobertura,2023,225719,universidad del tolima,0.5,False,209,0,0.5,0.0823,66.5072,2.3923
+cobertura,2023,225720,universidad de cordoba,0.2966,False,211,0,0.2966,0.0635,73.4597,0.0
+cobertura,2023,225721,universidad del quindio,0.2149,False,208,0,0.2149,0.087,58.1731,0.0
+cobertura,2023,225722,universidad popular del cesar,0.5705,False,194,0,0.5705,0.0409,65.4639,0.0
+cobertura,2023,225723,universidad de los llanos,0.2137,False,204,0,0.2137,0.0206,65.6863,0.0
+cobertura,2023,225724,universidad francisco de paula santander,0.3298,False,221,0,0.3298,0.0717,60.181,0.0
+cobertura,2023,225725,universidad francisco de paula santander seccional ocaña,0.3562,False,236,0,0.3562,0.0184,54.661,0.0
+cobertura,2023,225726,universidad de la amazonia,0.4426,False,223,0,0.4426,0.033,65.9193,0.0
+cobertura,2023,225727,universidad colegio mayor de cundinamarca,0.3032,False,256,0,0.3032,0.0129,51.9531,0.0
+cobertura,2023,225728,universidad de cundinamarca,0.8659,False,204,8,0.8659,0.0716,68.8776,19.898
+cobertura,2023,225729,universidad tecnologica del choco diego luis cordoba,0.261,False,222,0,0.261,0.0521,66.2162,0.0
+cobertura,2023,225730,universidad de sucre,0.2964,False,178,0,0.2964,0.012,55.618,0.0
+cobertura,2023,225731,universidad de la guajira,0.6741,False,209,0,0.6741,0.0369,66.9856,0.9569
+cobertura,2023,225732,universidad del pacifico,0.216,False,214,36,0.216,0.0057,68.5393,0.0
+cobertura,2023,225733,universidad internacional del tropico americano,1.0,True,209,209,,,,
+cobertura,2024,225701,universidad nacional de colombia,0.7537,False,186,0,0.7537,0.1558,80.6452,19.3548
+cobertura,2024,225702,universidad de antioquia,0.4325,False,224,0,0.4325,0.1309,78.125,21.875
+cobertura,2024,225703,universidad del valle,0.4028,False,213,0,0.4028,0.1268,76.9953,0.939
+cobertura,2024,225704,universidad industrial de santander,0.2852,False,222,0,0.2852,0.0992,77.027,0.0
+cobertura,2024,225705,universidad pedagogica y tecnologica de colombia,0.5567,False,215,0,0.5567,0.1292,78.6047,21.3953
+cobertura,2024,225706,universidad distrital francisco jose de caldas,0.8575,False,209,0,0.8575,0.1346,65.5502,18.6603
+cobertura,2024,225707,universidad de cartagena,0.5269,False,210,0,0.5269,0.1639,74.2857,25.7143
+cobertura,2024,225708,universidad de nariño,0.219,False,240,0,0.219,0.0548,84.5833,0.0
+cobertura,2024,225709,universidad nacional abierta y a distancia unad,1.0,True,231,0,6.5512,5.5703,0.0,
+cobertura,2024,225710,universidad del magdalena,0.4052,False,192,0,0.4052,0.1297,62.5,20.8333
+cobertura,2024,225711,universidad del cauca,0.1948,False,217,0,0.1948,0.0905,76.0369,0.0
+cobertura,2024,225712,universidad tecnologica de pereira,0.2016,False,210,0,0.2016,0.0666,81.4286,0.0
+cobertura,2024,225713,universidad de pamplona,0.3601,False,207,0,0.3601,0.1399,63.285,0.4831
+cobertura,2024,225714,universidad surcolombiana,0.2236,False,195,0,0.2236,0.0718,64.6154,0.0
+cobertura,2024,225715,universidad pedagogica nacional,0.1276,False,201,0,0.1276,0.0322,85.0746,0.0
+cobertura,2024,225716,universidad de caldas,0.2147,False,198,0,0.2147,0.0689,78.7879,0.0
+cobertura,2024,225717,universidad militar nueva granada,0.8737,False,206,0,0.8737,0.0751,65.0485,20.3883
+cobertura,2024,225718,universidad del atlantico,0.3093,False,226,0,0.3093,0.079,78.3186,0.0
+cobertura,2024,225719,universidad del tolima,0.4933,False,209,0,0.4933,0.0992,67.4641,17.7033
+cobertura,2024,225720,universidad de cordoba,0.207,False,211,0,0.207,0.0792,73.4597,0.0
+cobertura,2024,225721,universidad del quindio,0.173,False,208,0,0.173,0.098,67.7885,0.0
+cobertura,2024,225722,universidad popular del cesar,0.4515,False,194,0,0.4515,0.0503,63.9175,0.0
+cobertura,2024,225723,universidad de los llanos,0.1974,False,204,0,0.1974,0.0237,67.6471,0.0
+cobertura,2024,225724,universidad francisco de paula santander,0.3007,False,221,0,0.3007,0.0774,60.181,0.0
+cobertura,2024,225725,universidad francisco de paula santander seccional ocaña,0.366,False,236,0,0.366,0.0293,65.678,0.0
+cobertura,2024,225726,universidad de la amazonia,0.2233,False,223,0,0.2233,0.0278,66.8161,0.0
+cobertura,2024,225727,universidad colegio mayor de cundinamarca,0.2932,False,256,0,0.2932,0.0184,63.6719,0.0
+cobertura,2024,225728,universidad de cundinamarca,0.8259,False,204,8,0.8259,0.2035,65.3061,17.8571
+cobertura,2024,225729,universidad tecnologica del choco diego luis cordoba,0.2133,False,222,0,0.2133,0.0652,65.7658,0.0
+cobertura,2024,225730,universidad de sucre,0.2958,False,178,0,0.2958,0.0178,65.7303,0.0
+cobertura,2024,225731,universidad de la guajira,0.5803,False,209,0,0.5803,0.0476,65.0718,0.9569
+cobertura,2024,225732,universidad del pacifico,0.1744,False,214,36,0.1744,0.0067,80.8989,0.0
+cobertura,2024,225733,universidad internacional del tropico americano,1.0,True,209,209,,,,
+cobertura_sin_unad,2023,225701,universidad nacional de colombia,1.0,True,160,0,1.5161,0.551,0.0,
+cobertura_sin_unad,2023,225702,universidad de antioquia,0.9821,False,179,0,0.9821,0.0213,72.067,27.933
+cobertura_sin_unad,2023,225703,universidad del valle,0.967,False,191,0,0.967,0.009,72.2513,14.1361
+cobertura_sin_unad,2023,225704,universidad industrial de santander,0.6999,False,184,0,0.6999,0.0126,65.2174,0.0
+cobertura_sin_unad,2023,225705,universidad pedagogica y tecnologica de colombia,1.0,True,203,0,1.3579,0.4265,0.0,
+cobertura_sin_unad,2023,225706,universidad distrital francisco jose de caldas,1.0,True,182,0,1.3934,0.4738,0.0,
+cobertura_sin_unad,2023,225707,universidad de cartagena,0.9288,False,166,0,0.9288,0.0874,52.4096,23.494
+cobertura_sin_unad,2023,225708,universidad de nariño,0.5696,False,203,0,0.5696,0.0146,63.0542,0.0
+cobertura_sin_unad,2023,225710,universidad del magdalena,0.9163,False,184,0,0.9163,0.0199,70.6522,2.7174
+cobertura_sin_unad,2023,225711,universidad del cauca,0.5772,False,189,0,0.5772,0.0064,68.254,0.0
+cobertura_sin_unad,2023,225712,universidad tecnologica de pereira,0.5489,False,184,0,0.5489,0.0073,71.7391,0.0
+cobertura_sin_unad,2023,225713,universidad de pamplona,0.8721,False,190,0,0.8721,0.0261,51.5789,2.1053
+cobertura_sin_unad,2023,225714,universidad surcolombiana,0.5432,False,169,0,0.5432,0.0145,67.4556,0.0
+cobertura_sin_unad,2023,225715,universidad pedagogica nacional,0.3325,False,191,0,0.3325,0.0071,72.2513,0.0
+cobertura_sin_unad,2023,225716,universidad de caldas,0.4962,False,180,0,0.4962,0.009,66.6667,0.0
+cobertura_sin_unad,2023,225717,universidad militar nueva granada,1.0,True,191,0,1.1833,0.2178,0.0,
+cobertura_sin_unad,2023,225718,universidad del atlantico,0.698,False,185,0,0.698,0.0147,72.4324,0.0
+cobertura_sin_unad,2023,225719,universidad del tolima,0.9386,False,180,0,0.9386,0.0268,53.8889,16.1111
+cobertura_sin_unad,2023,225720,universidad de cordoba,0.5145,False,196,0,0.5145,0.0212,66.8367,0.0
+cobertura_sin_unad,2023,225721,universidad del quindio,0.6149,False,198,0,0.6149,0.0123,67.1717,0.0
+cobertura_sin_unad,2023,225722,universidad popular del cesar,0.7431,False,190,0,0.7431,0.021,54.2105,0.0
+cobertura_sin_unad,2023,225723,universidad de los llanos,0.3046,False,199,0,0.3046,0.0121,53.2663,0.0
+cobertura_sin_unad,2023,225724,universidad francisco de paula santander,0.5981,False,189,0,0.5981,0.0157,75.1323,0.0
+cobertura_sin_unad,2023,225725,universidad francisco de paula santander seccional ocaña,0.3633,False,182,0,0.3633,0.0218,56.5934,0.0
+cobertura_sin_unad,2023,225726,universidad de la amazonia,0.5507,False,202,0,0.5507,0.0149,69.3069,0.0
+cobertura_sin_unad,2023,225727,universidad colegio mayor de cundinamarca,0.3253,False,191,0,0.3253,0.0144,52.356,0.0
+cobertura_sin_unad,2023,225728,universidad de cundinamarca,0.8659,False,203,3,0.8659,0.0603,74.0,15.5
+cobertura_sin_unad,2023,225729,universidad tecnologica del choco diego luis cordoba,0.5376,False,200,0,0.5376,0.0128,71.0,0.0
+cobertura_sin_unad,2023,225730,universidad de sucre,0.3083,False,181,0,0.3083,0.0132,56.9061,0.0
+cobertura_sin_unad,2023,225731,universidad de la guajira,0.784,False,193,0,0.784,0.0252,61.658,2.0725
+cobertura_sin_unad,2023,225732,universidad del pacifico,0.2294,False,185,32,0.2294,0.0154,67.9739,0.0
+cobertura_sin_unad,2023,225733,universidad internacional del tropico americano,1.0,True,180,180,,,,
+cobertura_sin_unad,2024,225701,universidad nacional de colombia,1.0,True,160,0,1.5344,0.566,0.0,
+cobertura_sin_unad,2024,225702,universidad de antioquia,1.0,True,179,0,1.006,0.0315,0.0,
+cobertura_sin_unad,2024,225703,universidad del valle,0.946,False,191,0,0.946,0.0065,71.7277,3.1414
+cobertura_sin_unad,2024,225704,universidad industrial de santander,0.7111,False,184,0,0.7111,0.011,65.2174,0.0
+cobertura_sin_unad,2024,225705,universidad pedagogica y tecnologica de colombia,1.0,True,203,0,1.1313,0.1616,0.0,
+cobertura_sin_unad,2024,225706,universidad distrital francisco jose de caldas,1.0,True,182,0,1.4021,0.4588,0.0,
+cobertura_sin_unad,2024,225707,universidad de cartagena,1.0,True,166,0,1.1371,0.1756,0.0,
+cobertura_sin_unad,2024,225708,universidad de nariño,0.573,False,203,0,0.573,0.0016,68.9655,0.0
+cobertura_sin_unad,2024,225710,universidad del magdalena,1.0,True,184,0,1.0159,0.0265,0.0,
+cobertura_sin_unad,2024,225711,universidad del cauca,0.5627,False,189,0,0.5627,0.0056,69.3122,0.0
+cobertura_sin_unad,2024,225712,universidad tecnologica de pereira,0.5544,False,184,0,0.5544,0.0047,73.3696,0.0
+cobertura_sin_unad,2024,225713,universidad de pamplona,0.9193,False,190,0,0.9193,0.014,68.4211,2.1053
+cobertura_sin_unad,2024,225714,universidad surcolombiana,0.5541,False,169,0,0.5541,0.0026,67.4556,0.0
+cobertura_sin_unad,2024,225715,universidad pedagogica nacional,0.3424,False,191,0,0.3424,0.0012,67.5393,0.0
+cobertura_sin_unad,2024,225716,universidad de caldas,0.5351,False,180,0,0.5351,0.0033,67.7778,0.0
+cobertura_sin_unad,2024,225717,universidad militar nueva granada,1.0,True,191,0,1.1214,0.1595,0.0,
+cobertura_sin_unad,2024,225718,universidad del atlantico,0.6634,False,185,0,0.6634,0.0098,66.4865,0.0
+cobertura_sin_unad,2024,225719,universidad del tolima,1.0,True,180,0,1.0375,0.0496,0.0,
+cobertura_sin_unad,2024,225720,universidad de cordoba,0.502,False,196,0,0.502,0.0039,62.7551,0.0
+cobertura_sin_unad,2024,225721,universidad del quindio,0.6332,False,198,0,0.6332,0.0018,67.1717,0.0
+cobertura_sin_unad,2024,225722,universidad popular del cesar,0.7014,False,190,0,0.7014,0.0162,58.4211,0.0
+cobertura_sin_unad,2024,225723,universidad de los llanos,0.318,False,199,0,0.318,0.0093,71.8593,0.0
+cobertura_sin_unad,2024,225724,universidad francisco de paula santander,0.6021,False,189,0,0.6021,0.0088,77.7778,0.0
+cobertura_sin_unad,2024,225725,universidad francisco de paula santander seccional ocaña,0.4173,False,182,0,0.4173,0.0206,56.5934,0.0
+cobertura_sin_unad,2024,225726,universidad de la amazonia,0.3395,False,202,0,0.3395,0.0085,61.3861,0.0
+cobertura_sin_unad,2024,225727,universidad colegio mayor de cundinamarca,0.3485,False,191,0,0.3485,0.0103,57.5916,0.0
+cobertura_sin_unad,2024,225728,universidad de cundinamarca,0.9353,False,203,3,0.9353,0.14,74.0,15.5
+cobertura_sin_unad,2024,225729,universidad tecnologica del choco diego luis cordoba,0.5746,False,200,0,0.5746,0.0055,72.0,0.0
+cobertura_sin_unad,2024,225730,universidad de sucre,0.3398,False,181,0,0.3398,0.0097,54.1436,0.0
+cobertura_sin_unad,2024,225731,universidad de la guajira,0.7696,False,193,0,0.7696,0.0247,55.9585,2.0725
+cobertura_sin_unad,2024,225732,universidad del pacifico,0.2029,False,185,32,0.2029,0.0145,81.0458,0.0
+cobertura_sin_unad,2024,225733,universidad internacional del tropico americano,1.0,True,180,180,,,,
