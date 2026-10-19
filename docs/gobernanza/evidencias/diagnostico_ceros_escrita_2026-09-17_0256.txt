@@ -1,0 +1,45 @@
+##### Diagnóstico de ceros en Comunicación Escrita — 2026-09-17 02:56 #####
+
+=== AÑO 2023 === registros=249,096  ceros en Escrita=10,877 (4.37%)
+  1. Puntaje global frente al promedio de los 5 módulos (registros completos):
+     diferencia absoluta media=0.241 | máxima=0.400 | % con diferencia <= 0.5: 100.00%
+     solo registros con cero en Escrita: % con diferencia <= 0.5: 100.00%
+  2. Puntaje global promedio según tratamiento del cero:
+     a) tal cual (cero incluido):                      144.83
+     b) excluyendo registros con cero en Escrita:      146.63
+     c) promedio de 4 módulos para los registros cero: 145.98
+  3. % de ceros por institución (instituciones con >= 100 registros: 227):
+     percentil 10=1.9% | mediana=3.9% | percentil 90=6.9% | máximo=16.0%
+     10 instituciones con mayor % de ceros:
+       1118 | UNIVERSIDAD TECNOLOGICA DEL CHOCODIEGO LUIS CORDOBA-QUIBDO | 1,665 registros | 16.0%
+       9116 | FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA-QUIBDO | 401 registros | 14.0%
+       1122 | UNIVERSIDAD DEL PACIFICO-BUENAVENTURA | 261 registros | 13.4%
+       9104 | ESCUELA MILITAR DE CADETES GENERAL JOSE MARIA CORDOVA-BOGOTÁ D.C. | 281 registros | 11.7%
+       2825 | CORPORACION UNIVERSITARIA RAFAEL NUÑEZ-CARTAGENA | 781 registros | 11.5%
+       4110 | INSTITUTO TOLIMENSE DE FORMACION TECNICA PROFESIONAL -ESPINAL | 513 registros | 11.1%
+       9122 | UNIVERSIDAD MANUELA BELTRAN-UMB--BUCARAMANGA | 111 registros | 10.8%
+       1123 | UNIVERSIDAD POPULAR DEL CESAR-AGUACHICA | 366 registros | 10.7%
+       2211 | INSTITUCION UNIVERSITARIA BELLAS ARTES Y CIENCIAS DE BOLIVAR-CARTAGENA | 197 registros | 10.7%
+       1826 | UNIVERSIDAD ANTONIO NARIÑO-BOGOTÁ D.C. | 2,077 registros | 9.3%
+
+=== AÑO 2024 === registros=281,601  ceros en Escrita=19,357 (6.87%)
+  1. Puntaje global frente al promedio de los 5 módulos (registros completos):
+     diferencia absoluta media=0.240 | máxima=0.400 | % con diferencia <= 0.5: 100.00%
+     solo registros con cero en Escrita: % con diferencia <= 0.5: 100.00%
+  2. Puntaje global promedio según tratamiento del cero:
+     a) tal cual (cero incluido):                      145.86
+     b) excluyendo registros con cero en Escrita:      148.77
+     c) promedio de 4 módulos para los registros cero: 147.68
+  3. % de ceros por institución (instituciones con >= 100 registros: 228):
+     percentil 10=2.9% | mediana=6.1% | percentil 90=11.1% | máximo=20.1%
+     10 instituciones con mayor % de ceros:
+       1123 | UNIVERSIDAD POPULAR DEL CESAR-AGUACHICA | 304 registros | 20.1%
+       1829 | UNIVERSIDAD SANTIAGO DE CALI-PALMIRA | 309 registros | 19.4%
+       2207 | INSTITUTO UNIVERSITARIO DE LA PAZ-BARRANCABERMEJA | 557 registros | 17.4%
+       1210 | UNIVERSIDAD FRANCISCO DE PAULA SANTANDER-OCAÑA | 654 registros | 15.4%
+       3115 | INSTITUTO TECNOLOGICO DEL PUTUMAYO-MOCOA | 319 registros | 15.0%
+       1216 | UNIVERSIDAD DE CUNDINAMARCA-UDEC-UBATE | 120 registros | 15.0%
+       2825 | CORPORACION UNIVERSITARIA RAFAEL NUÑEZ-CARTAGENA | 766 registros | 14.6%
+       9922 | INSTITUCIÓN UNIVERSITARIA COMFAMILIAR RISARALDA | 128 registros | 14.1%
+       4709 | INSTITUCION UNIVERSITARIA EAM QUINDIO-ARMENIA | 165 registros | 13.9%
+       9116 | FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA-QUIBDO | 669 registros | 13.8%
