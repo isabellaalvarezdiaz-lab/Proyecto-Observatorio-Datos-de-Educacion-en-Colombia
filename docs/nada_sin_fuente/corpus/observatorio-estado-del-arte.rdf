@@ -1,0 +1,945 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/">
+    <bib:Article rdf:about="https://revistas.uptc.edu.co/index.php/cenes/article/view/18505">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2256-5779"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Romero-Bolívar</foaf:surname>
+                        <foaf:givenName>Fabián Leonardo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rincón-Chaparro</foaf:surname>
+                        <foaf:givenName>Valeria Alexandra</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_11"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>análisis de datos espaciales</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Desigualdad regional</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>educational evaluation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>educational outcomes</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>evaluación de la educación</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>nivel socioeconómico</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Regional inequality</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>resultados educativos</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>socioeconomic level</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>spatial data analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Desigualdad regional y distribución espacial en educación media en Colombia 2019 y 2023</dc:title>
+        <dcterms:abstract>Regional inequalities in education and socioeconomic conditions in Colombia are critical issues in the field of public policy. This study aims to analyze how spatial and departmental context influences inequality in educational outcomes, despite the decentralization of the public sector in 1991, which was intended to mitigate these disparities. Data from ICFES and IGAC were employed, using methods such as multiple correspondence analysis, descriptive statistics, inequality tests and spatial autocorrelation.
+The findings reveal that differences in academic achievement are significantly associated with the department where the educational institution is located. This suggests that educational policies should integrate a departmental and spatial approach to effectively address regional inequalities. The implications of this study are relevant for policy formulation, as it highlights the need for strategies that consider regional particularities in education. The paper includes a comprehensive analysis with references, tables and graphs that support the results obtained.</dcterms:abstract>
+        <dc:date>2025-03-12</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://revistas.uptc.edu.co/index.php/cenes/article/view/18505</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:36:55</dcterms:dateSubmitted>
+        <z:language>es</z:language>
+        <z:libraryCatalog>revistas.uptc.edu.co</z:libraryCatalog>
+        <dc:rights>http://creativecommons.org/licenses/by-nc-sa/4.0</dc:rights>
+        <bib:pages>259-283</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2256-5779">
+        <dc:identifier>DOI 10.19053/uptc.01203053.v44.n79.2025.18505</dc:identifier>
+        <prism:volume>44</prism:volume>
+        <dc:title>Apuntes del Cenes</dc:title>
+        <dc:identifier>ISSN 2256-5779</dc:identifier>
+        <prism:number>79</prism:number>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_11">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/11/Romero-Bolívar y Rincón-Chaparro - 2025 - Desigualdad regional y distribución espacial en educación media en Colombia 2019 y 2023.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://revistas.uptc.edu.co/index.php/cenes/article/download/18505/15336</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:37:06</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.actauniversitaria.ugto.mx/index.php/acta/article/view/911">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2007-9621,%200188-6266"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Navarro Chávez</foaf:surname>
+                        <foaf:givenName>José César Lenin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gómez Monge</foaf:surname>
+                        <foaf:givenName>Rodrigo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Torres Hernández</foaf:surname>
+                        <foaf:givenName>Zacarías</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_12"/>
+        <dc:title>Las universidades en México: una medida de su eficiencia a través del análisis de la envolvente de datos con bootstrap</dc:title>
+        <dcterms:abstract>This paper presents efficiency of 32 public universities in Mexico in 2012, instrumenting Data Envelopment Analysis (DEA), identifying overall technical, pure technical and scale efficiency, considering also bootstrapping technique to give strength to the scores. To measure this efficiency authors like Nazarko &amp; Saparauskas (2014); Ramirez &amp; Alfaro (2013); Cunha &amp; Rocha (2012) have been used as input financing, while as outputs, Agasisti &amp; Perez-Esparrells (2010), and Daghbashyan (2009), used variables relating to education and research. Results show that on average, it had a value of 0.77 of efficiency with VRS DEA and 0.71 with CRS DEA, using bootstrap. Although any university was efficient, the Autonomous University of Queretaro was the closest to optimum value and in the opposite side was University of Chapingo who obtained the lowest value.</dcterms:abstract>
+        <dc:date>2016-12-16</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.actauniversitaria.ugto.mx/index.php/acta/article/view/911</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:33:18</dcterms:dateSubmitted>
+        <z:shortTitle>Las universidades en México</z:shortTitle>
+        <z:language>es</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:pages>60-69</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2007-9621,%200188-6266">
+        <dc:identifier>DOI 10.15174/au.2016.911</dc:identifier>
+        <prism:volume>26</prism:volume>
+        <dc:title>Acta Universitaria</dc:title>
+        <dc:identifier>ISSN 2007-9621, 0188-6266</dc:identifier>
+        <prism:number>6</prism:number>
+        <dcterms:alternative>Acta Universitaria</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_12">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/12/Navarro Chávez et al. - 2016 - Las universidades en México una medida de su eficiencia a través del análisis de la envolvente de d.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.mdpi.com/2071-1050/9/8/1416">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2071-1050"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Visbal-Cadavid</foaf:surname>
+                        <foaf:givenName>Delimiro</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Martínez-Gómez</foaf:surname>
+                        <foaf:givenName>Mónica</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Guijarro</foaf:surname>
+                        <foaf:givenName>Francisco</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_13"/>
+        <dc:title>Assessing the Efficiency of Public Universities through DEA. A Case Study</dc:title>
+        <dcterms:abstract>This paper presents the results of an efﬁciency study of Colombian public universities in 2012, conducted using the methodology of Data Envelopment Analysis (DEA) and the models CCR, BCC and SBM under output orientation. The main objective is to determine technical, pure technical, scale and mix efﬁciencies using data acquired from the Ministry of National Education. An analysis of the results shows the extent to which outputs of inefﬁcient Higher Education Institutions (HEIs) could be improved and the possible cause of this inefﬁciency. The universities were also ranked using a Pareto efﬁcient cross-efﬁciency model and a study was made of changes to overall productivity between 2011 and 2012. The results showed Tolima, Caldas and UNAD to be the best-performing universities, with Universidad del Pacíﬁco as the worst performer. Malmquist index was applied to analyze the change in productivity from 2011 to 2012. The Universidad de La Guajira showed great improvement in technical efﬁciency between 2011 and 2012.</dcterms:abstract>
+        <dc:date>2017-08-11</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.mdpi.com/2071-1050/9/8/1416</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:33:15</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:pages>1416</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2071-1050">
+        <dc:identifier>DOI 10.3390/su9081416</dc:identifier>
+        <prism:volume>9</prism:volume>
+        <dc:title>Sustainability</dc:title>
+        <dc:identifier>ISSN 2071-1050</dc:identifier>
+        <prism:number>8</prism:number>
+        <dcterms:alternative>Sustainability</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_13">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/13/Visbal-Cadavid et al. - 2017 - Assessing the Efficiency of Public Universities through DEA. A Case Study.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://repositorio.ipea.gov.br/bitstream/11058/13226/1/ppp_n54_Artigo7_Comparacao_de_eficiencia.pdf">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.38116/ppp54art07</dc:identifier>
+                <prism:volume>54</prism:volume>
+                <dc:title>Planejamento e Políticas Públicas (PPP): n. 54, jan./jun. 2020</dc:title>
+                <dcterms:alternative>PPP n. 54</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marques</foaf:surname>
+                        <foaf:givenName>Felipe César</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Davoglio</foaf:surname>
+                        <foaf:givenName>Guilherme Rubim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Camara</foaf:surname>
+                        <foaf:givenName>Marcia Regina Gabardo Da</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nascimento</foaf:surname>
+                        <foaf:givenName>Sidnei Pereira Do</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ferreira</foaf:surname>
+                        <foaf:givenName>Carlos Roberto</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_14"/>
+        <dc:title>Comparação de eficiência entre as instituições de ensino superior públicas e privadas no desempenho acadêmico dos alunos concluintes em ciências econômicas</dc:title>
+        <dcterms:abstract>O objetivo do trabalho é avaliar o desempenho das instituições de ensino superior (IES) públicas e privadas em relação a sua capacidade de agregar conhecimento acadêmico aos alunos concluintes em ciências econômicas, com base nas notas do Exame Nacional de Desempenho dos Estudantes (Enade) em 2012 e 2015. O estudo contribui com a literatura, ao utilizar uma nova abordagem, que decompõe a análise envoltória de dados em dois componentes: um relativo ao desempenho do aluno, e outro relacionado à eficiência das IES. Aplica-se também a técnica de mínimos quadrados ordinários para o controle dos fatores socioeconômicos dos alunos. Para a obtenção de fronteiras de eficiência robustas, foi utilizado o método jackstrap de identificação de outliers. Os resultados indicam não haver diferenças significativas de eficiência entre as categorias administrativas, tanto entre os alunos, quanto entre as instituições. Verifica-se também a menor eficiência média de alunos, quando comparada com a eficiência média das IES.</dcterms:abstract>
+        <dc:date>06/2020</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://repositorio.ipea.gov.br/bitstream/11058/13226/1/ppp_n54_Artigo7_Comparacao_de_eficiencia.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:33:12</dcterms:dateSubmitted>
+        <z:language>pt</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:pages>157-186</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_14">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/14/Marques et al. - 2020 - Comparação de eficiência entre as instituições de ensino superior públicas e privadas no desempenho.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://revistas.uniandes.edu.co/index.php/dys/article/view/6696">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1900-7760,%200120-3584"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Melo-Becerra</foaf:surname>
+                        <foaf:givenName>Ligia Alba</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramos-Forero</foaf:surname>
+                        <foaf:givenName>Jorge Enrique</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hernández-Santamaría</foaf:surname>
+                        <foaf:givenName>Pedro Oswaldo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_15"/>
+        <dc:title>La educación superior en Colombia: situación actual y análisis de eficiencia</dc:title>
+        <dcterms:abstract>The aim of this paper is to examine the state of higher education in Colombia and estimate the efficiency of different academic programs from institutions of higher education in the country. To estimate efficiency measures, we use stochastic frontier techniques and the results of the Saber Pro test. Estimations evaluate the effect of variables associated with the teaching staff and infrastructure of institutions, and environmental factors that are not directly under the control institutions, such as the family income and parental education. Results highlight the importance of environmental factors, suggesting that while many institutions have margin to improve their efficiency, many of them are restricted by the influence of students’ socioeconomic factors.</dcterms:abstract>
+        <dc:date>2017-03-01</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://revistas.uniandes.edu.co/index.php/dys/article/view/6696</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-27 07:33:08</dcterms:dateSubmitted>
+        <z:shortTitle>La educación superior en Colombia</z:shortTitle>
+        <z:language>es</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:rights>https://creativecommons.org/licenses/by-nc-nd/4.0</dc:rights>
+        <bib:pages>59-111</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1900-7760,%200120-3584">
+        <dc:identifier>DOI 10.13043/dys.78.2</dc:identifier>
+        <dc:title>Desarrollo y Sociedad</dc:title>
+        <dc:identifier>ISSN 1900-7760, 0120-3584</dc:identifier>
+        <prism:number>78</prism:number>
+        <dcterms:alternative>Desarro. soc.</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_15">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/15/Melo-Becerra et al. - 2017 - La educación superior en Colombia situación actual y análisis de eficiencia.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.redalyc.org/articulo.oa?id=15543298014">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:,%201607-4041"/>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Universidad Autónoma de Baja California</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rojas</foaf:surname>
+                        <foaf:givenName>Angélica María Váquez</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pérez-Esparrells</foaf:surname>
+                        <foaf:givenName>Carmen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_17"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>cambio tecnológico</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>eficiencia</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>índice de Malmquist</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Malmquist index</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>productividad</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>productivity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>technical efficiency</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>technological change</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Universidades</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Universities</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Cambios de la productividad en las universidades públicas españolas, 2002-2009</dc:title>
+        <dcterms:abstract>En este artículo se analiza la evolución de la productividad en 47 universidades españolas mediante el Índice de Malmquist durante el período 2002-2009. Los insumos incluidos en el análisis son el Personal Docente e Investigador equivalente a tiempo completo, gastos corrientes en bienes y servicios, mientras los productos son el Número de graduados y la Producción Científica anual por universidad. Utilizando esta metodología, el crecimiento de la productividad se puede descomponer en dos componentes: cambio en la eficiencia técnica y el cambio tecnológico. Los resultados indican que el cambio de la productividad registró un promedio anual de -1.1% en todas las universidades, con un rango entre -15.2% y 18.3%, lo que confirma la hipótesis de una gran heterogeneidad en el Sistema Universitario Público Español respecto del cambio en productividad a lo largo del tiempo. Sin embargo, existen notables diferencias respecto del cambio en productividad a lo largo del tiempo cuando se analiza sólo investigación y sólo docencia, con un crecimiento promedio anual de 14.6% y 6.1% respectivamente. En el caso de la actividad de investigación los cambios positivos fueron derivados principalmente del progreso tecnológico y la mayor productividad inducida por el sistema de incentivos a la investigación de alto impacto de los profesores.</dcterms:abstract>
+        <dc:date>2016</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.redalyc.org/articulo.oa?id=15543298014</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 22:22:44</dcterms:dateSubmitted>
+        <z:language>Español</z:language>
+        <z:libraryCatalog>www.redalyc.org</z:libraryCatalog>
+        <bib:pages>197-207</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:,%201607-4041">
+        <prism:volume>18</prism:volume>
+        <dc:title>REDIE. Revista Electrónica de Investigación Educativa</dc:title>
+        <dc:identifier>ISSN , 1607-4041</dc:identifier>
+        <prism:number>1</prism:number>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_17">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/17/Rojas y Pérez-Esparrells - 2016 - Cambios de la productividad en las universidades públicas españolas, 2002-2009.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.redalyc.org/pdf/155/15543298014.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 22:22:47</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://rcientificas.uninorte.edu.co/investigacion/article/view/7894">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2011-7574"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ávila</foaf:surname>
+                        <foaf:givenName>Francisco Javier Maza</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schmalbach</foaf:surname>
+                        <foaf:givenName>Juan Carlos Vergara</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Romero</foaf:surname>
+                        <foaf:givenName>Raúl Román</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_18"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>productivity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Análisis Envolvente de Datos (DEA)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Cobertura</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>coverage</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Data Envelopment Analysis (DEA)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Educación Superior</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Efficiency</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Eficiencia</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>higher education</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Productividad</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Eficiencia y productividad en la cobertura de las universidades públicas colombianas</dc:title>
+        <dcterms:abstract>This article analyzes the efficiency and the productive changes in the coverage of the 32 Colombian Higher Education Institutions belonging to the System of State Universities (SUE), during the period 2003-2012. Data Envelopment Analysis and the Malmquist Productivity Index were used to analyze data on students enrolled in undergraduate and postgraduate programs, number of full-time teachers, administrative expenses, and financial and infrastructure resources. The results show that, on average, all the institutions of higher education obtained efficiencies above 70%, as well as increases in their productivity at an average rate of 9%. However, it was observed deep differences between the regions of Colombia, especially the central region and the north of Colombia.</dcterms:abstract>
+        <dc:date>2017-09-29</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcientificas.uninorte.edu.co/investigacion/article/view/7894</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 20:41:25</dcterms:dateSubmitted>
+        <z:language>es</z:language>
+        <z:libraryCatalog>rcientificas.uninorte.edu.co</z:libraryCatalog>
+        <dc:rights>Derechos de autor 2022 Investigación &amp; Desarrollo</dc:rights>
+        <bib:pages>6-33</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2011-7574">
+        <dc:identifier>DOI 10.14482/indes.25.2.10957</dc:identifier>
+        <prism:volume>25</prism:volume>
+        <dc:title>Investigación &amp; Desarrollo</dc:title>
+        <dc:identifier>ISSN 2011-7574</dc:identifier>
+        <prism:number>2</prism:number>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_18">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/18/Ávila et al. - 2017 - Eficiencia y productividad en la cobertura de las universidades públicas colombianas.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcientificas.uninorte.edu.co/investigacion/article/download/7894/10957</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 20:41:26</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://revistas.utb.edu.co/economiayregion/article/view/106">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2539-2093"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Galvis-Aponte</foaf:surname>
+                        <foaf:givenName>Luis Armando</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_19"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>eficiencia</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>análisis envolvente de datos</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Colombia</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Educación pública</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>recursos públicos</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>SGP</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Sistema General de Participaciones</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>La eficiencia del gasto público en educación en Colombia</dc:title>
+        <dcterms:abstract>In this paper I analyze the efficiency with which resources from the Colombian central government are used for the provision of educational services. The purpose is to evaluate the efficiency of public spending at the subnational level, specifically relative efficiency in the use of resources from the General System of Participations (SGP). To this end, I use a Data Envelopment Analysis (DEA). We find that the average efficiency is 62,3% in the provision of education. As to quality, the efficiency reaches only 48,8%. I conclude that municipalities should try to improve the performance and efficiency with which they use resources from the SGP, especially to improve the efficiency in quality.</dcterms:abstract>
+        <dc:date>2015</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://revistas.utb.edu.co/economiayregion/article/view/106</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 19:08:26</dcterms:dateSubmitted>
+        <z:language>es</z:language>
+        <z:libraryCatalog>revistas.utb.edu.co</z:libraryCatalog>
+        <dc:rights>Derechos de autor 0</dc:rights>
+        <bib:pages>75-98</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2539-2093">
+        <prism:volume>9</prism:volume>
+        <dc:title>Economía &amp; Región</dc:title>
+        <dc:identifier>ISSN 2539-2093</dc:identifier>
+        <prism:number>2</prism:number>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_19">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/19/Galvis-Aponte - 2015 - La eficiencia del gasto público en educación en Colombia.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://revistas.utb.edu.co/economiayregion/article/download/106/87</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-26 19:08:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1007/s11123-012-0320-0">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1573-0441"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Parteka</foaf:surname>
+                        <foaf:givenName>Aleksandra</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wolszczak-Derlacz</foaf:surname>
+                        <foaf:givenName>Joanna</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_23"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Efficiency</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Bootstrapped Malmquist index</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>C61</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>D24</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Higher education</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>I23</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Productivity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Dynamics of productivity in higher education: cross-european evidence based on bootstrapped Malmquist indices</dc:title>
+        <dcterms:abstract>This study examines patterns of productivity change in a large set of 266 public higher education institutions (HEIs) in 7 European countries across the time period 2001–2005. We adopt consistent bootstrap estimation procedures to obtain confidence intervals for Malmquist indices of HEI productivity and their components. Consequently, we are able to assess the statistical significance of changes in HEI productivity, efficiency and technology. Our results suggest that, assessed vis-à-vis a common ‘European’ frontier, HEI productivity rose on average by 4 % annually. Statistically significant changes in productivity were registered in 90 % of observations on the institutions in our sample, but statistically significant annual improvements in overall productivity took place in only 56 % of cases. There are considerable national differences, with German, Italian and Swiss HEIs performing better in terms of productivity change than HEIs from the other countries examined.</dcterms:abstract>
+        <dc:date>2013-08-01</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1007/s11123-012-0320-0</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:39:11</dcterms:dateSubmitted>
+        <z:shortTitle>Dynamics of productivity in higher education</z:shortTitle>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Springer Link</z:libraryCatalog>
+        <bib:pages>67-82</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1573-0441">
+        <dc:identifier>DOI 10.1007/s11123-012-0320-0</dc:identifier>
+        <prism:volume>40</prism:volume>
+        <dc:title>Journal of Productivity Analysis</dc:title>
+        <dc:identifier>ISSN 1573-0441</dc:identifier>
+        <prism:number>1</prism:number>
+        <dcterms:alternative>J Prod Anal</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_23">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/23/Parteka y Wolszczak-Derlacz - 2013 - Dynamics of productivity in higher education cross-european evidence based on bootstrapped Malmquis.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/content/pdf/10.1007%2Fs11123-012-0320-0.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:39:12</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.researchgate.net/publication/227352168_Sensitivity_Analysis_of_Efficiency_Scores_How_to_Bootstrap_in_Nonparametric_Frontier_Models">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1287/mnsc.44.1.49</dc:identifier>
+                <dc:title>ResearchGate</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Léopold</foaf:surname>
+                        <foaf:givenName>Simar</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Paul W.</foaf:surname>
+                        <foaf:givenName>Wilson</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_45"/>
+        <link:link rdf:resource="#item_31"/>
+        <dc:title>Sensitivity Analysis of Efficiency Scores: How to Bootstrap in Nonparametric Frontier Models</dc:title>
+        <dcterms:abstract>PDF | Efficiency scores of production units are generally measured relative to an estimated production frontier. Nonparametric estimators (DEA, FDH,... | Find, read and cite all the research you need on ResearchGate</dcterms:abstract>
+        <dc:date>1998</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/227352168_Sensitivity_Analysis_of_Efficiency_Scores_How_to_Bootstrap_in_Nonparametric_Frontier_Models</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:47:03</dcterms:dateSubmitted>
+        <z:shortTitle>(PDF) Sensitivity Analysis of Efficiency Scores</z:shortTitle>
+        <z:language>en</z:language>
+        <z:libraryCatalog>www.researchgate.net</z:libraryCatalog>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_45">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/45/simar-wilson-1998.pdf"/>
+        <dc:title>simar-wilson-1998</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_31">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/31/227352168_Sensitivity_Analysis_of_Efficiency_Scores_How_to_Bootstrap_in_Nonparametric_Frontier_.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/227352168_Sensitivity_Analysis_of_Efficiency_Scores_How_to_Bootstrap_in_Nonparametric_Frontier_Models</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:47:09</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.sciencedirect.com/science/article/pii/0377221778901388">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0377-2217"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Charnes</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cooper</foaf:surname>
+                        <foaf:givenName>W. W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rhodes</foaf:surname>
+                        <foaf:givenName>E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_37"/>
+        <link:link rdf:resource="#item_41"/>
+        <dc:title>Measuring the efficiency of decision making units</dc:title>
+        <dcterms:abstract>A nonlinear (nonconvex) programming model provides a new definition of efficiency for use in evaluating activities of not-for-profit entities participating in public programs. A scalar measure of the efficiency of each participating unit is thereby provided, along with methods for objectively determining weights by reference to the observational data for the multiple outputs and multiple inputs that characterize such programs. Equivalences are established to ordinary linear programming models for effecting computations. The duals to these linear programming models provide a new way for estimating extremal relations from observational data. Connections between engineering and economic approaches to efficiency are delineated along with new interpretations and ways of using them in evaluating and controlling managerial behavior in public programs.</dcterms:abstract>
+        <dc:date>1978-11-01</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/0377221778901388</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:54:25</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <bib:pages>429-444</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0377-2217">
+        <dc:identifier>DOI 10.1016/0377-2217(78)90138-8</dc:identifier>
+        <prism:volume>2</prism:volume>
+        <dc:title>European Journal of Operational Research</dc:title>
+        <dc:identifier>ISSN 0377-2217</dc:identifier>
+        <prism:number>6</prism:number>
+        <dcterms:alternative>European Journal of Operational Research</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_37">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/37/Measuring the efficiency of decisionmaking units.pdf"/>
+        <dc:title>Measuring the efficiency of decisionmaking units.pdf</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://iiif.library.cmu.edu/file/Cooper_box00009_fld00037_bdl0001_doc0001/Cooper_box00009_fld00037_bdl0001_doc0001.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:52:58</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_41">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/41/0377221778901388.html"/>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/0377221778901388</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-28 02:54:41</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://epaa.asu.edu/index.php/epaa/article/view/7310">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1068-2341"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Morales-Piñero</foaf:surname>
+                        <foaf:givenName>Juan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Niño-Muñoz</foaf:surname>
+                        <foaf:givenName>Diana</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lesmes-Cardenas</foaf:surname>
+                        <foaf:givenName>Diana</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_46"/>
+        <dc:title>Gestión pública o privada de las universidades: ¿Cuál es la opción más eficiente para una política pública en educación superior en Colombia?</dc:title>
+        <dcterms:abstract>The State is known as the guarantor of the higher education service. However, it does not always have the operational capacity to guarantee adequate coverage in the provision of the service. For this reason, it delegates this responsibility to public and private actors, although it could compromise the quality of the service. In this sense, the objective of this article is to compare, from a holistic measurement, the efficiency between public and private management of Colombian universities to guide the formulation of public policies in higher education. To this end, an efficiency metafrontier was estimated using data envelopment analysis (DEA), including formal unemployment as a bad output variable, to collect information on the undesired effect on the service provision of the 122 universities analyzed. Although it was not possible to prove significant differences between public and private management of the university, it was possible to evidence scenarios where public policy can help improve the system, considering differences by type of property and geographic location. The main conclusions highlight the importance of regional particularities to selectively consolidate public-private partnerships and improve the performance of the system.</dcterms:abstract>
+        <dc:date>2022-11-01</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://epaa.asu.edu/index.php/epaa/article/view/7310</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-30 15:14:38</dcterms:dateSubmitted>
+        <z:shortTitle>Gestión pública o privada de las universidades</z:shortTitle>
+        <z:language>es</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:rights>https://creativecommons.org/licenses/by-sa/4.0</dc:rights>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1068-2341">
+        <dc:identifier>DOI 10.14507/epaa.30.7310</dc:identifier>
+        <prism:volume>30</prism:volume>
+        <dc:title>Education Policy Analysis Archives</dc:title>
+        <dc:identifier>ISSN 1068-2341</dc:identifier>
+        <dcterms:alternative>EPAA</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_46">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/46/Morales-Piñero et al. - 2022 - Gestión pública o privada de las universidades ¿Cuál es la opción más eficiente para una política p.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.tandfonline.com/doi/full/10.1080/2331186X.2024.2445964">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2331-186X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Almeida</foaf:surname>
+                        <foaf:givenName>Juliana Pascualote Lemos De</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Anjos</foaf:surname>
+                        <foaf:givenName>Fábio Henrique Dos</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Moreira</foaf:surname>
+                        <foaf:givenName>Marina Figueiredo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bermejo</foaf:surname>
+                        <foaf:givenName>Paulo Henrique De Souza</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prata</foaf:surname>
+                        <foaf:givenName>David Nadler</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rodrigues</foaf:surname>
+                        <foaf:givenName>Waldecy</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_48"/>
+        <dc:title>University efficiency evaluation using data envelopment analysis: future research agenda</dc:title>
+        <dcterms:abstract>The evaluation of universities’ efficiency using data envelopment analysis is a robust research field, and many studies seek to improve the accuracy of the measures and the technique by incorporating new variables and expanding tests. In this study, we offer an integrative literature review aiming to describe the existing literature and synthesize individual research agendas into an integrated research agenda for the evaluation of university efficiency using DEA. Our study surveys publications on DEA from 2001 to 2023, considering 38 papers. This study confirms DEA as a robust methodology for evaluating university efficiency, highlighting the need for future research to integrate qualitative analyses, examine institutional goal alignment, and incorporate qualitative and environmental factors in the models. Such advancements would support evidence-based public policies and enable reliable, longitudinal assessments that inform decision-making in higher education management.</dcterms:abstract>
+        <dc:date>2025-12-31</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.tandfonline.com/doi/full/10.1080/2331186X.2024.2445964</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-09-30 15:16:45</dcterms:dateSubmitted>
+        <z:shortTitle>University efficiency evaluation using data envelopment analysis</z:shortTitle>
+        <z:language>en</z:language>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:pages>2445964</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2331-186X">
+        <dc:identifier>DOI 10.1080/2331186X.2024.2445964</dc:identifier>
+        <prism:volume>12</prism:volume>
+        <dc:title>Cogent Education</dc:title>
+        <dc:identifier>ISSN 2331-186X</dc:identifier>
+        <prism:number>1</prism:number>
+        <dcterms:alternative>Cogent Education</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_48">
+        <z:itemType>attachment</z:itemType>
+        <z:path rdf:resource="files/48/Almeida et al. - 2025 - University efficiency evaluation using data envelopment analysis future research agenda.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+</rdf:RDF>
