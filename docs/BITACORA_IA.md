@@ -556,6 +556,22 @@ corregida.
 
 ---
 
+## 18. Promedios de grupos con muy pocos evaluados
+
+**Prompt representativo:** solicitud de explicar, también desde el punto de vista matemático, qué hacer con las filas de Saber Pro que tienen un solo evaluado.
+
+**Qué se obtuvo:** en `resultados/saber_pro_institucion_anio.csv` y en la tabla maestra había 3 filas con un solo evaluado y una con tres. Con $n = 1$ el promedio es el puntaje de esa persona, y su error estándar, $\sigma/\sqrt{n}$, es igual a la dispersión de un estudiante cualquiera: el dato expone a alguien y no describe a la institución. Se decidió no publicar los promedios de grupos con menos de 5 evaluados.
+
+- `scripts/publicacion.py` define la regla (`K_MIN = 5`).
+- `agregar_saber_pro.py` y `construir_tabla_maestra.py` guardan la versión completa en `data/interim/` (no se sube) y publican en `resultados/` la versión con esas 4 filas en blanco y la columna `suprimido`.
+- `construir_base_integrada.py` lee la versión completa, así que la base integrada y todos los resultados del DEA quedan idénticos.
+
+**Verificación aplicada:** se corrió el OE1 completo con los datos crudos. La base integrada, la tabla del PTE y la de sedes salieron idénticas byte a byte a las anteriores, y las filas no suprimidas de las dos tablas publicadas no cambiaron. `verificar_oe1.py` tiene una sección 5 nueva que recalcula desde el .txt original los evaluados y el puntaje de cada sede y comprueba que los blancos estén exactamente donde hay menos de 5 evaluados: TODO COINCIDE. Se plantaron dos errores (un puntaje publicado en una fila suprimida y una marca de supresión en una fila grande) y el verificador detectó los dos.
+
+**Límite declarado:** el puntaje de la sede de Santa Fe de Antioquia (1 evaluado en 2023) podría intentar despejarse con el total de la Universidad de Antioquia y sus demás sedes. Como los promedios se publican con 2 decimales y la universidad tiene 3.196 evaluados, el despeje tiene un error posible de ±32 puntos; con los datos reales el despeje dio 151 frente a un valor real de 161. Además, los valores de esas filas siguen en el historial de git anterior a este cambio.
+
+---
+
 ## Resumen de afirmaciones descartadas mediante verificación
 
 La siguiente tabla sintetiza los casos en los que una afirmación inicial
@@ -582,3 +598,4 @@ proyecto sin contraste:
 | La acreditación institucional no pasa el ajuste de Holm en ningún año | Refutada — su p ajustado es 0,046 en 2023 |
 | El modelo de mayor eficiencia podría estar sobreajustado | Descartado — se sostiene fuera de muestra: al reservar el 20 % de las universidades, el orden se mantiene (Spearman agregado de 1,00 en el modelo principal) |
 | El repositorio de GitHub tiene todo lo que citan el informe, la bitácora y los diccionarios | Refutada — tres archivos citados se habían borrado en el commit `ffb2454`; se restauraron sin cambios |
+| Las tablas agregadas por institución no contienen información de estudiantes | Refutada — 3 filas tenían un solo evaluado, cuyo promedio es el puntaje de esa persona; ahora no se publican los promedios de grupos con menos de 5 |
