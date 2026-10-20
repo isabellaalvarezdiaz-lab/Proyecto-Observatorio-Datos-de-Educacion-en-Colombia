@@ -31,6 +31,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 │  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md, diccionario_resultados_oe2_oe3.md
 │  ├─ gobernanza/evidencias/   salida de cada corrida, con fecha y hora
 │  ├─ uso_ia/                  inventarios de fallos de IA
+│  ├─ nada_sin_fuente/         actividad de gestión de la información e IA (septiembre); ver su LEEME.md
 │  ├─ BITACORA_IA.md
 │  └─ Consultoria.pdf          anteproyecto
 ├─ heredado/       los archivos del equipo 2025-2, sin cambios; su README quedó como README_equipo_anterior.md
