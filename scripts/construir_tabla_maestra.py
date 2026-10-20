@@ -7,9 +7,13 @@ El PTE NO entra aquí (solo cubre las universidades públicas); se une después,
 construir_base_integrada.py, que parte de esta tabla.
 
 Entradas: data/interim/snies_*.csv.gz          <- cargar_snies.py
-          resultados/saber_pro_institucion_anio.csv <- agregar_saber_pro.py
+          data/interim/saber_pro_institucion_anio_completa.csv <- agregar_saber_pro.py
           resultados/sedes_por_universidad.csv       <- cruce_sedes.py (solo para marcar las 34 del PTE)
-Salida:   resultados/tabla_maestra_2023_2024.csv  (ver docs/diccionario_tabla_maestra.md)
+Salidas:  data/interim/tabla_maestra_completa.csv  versión completa, la que usa
+                                                   construir_base_integrada.py (no se sube)
+          resultados/tabla_maestra_2023_2024.csv   versión publicada: sin puntajes ni ceros en
+                                                   Escrita donde hay menos de 5 evaluados
+                                                   (ver publicacion.py y docs/diccionario_tabla_maestra.md)
 
 Reglas:
   - Matrícula: por semestre; NO se suman los dos semestres. Se guardan s1, s2 y su promedio.
@@ -23,6 +27,8 @@ Uso (desde la raíz del repositorio):
 from pathlib import Path
 
 import pandas as pd
+
+from publicacion import K_MIN, suprimir
 
 COD = "CÓDIGO DE LA INSTITUCIÓN"
 ATRIB = {"IES PADRE": "ies_padre", "INSTITUCIÓN DE EDUCACIÓN SUPERIOR (IES)": "nombre_snies",
@@ -69,7 +75,7 @@ def snies():
 
 
 def saber_pro():
-    sp = pd.read_csv("resultados/saber_pro_institucion_anio.csv", dtype={"codigo_ies": str})
+    sp = pd.read_csv("data/interim/saber_pro_institucion_anio_completa.csv", dtype={"codigo_ies": str})
     sp = sp.rename(columns={"codigo_ies": "cod_institucion", "nombre_ies": "nombre_saber_pro"})
     cols = ["nombre_saber_pro", "n_evaluados", "n_ceros_escrita", "pct_ceros_escrita",
             "global_a", "global_b", "global_c"]
@@ -93,8 +99,12 @@ def main():
     t = t[orden + [c for c in t.columns if c not in orden + ["nombre_snies"]]]
     t = t.sort_values(["anio", "cod_institucion"], key=lambda c: c.astype(int) if c.name == "cod_institucion" else c)
 
+    t.to_csv(Path("data") / "interim" / "tabla_maestra_completa.csv", index=False, encoding="utf-8-sig")
     salida = Path("resultados") / "tabla_maestra_2023_2024.csv"
-    t.to_csv(salida, index=False, encoding="utf-8-sig")
+    publicada = suprimir(t)
+    publicada.to_csv(salida, index=False, encoding="utf-8-sig")
+    print(f"Tabla publicada: puntajes en blanco en {int(publicada.suprimido.sum())} filas "
+          f"con menos de {K_MIN} evaluados (la versión completa queda en data/interim/)")
 
     # ---------- controles: cobertura de la llave ----------
     print(f"Filas: {len(t):,} | códigos de institución distintos: {t.cod_institucion.nunique()}")

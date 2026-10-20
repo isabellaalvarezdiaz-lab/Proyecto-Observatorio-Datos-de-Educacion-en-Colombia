@@ -15,8 +15,12 @@ Decisiones que aplica, todas verificadas con los microdatos:
   - No filtra por nivel de formación: solo reporta cuántos registros hay de
     cada nivel, para que el equipo decida después.
 
-Salida (agregada, sin datos de estudiantes; se puede subir al repositorio):
-  resultados/saber_pro_institucion_anio.csv
+Salidas:
+  data/interim/saber_pro_institucion_anio_completa.csv  versión completa, para los cálculos
+                                                         (no se sube)
+  resultados/saber_pro_institucion_anio.csv             versión publicada: sin puntajes ni ceros
+                                                         en Escrita donde hay menos de 5
+                                                         evaluados (ver publicacion.py)
 
 Evidencia: docs/gobernanza/evidencias/agregacion_saber_pro_AAAA-MM-DD_HHMM.txt
 
@@ -31,6 +35,8 @@ import os
 from datetime import datetime
 
 import pandas as pd
+
+from publicacion import K_MIN, suprimir
 
 MODULOS = ["mod_competen_ciudada_punt", "mod_comuni_escrita_punt", "mod_ingles_punt",
            "mod_lectura_critica_punt", "mod_razona_cuantitat_punt"]
@@ -86,10 +92,16 @@ def main():
             f"c={d['global_c'].mean():.2f}")
 
     tabla = pd.concat(tablas, ignore_index=True)
+    os.makedirs(os.path.join("data", "interim"), exist_ok=True)
+    completa = os.path.join("data", "interim", "saber_pro_institucion_anio_completa.csv")
+    tabla.to_csv(completa, index=False, encoding="utf-8-sig")
     os.makedirs("resultados", exist_ok=True)
     salida = os.path.join("resultados", "saber_pro_institucion_anio.csv")
-    tabla.to_csv(salida, index=False, encoding="utf-8-sig")
-    log(f"\nTabla guardada en {salida} ({len(tabla)} filas)")
+    publicada = suprimir(tabla)
+    publicada.to_csv(salida, index=False, encoding="utf-8-sig")
+    log(f"\nTabla completa guardada en {completa} ({len(tabla)} filas; no se sube)")
+    log(f"Tabla publicada guardada en {salida}: puntajes en blanco en {int(publicada.suprimido.sum())} "
+        f"filas con menos de {K_MIN} evaluados")
 
     if len(args.anios) > 1:
         por_anio = tabla.groupby("anio")["codigo_ies"].apply(set)

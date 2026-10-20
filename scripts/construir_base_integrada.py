@@ -4,7 +4,7 @@ toma las sedes de las universidades públicas del PTE, las suma por universidad 
 presupuesto del PTE. Una fila por universidad (entidad del PTE) y año.
 
 Entradas:
-  resultados/tabla_maestra_2023_2024.csv       <- construir_tabla_maestra.py
+  data/interim/tabla_maestra_completa.csv      <- construir_tabla_maestra.py (versión completa)
   resultados/pte_universidades_2023_2024.csv   <- extraer_pte_universidades.py
 
 Reglas:
@@ -27,7 +27,7 @@ import pandas as pd
 
 def main():
     pte = pd.read_csv("resultados/pte_universidades_2023_2024.csv", dtype={"pte_codigo": str})
-    t = pd.read_csv("resultados/tabla_maestra_2023_2024.csv", dtype={"cod_institucion": str, "pte_codigo": str})
+    t = pd.read_csv("data/interim/tabla_maestra_completa.csv", dtype={"cod_institucion": str, "pte_codigo": str})
     t = t[t.pte_codigo.notna()].copy()
     anios = sorted(pte.anio.unique())
 
