@@ -12,6 +12,9 @@ Qué comprueba:
   3. Saber Pro: evaluados, ceros en Escrita y puntaje global_c de cada universidad, calculados
      estudiante por estudiante desde el .txt (sin pasar por los promedios redondeados por sede).
   4. Tabla maestra: que sus totales nacionales sean los de los archivos originales.
+  5. Publicación: que las tablas por sede de resultados/ no muestren puntajes ni ceros en Escrita
+     donde hay menos de K_MIN evaluados (publicacion.py), y que en las demás filas los evaluados y
+     el puntaje global_c sean los del .txt original.
 
 Uso (desde la raíz del repositorio, después de correr_oe1.py):
     python scripts/verificar_oe1.py
@@ -20,6 +23,8 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+
+from publicacion import K_MIN, SENSIBLES
 
 COD = "CÓDIGO DE LA INSTITUCIÓN"
 MOD = ["mod_competen_ciudada_punt", "mod_comuni_escrita_punt", "mod_ingles_punt",
@@ -116,6 +121,7 @@ def main():
         d["anio"] = a
         partes.append(d)
     d = pd.concat(partes)
+    todos = d.copy()
     d = d[d.cod.isin(mapa)]
     d["u"] = d.cod.map(mapa)
     cero = d.mod_comuni_escrita_punt.eq(0)
@@ -139,6 +145,28 @@ def main():
             if not ok:
                 FALLAS.append(nombre)
             log(f"  {'PASA ' if ok else 'FALLA'}  {nombre}: archivo original={orig:,.0f} | tabla maestra={tabla:,.0f}")
+
+    # 5. Regla de publicación
+    log(f"\n5. Publicación por sede (sin puntajes donde hay menos de {K_MIN} evaluados)")
+    cero_t = todos.mod_comuni_escrita_punt.eq(0)
+    todos["gc"] = todos.punt_global.where(~cero_t, todos[[m for m in MOD if m != "mod_comuni_escrita_punt"]].mean(axis=1))
+    gt = todos.groupby(["cod", "anio"])
+    n_sede, gc_sede = gt.size(), gt.gc.mean()
+    for nombre, ruta, col in [("saber_pro_institucion_anio", "resultados/saber_pro_institucion_anio.csv", "codigo_ies"),
+                              ("tabla maestra", "resultados/tabla_maestra_2023_2024.csv", "cod_institucion")]:
+        p = pd.read_csv(ruta, dtype={col: str})
+        p = p[p.n_evaluados.notna()].set_index([col, "anio"])
+        peq = (n_sede.reindex(p.index) < K_MIN).to_numpy()
+        comparar(f"{nombre}: evaluados por sede", n_sede.reindex(p.index), p.n_evaluados)
+        mal = p.index[(p.suprimido.astype(bool).to_numpy() != peq) |
+                      (peq & p[[c for c in SENSIBLES if c in p]].notna().any(axis=1).to_numpy())]
+        if len(mal):
+            FALLAS.append(f"{nombre}: regla de publicación")
+            log(f"  FALLA  {nombre}: regla de publicación mal aplicada en {list(mal)[:5]}")
+        else:
+            log(f"  PASA   {nombre}: puntajes en blanco exactamente en las {int(peq.sum())} filas con menos de {K_MIN} evaluados")
+        comparar(f"{nombre}: global_c de las filas publicadas (tolerancia 0,01)",
+                 gc_sede.reindex(p.index[~peq]), p.global_c[~peq], tol=0.01)
 
     log(f"\nRESULTADO: {'TODO COINCIDE' if not FALLAS else 'HAY DIFERENCIAS: ' + ', '.join(FALLAS)}")
     carpeta = Path("docs") / "gobernanza" / "evidencias"
