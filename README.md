@@ -117,4 +117,4 @@ Estos archivos y `docs/uso_ia/inventario_fallos_isabella.md` se borraron en el c
 
 ## Datos y licencias
 
-Los datos son públicos (PTE – MinHacienda; SNIES – MEN) o de acceso institucional (Saber Pro – ICFES) y no se redistribuyen aquí. Este repositorio publica solo tablas agregadas por institución, sin información de estudiantes.
+Los datos son públicos (PTE – MinHacienda; SNIES – MEN) o de acceso institucional (Saber Pro – ICFES) y no se redistribuyen aquí. Este repositorio publica solo tablas agregadas por institución, sin información de estudiantes. Cuando una sede tiene menos de 5 evaluados en Saber Pro en un año, sus promedios no se publican, porque con tan pocos estudiantes el promedio deja ver el puntaje de una persona; los cálculos sí usan a todos los evaluados (ver `scripts/publicacion.py` y la regla 4 de `docs/diccionario_tabla_maestra.md`). Los valores de esas filas siguen en el historial de git anterior al 20-10-2026.

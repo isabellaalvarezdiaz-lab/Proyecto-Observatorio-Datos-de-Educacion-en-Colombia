@@ -47,6 +47,7 @@ En 2023 hay tres códigos de Saber Pro sin par en SNIES, todos privados, con 89 
 | `n_evaluados` | Estudiantes evaluados | `resultados/saber_pro_institucion_anio.csv` | estudiantes |
 | `n_ceros_escrita`, `pct_ceros_escrita` | Evaluados con 0 en Comunicación Escrita | ídem | estudiantes / % |
 | `global_a`, `global_b`, `global_c` | Puntaje global promedio en sus tres versiones. `global_c` es la recomendada; ver `docs/diccionario_base_integrada.md` | ídem | puntos |
+| `suprimido` | La fila tiene menos de 5 evaluados, así que sus columnas de ceros en Escrita y de puntaje se dejan en blanco (regla 4) | — | lógico |
 
 Si la institución no está en una fuente, las columnas de esa fuente quedan vacías: no se rellenan con cero.
 
@@ -55,3 +56,4 @@ Si la institución no está en una fuente, las columnas de esa fuente quedan vac
 1. **Matrícula:** no se suman los dos semestres, porque un estudiante matriculado en ambos se contaría dos veces.
 2. **Graduados:** sí se suman, porque son eventos distintos.
 3. **Una fila por código de sede.** Para hablar de una universidad completa hay que sumar sus sedes. Por ejemplo, la Universidad Nacional tiene 7 códigos con IES PADRE 1101. Para las universidades públicas del PTE, esa suma ya está hecha en la base integrada.
+4. **Grupos pequeños.** Si una sede tiene menos de 5 evaluados en un año, en esta tabla y en `resultados/saber_pro_institucion_anio.csv` se dejan en blanco `n_ceros_escrita`, `pct_ceros_escrita`, `global_a`, `global_b` y `global_c`, y `suprimido` queda en verdadero. Con un solo evaluado, el promedio es el puntaje de esa persona. `n_evaluados` sí se publica. Afecta 4 filas: 2809 y 9125 en 2023, y 3114 y 9924 en 2024. Las versiones completas quedan en `data/interim/` (no se suben), y la base integrada se calcula con ellas, así que la regla no cambia ningún resultado del DEA. La regla está en `scripts/publicacion.py` y la comprueba `scripts/verificar_oe1.py` (sección 5).
