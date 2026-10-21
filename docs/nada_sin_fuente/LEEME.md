@@ -38,4 +38,5 @@ modificar el 20-10-2026.
 Quedaron sin completar en los archivos entregados, y se dejan así:
 - `protocolo_v2.md`: los campos `[fecha]` y `[probada / pendiente]` de la última línea.
 - `corpus/README.md`: la línea de la verificación con `extraer.py` dice «[1099] de 13 documentos
-  con texto, [P] páginas»; el 1099 no puede ser un número de documentos.
+  con texto, [P] páginas»; el 1099 no puede ser un número de documentos. La misma línea cita
+  `evidencias/extraer_salida.txt`, que no viene en ninguno de los dos paquetes.

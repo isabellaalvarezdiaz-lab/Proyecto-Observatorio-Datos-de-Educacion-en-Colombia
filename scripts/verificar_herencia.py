@@ -1,6 +1,6 @@
 """
-verificar_herencia.py — Cierra los puntos PENDIENTES de 01_auditoria_herencia.md
-con los datos reales. No modifica ningún archivo de datos: solo lee y reporta.
+verificar_herencia.py — Cierra los puntos PENDIENTES de 01_auditoria_herencia.md (documento de
+trabajo de la fase 1 que no se subió al repositorio) con los datos reales. No modifica ningún archivo de datos: solo lee y reporta.
 
 Uso (cada bloque es opcional; corran los que tengan datos):
   python verificar_herencia.py --saber-dir "C:/ruta/Datos"
