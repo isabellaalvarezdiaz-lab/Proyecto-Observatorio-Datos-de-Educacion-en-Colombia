@@ -10,6 +10,7 @@ python scripts/oe2_malmquist.py         # segundos
 python scripts/oe3_cobertura_sin_unad.py        # ≈ 4 min
 python scripts/caracteristicas_universidades.py  # necesita data/raw (SNIES y Saber Pro)
 python scripts/oe3_segunda_etapa.py             # segundos
+python scripts/oe3_validacion_fuera_muestra.py  # ≈ 2 min
 python scripts/verificar_oe2_oe3.py     # comprueba todo por otro camino
 ```
 
@@ -134,7 +135,7 @@ Una fila por modelo, año y variable.
 | `valor` | rho de Spearman o U de Mann-Whitney (del grupo A) |
 | `efecto` | escala de −1 a 1 para comparar: rho en las continuas; en las binarias, correlación biserial de rangos 2U/(n_A·n_B) − 1, positiva si el grupo A es más eficiente |
 | `p`, `p_holm` | p-valor sin ajustar y ajustado por Holm |
-| `mecanica` | True si la variable se construye con el insumo o con un producto del modelo, así que la asociación es aritmética y no un hallazgo. Se marcan `millones_por_estudiante` en todos los modelos y `log_matricula` en los de cobertura |
+| `mecanica` | True si la variable se construye con el insumo o con un producto del modelo, así que la asociación es aritmética y no un hallazgo. Se marcan `millones_por_estudiante` en todos los modelos y `log_matricula` en los de cobertura. En el modelo principal la matrícula también es un producto, así que la asociación de `log_matricula` tampoco se interpreta allí, aunque la columna no la marque (no es significativa tras Holm) |
 | `grupo_a`, `mediana_a`, `grupo_b`, `mediana_b` | en las binarias, los grupos con su tamaño y la mediana de la eficiencia corregida |
 
 Cómo leerla:
@@ -221,5 +222,7 @@ En `universidades.json`, `matricula_*`, `graduados_*` y `puntaje_*` son las colu
 - Con 33 universidades, los intervalos son anchos. Compare universidades por sus intervalos, no solo por el valor puntual.
 - En el DEA BCC orientado al producto, quedan en la frontera por construcción la universidad con menor insumo y la de mayor valor en cada producto. Su 100 % no significa lo mismo que el de una universidad mediana.
 - El insumo es la obligación que el PTE registra en la entidad de cada universidad (2257xx). No incluye los recursos propios ni los que la Nación gira a las instituciones públicas desde el Ministerio de Educación sin desagregar por universidad. En el Cuadro No. 7 de diciembre de 2024, por ejemplo, la gratuidad tuvo obligaciones por 2.744 mil millones (fila 1758) y la concurrencia pensional por 475 mil millones (fila 1729), frente a 6.155 mil millones en las 34 universidades. Las universidades con más recursos fuera del insumo parecen más eficientes de lo que son; el análisis deja uno fuera mide cuánto pesa la UNAD.
+- Tampoco entran los aportes de los departamentos y los distritos. El artículo 86 de la Ley 30 de 1992 dice que el presupuesto de las universidades públicas se forma con aportes del presupuesto nacional, aportes de los entes territoriales y recursos propios; el insumo solo recoge parte de los primeros. Esto favorece a las universidades territoriales. En 2024, la Distrital tiene 388 matriculados por cada mil millones de pesos de la Nación, frente a una mediana de 111 (`base_integrada_2023_2024.csv`).
+- El Malmquist usa rendimientos constantes, que suponen que los productos pueden crecer en la misma proporción que el insumo. Eso vale para la matrícula y los graduados, pero no para el puntaje promedio de Saber Pro: cuando una variable es una razón hay que usar rendimientos variables (Hollingsworth y Smith, 2003, *Applied Economics Letters* 10(11), 733–735). Por eso, en el modelo principal se lee el nivel de M, pero no su descomposición en EC y TC. La descomposición cambia de signo entre modelos: en el principal EC = 1,050 y TC = 0,852, y en el de cobertura EC = 0,809 y TC = 1,080 (versión real). En el de cobertura, la frontera con rendimientos constantes es solo la UNAD en los dos años (`D23_23` y `D24_24` valen 1 solo para ella), así que su TC, igual para todas, es el cambio de la propia UNAD.
 - El bootstrap de Simar y Wilson (1998) es homogéneo: supone que la ineficiencia se distribuye igual en todas las universidades. Simar y Wilson (2000) proponen una versión heterogénea, que no se implementó.
 - El Malmquist no tiene intervalos: el método original de bootstrap para Malmquist (Simar y Wilson, 1999) no se consiguió en texto completo.
