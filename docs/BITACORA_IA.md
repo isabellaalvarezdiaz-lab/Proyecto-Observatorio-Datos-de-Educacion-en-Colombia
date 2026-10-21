@@ -46,7 +46,7 @@ Con los objetivos ya definidos, necesito que construyas el estado del arte: lite
 
 Entregable de este chat: objetivos específicos definidos, diseño metodológico completo del DEA, y estado del arte con fuentes verificadas una por una.
 
-Chat 3 — Adaptación a la rúbrica y ensamblaje de entregables**
+Chat 3 — Adaptación a la rúbrica y ensamblaje de entregables
 
 "Cerramos la Fase 1 de la consultoría del Proyecto Observatorio de Datos de Educación en Colombia. Te resumo lo desarrollado hasta ahora: [pegar o adjuntar el diagnóstico, la llave validada, los objetivos específicos, el diseño del DEA, y el estado del arte ya construidos].
 
@@ -293,8 +293,8 @@ tablero de la entrega final es el de la entrada 15.
 ejecución de código, en la que el agente corrió los scripts sobre copias de
 los datos aportados por el equipo.
 
-**Integrantes que interactuaron en esta fase:** Isabella Álvarez y Anderson
-González.
+**Integrantes que interactuaron en esta fase:** Isabella Álvarez, Anderson
+González y Eduar Caicedo.
 
 **Punto de partida:** la sesión arrancó de un resumen de traspaso con las
 decisiones ya verificadas, redactado bajo la regla "nada sin fuente": toda
@@ -572,6 +572,25 @@ corregida.
 
 ---
 
+## 19. Revisión completa del proyecto
+
+**Prompt representativo:** "necesito que me digas muy bien que se hizo en el proyecto paso a paso y lo que arrojo, necesito que mires lo que se ha hecho hasta el momento y si esto es correcto estadisticamente, claro tambien necesito que mires que todo lo que este en el repo tenga sentido y sea valido".
+
+**Qué se obtuvo:** una reproducción completa y una revisión de los métodos y de cada archivo del repositorio.
+
+- Se clonó el repositorio de GitHub en un entorno limpio y se corrieron los 12 scripts en orden con los datos crudos; las huellas SHA-256 de los archivos de Saber Pro y del SNIES coinciden con las de los inventarios de la fase 1. Las 16 tablas de `resultados/` y los 4 archivos del tablero salieron iguales; los CSV del OE2 y el OE3 solo difieren en el fin de línea de Windows. Los dos verificadores respondieron TODO COINCIDE.
+- En una corrida de revisión hecha por el agente (no incluida en el repositorio), el Malmquist y el bootstrap se reescribieron sin usar `dea.py`. El Malmquist coincidió hasta el redondeo y el bootstrap dio las mismas medias corregidas e intervalos, dentro del error de Monte Carlo. Con el bootstrap del repositorio, el sesgo es al menos 1,7 veces su desviación estándar en todos los modelos y años.
+- Los archivos de `heredado/` son idénticos a los del repositorio del equipo 2025-2 (22 de 22).
+
+**Fallos de la IA detectados y corregidos:**
+
+- El informe interpretaba la descomposición del Malmquist del modelo principal ("las universidades se acercaron a la frontera, pero la frontera retrocedió") sin advertir que un puntaje promedio no cumple el supuesto de rendimientos constantes (Hollingsworth y Smith, 2003). En el modelo de cobertura la descomposición tiene el signo contrario. En la corrida de revisión, si todas las universidades crecían 10 % en presupuesto, matrícula y graduados con el mismo puntaje, el modelo principal daba M = 0,953 y el de cobertura, 1. Se dejó de interpretar la descomposición en el informe, en la presentación (diapositivas 11, 12, 14 y 15) y en la guía (preguntas 14, 22 y 23), y se agregó la limitación. El nivel de M no cambió.
+- Las limitaciones no mencionaban los aportes de los entes territoriales, que el artículo 86 de la Ley 30 de 1992 incluye en el presupuesto de las universidades públicas. Se agregaron al informe y a `docs/diccionario_resultados_oe2_oe3.md`.
+- Tres imprecisiones menores del informe: la ventaja del modelo principal en eficiencia se llamaba "en parte mecánica", cuando es mecánica (contiene los productos del de cobertura); el tamaño no se advertía como asociación mecánica en el modelo principal, donde la matrícula también es un producto, y la sensibilidad al deflactor no tenía cifras. Se corrigieron en el texto; los resultados no cambian.
+- Documentación desactualizada: las "decisiones pendientes" de `docs/diccionario_base_integrada.md` ya estaban tomadas; la lista de scripts del diccionario de resultados no incluía la validación; esta bitácora no nombraba a Eduar entre quienes interactuaron en la fase 2; el inventario de fallos de Eduar citaba el archivo del experimento con su nombre previo a la entrega y describía una carga del SNIES distinta de la de `cargar_snies.py`. Se corrigieron.
+
+---
+
 ## Resumen de afirmaciones descartadas mediante verificación
 
 La siguiente tabla sintetiza los casos en los que una afirmación inicial
@@ -599,3 +618,5 @@ proyecto sin contraste:
 | El modelo de mayor eficiencia podría estar sobreajustado | Descartado — se sostiene fuera de muestra: al reservar el 20 % de las universidades, el orden se mantiene (Spearman agregado de 1,00 en el modelo principal) |
 | El repositorio de GitHub tiene todo lo que citan el informe, la bitácora y los diccionarios | Refutada — tres archivos citados se habían borrado en el commit `ffb2454`; se restauraron sin cambios |
 | Las tablas agregadas por institución no contienen información de estudiantes | Refutada — 3 filas tenían un solo evaluado, cuyo promedio es el puntaje de esa persona; ahora no se publican los promedios de grupos con menos de 5 |
+| Entre 2023 y 2024 las universidades se acercaron a la frontera y la frontera retrocedió | Refutada — la descomposición cambia de signo entre el modelo principal (EC 1,050; TC 0,852) y el de cobertura (EC 0,809; TC 1,080), y el puntaje promedio no cumple el supuesto de rendimientos constantes; solo se sostiene que la productividad cayó |
+| El insumo deja fuera solo la gratuidad, la concurrencia pensional y los recursos propios | Refutada — también los aportes de los entes territoriales (Ley 30 de 1992, artículo 86) |
