@@ -19,6 +19,12 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | Corrección del trabajo previo | cifras de Comunicación Escrita 2023–2024 que corrigen el informe 2025-2 | `resultados/revision_trabajo_previo.csv` |
 | Tablero interactivo | los datos que lee el tablero, tomados de las tablas anteriores | `resultados/tablero/*.json` |
 
+## Entregables
+
+- **Informe final:** `docs/informe_final.pdf`, compilado en Overleaf.
+- **Presentación de la sustentación:** https://claude.ai/artifact/QwZq5ANNtcQAAtHKuS9xyd
+- **Tablero interactivo:** https://claude.ai/artifact/9oDtKfv96bNso6KNgvSu2P (lee los datos de `resultados/tablero/`)
+
 ## Estructura
 
 ```text
@@ -33,7 +39,8 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 │  ├─ uso_ia/                  inventarios de fallos de IA
 │  ├─ nada_sin_fuente/         actividad de gestión de la información e IA (septiembre); ver su LEEME.md
 │  ├─ BITACORA_IA.md
-│  └─ Consultoria.pdf          anteproyecto
+│  ├─ Consultoria.pdf          anteproyecto
+│  └─ informe_final.pdf        informe final
 ├─ heredado/       los archivos del equipo 2025-2, sin cambios; su README quedó como README_equipo_anterior.md
 ├─ requirements.txt
 └─ data/           datos crudos; NO se sube (está en .gitignore)
