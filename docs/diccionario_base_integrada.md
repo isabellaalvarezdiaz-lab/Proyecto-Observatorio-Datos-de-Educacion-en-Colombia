@@ -57,14 +57,14 @@ Las definiciones de `global_a`, `global_b` y `global_c` están en `scripts/agreg
 4. **Universidad del Trópico Americano (225733):** Saber Pro la rotula "no oficial – fundación"; el pie de página de SNIES aclara que pertenece al sector oficial desde 2021.
 5. **Escuela Naval Almirante Padilla (9105)** es oficial en SNIES pero no está entre las 34 entidades del PTE. No entra.
 6. **Matrícula:** no se suman los dos semestres, porque un estudiante matriculado en ambos se contaría dos veces.
-7. **Pesos corrientes.** Para el Malmquist hay que deflactar el insumo (ver pendientes).
+7. **Pesos corrientes.** El Malmquist deflacta el insumo de 2024 (ver `docs/diccionario_resultados_oe2_oe3.md`).
 
-## Decisiones pendientes del equipo
+## Decisiones tomadas por el equipo
 
-- Medida del insumo: obligación (por defecto en la base), compromiso o apropiación.
-- Matrícula: promedio de semestres (por defecto), semestre 1 o semestre 2.
-- Deflactor del insumo para comparar 2023 con 2024: IPC del DANE (fuente por citar).
-- Tratamiento de UNAD, Distrital y Militar Nueva Granada (ver isotonicidad abajo).
+- **Insumo:** la obligación. En la práctica la elección casi no importa: apropiación, compromiso, obligación y pago son iguales en 54 de las 68 filas, y en las 33 universidades del DEA la obligación es al menos el 93,7 % de la apropiación.
+- **Matrícula:** promedio de los dos semestres.
+- **Deflactor:** el insumo de 2024 se divide por 1,052, la variación anual del IPC a diciembre de 2024 (DANE). La fuente está en `docs/diccionario_resultados_oe2_oe3.md`.
+- **UNAD, Distrital y Militar Nueva Granada:** las tres quedan en todos los modelos. La UNAD tiene además un modelo de cobertura sin ella (`resultados/oe3_cobertura_sin_unad.csv`). Lo que el insumo no recoge de su financiación está en las limitaciones de `docs/diccionario_resultados_oe2_oe3.md`.
 
 ## Verificación de isotonicidad (Spearman, insumo = obligación)
 
