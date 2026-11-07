@@ -1,0 +1,12 @@
+# Lo que nunca entra al contexto de Docker
+data/
+heredado/
+.git/
+.github/
+**/__pycache__/
+**/*.pyc
+**/*.db
+**/.env
+docs/nada_sin_fuente/
+docs/gobernanza/
+docs/uso_ia/

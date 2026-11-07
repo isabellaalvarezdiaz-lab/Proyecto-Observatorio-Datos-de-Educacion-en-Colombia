@@ -1,0 +1,91 @@
+##### Riesgo de cola del puntaje Saber Pro — 2026-11-06 19:27 #####
+α = 0.05 | B = 2000 | semilla = 20261106 | puntaje = global_c
+Universidades del DEA: 33
+
+2023: evaluados nacionales 242,140 | en las 33 universidades 70,534 | universidades con evaluados 33 | mínimo por universidad 226
+
+2024: evaluados nacionales 272,448 | en las 33 universidades 83,906 | universidades con evaluados 33 | mínimo por universidad 229
+
+=== VaR y CVaR al 95 %, 2023 (puntaje global_c) ===
+  nacional             n=242,140 media= 146.2 VaR= 111.0 CVaR= 103.9 brecha= 42.3
+  33 universidades     n= 70,534 media= 150.3 VaR= 112.0 CVaR= 104.8 brecha= 45.6
+  cola más pequeña: k = 12 evaluados (K_MIN = 5)
+  5 universidades con la cola más baja (CVaR):
+    universidad tecnologica del choco diego luis cor n=  1665 VaR=  96.2 [95; 97]  CVaR=  89.8 [87.4; 91.8]  brecha= 29.3
+    universidad del pacifico                         n=   261 VaR= 104.0 [98; 106]  CVaR=  91.2 [74.6; 101.2]  brecha= 37.3
+    universidad de la guajira                        n=  1790 VaR= 103.0 [102; 105]  CVaR=  96.5 [94.9; 98.2]  brecha= 34.6
+    universidad nacional abierta y a distancia unad  n=  8594 VaR= 108.0 [107; 109]  CVaR= 101.6 [100.8; 102.5]  brecha= 35.4
+    universidad de la amazonia                       n=  1002 VaR= 108.0 [107; 110]  CVaR= 101.8 [99.6; 104.2]  brecha= 36.1
+  5 universidades con la brecha de cola más grande (media − CVaR):
+    universidad de antioquia                         media= 162.9 CVaR= 115.0 brecha= 47.9
+    universidad nacional de colombia                 media= 177.7 CVaR= 130.2 brecha= 47.5
+    universidad industrial de santander              media= 167.2 CVaR= 119.8 brecha= 47.4
+    universidad del valle                            media= 160.9 CVaR= 113.5 brecha= 47.3
+    universidad del magdalena                        media= 146.9 CVaR= 103.4 brecha= 43.5
+
+=== VaR y CVaR al 95 %, 2024 (puntaje global_c) ===
+  nacional             n=272,448 media= 148.0 VaR= 112.0 CVaR= 104.3 brecha= 43.7
+  33 universidades     n= 83,906 media= 152.4 VaR= 113.0 CVaR= 105.0 brecha= 47.3
+  cola más pequeña: k = 12 evaluados (K_MIN = 5)
+  5 universidades con la cola más baja (CVaR):
+    universidad tecnologica del choco diego luis cor n=  2037 VaR=  95.0 [94; 96]  CVaR=  88.9 [86.5; 91.0]  brecha= 30.8
+    universidad de la guajira                        n=  1913 VaR= 106.0 [104; 107]  CVaR=  99.8 [98.3; 101.3]  brecha= 35.7
+    universidad del pacifico                         n=   229 VaR= 104.0 [100; 108]  CVaR=  99.8 [97.2; 103.1]  brecha= 29.8
+    universidad del tolima                           n=  3662 VaR= 109.0 [108; 109]  CVaR= 101.0 [99.3; 102.6]  brecha= 40.5
+    universidad nacional abierta y a distancia unad  n= 11947 VaR= 108.5 [108; 109]  CVaR= 101.9 [101.0; 102.7]  brecha= 36.5
+  5 universidades con la brecha de cola más grande (media − CVaR):
+    universidad industrial de santander              media= 169.4 CVaR= 118.8 brecha= 50.6
+    universidad nacional de colombia                 media= 180.0 CVaR= 133.3 brecha= 46.6
+    universidad del valle                            media= 159.7 CVaR= 113.6 brecha= 46.1
+    universidad de antioquia                         media= 167.4 CVaR= 122.0 brecha= 45.4
+    universidad del magdalena                        media= 147.4 CVaR= 102.0 brecha= 45.3
+
+=== Backtesting de Kupiec: VaR de 2023 frente a la cohorte de 2024 (α = 0.05) ===
+  nacional             VaR2023=111.0 tasa2024=4.62 % LR=83.93 p=0.0000
+  33 universidades     VaR2023=112.0 tasa2024=4.54 % LR=39.31 p=0.0000
+  Universidades: 9 de 33 rechazan con Holm al 5 % (2 peor, 7 mejor)
+  comprobación: tasa de 2023 = α en todas: True
+    universidad de antioquia                         tasa2024= 2.51 % LR=  66.07 p_holm=0.0000 → cola mejor en 2024
+    universidad del cauca                            tasa2024= 2.33 % LR=  35.01 p_holm=0.0000 → cola mejor en 2024
+    universidad nacional de colombia                 tasa2024= 3.86 % LR=  17.71 p_holm=0.0008 → cola mejor en 2024
+    universidad del atlantico                        tasa2024= 3.47 % LR=  17.00 p_holm=0.0011 → cola mejor en 2024
+    universidad del tolima                           tasa2024= 6.54 % LR=  16.80 p_holm=0.0012 → cola peor en 2024
+    universidad popular del cesar                    tasa2024= 3.21 % LR=  16.00 p_holm=0.0018 → cola mejor en 2024
+    universidad del quindio                          tasa2024= 3.28 % LR=  14.55 p_holm=0.0037 → cola mejor en 2024
+    universidad francisco de paula santander         tasa2024= 3.42 % LR=  13.34 p_holm=0.0067 → cola mejor en 2024
+    universidad tecnologica del choco diego luis cor tasa2024= 6.63 % LR=  10.40 p_holm=0.0315 → cola peor en 2024
+  Frente al cambio nacional (p₀ = 4.62 %): 6 de 33 rechazan con Holm al 5 %
+    universidad de antioquia                         tasa2024= 2.51 % LR=  50.23 p_holm=0.0000 → mejor que el cambio nacional
+    universidad del cauca                            tasa2024= 2.33 % LR=  27.30 p_holm=0.0000 → mejor que el cambio nacional
+    universidad del tolima                           tasa2024= 6.54 % LR=  27.29 p_holm=0.0000 → peor que el cambio nacional
+    universidad tecnologica del choco diego luis cor tasa2024= 6.63 % LR=  16.53 p_holm=0.0014 → peor que el cambio nacional
+    universidad popular del cesar                    tasa2024= 3.21 % LR=  10.52 p_holm=0.0343 → mejor que el cambio nacional
+    universidad del atlantico                        tasa2024= 3.47 % LR=  10.14 p_holm=0.0406 → mejor que el cambio nacional
+
+=== Asociaciones exploratorias (Spearman, 33 universidades) ===
+  2023 var          vs pct_estrato_1_2       rho=-0.740 p=0.0000
+  2023 var          vs eficiencia_corregida  rho=+0.804 p=0.0000
+  2023 cvar         vs pct_estrato_1_2       rho=-0.717 p=0.0000
+  2023 cvar         vs eficiencia_corregida  rho=+0.794 p=0.0000
+  2023 brecha_cola  vs pct_estrato_1_2       rho=-0.655 p=0.0000
+  2023 brecha_cola  vs eficiencia_corregida  rho=+0.572 p=0.0005
+  2024 var          vs pct_estrato_1_2       rho=-0.681 p=0.0000
+  2024 var          vs eficiencia_corregida  rho=+0.780 p=0.0000
+  2024 cvar         vs pct_estrato_1_2       rho=-0.703 p=0.0000
+  2024 cvar         vs eficiencia_corregida  rho=+0.798 p=0.0000
+  2024 brecha_cola  vs pct_estrato_1_2       rho=-0.497 p=0.0033
+  2024 brecha_cola  vs eficiencia_corregida  rho=+0.519 p=0.0020
+
+=== ¿Qué agrega la cola frente al promedio? (puesto por media vs. puesto por CVaR) ===
+  2023: Spearman media vs CVaR = 0.950; universidades que se mueven 5 puestos o más: 5
+    universidad internacional del tropico americano  puesto por media 30 → por CVaR 22
+    universidad del magdalena                        puesto por media 19 → por CVaR 26
+    universidad de cartagena                         puesto por media 21 → por CVaR 28
+    universidad de cordoba                           puesto por media 24 → por CVaR 19
+  2024: Spearman media vs CVaR = 0.955; universidades que se mueven 5 puestos o más: 5
+    universidad del valle                            puesto por media  7 → por CVaR 14
+    universidad del magdalena                        puesto por media 21 → por CVaR 28
+    universidad de cartagena                         puesto por media 19 → por CVaR 26
+    universidad internacional del tropico americano  puesto por media 28 → por CVaR 22
+
+Guardados: resultados/riesgo_puntaje.csv, riesgo_kupiec.csv, riesgo_puntaje_asociaciones.csv

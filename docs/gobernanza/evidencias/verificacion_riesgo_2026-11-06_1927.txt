@@ -1,0 +1,32 @@
+##### Verificación de los análisis de riesgo — 2026-11-06 19:27 #####
+
+A. Riesgo del puntaje
+  [OK] A1 2023: el puntaje global es el promedio de los módulos presentes — registros que no lo cumplen: 1 de 231,717
+  [OK] A1 2024: el puntaje global es el promedio de los módulos presentes — registros que no lo cumplen: 0 de 254,121
+  [OK] A2 VaR por ordenamiento completo — diferencia máxima 0.0000
+  [OK] A2 CVaR por ordenamiento completo — diferencia máxima 0.0000
+  [OK] A3 intervalos bootstrap con otra semilla — diferencia máxima 2.25 puntos (simulación; tolerancia 3)
+  [OK] A4 CVaR ≤ VaR ≤ media, intervalos y tamaño de la cola
+
+B. Backtesting de Kupiec
+  [OK] B1 LR de Kupiec recalculado con xlogy — diferencia máxima 0.0000
+  [OK] B1 p-valores por la gamma incompleta — diferencia máxima 4.93e-07
+  [OK] B2 Holm paso a paso — diferencia máxima 1.40e-05 (tolerancia 33 × 10⁻⁶)
+  B3 empates sorteados 500 veces: la decisión de cada universidad se mantiene en 93.2 % de los sorteos o más (mediana 100.0 %)
+  [OK] B3 decisiones estables (≥ 90 % de los sorteos) salvo las listadas — menos estables: ninguna
+  [OK] B1 prueba relativa a la tasa nacional — diferencia máxima 4.46e-07
+
+C. Stress testing
+  C1 gratuidad leída con openpyxl: 2,744.311 mil millones
+  [OK] C4 invariancia cobertura E1
+  [OK] C4 invariancia cobertura E2
+  [OK] C4 invariancia cobertura_sin_unad E1
+  [OK] C4 invariancia cobertura_sin_unad E2
+  [OK] C4 invariancia principal E1
+  [OK] C4 invariancia principal E2
+  [OK] C2 eficiencias de todos los escenarios = programa dual (punto interior) — diferencia máxima 0.000000
+  [OK] C3 insumos de los escenarios reconstruidos — diferencia máxima 0.0000
+  [OK] C3 E6: la gratuidad repartida suma el monto del PTE — 2,744.3 vs 2,744.3
+  [OK] C3 E7: la gratuidad repartida suma el monto del PTE — 2,744.3 vs 2,744.3
+
+Resultado: TODO COINCIDE

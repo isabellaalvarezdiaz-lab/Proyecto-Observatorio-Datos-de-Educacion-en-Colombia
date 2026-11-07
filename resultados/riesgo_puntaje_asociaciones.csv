@@ -1,0 +1,15 @@
+﻿anio,medida,variable,n,rho,p
+2023,var,pct_estrato_1_2,33,-0.7403,1e-06
+2023,var,eficiencia_corregida,33,0.8041,0.0
+2023,cvar,pct_estrato_1_2,33,-0.7166,3e-06
+2023,cvar,eficiencia_corregida,33,0.7945,0.0
+2023,brecha_cola,pct_estrato_1_2,33,-0.6547,3.6e-05
+2023,brecha_cola,eficiencia_corregida,33,0.5722,0.000503
+2024,var,pct_estrato_1_2,33,-0.6809,1.3e-05
+2024,var,eficiencia_corregida,33,0.7799,0.0
+2024,cvar,pct_estrato_1_2,33,-0.7025,5e-06
+2024,cvar,eficiencia_corregida,33,0.7978,0.0
+2024,brecha_cola,pct_estrato_1_2,33,-0.497,0.003258
+2024,brecha_cola,eficiencia_corregida,33,0.5194,0.001952
+2023,cvar,media,33,0.9495,
+2024,cvar,media,33,0.9545,

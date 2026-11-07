@@ -18,6 +18,10 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE3 · Segunda etapa (exploratoria) | qué características, institucionales y socioeconómicas, se asocian con la eficiencia, y el perfil de las menos eficientes | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv`, `oe3_contexto_menos_eficientes.csv` |
 | Corrección del trabajo previo | cifras de Comunicación Escrita 2023–2024 que corrigen el informe 2025-2 | `resultados/revision_trabajo_previo.csv` |
 | Tablero interactivo | los datos que lee el tablero, tomados de las tablas anteriores | `resultados/tablero/*.json` |
+| Riesgo · VaR y CVaR del puntaje (Teoría del Riesgo) | VaR y CVaR no paramétricos del puntaje de Saber Pro por universidad, con intervalos bootstrap y backtesting de Kupiec 2023 → 2024 | `resultados/riesgo_puntaje.csv`, `riesgo_kupiec.csv`, `riesgo_puntaje_asociaciones.csv` |
+| Riesgo · Stress testing del presupuesto | eficiencia y orden del DEA bajo recortes y con la gratuidad sumada al insumo | `resultados/riesgo_stress_resumen.csv`, `riesgo_stress_universidades.csv` |
+| Imputación de Escrita por perfiles similares | `global_d` con los ceros de Escrita imputados por PMM, y su efecto en el DEA y en el CVaR | `resultados/imputacion_escrita_universidades.csv`, `imputacion_escrita_sensibilidad.csv`, `modelos/imputador_escrita.json` |
+| API e integración con Python | FastAPI + SQLAlchemy con los resultados, `/predict`, stress a la medida, asistente con fuentes, tablero Streamlit, Docker y CI | `backend/`, `frontend/`, `.github/workflows/ci.yml` |
 
 ## Entregables
 
@@ -35,12 +39,17 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 │  └─ tablero/     los datos que lee el tablero interactivo
 ├─ docs/
 │  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md, diccionario_resultados_oe2_oe3.md
+│  ├─ diccionario_riesgo.md, diccionario_imputacion.md
 │  ├─ gobernanza/evidencias/   salida de cada corrida, con fecha y hora
 │  ├─ uso_ia/                  inventarios de fallos de IA
 │  ├─ nada_sin_fuente/         actividad de gestión de la información e IA (septiembre); ver su LEEME.md
 │  ├─ BITACORA_IA.md
 │  ├─ Consultoria.pdf          anteproyecto
 │  └─ informe_final.pdf        informe final
+├─ modelos/        imputador_escrita.json: el modelo de Escrita (coeficientes, sin datos individuales)
+├─ backend/        API FastAPI, tests, Dockerfile y docker-compose; ver backend/README.md
+├─ frontend/       tablero Streamlit que consume la API
+├─ .github/workflows/ci.yml   tests y construcción de la imagen en cada push
 ├─ heredado/       los archivos del equipo 2025-2, sin cambios; su README quedó como README_equipo_anterior.md
 ├─ requirements.txt
 └─ data/           datos crudos; NO se sube (está en .gitignore)
@@ -105,6 +114,42 @@ python scripts/datos_tablero.py             # datos del tablero interactivo (seg
 ```
 
 `revision_trabajo_previo.py` calcula, con la misma población que la agregación de Saber Pro, la media y la desviación estándar de cada módulo, y las de Comunicación Escrita sin los ceros que no tienen nivel de desempeño. `datos_tablero.py` no estima nada: une las tablas de `resultados/` y les agrega una llave y el nombre corto de cada universidad. El tablero interactivo lee solo esos cuatro archivos y calcula a la vista los promedios, los puestos y las medianas que muestra.
+
+## Análisis de riesgo (integración con Teoría del Riesgo)
+
+```bash
+python scripts/riesgo_puntaje.py     # VaR y CVaR del puntaje, bootstrap y Kupiec; necesita data/raw/saber_pro (≈ 30 s)
+python scripts/riesgo_stress.py      # stress testing del presupuesto sobre el DEA; necesita data/raw/pte/2024 o --gratuidad-mm (segundos)
+python scripts/verificar_riesgo.py   # recalcula todo por otro camino y responde TODO COINCIDE o FALLAS (≈ 20 s)
+```
+
+Lleva dos herramientas del curso de Teoría del Riesgo al observatorio. El VaR y el CVaR no paramétricos, por simulación histórica, resumen la cola de evaluados de menor puntaje de cada universidad; el backtesting de Kupiec comprueba si el VaR de 2023 acertó con la cohorte de 2024. El stress testing cambia el insumo del DEA (recortes y la gratuidad, que hoy no está en el insumo) y mide cuánto cambian la eficiencia y el orden. Las semillas son fijas. La especificación, las columnas, los resultados y sus límites están en `docs/diccionario_riesgo.md`.
+
+## Imputación de los ceros de Escrita por perfiles similares
+
+```bash
+python scripts/imputar_escrita.py        # modelo, PMM con 5 imputaciones y sensibilidad; necesita data/raw/saber_pro (≈ 20 s)
+python scripts/verificar_imputacion.py   # recalcula por otro camino y responde TODO COINCIDE o FALLAS (≈ 4 min)
+```
+
+El cero en Escrita es un dato faltante. En vez de suponer que el evaluado habría sacado el promedio de sus otros cuatro módulos (`global_c`), se toma el puntaje real de un evaluado de perfil parecido (*predictive mean matching*). La eficiencia y la frontera del DEA no cambian, y el CVaR casi no cambia: las conclusiones no dependen del tratamiento de los ceros. El método, la validación y los límites están en `docs/diccionario_imputacion.md`.
+
+## API, tablero y despliegue (integración con Python para APIs e IA)
+
+```bash
+cd backend
+python -m pip install -r requirements.txt
+python -m pytest -q                  # 85 tests; no necesitan data/
+uvicorn app.main:app --reload        # http://localhost:8000/docs
+```
+
+La API sirve los resultados de `resultados/` desde una base SQLite con SQLAlchemy y expone:
+- el VaR y el CVaR bajo demanda, con Kupiec;
+- escenarios de stress a la medida, con el DEA recalculado;
+- el imputador de Escrita en `/predict`, servido con Singleton;
+- un asistente que responde con cifras de la base y cita la página del informe o la sección del documento de donde salen.
+
+El tablero (`streamlit run frontend/app.py`) consume la API. `docker compose up --build`, desde `backend/`, levanta los dos. El detalle de endpoints, variables de entorno, Docker, Render y CI está en `backend/README.md`.
 
 ## Fase 1: diagnóstico de las fuentes (septiembre de 2026)
 

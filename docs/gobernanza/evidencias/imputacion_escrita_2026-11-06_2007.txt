@@ -1,0 +1,32 @@
+##### Imputación de ceros en Escrita por PMM — 2026-11-06 20:07 #####
+M = 5 | donantes = 5 | semilla = 20261106
+2023: evaluados 242,140 | ceros en Escrita 10,423 | ceros con los otros 4 módulos completos 10,395
+2024: evaluados 272,448 | ceros en Escrita 18,327 | ceros con los otros 4 módulos completos 18,294
+Ceros sin perfil completo (se quedan con global_c): 61
+
+=== 1. Validación: 97,116 evaluados con Escrita que no entran al ajuste (desviación de Escrita = 27.0) ===
+  supuesto_global_c    MAE  24.76 | RMSE  31.85 | sesgo  +3.69
+  lineal_pmm           MAE  19.75 | RMSE  25.65 | sesgo  +0.24
+  gradient_boosting    MAE  19.67 | RMSE  25.59 | sesgo  +0.24
+  knn_20               MAE  20.24 | RMSE  26.30 | sesgo  +0.15
+  R² del modelo lineal en validación: 0.096. Escrita se predice mal a nivel individual;
+  por eso se imputa con PMM (puntajes reales de donantes) y se mira el efecto en agregados.
+
+=== 2. Modelo final (todos los evaluados con Escrita) ===
+  Escrita = 101.380 +0.0534·ciudadanas +0.0931·ingles +0.1092·lectura_critica +0.0514·razonamiento -4.397·[2024]
+  residuos: desviación 25.74 | cuantiles 2.5/10/50/90/97.5 = [-47.4, -29.6, 0.4, 28.7, 42.2]
+  Escrita predicha promedio de los ceros: 139.8 | lo que supone global_c: 132.7
+
+=== 3. PMM: Escrita imputada promedio 139.8 (entre imputaciones: [139.67, 139.8, 139.72, 139.9, 139.97]) ===
+
+=== 4. global_c frente a global_d (promedio de las M imputaciones) ===
+  2023: nacional 146.22 → 146.31 | en las 33: diferencia media +0.08, máxima +0.82 (universidad tecnologica del choco diego luis cordoba) | Spearman c vs d 1.0000
+  2024: nacional 147.98 → 148.05 | en las 33: diferencia media +0.04, máxima +0.62 (universidad tecnologica del choco diego luis cordoba) | Spearman c vs d 1.0000
+
+=== 5. Sensibilidad ===
+  DEA 2023: Spearman 1.0000 | media 0.9127 → 0.9134 | frontera 6 → 6 | cambio máximo +0.0052 (universidad tecnologica del choco diego luis cordoba)
+  CVaR 2023: Spearman 0.9963 | media 109.30 → 109.94 | cambio máximo +3.15 (universidad del pacifico)
+  DEA 2024: Spearman 1.0000 | media 0.9156 → 0.9161 | frontera 4 → 4 | cambio máximo +0.0040 (universidad tecnologica del choco diego luis cordoba)
+  CVaR 2024: Spearman 0.9957 | media 110.64 → 111.40 | cambio máximo +3.45 (universidad tecnologica del choco diego luis cordoba)
+
+Salidas: modelos/imputador_escrita.json, resultados/imputacion_escrita_universidades.csv, resultados/imputacion_escrita_sensibilidad.csv

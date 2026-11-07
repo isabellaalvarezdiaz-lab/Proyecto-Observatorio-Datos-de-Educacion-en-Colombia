@@ -1,0 +1,15 @@
+# Despliegue en Render (plan gratuito) desde el Dockerfile de la API.
+services:
+  - type: web
+    name: observatorio-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /salud
+    autoDeploy: true
+    envVars:
+      - key: ENTORNO
+        value: produccion
+      - key: LLM_API_KEY
+        sync: false

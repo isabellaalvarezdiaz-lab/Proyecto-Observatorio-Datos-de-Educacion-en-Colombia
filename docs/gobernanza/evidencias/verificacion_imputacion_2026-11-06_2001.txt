@@ -1,0 +1,21 @@
+##### Verificación de la imputación de Escrita — 2026-11-06 19:57 #####
+
+A. Modelo
+  [OK] A1 coeficientes (scipy.linalg.lstsq) — diferencia máxima 3.46e-07
+  [OK] A2 residuos (desviación y cuantiles) — desviación 25.7389 vs 25.7389
+  [OK] A3 el JSON solo tiene parámetros y métricas — 1390 bytes
+  [OK] A3 n de entrenamiento — 485,580
+
+B. Agregados por universidad
+  [OK] B1 global_c — diferencia máxima 0.0049
+  [OK] B2 global_d esperado por PMM de fuerza bruta — |z| máximo 2.89; universidades fuera de tolerancia 0
+  [OK] B2 global_d nacional 2023 — esperado 146.307 vs publicado 146.31
+  [OK] B2 global_d nacional 2024 — esperado 148.049 vs publicado 148.05
+
+C. Sensibilidad del DEA (programa de multiplicadores)
+  [OK] C1 eficiencia media 2023 con global_d — 0.9134 vs 0.9134
+  [OK] C1 frontera 2023 con global_d — 6 vs 6
+  [OK] C1 eficiencia media 2024 con global_d — 0.9161 vs 0.9161
+  [OK] C1 frontera 2024 con global_d — 4 vs 4
+
+Resultado: TODO COINCIDE

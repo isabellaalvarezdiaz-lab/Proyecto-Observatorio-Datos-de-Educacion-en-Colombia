@@ -6,3 +6,11 @@ data/
 # Temporales de Excel
 ~$*
 __pycache__/
+
+# Entornos virtuales y caché de pruebas
+.venv/
+.pytest_cache/
+
+# Entornos virtuales y caché de pruebas
+.venv/
+.pytest_cache/

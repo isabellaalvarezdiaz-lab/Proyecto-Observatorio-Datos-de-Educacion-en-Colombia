@@ -1,0 +1,29 @@
+# Desde backend/:  docker compose up --build
+# API en http://localhost:8000/docs y tablero en http://localhost:8501
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      ENTORNO: produccion
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/salud')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+  tablero:
+    build:
+      context: ..
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
