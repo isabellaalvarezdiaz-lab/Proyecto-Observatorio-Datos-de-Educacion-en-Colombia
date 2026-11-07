@@ -607,6 +607,47 @@ corregida.
 
 ---
 
+## 21. Integración con Python para APIs e IA: API, imputación de Escrita y asistente con fuentes
+
+**Prompt representativo:** "y tambien debemos integrar esto Api, un agente, rags, o similares que es de pyhton [...] lo que integremso de pyhton debe quedar muy muy bien [...] necesito qur todo quede bien integrado".
+
+**Qué se obtuvo:**
+
+- `scripts/imputar_escrita.py` y su verificador `scripts/verificar_imputacion.py`: los ceros de Escrita se imputan con estudiantes de perfil similar (PMM), como sugirió el docente. Producen `modelos/imputador_escrita.json`, dos tablas en `resultados/` y `docs/diccionario_imputacion.md`.
+- La carpeta `backend/`: API FastAPI con SQLAlchemy, 85 tests, Dockerfile multi-stage y docker-compose.
+- `frontend/`: el tablero Streamlit.
+- `render.yaml` y `.github/workflows/ci.yml`.
+- La API sigue la especificación del proyecto integrador del curso (cinco capas, `/predict` con Singleton, `Depends`, `BaseSettings`, versiones fijas, Python 3.11.9).
+
+**Decisiones:**
+
+- **La API no lee microdatos.** Carga los CSV agregados de `resultados/`; así los tests, la imagen de Docker y el CI funcionan sin `data/`. El CI falla si algún archivo de `data/` llega a git.
+- **El modelo de Escrita se guarda en JSON, no con joblib.** Se descartó un KNN guardado con pickle porque llevaría dentro los microdatos de entrenamiento. En la validación, el modelo lineal predice casi igual que un gradient boosting y mejor que KNN.
+- **El asistente no deja que el LLM ponga cifras** (protocolo v2 de la actividad "Nada sin fuente"):
+  - los números salen de la base;
+  - cada fragmento cita su documento y su sección o página;
+  - una redacción del LLM con un número sin fuente se descarta.
+
+  Sin clave de API responde con plantillas, así que funciona sin servicios externos.
+- **La API y los scripts calculan igual.** Los tests comprueban que los escenarios armados con `POST /stress` reproducen los de `riesgo_stress.py` en los tres modelos. El DEA de la API está escrito aparte; el de `scripts/dea.py` no se importa.
+
+**Fallos de la IA detectados y corregidos:**
+
+- **Gratuidad sin la UNAD.** En el modelo sin la UNAD, la primera versión de `POST /stress` repartía la gratuidad solo entre las 32 universidades restantes. El script la reparte entre las 33 y luego deja fuera la parte de la UNAD. Lo detectó el test que compara con `riesgo_stress.py`; se corrigió la API para que cada universidad reciba lo mismo en cualquier modelo.
+- **Universidad no reconocida.** Ante "¿Cuál es el CVaR de la Universidad Tecnológica del Chocó?", el asistente no reconocía la universidad y respondía con la cifra nacional. Se cambió la búsqueda: basta una palabra propia de un solo nombre ("chocó").
+- **Preguntas ajenas al proyecto.** Para una pregunta ajena ("¿cuál es la capital de Francia?") la recuperación devolvía un fragmento cualquiera del informe. Ahora el fragmento debe contener al menos dos palabras de la pregunta y la mitad de ellas; si no, el asistente se abstiene.
+- **El año en la URL.** Se validaba como `Literal[2023, 2024]`, y todo `?anio=2024` daba 422 porque llega como texto. Se valida como entero entre 2023 y 2024.
+- **Docstring desactualizado.** El de `riesgo_puntaje.py` decía que la cola más pequeña tenía 11 evaluados y que el script tardaba 2 minutos. Son 12 (Trópico Americano 2023 y Pacífico 2024) y menos de un minuto.
+
+**Verificación:**
+
+- `verificar_imputacion.py` responde TODO COINCIDE y detectó dos errores plantados (un coeficiente y un `global_d`).
+- La API se probó con las versiones fijas de `requirements.txt` para FastAPI, Starlette, SQLAlchemy, pydantic-settings, httpx y pytest. Pydantic, pandas, numpy y scipy se probaron con versiones más nuevas, y con Python 3.13; el código también compila en Python 3.11.
+- El tablero se recorrió de punta a punta contra la API en vivo, con un Streamlit simulado.
+- Docker no se pudo construir en el entorno de la IA: lo construye el CI en cada push.
+
+---
+
 ## Resumen de afirmaciones descartadas mediante verificación
 
 La siguiente tabla sintetiza los casos en los que una afirmación inicial
@@ -638,3 +679,6 @@ proyecto sin contraste:
 | El insumo deja fuera solo la gratuidad, la concurrencia pensional y los recursos propios | Refutada — también los aportes de los entes territoriales (Ley 30 de 1992, artículo 86) |
 | Con puntajes enteros, el VaR empírico deja exactamente al 5 % de los evaluados por debajo | Refutada — muchos evaluados empatan en el VaR (a nivel nacional en 2023, el 4,79 % queda por debajo de 111 y el 5,35 % en 111 o por debajo); el backtesting pondera los empates para que la tasa esperada sea α |
 | Un recorte de presupuesto cambia la eficiencia de las universidades | Matizada — un recorte uniforme no cambia ninguna (el DEA es relativo); los recortes focalizados y la gratuidad sí cambian el orden |
+| Imputar los ceros de Escrita con estudiantes de perfil similar cambia la eficiencia | Refutada — Spearman de 1,000 con la eficiencia de `global_c` en los dos años, la misma frontera (6 y 4) y un cambio máximo de 0,0052 |
+| El supuesto de `global_c` (Escrita igual al promedio de los otros cuatro módulos) es neutro | Matizada — a los evaluados con cero el modelo les predice 139,8 en Escrita, frente a 132,7 que supone `global_c`; en los promedios por universidad el efecto es de 0,82 puntos o menos |
+| Un modelo flexible (KNN o boosting) predice Escrita claramente mejor que uno lineal | Refutada — MAE de validación de 20,24 (KNN) y 19,67 (boosting) frente a 19,75 (lineal); con un R² de 0,096, ninguno sirve para juzgar a un estudiante individual |
