@@ -1,0 +1,13 @@
+# API del observatorio — Python 3.11.9. Versiones fijas (==), como en el curso.
+# Instalación (desde backend/):  python -m pip install -r requirements.txt
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+SQLAlchemy==2.0.35
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.14.1          # linprog (HiGHS) para el DEA de los escenarios de stress
+pypdf==5.0.1           # el asistente lee el informe final en PDF
+httpx==0.27.2          # cliente del LLM opcional y requerido por TestClient
+pytest==8.3.3
