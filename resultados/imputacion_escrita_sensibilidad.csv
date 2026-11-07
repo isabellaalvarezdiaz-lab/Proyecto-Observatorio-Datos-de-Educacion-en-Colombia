@@ -1,0 +1,5 @@
+﻿anio,analisis,spearman_c_vs_d,media_c,media_d,n_frontera_c,n_frontera_d,cambio_max,universidad_cambio_max
+2023,DEA principal (eficiencia),1.0,0.9127,0.9134,6.0,6.0,0.0052,universidad tecnologica del choco diego luis cordoba
+2023,CVaR 5% del puntaje,0.9963,109.3012,109.9445,,,3.1543,universidad del pacifico
+2024,DEA principal (eficiencia),1.0,0.9156,0.9161,4.0,4.0,0.004,universidad tecnologica del choco diego luis cordoba
+2024,CVaR 5% del puntaje,0.9957,110.6394,111.3972,,,3.4461,universidad tecnologica del choco diego luis cordoba

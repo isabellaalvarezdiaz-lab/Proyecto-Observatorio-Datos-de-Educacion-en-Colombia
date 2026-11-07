@@ -5,3 +5,4 @@ numpy
 scipy>=1.6     # los métodos HiGHS de linprog llegaron en scipy 1.6.0
 matplotlib
 openpyxl       # lectura de los .xlsx del SNIES y del PTE
+scikit-learn   # opcional: solo para las comparaciones de validación de imputar_escrita.py

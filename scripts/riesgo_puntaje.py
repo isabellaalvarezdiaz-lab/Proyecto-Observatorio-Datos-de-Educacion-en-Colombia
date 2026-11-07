@@ -47,10 +47,11 @@ Salidas:  resultados/riesgo_puntaje.csv              VaR, CVaR e intervalos por 
           resultados/riesgo_puntaje_asociaciones.csv  Spearman exploratorios
 Evidencia: docs/gobernanza/evidencias/riesgo_puntaje_AAAA-MM-DD_HHMM.txt
 
-Publicación: las tablas son agregados por universidad. La cola más pequeña tiene 11 evaluados
-  (por encima de K_MIN = 5 de publicacion.py); si alguna quedara por debajo, su CVaR no se publica.
+Publicación: las tablas son agregados por universidad. La cola más pequeña tiene 12 evaluados
+  (U. del Trópico Americano en 2023 y U. del Pacífico en 2024; por encima de K_MIN = 5 de publicacion.py); si alguna quedara por
+  debajo, su CVaR no se publica.
 
-Uso (desde la raíz del repositorio; tarda unos 2 minutos con B = 2000):
+Uso (desde la raíz del repositorio; tarda menos de un minuto con B = 2000):
     python scripts/riesgo_puntaje.py
     python scripts/riesgo_puntaje.py --alfa 0.05 --B 2000 --semilla 20261106
 

@@ -1,0 +1,71 @@
+﻿anio,pte_codigo,pte_nombre,n_evaluados,n_ceros_escrita,global_c,global_d,global_d_de_entre_imputaciones,diferencia_d_menos_c
+2023,,nacional,242140,10423,146.22,146.31,0.002,0.09
+2023,,33 universidades,70534,2957,150.35,150.42,0.002,0.07
+2023,225701.0,universidad nacional de colombia,5273,95,177.73,177.67,0.008,-0.06
+2023,225702.0,universidad de antioquia,3196,84,162.87,162.86,0.012,-0.01
+2023,225703.0,universidad del valle,2945,127,160.86,160.84,0.021,-0.02
+2023,225704.0,universidad industrial de santander,2277,71,167.24,167.19,0.024,-0.05
+2023,225705.0,universidad pedagogica y tecnologica de colombia,2932,72,156.82,156.8,0.024,-0.02
+2023,225706.0,universidad distrital francisco jose de caldas,2419,47,166.04,165.97,0.017,-0.06
+2023,225707.0,universidad de cartagena,2387,133,145.53,145.62,0.021,0.09
+2023,225708.0,universidad de nariño,1693,91,151.2,151.2,0.012,-0.0
+2023,225709.0,universidad nacional abierta y a distancia unad,8594,387,136.99,137.14,0.007,0.15
+2023,225710.0,universidad del magdalena,2565,124,146.94,147.03,0.03,0.09
+2023,225711.0,universidad del cauca,1927,65,155.52,155.52,0.02,0.0
+2023,225712.0,universidad tecnologica de pereira,1497,41,154.75,154.72,0.02,-0.03
+2023,225713.0,universidad de pamplona,2685,112,143.15,143.25,0.014,0.1
+2023,225714.0,universidad surcolombiana,1682,54,150.58,150.6,0.029,0.02
+2023,225715.0,universidad pedagogica nacional,919,15,154.31,154.29,0.021,-0.02
+2023,225716.0,universidad de caldas,1244,44,155.42,155.41,0.025,-0.01
+2023,225717.0,universidad militar nueva granada,2129,48,159.0,159.0,0.017,0.0
+2023,225718.0,universidad del atlantico,2507,89,151.3,151.33,0.015,0.03
+2023,225719.0,universidad del tolima,3551,157,142.04,142.15,0.02,0.11
+2023,225720.0,universidad de cordoba,2391,149,142.6,142.67,0.024,0.08
+2023,225721.0,universidad del quindio,1555,76,145.8,145.91,0.036,0.11
+2023,225722.0,universidad popular del cesar,2315,137,139.12,139.26,0.031,0.14
+2023,225723.0,universidad de los llanos,757,29,152.59,152.64,0.024,0.05
+2023,225724.0,universidad francisco de paula santander,1727,56,143.52,143.61,0.022,0.09
+2023,225725.0,universidad francisco de paula santander seccional ocaña,698,38,140.6,140.73,0.024,0.13
+2023,225726.0,universidad de la amazonia,1002,44,138.0,138.14,0.022,0.14
+2023,225727.0,universidad colegio mayor de cundinamarca,917,31,156.0,155.96,0.03,-0.04
+2023,225728.0,universidad de cundinamarca,1865,93,148.15,148.16,0.021,0.01
+2023,225729.0,universidad tecnologica del choco diego luis cordoba,1665,266,119.16,119.98,0.034,0.82
+2023,225730.0,universidad de sucre,943,34,149.57,149.6,0.012,0.03
+2023,225731.0,universidad de la guajira,1790,103,131.16,131.41,0.014,0.25
+2023,225732.0,universidad del pacifico,261,35,128.52,128.93,0.039,0.42
+2023,225733.0,universidad internacional del tropico americano,226,10,136.67,136.8,0.052,0.13
+2024,,nacional,272448,18327,147.98,148.05,0.001,0.07
+2024,,33 universidades,83906,5238,152.36,152.4,0.004,0.04
+2024,225701.0,universidad nacional de colombia,5969,116,179.98,179.9,0.009,-0.08
+2024,225702.0,universidad de antioquia,4178,113,167.41,167.35,0.019,-0.06
+2024,225703.0,universidad del valle,3674,244,159.73,159.68,0.022,-0.05
+2024,225704.0,universidad industrial de santander,2594,90,169.36,169.3,0.015,-0.06
+2024,225705.0,universidad pedagogica y tecnologica de colombia,3522,163,159.5,159.43,0.02,-0.07
+2024,225706.0,universidad distrital francisco jose de caldas,3103,85,167.87,167.79,0.014,-0.08
+2024,225707.0,universidad de cartagena,3438,271,147.9,147.97,0.017,0.07
+2024,225708.0,universidad de nariño,1736,98,152.05,152.03,0.032,-0.02
+2024,225709.0,universidad nacional abierta y a distancia unad,11947,1067,138.36,138.53,0.015,0.17
+2024,225710.0,universidad del magdalena,2831,193,147.39,147.5,0.013,0.11
+2024,225711.0,universidad del cauca,1885,42,162.27,162.2,0.008,-0.07
+2024,225712.0,universidad tecnologica de pereira,1722,68,156.6,156.58,0.019,-0.03
+2024,225713.0,universidad de pamplona,3283,274,143.33,143.41,0.026,0.08
+2024,225714.0,universidad surcolombiana,1775,85,152.33,152.32,0.013,-0.01
+2024,225715.0,universidad pedagogica nacional,1689,57,155.95,155.93,0.028,-0.02
+2024,225716.0,universidad de caldas,1324,43,158.21,158.21,0.005,-0.01
+2024,225717.0,universidad militar nueva granada,2677,99,160.2,160.16,0.015,-0.04
+2024,225718.0,universidad del atlantico,3109,139,155.64,155.6,0.008,-0.04
+2024,225719.0,universidad del tolima,3662,308,141.5,141.61,0.022,0.12
+2024,225720.0,universidad de cordoba,2721,190,146.59,146.59,0.019,0.01
+2024,225721.0,universidad del quindio,2059,134,149.21,149.23,0.022,0.01
+2024,225722.0,universidad popular del cesar,2076,230,144.17,144.27,0.022,0.1
+2024,225723.0,universidad de los llanos,764,35,154.88,154.85,0.029,-0.02
+2024,225724.0,universidad francisco de paula santander,2269,123,146.86,146.87,0.016,0.01
+2024,225725.0,universidad francisco de paula santander seccional ocaña,654,101,144.34,144.36,0.052,0.02
+2024,225726.0,universidad de la amazonia,1106,134,142.58,142.71,0.034,0.13
+2024,225727.0,universidad colegio mayor de cundinamarca,973,43,156.15,156.15,0.025,0.0
+2024,225728.0,universidad de cundinamarca,1754,141,147.66,147.66,0.019,-0.0
+2024,225729.0,universidad tecnologica del choco diego luis cordoba,2037,281,119.67,120.29,0.028,0.62
+2024,225730.0,universidad de sucre,901,46,154.29,154.31,0.039,0.02
+2024,225731.0,universidad de la guajira,1913,179,135.42,135.67,0.028,0.25
+2024,225732.0,universidad del pacifico,229,20,129.66,129.94,0.037,0.28
+2024,225733.0,universidad internacional del tropico americano,332,26,141.63,141.62,0.071,-0.01

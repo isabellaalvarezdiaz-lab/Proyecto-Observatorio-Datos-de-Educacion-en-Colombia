@@ -1,0 +1,61 @@
+{
+  "nombre": "imputador_escrita",
+  "version": "2026-11-06",
+  "descripcion": "Escrita (Saber Pro) predicha por un modelo lineal con los otros cuatro módulos y el año. Ajustado con los evaluados con Escrita > 0, microdatos ICFES 2023-2024.",
+  "variables": [
+    "ciudadanas",
+    "ingles",
+    "lectura_critica",
+    "razonamiento",
+    "anio_2024"
+  ],
+  "intercepto": 101.379716,
+  "coeficientes": {
+    "ciudadanas": 0.053397,
+    "ingles": 0.093076,
+    "lectura_critica": 0.109216,
+    "razonamiento": 0.051425,
+    "anio_2024": -4.396756
+  },
+  "residuos": {
+    "desviacion": 25.7389,
+    "cuantiles": {
+      "p2_5": -47.3797,
+      "p10": -29.5778,
+      "p50": 0.4322,
+      "p90": 28.7219,
+      "p97_5": 42.2432
+    }
+  },
+  "rango_puntaje": [
+    0,
+    300
+  ],
+  "n_entrenamiento": 485580,
+  "validacion": {
+    "n": 97116,
+    "r2_lineal": 0.0964,
+    "supuesto_global_c": {
+      "mae": 24.7595,
+      "rmse": 31.8549,
+      "sesgo": 3.6945
+    },
+    "lineal_pmm": {
+      "mae": 19.7488,
+      "rmse": 25.6531,
+      "sesgo": 0.2412
+    },
+    "gradient_boosting": {
+      "mae": 19.6748,
+      "rmse": 25.593,
+      "sesgo": 0.2374
+    },
+    "knn_20": {
+      "mae": 20.2367,
+      "rmse": 26.3019,
+      "sesgo": 0.1499
+    }
+  },
+  "fuente": "ICFES, Examen Saber Pro Genéricas 2023 y 2024 (microdatos; no se publican)",
+  "script": "scripts/imputar_escrita.py"
+}
