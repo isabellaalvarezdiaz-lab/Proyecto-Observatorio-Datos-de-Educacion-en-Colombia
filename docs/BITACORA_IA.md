@@ -589,6 +589,22 @@ corregida.
 - Tres imprecisiones menores del informe: la ventaja del modelo principal en eficiencia se llamaba "en parte mecánica", cuando es mecánica (contiene los productos del de cobertura); el tamaño no se advertía como asociación mecánica en el modelo principal, donde la matrícula también es un producto, y la sensibilidad al deflactor no tenía cifras. Se corrigieron en el texto; los resultados no cambian.
 - Documentación desactualizada: las "decisiones pendientes" de `docs/diccionario_base_integrada.md` ya estaban tomadas; la lista de scripts del diccionario de resultados no incluía la validación; esta bitácora no nombraba a Eduar entre quienes interactuaron en la fase 2; el inventario de fallos de Eduar citaba el archivo del experimento con su nombre previo a la entrega y describía una carga del SNIES distinta de la de `cargar_snies.py`. Se corrigieron.
 
+
+## 20. Integración con Teoría del Riesgo: VaR y CVaR del puntaje y stress testing del presupuesto
+
+**Prompt representativo:** "listo, si hagámoslo con VaR y CVaR no paramétricos del puntaje, por simulación histórica, con intervalo por bootstrap y backtesting de Kupiec de 2023 a 2024 [...] Stress testing del presupuesto sobre el DEA. estas dos cosas [...] para que todo quede muy muy bien porque ya es nuestra entrega final".
+
+**Qué se obtuvo:** tres scripts nuevos (`riesgo_puntaje.py`, `riesgo_stress.py` y `verificar_riesgo.py`), cinco tablas en `resultados/` y `docs/diccionario_riesgo.md`.
+
+- Antes de escribir código se descartaron, por no tener sentido estadístico con estos datos, un "VaR de la eficiencia" sobre las réplicas del bootstrap (sería el intervalo de confianza con otro nombre) y un Monte Carlo de la productividad (con dos años, la distribución dependería casi solo de los supuestos).
+- El verificador recalcula cada cifra por otro camino y responde TODO COINCIDE. Se plantaron tres errores (un CVaR, un LR de Kupiec y una eficiencia de un escenario) y los detectó.
+
+**Fallos de la IA detectados y corregidos:**
+
+- La primera versión del backtesting probaba cada universidad solo contra α. La cohorte nacional de 2024 también se movió (4,62 % por debajo del VaR de 2023) y, con cientos de miles de evaluados, Kupiec detecta cambios muy pequeños. Se agregó la prueba contra la tasa nacional, que separa el cambio propio de la universidad del de toda la cohorte.
+- El stress testing suponía que todas las universidades tenían orden nacional o territorial; la U. del Trópico Americano no tiene (Saber Pro la registra como no oficial). En vez de asignarle uno, en los recortes por orden no se recorta y queda documentado.
+- La primera comprobación del verificador suponía que el puntaje global del ICFES cuenta como 0 un módulo vacío; los datos muestran que promedia los módulos presentes, con una sola excepción en 2023. Se corrigió la comprobación; el análisis no cambia porque usa el puntaje global oficial.
+
 ---
 
 ## Resumen de afirmaciones descartadas mediante verificación
@@ -620,3 +636,5 @@ proyecto sin contraste:
 | Las tablas agregadas por institución no contienen información de estudiantes | Refutada — 3 filas tenían un solo evaluado, cuyo promedio es el puntaje de esa persona; ahora no se publican los promedios de grupos con menos de 5 |
 | Entre 2023 y 2024 las universidades se acercaron a la frontera y la frontera retrocedió | Refutada — la descomposición cambia de signo entre el modelo principal (EC 1,050; TC 0,852) y el de cobertura (EC 0,809; TC 1,080), y el puntaje promedio no cumple el supuesto de rendimientos constantes; solo se sostiene que la productividad cayó |
 | El insumo deja fuera solo la gratuidad, la concurrencia pensional y los recursos propios | Refutada — también los aportes de los entes territoriales (Ley 30 de 1992, artículo 86) |
+| Con puntajes enteros, el VaR empírico deja exactamente al 5 % de los evaluados por debajo | Refutada — muchos evaluados empatan en el VaR (a nivel nacional en 2023, el 4,79 % queda por debajo de 111 y el 5,35 % en 111 o por debajo); el backtesting pondera los empates para que la tasa esperada sea α |
+| Un recorte de presupuesto cambia la eficiencia de las universidades | Matizada — un recorte uniforme no cambia ninguna (el DEA es relativo); los recortes focalizados y la gratuidad sí cambian el orden |

@@ -18,6 +18,8 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE3 · Segunda etapa (exploratoria) | qué características, institucionales y socioeconómicas, se asocian con la eficiencia, y el perfil de las menos eficientes | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv`, `oe3_contexto_menos_eficientes.csv` |
 | Corrección del trabajo previo | cifras de Comunicación Escrita 2023–2024 que corrigen el informe 2025-2 | `resultados/revision_trabajo_previo.csv` |
 | Tablero interactivo | los datos que lee el tablero, tomados de las tablas anteriores | `resultados/tablero/*.json` |
+| Riesgo · VaR y CVaR del puntaje (Teoría del Riesgo) | VaR y CVaR no paramétricos del puntaje de Saber Pro por universidad, con intervalos bootstrap y backtesting de Kupiec 2023 → 2024 | `resultados/riesgo_puntaje.csv`, `riesgo_kupiec.csv`, `riesgo_puntaje_asociaciones.csv` |
+| Riesgo · Stress testing del presupuesto | eficiencia y orden del DEA bajo recortes y con la gratuidad sumada al insumo | `resultados/riesgo_stress_resumen.csv`, `riesgo_stress_universidades.csv` |
 
 ## Entregables
 
@@ -105,6 +107,16 @@ python scripts/datos_tablero.py             # datos del tablero interactivo (seg
 ```
 
 `revision_trabajo_previo.py` calcula, con la misma población que la agregación de Saber Pro, la media y la desviación estándar de cada módulo, y las de Comunicación Escrita sin los ceros que no tienen nivel de desempeño. `datos_tablero.py` no estima nada: une las tablas de `resultados/` y les agrega una llave y el nombre corto de cada universidad. El tablero interactivo lee solo esos cuatro archivos y calcula a la vista los promedios, los puestos y las medianas que muestra.
+
+## Análisis de riesgo (integración con Teoría del Riesgo)
+
+```bash
+python scripts/riesgo_puntaje.py     # VaR y CVaR del puntaje, bootstrap y Kupiec; necesita data/raw/saber_pro (≈ 30 s)
+python scripts/riesgo_stress.py      # stress testing del presupuesto sobre el DEA; necesita data/raw/pte/2024 o --gratuidad-mm (segundos)
+python scripts/verificar_riesgo.py   # recalcula todo por otro camino y responde TODO COINCIDE o FALLAS (≈ 20 s)
+```
+
+Lleva dos herramientas del curso de Teoría del Riesgo al observatorio. El VaR y el CVaR no paramétricos, por simulación histórica, resumen la cola de evaluados de menor puntaje de cada universidad; el backtesting de Kupiec comprueba si el VaR de 2023 acertó con la cohorte de 2024. El stress testing cambia el insumo del DEA (recortes y la gratuidad, que hoy no está en el insumo) y mide cuánto cambian la eficiencia y el orden. Las semillas son fijas. La especificación, las columnas, los resultados y sus límites están en `docs/diccionario_riesgo.md`.
 
 ## Fase 1: diagnóstico de las fuentes (septiembre de 2026)
 
