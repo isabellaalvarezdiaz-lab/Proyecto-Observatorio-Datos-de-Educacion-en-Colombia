@@ -1,0 +1,53 @@
+##### Stress testing del presupuesto sobre el DEA, 2024 — 2026-11-06 19:27 #####
+Gratuidad 2024: 2,744.311 mil millones (data/raw/pte/2024/pte_2024.xlsx | hoja Cuadro No. 7 | fila 1758)
+Universidades: 33 | orden nacional 16, territorial 16, sin orden 1 ['universidad internacional del tropico americano'] | insumo total 6,137.4 mil millones
+  Sin orden: Saber Pro no la registra como oficial nacional ni territorial; en E3 y E4 no se le aplica recorte.
+
+=== Modelo principal (33 universidades) ===
+  comprobación: el escenario base reproduce oe3 (diferencia máxima 0.00000)
+  E0 base                                          media 0.916 (+0.000) | frontera 4 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E1 recorte uniforme 10 %                         media 0.916 (+0.000) | frontera 4 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E2 recorte uniforme 20 %                         media 0.916 (-0.000) | frontera 4 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E3 recorte 20 % orden nacional                   media 0.918 (+0.002) | frontera 5 | Spearman 0.976 | Δ5pts  1 | máx +0.054 (universidad del pacifico)
+  E4 recorte 20 % orden territorial                media 0.917 (+0.001) | frontera 6 | Spearman 0.978 | Δ5pts  2 | máx +0.065 (universidad de cundinamarca)
+  E5 recorte 10 % a las 8 menos eficientes         media 0.916 (+0.001) | frontera 4 | Spearman 1.000 | Δ5pts  0 | máx +0.027 (universidad del pacifico)
+  E6 + gratuidad por matrícula de pregrado         media 0.935 (+0.020) | frontera 9 | Spearman 0.863 | Δ5pts  7 | máx +0.081 (universidad de sucre)
+  E7 + gratuidad por pregrado × % estratos 1 y 2   media 0.927 (+0.012) | frontera 7 | Spearman 0.937 | Δ5pts  3 | máx +0.063 (universidad de cartagena)
+  comprobación de invariancia (E1): sí, ninguna eficiencia cambia
+  comprobación de invariancia (E2): sí, ninguna eficiencia cambia
+
+=== Modelo cobertura (33 universidades) ===
+  comprobación: el escenario base reproduce oe3 (diferencia máxima 0.00000)
+  E0 base                                          media 0.416 (+0.000) | frontera 2 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E1 recorte uniforme 10 %                         media 0.416 (+0.000) | frontera 2 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E2 recorte uniforme 20 %                         media 0.416 (+0.000) | frontera 2 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E3 recorte 20 % orden nacional                   media 0.394 (-0.022) | frontera 3 | Spearman 0.936 | Δ5pts 10 | máx -0.230 (universidad distrital francisc)
+  E4 recorte 20 % orden territorial                media 0.441 (+0.025) | frontera 4 | Spearman 0.962 | Δ5pts 11 | máx +0.174 (universidad de cundinamarca)
+  E5 recorte 10 % a las 8 menos eficientes         media 0.421 (+0.005) | frontera 2 | Spearman 0.975 | Δ5pts  1 | máx +0.057 (universidad del pacifico)
+  E6 + gratuidad por matrícula de pregrado         media 0.661 (+0.245) | frontera 4 | Spearman 0.866 | Δ5pts 29 | máx +0.473 (universidad de cartagena)
+  E7 + gratuidad por pregrado × % estratos 1 y 2   media 0.583 (+0.167) | frontera 4 | Spearman 0.869 | Δ5pts 26 | máx +0.473 (universidad de cartagena)
+  comprobación de invariancia (E1): sí, ninguna eficiencia cambia
+  comprobación de invariancia (E2): sí, ninguna eficiencia cambia
+
+=== Modelo cobertura_sin_unad (32 universidades) ===
+  comprobación: el escenario base reproduce oe3 (diferencia máxima 0.00000)
+  E0 base                                          media 0.689 (+0.000) | frontera 9 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E1 recorte uniforme 10 %                         media 0.689 (-0.000) | frontera 9 | Spearman 1.000 | Δ5pts  0 | máx -0.000 (ninguna)
+  E2 recorte uniforme 20 %                         media 0.689 (-0.000) | frontera 9 | Spearman 1.000 | Δ5pts  0 | máx +0.000 (ninguna)
+  E3 recorte 20 % orden nacional                   media 0.675 (-0.014) | frontera 7 | Spearman 0.970 | Δ5pts  5 | máx -0.316 (universidad de cundinamarca)
+  E4 recorte 20 % orden territorial                media 0.687 (-0.002) | frontera 9 | Spearman 0.982 | Δ5pts  3 | máx -0.071 (universidad del pacifico)
+  E5 recorte 10 % a las 8 menos eficientes         media 0.701 (+0.012) | frontera 9 | Spearman 0.998 | Δ5pts  4 | máx +0.115 (universidad francisco de paula)
+  E6 + gratuidad por matrícula de pregrado         media 0.755 (+0.066) | frontera 9 | Spearman 0.961 | Δ5pts 11 | máx +0.291 (universidad del pacifico)
+  E7 + gratuidad por pregrado × % estratos 1 y 2   media 0.699 (+0.010) | frontera 7 | Spearman 0.978 | Δ5pts  6 | máx -0.300 (universidad de cundinamarca)
+  comprobación de invariancia (E1): sí, ninguna eficiencia cambia
+  comprobación de invariancia (E2): sí, ninguna eficiencia cambia
+
+=== Universidades que más cambian con la gratuidad (E6, modelo principal) ===
+  universidad de sucre                             0.919 → 1.000 (puesto 19 → 1)
+  universidad del tolima                           0.879 → 0.950 (puesto 25 → 16)
+  universidad colegio mayor de cundinamarca        0.930 → 1.000 (puesto 14 → 1)
+  universidad de cartagena                         0.937 → 1.000 (puesto 11 → 1)
+  universidad francisco de paula santander seccion 0.895 → 0.957 (puesto 23 → 15)
+  universidad del pacifico                         0.824 → 0.883 (puesto 31 → 27)
+
+Guardados: resultados/riesgo_stress_resumen.csv y riesgo_stress_universidades.csv
