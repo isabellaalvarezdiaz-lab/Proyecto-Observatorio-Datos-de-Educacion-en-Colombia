@@ -28,6 +28,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 - **Informe final:** `docs/informe_final.pdf`, compilado en Overleaf.
 - **Presentación de la sustentación:** https://claude.ai/artifact/QwZq5ANNtcQAAtHKuS9xyd
 - **Tablero interactivo:** https://claude.ai/artifact/9oDtKfv96bNso6KNgvSu2P (lee los datos de `resultados/tablero/`)
+- **API desplegada:** https://observatorio-api-fuk3.onrender.com/docs (Render, plan gratuito: si estuvo inactiva, la primera carga tarda cerca de un minuto)
 
 ## Estructura
 
