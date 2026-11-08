@@ -50,7 +50,6 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 │  ├─ uso_ia/                  inventarios de fallos de IA
 │  ├─ nada_sin_fuente/         actividad de gestión de la información e IA (septiembre); ver su LEEME.md
 │  ├─ BITACORA_IA.md
-│  ├─ Consultoria.pdf          anteproyecto
 │  └─ informe_final.pdf        informe final
 ├─ modelos/        imputador_escrita.json: el modelo de Escrita (coeficientes, sin datos individuales)
 ├─ backend/        API FastAPI, tests, Dockerfile y docker-compose; ver backend/README.md
