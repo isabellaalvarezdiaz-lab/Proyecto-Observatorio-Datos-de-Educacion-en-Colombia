@@ -17,7 +17,7 @@ Equipo: Isabella Álvarez, Eduar Caicedo, Anderson González.
 | `protocolo_v1.md`, `protocolo_v2.md` | Protocolo de consulta del cuaderno de NotebookLM y su versión corregida |
 | `corpus/README.md` | Procedencia de los 13 documentos del estado del arte (origen, licencia, quién lo verificó) |
 | `corpus/observatorio-estado-del-arte.rdf` | Exportación de la biblioteca de Zotero |
-| `anteproyecto_corregido_2026-10-04.pdf` | Anteproyecto con las seis afirmaciones corregidas (se entregó como `Consultoria_Ante_Poyecto.pdf`). El anteproyecto original está en `docs/Consultoria.pdf` |
+| `anteproyecto_corregido_2026-10-04.pdf` | Anteproyecto con las seis afirmaciones corregidas (se entregó como `Consultoria_Ante_Poyecto.pdf`). El anteproyecto original se quitó del repositorio el 8-11-2026 y sigue en el historial de git |
 | `Trazabilidad_Final.xlsx`, `Anexo_Pruebas_Herramienta.docx` | Tabla de trazabilidad y anexo de pruebas de herramienta, que cita la memoria |
 | `scripts/extraer.py` | Verifica que los PDF del corpus tengan capa de texto |
 | `scripts/prueba-via-propia/` | Sistema propio (Ollama + Chroma) que se construyó, se midió y se descartó |
