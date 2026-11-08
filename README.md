@@ -26,7 +26,7 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 ## Entregables
 
 - **Informe final:** `docs/informe_final.pdf`, compilado en Overleaf.
-- **Tablero interactivo:** `frontend/app.py` (Streamlit; consume la API: `streamlit run frontend/app.py`)
+- **Tablero interactivo:** https://observatorio-tablero.onrender.com (Streamlit en Render; consume la API. En local: `streamlit run frontend/app.py`)
 - **API desplegada:** https://observatorio-api-fuk3.onrender.com/docs (Render, plan gratuito: si estuvo inactiva, la primera carga tarda cerca de un minuto)
 
 ## Estructura
