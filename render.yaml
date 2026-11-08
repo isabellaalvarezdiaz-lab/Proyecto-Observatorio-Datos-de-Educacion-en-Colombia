@@ -1,4 +1,4 @@
-# Despliegue en Render (plan gratuito) desde el Dockerfile de la API.
+# Despliegue en Render (plan gratuito): la API y el tablero, cada uno desde su Dockerfile.
 services:
   - type: web
     name: observatorio-api
@@ -13,3 +13,15 @@ services:
         value: produccion
       - key: LLM_API_KEY
         sync: false
+
+  - type: web
+    name: observatorio-tablero
+    runtime: docker
+    plan: free
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
+    envVars:
+      - key: API_URL
+        value: https://observatorio-api-fuk3.onrender.com

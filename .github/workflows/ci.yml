@@ -38,3 +38,32 @@ jobs:
           docker logs api; exit 1
       - name: La imagen no trae microdatos
         run: docker run --rm --entrypoint sh observatorio-api -c 'test ! -e /app/data'
+
+  tablero:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construir las imágenes de la API y del tablero
+        run: |
+          docker build -f backend/Dockerfile -t observatorio-api .
+          docker build -f frontend/Dockerfile -t observatorio-tablero .
+      - name: Arrancar la API
+        run: |
+          docker run -d --name api -p 8000:8000 observatorio-api
+          for i in $(seq 1 30); do curl -fs http://localhost:8000/salud && exit 0; sleep 2; done
+          docker logs api; exit 1
+      - name: Correr el tablero completo contra la API (AppTest de Streamlit)
+        run: |
+          docker run --rm --network host -e API_URL=http://localhost:8000 --entrypoint python observatorio-tablero -c "
+          from streamlit.testing.v1 import AppTest
+          at = AppTest.from_file('app.py', default_timeout=120).run()
+          assert not at.exception, at.exception
+          assert not at.error, [e.value for e in at.error]
+          print('tablero OK:', len(at.dataframe), 'tablas,', len(at.tabs), 'pestañas')
+          "
+      - name: Streamlit responde como servidor
+        run: |
+          docker run -d --name tablero -p 8501:8501 -e API_URL=http://localhost:8000 observatorio-tablero
+          for i in $(seq 1 30); do curl -fs http://localhost:8501/_stcore/health && exit 0; sleep 2; done
+          docker logs tablero; exit 1

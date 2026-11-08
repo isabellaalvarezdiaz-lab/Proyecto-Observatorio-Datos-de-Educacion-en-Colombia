@@ -8,4 +8,5 @@ WORKDIR /app
 COPY frontend/app.py frontend/cliente.py ./
 USER tablero
 EXPOSE 8501
-CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.headless=true"]
+# Render inyecta $PORT; en local se usa 8501
+CMD ["sh", "-c", "exec streamlit run app.py --server.address=0.0.0.0 --server.port=${PORT:-8501} --server.headless=true"]

@@ -12,7 +12,8 @@ class ErrorAPI(RuntimeError):
 
 
 class ClienteAPI:
-    def __init__(self, url: str = API_URL, timeout: float = 60) -> None:
+    def __init__(self, url: str = API_URL, timeout: float = 120) -> None:
+        # 120 s: en el plan gratuito de Render la API puede tardar cerca de un minuto en despertar
         self.url, self.timeout = url.rstrip("/"), timeout
         self.sesion = requests.Session()
 
