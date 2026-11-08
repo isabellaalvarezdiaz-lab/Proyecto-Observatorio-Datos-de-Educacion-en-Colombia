@@ -592,59 +592,69 @@ corregida.
 
 ## 20. Integración con Teoría del Riesgo: VaR y CVaR del puntaje y stress testing del presupuesto
 
-**Prompt representativo:** "listo, si hagámoslo con VaR y CVaR no paramétricos del puntaje, por simulación histórica, con intervalo por bootstrap y backtesting de Kupiec de 2023 a 2024 [...] Stress testing del presupuesto sobre el DEA. estas dos cosas [...] para que todo quede muy muy bien porque ya es nuestra entrega final".
+**Solicitud del equipo (parafraseada):** relacionar el proyecto con Teoría del Riesgo usando dos herramientas del curso, sin agregar análisis que no tuvieran sentido con estos datos: VaR y CVaR no paramétricos del puntaje Saber Pro por simulación histórica, con intervalos bootstrap y backtesting de Kupiec entre 2023 y 2024, y stress testing del presupuesto sobre el DEA.
 
-**Qué se obtuvo:** tres scripts nuevos (`riesgo_puntaje.py`, `riesgo_stress.py` y `verificar_riesgo.py`), cinco tablas en `resultados/` y `docs/diccionario_riesgo.md`.
+**Decisiones del equipo:**
 
-- Antes de escribir código se descartaron, por no tener sentido estadístico con estos datos, un "VaR de la eficiencia" sobre las réplicas del bootstrap (sería el intervalo de confianza con otro nombre) y un Monte Carlo de la productividad (con dos años, la distribución dependería casi solo de los supuestos).
-- El verificador recalcula cada cifra por otro camino y responde TODO COINCIDE. Se plantaron tres errores (un CVaR, un LR de Kupiec y una eficiencia de un escenario) y los detectó.
+- Se evaluaron varias opciones antes de elegir. Se descartaron un "VaR de la eficiencia" sobre las réplicas del bootstrap, que sería el mismo intervalo de confianza con otro nombre, y un Monte Carlo de la productividad: con dos años, el resultado dependería casi solo de los supuestos.
+- Se usó solo el VaR histórico. Se discutió agregar un VaR normal y uno de Cornish-Fisher para comparar métodos, y se decidió no hacerlo para no ampliar el alcance. El método histórico se mantiene porque no supone que el puntaje sea normal.
+- El stress testing se planteó para responder a la principal limitación del informe: el insumo presupuestal está incompleto porque no incluye la gratuidad.
 
-**Fallos de la IA detectados y corregidos:**
+**Qué se obtuvo con apoyo de la IA:**
 
-- La primera versión del backtesting probaba cada universidad solo contra α. La cohorte nacional de 2024 también se movió (4,62 % por debajo del VaR de 2023) y, con cientos de miles de evaluados, Kupiec detecta cambios muy pequeños. Se agregó la prueba contra la tasa nacional, que separa el cambio propio de la universidad del de toda la cohorte.
-- El stress testing suponía que todas las universidades tenían orden nacional o territorial; la U. del Trópico Americano no tiene (Saber Pro la registra como no oficial). En vez de asignarle uno, en los recortes por orden no se recorta y queda documentado.
-- La primera comprobación del verificador suponía que el puntaje global del ICFES cuenta como 0 un módulo vacío; los datos muestran que promedia los módulos presentes, con una sola excepción en 2023. Se corrigió la comprobación; el análisis no cambia porque usa el puntaje global oficial.
+- Tres scripts: `riesgo_puntaje.py`, `riesgo_stress.py` y `verificar_riesgo.py`.
+- Cinco tablas en `resultados/`.
+- `docs/diccionario_riesgo.md`.
+
+El verificador recalcula cada cifra por otro camino y responde TODO COINCIDE. Se plantaron tres errores (un CVaR, un LR de Kupiec y una eficiencia de un escenario) y los detectó.
+
+**Problemas encontrados en la propuesta de la IA y cómo se corrigieron:**
+
+- **El backtesting solo comparaba contra α.** La cohorte nacional de 2024 también se movió: el 4,62 % quedó por debajo del VaR de 2023. Con cientos de miles de evaluados, Kupiec detecta cambios muy pequeños. Se agregó una prueba contra la tasa nacional, que separa el cambio propio de cada universidad del de toda la cohorte.
+- **Una universidad sin orden.** El stress testing suponía que todas las universidades eran de orden nacional o territorial, pero la U. del Trópico Americano no tiene orden en Saber Pro, que la registra como no oficial. No se le asignó uno: queda fuera de los recortes por orden y así se documenta.
+- **La regla del puntaje global.** Una comprobación del verificador suponía que el ICFES cuenta como 0 un módulo vacío. Los datos muestran que promedia solo los módulos presentes, con una única excepción en 2023. Se corrigió la comprobación; el análisis no cambia porque usa el puntaje global oficial.
 
 ---
 
 ## 21. Integración con Python para APIs e IA: API, imputación de Escrita y asistente con fuentes
 
-**Prompt representativo:** "y tambien debemos integrar esto Api, un agente, rags, o similares que es de pyhton [...] lo que integremso de pyhton debe quedar muy muy bien [...] necesito qur todo quede bien integrado".
+**Solicitud del equipo (parafraseada):** integrar el proyecto con lo visto en Python para APIs e IA (API, modelo servido, agente o RAG) de forma completa y verificable. Además, atender la sugerencia del docente de imputar los ceros de Comunicación Escrita con estudiantes de perfil similar.
 
-**Qué se obtuvo:**
+**Decisiones del equipo:**
 
-- `scripts/imputar_escrita.py` y su verificador `scripts/verificar_imputacion.py`: los ceros de Escrita se imputan con estudiantes de perfil similar (PMM), como sugirió el docente. Producen `modelos/imputador_escrita.json`, dos tablas en `resultados/` y `docs/diccionario_imputacion.md`.
-- La carpeta `backend/`: API FastAPI con SQLAlchemy, 85 tests, Dockerfile multi-stage y docker-compose.
-- `frontend/`: el tablero Streamlit.
-- `render.yaml` y `.github/workflows/ci.yml`.
-- La API sigue la especificación del proyecto integrador del curso (cinco capas, `/predict` con Singleton, `Depends`, `BaseSettings`, versiones fijas, Python 3.11.9).
+- **Seguir la especificación del proyecto integrador del curso:** cinco capas, `/predict` con Singleton, `Depends`, `BaseSettings`, versiones fijas y Python 3.11.9.
+- **Que la API no lea microdatos.** Usa solo las tablas agregadas de `resultados/`, para que los microdatos de Saber Pro nunca salgan del equipo. El CI falla si algún archivo de `data/` llega a git.
+- **Que el asistente siga el protocolo v2 de "Nada sin fuente".** Las cifras salen de la base y cada fragmento cita su documento y su página. Si un modelo de lenguaje redacta y pone un número sin fuente, su respuesta se descarta.
+- **Tratar la imputación de Escrita como análisis de sensibilidad,** no como reemplazo del puntaje usado en los resultados principales.
+- **Publicar la API y el tablero en Render** y quitar del README los enlaces a herramientas externas.
 
-**Decisiones:**
+**Qué se obtuvo con apoyo de la IA:**
 
-- **La API no lee microdatos.** Carga los CSV agregados de `resultados/`; así los tests, la imagen de Docker y el CI funcionan sin `data/`. El CI falla si algún archivo de `data/` llega a git.
-- **El modelo de Escrita se guarda en JSON, no con joblib.** Se descartó un KNN guardado con pickle porque llevaría dentro los microdatos de entrenamiento. En la validación, el modelo lineal predice casi igual que un gradient boosting y mejor que KNN.
-- **El asistente no deja que el LLM ponga cifras** (protocolo v2 de la actividad "Nada sin fuente"):
-  - los números salen de la base;
-  - cada fragmento cita su documento y su sección o página;
-  - una redacción del LLM con un número sin fuente se descarta.
+- La imputación: `scripts/imputar_escrita.py` y su verificador `scripts/verificar_imputacion.py`, el modelo `modelos/imputador_escrita.json`, dos tablas en `resultados/` y `docs/diccionario_imputacion.md`.
+- `backend/`: API FastAPI con SQLAlchemy, 85 pruebas, Dockerfile multi-stage y docker-compose.
+- `frontend/`: el tablero en Streamlit, que consume la API.
+- La infraestructura: `render.yaml` y `.github/workflows/ci.yml`.
 
-  Sin clave de API responde con plantillas, así que funciona sin servicios externos.
-- **La API y los scripts calculan igual.** Los tests comprueban que los escenarios armados con `POST /stress` reproducen los de `riesgo_stress.py` en los tres modelos. El DEA de la API está escrito aparte; el de `scripts/dea.py` no se importa.
+**Elecciones técnicas:**
 
-**Fallos de la IA detectados y corregidos:**
+- **El modelo de Escrita se guarda en JSON,** con solo coeficientes y métricas. Un KNN guardado con pickle llevaría dentro los datos de entrenamiento. En la validación, el modelo lineal predice casi igual que un gradient boosting y mejor que KNN.
+- **El DEA de la API está escrito aparte del de `scripts/dea.py`.** Las pruebas comprueban que los escenarios armados con `POST /stress` reproducen los de `riesgo_stress.py` en los tres modelos.
 
-- **Gratuidad sin la UNAD.** En el modelo sin la UNAD, la primera versión de `POST /stress` repartía la gratuidad solo entre las 32 universidades restantes. El script la reparte entre las 33 y luego deja fuera la parte de la UNAD. Lo detectó el test que compara con `riesgo_stress.py`; se corrigió la API para que cada universidad reciba lo mismo en cualquier modelo.
-- **Universidad no reconocida.** Ante "¿Cuál es el CVaR de la Universidad Tecnológica del Chocó?", el asistente no reconocía la universidad y respondía con la cifra nacional. Se cambió la búsqueda: basta una palabra propia de un solo nombre ("chocó").
-- **Preguntas ajenas al proyecto.** Para una pregunta ajena ("¿cuál es la capital de Francia?") la recuperación devolvía un fragmento cualquiera del informe. Ahora el fragmento debe contener al menos dos palabras de la pregunta y la mitad de ellas; si no, el asistente se abstiene.
-- **El año en la URL.** Se validaba como `Literal[2023, 2024]`, y todo `?anio=2024` daba 422 porque llega como texto. Se valida como entero entre 2023 y 2024.
-- **Docstring desactualizado.** El de `riesgo_puntaje.py` decía que la cola más pequeña tenía 11 evaluados y que el script tardaba 2 minutos. Son 12 (Trópico Americano 2023 y Pacífico 2024) y menos de un minuto.
+**Problemas encontrados durante la revisión y cómo se corrigieron:**
 
-**Verificación:**
+- **Gratuidad sin la UNAD.** En el modelo sin la UNAD, la primera versión de `POST /stress` repartía la gratuidad solo entre 32 universidades. El script la reparte entre las 33 y luego deja fuera la parte de la UNAD. Lo detectó la prueba que compara con `riesgo_stress.py`, y la API se corrigió para que cada universidad reciba lo mismo en cualquier modelo.
+- **Universidad no reconocida.** Ante "¿Cuál es el CVaR de la Universidad Tecnológica del Chocó?", el asistente devolvía la cifra nacional. Ahora basta una palabra propia de un solo nombre ("chocó").
+- **Preguntas ajenas al proyecto.** Ante una pregunta ajena ("¿cuál es la capital de Francia?"), el asistente devolvía un fragmento cualquiera del informe. Ahora se abstiene si no hay un fragmento con al menos dos palabras de la pregunta y la mitad de ellas.
+- **El año en la URL.** Se validaba de forma que todo `?anio=2024` daba error 422. Ahora se valida como entero entre 2023 y 2024.
+- **Docstring desactualizado.** El de `riesgo_puntaje.py` decía que la cola más pequeña tenía 11 evaluados. Son 12: el Trópico Americano en 2023 y el Pacífico en 2024.
 
-- `verificar_imputacion.py` responde TODO COINCIDE y detectó dos errores plantados (un coeficiente y un `global_d`).
-- La API se probó con las versiones fijas de `requirements.txt` para FastAPI, Starlette, SQLAlchemy, pydantic-settings, httpx y pytest. Pydantic, pandas, numpy y scipy se probaron con versiones más nuevas, y con Python 3.13; el código también compila en Python 3.11.
-- El tablero se recorrió de punta a punta contra la API en vivo, con un Streamlit simulado.
-- Docker no se pudo construir en el entorno de la IA: lo construye el CI en cada push.
+**Verificación hecha por el equipo:**
+
+- **Las 85 pruebas pasaron en el computador del equipo,** con Windows, Python 3.11.9 y exactamente las versiones de `requirements.txt`.
+- **GitHub Actions pasó dos veces en verde:** corrió las pruebas en un entorno limpio, construyó la imagen de Docker y comprobó que no trae microdatos.
+- **La API se probó a mano desde `/docs`,** con una pregunta en lenguaje natural al asistente.
+- **La API y el tablero quedaron publicados en Render.**
+- **`verificar_imputacion.py` responde TODO COINCIDE** y detectó dos errores plantados (un coeficiente y un `global_d`).
 
 ---
 

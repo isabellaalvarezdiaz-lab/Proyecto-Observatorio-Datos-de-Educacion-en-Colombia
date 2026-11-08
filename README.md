@@ -17,7 +17,6 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 | OE3 · Validación fuera de muestra | si la evaluación se sostiene con universidades que el modelo no usó | `resultados/oe3_validacion_resumen.csv`, `oe3_validacion_universidades.csv` |
 | OE3 · Segunda etapa (exploratoria) | qué características, institucionales y socioeconómicas, se asocian con la eficiencia, y el perfil de las menos eficientes | `resultados/caracteristicas_universidades.csv`, `oe3_segunda_etapa.csv`, `oe3_contexto_menos_eficientes.csv` |
 | Corrección del trabajo previo | cifras de Comunicación Escrita 2023–2024 que corrigen el informe 2025-2 | `resultados/revision_trabajo_previo.csv` |
-| Tablero interactivo | los datos que lee el tablero, tomados de las tablas anteriores | `resultados/tablero/*.json` |
 | Riesgo · VaR y CVaR del puntaje (Teoría del Riesgo) | VaR y CVaR no paramétricos del puntaje de Saber Pro por universidad, con intervalos bootstrap y backtesting de Kupiec 2023 → 2024 | `resultados/riesgo_puntaje.csv`, `riesgo_kupiec.csv`, `riesgo_puntaje_asociaciones.csv` |
 | Riesgo · Stress testing del presupuesto | eficiencia y orden del DEA bajo recortes y con la gratuidad sumada al insumo | `resultados/riesgo_stress_resumen.csv`, `riesgo_stress_universidades.csv` |
 | Imputación de Escrita por perfiles similares | `global_d` con los ceros de Escrita imputados por PMM, y su efecto en el DEA y en el CVaR | `resultados/imputacion_escrita_universidades.csv`, `imputacion_escrita_sensibilidad.csv`, `modelos/imputador_escrita.json` |
@@ -29,14 +28,21 @@ El periodo es **2023–2024**. Lo fija la intersección de las fuentes: el PTE d
 - **Tablero interactivo:** https://observatorio-tablero.onrender.com (Streamlit en Render; consume la API. En local: `streamlit run frontend/app.py`)
 - **API desplegada:** https://observatorio-api-fuk3.onrender.com/docs (Render, plan gratuito: si estuvo inactiva, la primera carga tarda cerca de un minuto)
 
+## Por dónde empezar
+
+1. **Lea el informe** (`docs/informe_final.pdf`) o recorra la presentación (`docs/presentacion_sustentacion.pdf`).
+2. **Explore los resultados sin instalar nada** en el tablero o en la API (enlaces arriba).
+3. **Busque la tabla que necesita** en `resultados/README.md`: dice qué archivo responde cada pregunta, qué script lo produce y dónde están sus columnas explicadas.
+4. **Para reproducir o continuar el trabajo**, siga las secciones de abajo en orden (OE1 → OE3 y OE2 → riesgo → imputación → API). Cada script se corre desde la raíz, deja su evidencia en `docs/gobernanza/evidencias/` y tiene un verificador que recalcula sus cifras por otro camino.
+
 ## Estructura
 
 ```text
 .
 ├─ scripts/        código; todo se corre desde la raíz del repositorio
 ├─ resultados/     tablas agregadas, sin datos de estudiantes (sí se suben)
-│  ├─ figuras/     las que genera graficos_oe2_oe3.py
-│  └─ tablero/     los datos que lee el tablero interactivo
+│  ├─ README.md    guía: qué archivo responde qué pregunta
+│  └─ figuras/     las que genera graficos_oe2_oe3.py
 ├─ docs/
 │  ├─ diccionario_tabla_maestra.md, diccionario_base_integrada.md, diccionario_resultados_oe2_oe3.md
 │  ├─ diccionario_riesgo.md, diccionario_imputacion.md
@@ -106,14 +112,13 @@ python scripts/graficos_oe2_oe3.py      # figuras en resultados/figuras/
 
 El bootstrap usa una semilla fija (20261011), así que cualquiera que lo corra obtiene los mismos números. `caracteristicas_universidades.py` lee los archivos crudos; quien no los tenga puede usar el `resultados/caracteristicas_universidades.csv` que está en el repositorio y seguir con `oe3_segunda_etapa.py`. La especificación, las columnas y cómo leerlas están en `docs/diccionario_resultados_oe2_oe3.md`.
 
-## Corrección del trabajo previo y tablero
+## Corrección del trabajo previo
 
 ```bash
 python scripts/revision_trabajo_previo.py   # cifras de Comunicación Escrita del informe 2025-2; necesita data/raw
-python scripts/datos_tablero.py             # datos del tablero interactivo (segundos)
 ```
 
-`revision_trabajo_previo.py` calcula, con la misma población que la agregación de Saber Pro, la media y la desviación estándar de cada módulo, y las de Comunicación Escrita sin los ceros que no tienen nivel de desempeño. `datos_tablero.py` no estima nada: une las tablas de `resultados/` y les agrega una llave y el nombre corto de cada universidad. El tablero interactivo lee solo esos cuatro archivos y calcula a la vista los promedios, los puestos y las medianas que muestra.
+`revision_trabajo_previo.py` calcula, con la misma población que la agregación de Saber Pro, la media y la desviación estándar de cada módulo, y las de Comunicación Escrita sin los ceros que no tienen nivel de desempeño.
 
 ## Análisis de riesgo (integración con Teoría del Riesgo)
 

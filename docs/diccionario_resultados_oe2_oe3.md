@@ -204,19 +204,6 @@ Cifras para la corrección anónima de las conclusiones del trabajo previo (info
 
 El % de evaluados con 0 en Escrita es 1 − n(sin los ceros) / n(todos) en Comunicación escrita. Ninguno de esos ceros tiene nivel de desempeño (lo imprime la evidencia `revision_trabajo_previo_<fecha>.txt`), así que son pruebas sin calificar. Los años 2021 y 2022 del trabajo previo no se revisan: el proyecto no tiene esos microdatos.
 
-## `resultados/tablero/*.json`
-
-Datos del tablero interactivo. `scripts/datos_tablero.py` los arma desde los CSV de `resultados/` sin cambiar ningún valor numérico: agrega una llave `id` y el nombre corto de cada universidad (la misma función de las figuras) y renombra algunas columnas, como se indica abajo. Cada archivo es una lista de filas en JSON.
-
-| Archivo | Una fila por | Llave `id` | Viene de |
-|---|---|---|---|
-| `universidades.json` | modelo, año y universidad | `modelo-año-código PTE` | `oe3_eficiencia.csv` y `oe3_cobertura_sin_unad.csv` |
-| `caracteristicas.json` | año y universidad (las 33 del DEA) | `año-código PTE` | `base_integrada_2023_2024.csv` y `caracteristicas_universidades.csv` |
-| `malmquist.json` | modelo, versión y universidad | `modelo-versión-código PTE` | `oe2_malmquist.csv` |
-| `segunda_etapa.json` | modelo, año y variable | `modelo-año-variable` | `oe3_segunda_etapa.csv` |
-
-En `universidades.json`, `matricula_*`, `graduados_*` y `puntaje_*` son las columnas `mat_total_prom_*`, `grad_total_*` y `global_c_*` de `oe3_eficiencia.csv`, y `pares` lleva los nombres cortos con el peso de cada par. Los promedios, los puestos y las medianas que muestra el tablero no están en estos archivos: los calcula el tablero, y quien lo consulte puede ver cada fórmula.
-
 ## Limitaciones de lectura
 
 - Con 33 universidades, los intervalos son anchos. Compare universidades por sus intervalos, no solo por el valor puntual.
